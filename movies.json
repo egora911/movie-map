@@ -1,0 +1,2257 @@
+{
+  "schema_version": 1,
+  "source": "movie_map_v15_save_fixed",
+  "description": "Structured Movie Map data extracted from the canonical v15 HTML. A work is unique by id; category-specific presentation data is preserved in placements.",
+  "counts": {
+    "unique_works": 58,
+    "rendered_cards": 85,
+    "seen": 18,
+    "todo": 67
+  },
+  "categories": [
+    {
+      "id": "films",
+      "label": "Фильмы для двоих",
+      "expected_cards": 20
+    },
+    {
+      "id": "series",
+      "label": "Сериалы для двоих",
+      "expected_cards": 19
+    },
+    {
+      "id": "weird",
+      "label": "Странное кино / сериал для двоих",
+      "expected_cards": 15
+    },
+    {
+      "id": "me",
+      "label": "Кино / сериал для меня",
+      "expected_cards": 16
+    },
+    {
+      "id": "her",
+      "label": "Кино / сериал для неё",
+      "expected_cards": 15
+    }
+  ],
+  "works": [
+    {
+      "id": "1d69f6b7f142",
+      "title": "Saltburn / Солтберн",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Saltburn",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Saltburn"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 1,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "8.8",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "8–9",
+            "wife": "7.5"
+          },
+          "before": "Студент из Оксфорда попадает в закрытый мир очень богатой аристократической семьи. Секс, классовая зависть, красота и опасная игра.",
+          "after": "Тебе особенно зашли позднее раскрытие «паразита», логика отношений, девиации вместо прямой эротики и сарказм над аристократической средой. Жене — картинка, но не хватило раскрытия Феликса."
+        }
+      ]
+    },
+    {
+      "id": "b08c6e50d285",
+      "title": "The Substance / Субстанция",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Substance",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Substance"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 2,
+          "stars": 0,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.7"
+          },
+          "actual": {
+            "me": "≈7–8",
+            "wife": "≈8–9"
+          },
+          "before": "Гротескное body-horror кино о теле, старении, женской идентичности и цене внешнего подтверждения собственной ценности.",
+          "after": "Обоим понравились визуал, кастинг и актёры; жене примерно на 1–2 балла больше. Для тебя финальная эскалация слишком явно давила авторским жестом."
+        }
+      ]
+    },
+    {
+      "id": "5d0a1d8a3d12",
+      "title": "Dream Scenario / Герой наших снов",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Dream%20Scenario",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Dream%20Scenario"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 3,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.8",
+            "wife": "7.7"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Самый обычный профессор внезапно начинает сниться миллионам людей. Кауфмановская идея, чёрная комедия и социальная машина известности.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 49,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.8",
+            "wife": "7.7"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Слава возникает буквально из чужих снов и превращает обычного человека в общественный объект.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "27c3708391b0",
+      "title": "A Real Pain / Настоящая боль",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=A%20Real%20Pain",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=A%20Real%20Pain"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 4,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "7.8",
+            "wife": "8.7"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Два очень разных родственника едут в Польшу по следам семейной истории. Память, близость и несовпадающие способы переживать боль.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "5f2b573c820e",
+      "title": "Sentimental Value / Сентиментальная ценность",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sentimental%20Value",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sentimental%20Value"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 5,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "8.6",
+            "wife": "9.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Семья, память и искусство сталкиваются внутри отношений отца и дочерей. Творчество одновременно соединяет людей и использует их.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 81,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "8.6",
+            "wife": "9.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Семейная рана и искусство как способ приблизиться к другому и одновременно использовать его.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "e7a0a14e3d21",
+      "title": "Bugonia / Бугония",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Bugonia",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Bugonia"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 6,
+          "stars": 0,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.0",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "просмотрено",
+            "wife": "просмотрено"
+          },
+          "before": "Лантимос: паранойя, сломанная реальность и люди, чья уверенность в собственной картине мира становится опаснее самой картины.",
+          "after": "Просмотрено до фиксации карты. Детальные оценки и впечатления пока не восстановлены — не придумываю их задним числом."
+        },
+        {
+          "category": "weird",
+          "order": 50,
+          "stars": 0,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.0",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "просмотрено",
+            "wife": "просмотрено"
+          },
+          "before": "Паранойя, заговор и конфликт несовместимых карт реальности.",
+          "after": "Просмотрено; ждём восстановления ваших точных оценок и комментариев."
+        }
+      ]
+    },
+    {
+      "id": "e1f1636fa3c3",
+      "title": "Mickey 17 / Микки 17",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Mickey%2017",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Mickey%2017"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 7,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.4",
+            "wife": "7.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Sci-fi о человеке, которого система буквально может печатать заново. Абсурд, социальная сатира и уникальность при воспроизводимости.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 70,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.5",
+            "wife": "7.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Идентичность становится технологически воспроизводимой, а человек — расходным ресурсом институции.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "3917205d36ac",
+      "title": "One Battle After Another / Битва за битвой",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=One%20Battle%20After%20Another",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=One%20Battle%20After%20Another"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 8,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.2",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Большое нервное кино Пола Томаса Андерсона: семья и прошлое существуют внутри политической, исторической и абсурдной машины.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "cb466f7bffb3",
+      "title": "The Brutalist / Бруталист",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Brutalist",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Brutalist"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 9,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "9.1",
+            "wife": "7.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Архитектура, амбиция, власть и цена создания чего-то большого. Длительность должна работать как часть содержания.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 69,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "9.1",
+            "wife": "7.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Архитектура как форма воли, зависимости и социального положения. Проверка твоего критерия «оплачивает ли длительность сама себя».",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "c1d807ea42dd",
+      "title": "Sinners / Грешники",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sinners",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sinners"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 10,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "8.8",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Жанровое кино с сильной авторской формой: музыка, телесность, сообщество и опасность собраны в энергичную конструкцию.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "2578ccaffd77",
+      "title": "The Odyssey / Одиссея",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Odyssey",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Odyssey"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 11,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "7.0",
+            "wife": "6.0"
+          },
+          "actual": {
+            "me": "≈6–7",
+            "wife": "низко"
+          },
+          "before": "Большой визуальный эпос: знакомый миф как материал для масштабного современного прочтения.",
+          "after": "Фактически обоим не хватило содержательной отдачи. Тебе понравилась картинка, но длительность не была оплачена новой глубиной; жене было скучно и тягомотно."
+        }
+      ]
+    },
+    {
+      "id": "246d7519df41",
+      "title": "Challengers / Претенденты",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Challengers",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Challengers"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 12,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "9.5",
+            "wife": "9.5"
+          },
+          "actual": {
+            "me": "10",
+            "wife": "10"
+          },
+          "before": "Треугольник желания, теннис, амбиция и власть. Спортивный матч превращается в язык отношений.",
+          "after": "Ваш нынешний общий эталон: жене — непосредственное переживание и Zendaya; тебе — камера, форма, кастинг и сосуществование животного, рационального и социального без морализаторства."
+        },
+        {
+          "category": "her",
+          "order": 76,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "9.5",
+            "wife": "9.5"
+          },
+          "actual": {
+            "me": "10",
+            "wife": "10"
+          },
+          "before": "Треугольник желания, спорта и власти.",
+          "after": "Для неё — одно из лучших попаданий последнего времени; Zendaya — отдельный эмоциональный плюс."
+        }
+      ]
+    },
+    {
+      "id": "2f4b0ac675b8",
+      "title": "All of Us Strangers / Мы всем чужие",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=All%20of%20Us%20Strangers",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=All%20of%20Us%20Strangers"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 13,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "7.5",
+            "wife": "9.3"
+          },
+          "actual": {
+            "me": "7",
+            "wife": "10"
+          },
+          "before": "Интимная история одиночества, близости, памяти и встречи взрослого человека с непрожитой утратой родителей.",
+          "after": "Для жены почти уровень Challengers: ценность внутри самого переживания. Для тебя красиво и эмоционально, но после считывания механизма осталось меньше второго слоя."
+        },
+        {
+          "category": "her",
+          "order": 77,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "7.5",
+            "wife": "9.3"
+          },
+          "actual": {
+            "me": "7",
+            "wife": "10"
+          },
+          "before": "Близость, утрата, память и невозможность окончательно закрыть прошлое.",
+          "after": "Она прямо ставит фильм очень близко к Challengers: редкий пример полного проживания субъекта изнутри."
+        }
+      ]
+    },
+    {
+      "id": "7925baaaf395",
+      "title": "May December / Май декабрь",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=May%20December",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=May%20December"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 14,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "7.8",
+            "wife": "8.7"
+          },
+          "actual": {
+            "me": "7–8",
+            "wife": "8–9"
+          },
+          "before": "Актриса изучает женщину, чья давняя скандальная связь стала семьёй. Наблюдение постепенно перестаёт быть нейтральным.",
+          "after": "Жене особенно интересна Elizabeth, входящая в семью; тебе — Joe и вопрос, чем его жизненный симулякр отличается от наших социально произведённых реальностей."
+        },
+        {
+          "category": "her",
+          "order": 79,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "7.8",
+            "wife": "8.7"
+          },
+          "actual": {
+            "me": "7–8",
+            "wife": "8–9"
+          },
+          "before": "Актриса входит в чужую семью, чтобы сыграть её хозяйку, и сама становится участником системы отношений.",
+          "after": "Ей особенно интересна линия Elizabeth и её внедрение в отношения; Joe вызывает сочувствие, но и вопрос о его инфантильности."
+        }
+      ]
+    },
+    {
+      "id": "93f5326069dc",
+      "title": "No Other Choice / Метод исключения",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=No%20Other%20Choice",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=No%20Other%20Choice"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 15,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.3",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Пак Чхан-ук превращает потерю работы в чёрную сатиру о конкуренции, семье и моральном распаде. Социальная машина работает через очень конкретного человека.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 44,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.3",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Чёрная социальная сатира Пак Чхан-ука: конкуренция за работу доводится до буквального устранения конкурентов.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 68,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.4",
+            "wife": "8.1"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Человек пытается вернуть контроль над жизнью и постепенно становится функцией конкурентной системы, с которой борется.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "967ae6447315",
+      "title": "The Life of Chuck / Жизнь Чака",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Life%20of%20Chuck",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Life%20of%20Chuck"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 16,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.4",
+            "wife": "8.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Необычно собранная история о конечности, памяти и ценности прожитого — эмоциональная конструкция с формальным трюком.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 43,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.4",
+            "wife": "8.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "История жизни рассказана через необычную структуру и ощущение конечности мира.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "5765f7f11f6e",
+      "title": "Sorry, Baby / Прости, детка",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sorry%2C%20Baby",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sorry%2C%20Baby"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 17,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Тихое, чёрно-комическое кино о травме и возвращении к собственной жизни без большой морализаторской речи.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 45,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Травма без привычной драматической эксплуатации: сухой юмор, близость и возвращение к жизни.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 82,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.9"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Очень человеческое кино о травме, дружбе и возвращении способности жить без эмоционального шантажа зрителя.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "0e9229421daa",
+      "title": "Hit Man / Я не киллер",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Hit%20Man",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hit%20Man"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 18,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Игра идентичностей, сексуальность и лёгкая криминальная интрига; умное жанровое кино без необходимости тяжело работать зрителем.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 42,
+          "stars": 1,
+          "tags": [
+            "странное",
+            "отдых"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Мужчина начинает играть выдуманные личности и обнаруживает, что роль способна переписать самого исполнителя.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "56ef07b1d83f",
+      "title": "Sanctuary / Убежище",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sanctuary",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sanctuary"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 19,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.5",
+            "wife": "8.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Почти камерная дуэль желания, роли, власти и контроля между двумя людьми; сексуальность здесь прежде всего механизм отношений.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 41,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.5",
+            "wife": "8.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Камерная сексуально-психологическая дуэль, где роль и реальная власть всё время меняются местами.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "b077b95583d6",
+      "title": "Infinity Pool / Бескрайний бассейн",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Infinity%20Pool",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Infinity%20Pool"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 20,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.1",
+            "wife": "7.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Отпуск превращается в распад идентичности, привилегии и моральных ограничений. Красиво, телесно и намеренно неприятно.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 40,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.1",
+            "wife": "7.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Отпуск, привилегия и возможность избежать последствий постепенно размывают личность героя.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "972b44bb2d7b",
+      "title": "The Curse / Проклятие",
+      "year": 2023,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Curse",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Curse"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 21,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.4",
+            "wife": "8.6"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "White Lotus × Severance × Линч: молодая пара снимает телешоу о «правильной» жизни и постепенно оказывается внутри всё более неприятной версии себя.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "218b0c7e99fb",
+      "title": "Beef / Грызня",
+      "year": 2023,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Beef",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Beef"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 22,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "9.0",
+            "wife": "9.1"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Дорожный конфликт двух незнакомцев превращается в долгую взаимную одержимость. Ярость, абсурд, отношения и саморазрушение.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "329bfffc8644",
+      "title": "Ripley / Рипли",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Ripley",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Ripley"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 23,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "9.2",
+            "wife": "8.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Чёрно-белая Италия, холодная красота и человек, который примеряет чужую жизнь как костюм. Психопатология без лишних объяснений.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "be73d241afed",
+      "title": "Baby Reindeer / Оленёнок",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Baby%20Reindeer",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Baby%20Reindeer"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 24,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "8.2",
+            "wife": "9.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Близость, зависимость, травма и нарушение границ без удобного деления людей на чистую жертву и чистого злодея.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "05b74354dced",
+      "title": "Adolescence / Переходный возраст",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Adolescence",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Adolescence"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 25,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "9.0",
+            "wife": "9.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Четыре эпизода, снятые длинными непрерывными дублями: преступление подростка раскрывается через семью, школу, мужскую социализацию и взгляд взрослых.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "08acb5d01de5",
+      "title": "Аутсорс / Outsource",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=%D0%90%D1%83%D1%82%D1%81%D0%BE%D1%80%D1%81",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=%D0%90%D1%83%D1%82%D1%81%D0%BE%D1%80%D1%81"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 26,
+          "stars": 3,
+          "tags": [
+            "россия"
+          ],
+          "prediction": {
+            "me": "9.0",
+            "wife": "8.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "1990-е, тюрьма и идея продавать право исполнения смертного приговора родственникам жертв. Власть, ответственность и деньги превращаются в одну систему.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "7c694ab04067",
+      "title": "Подслушано в Рыбинске / Overheard in Rybinsk",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=%D0%9F%D0%BE%D0%B4%D1%81%D0%BB%D1%83%D1%88%D0%B0%D0%BD%D0%BE%20%D0%B2%20%D0%A0%D1%8B%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%B5",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=%D0%9F%D0%BE%D0%B4%D1%81%D0%BB%D1%83%D1%88%D0%B0%D0%BD%D0%BE%20%D0%B2%20%D0%A0%D1%8B%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%B5"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 27,
+          "stars": 1,
+          "tags": [
+            "россия",
+            "отдых"
+          ],
+          "prediction": {
+            "me": "8.1",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Провинциальный журналист начинает видеть будущие убийства. Детективная интрига смешана с абсурдом маленького города и человеческими слабостями.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "72005cd3bec5",
+      "title": "Бар «Один звонок» / One Call Bar",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=%D0%91%D0%B0%D1%80%20%C2%AB%D0%9E%D0%B4%D0%B8%D0%BD%20%D0%B7%D0%B2%D0%BE%D0%BD%D0%BE%D0%BA%C2%BB",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=%D0%91%D0%B0%D1%80%20%C2%AB%D0%9E%D0%B4%D0%B8%D0%BD%20%D0%B7%D0%B2%D0%BE%D0%BD%D0%BE%D0%BA%C2%BB"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 28,
+          "stars": 2,
+          "tags": [
+            "россия",
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.2",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Таинственный бар предлагает невозможный звонок умершему человеку — но цена разговора превращает желание в моральный эксперимент.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 52,
+          "stars": 2,
+          "tags": [
+            "россия",
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.2",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Звонок умершему как услуга с ценой: мистическая идея быстро становится экспериментом над виной и желанием.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "37bf1a7916c0",
+      "title": "The White Lotus / Белый лотос",
+      "year": "2021–",
+      "media_type": "сериал",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20White%20Lotus",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20White%20Lotus"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 29,
+          "stars": 0,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "—",
+            "wife": "—"
+          },
+          "actual": {
+            "me": "любим",
+            "wife": "любим"
+          },
+          "before": "Отпуск как лаборатория класса, желания, денег, секса и взаимного использования.",
+          "after": "Один из ваших общих эталонов: социальная психология и отношения работают одновременно, но сериал остаётся увлекательным."
+        }
+      ]
+    },
+    {
+      "id": "c699db434506",
+      "title": "Severance / Разделение",
+      "year": "2022–",
+      "media_type": "сериал",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Severance",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Severance"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 30,
+          "stars": 0,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "—",
+            "wife": "—"
+          },
+          "actual": {
+            "me": "любим",
+            "wife": "любим"
+          },
+          "before": "Рабочая и личная личности буквально разделены. Формальная sci-fi идея превращается в исследование власти, идентичности и труда.",
+          "after": "Общий любимый сериал — важная контрольная точка пересечения ваших вкусов."
+        }
+      ]
+    },
+    {
+      "id": "c95a34cdb0cf",
+      "title": "Your Friends & Neighbors / Друзья и соседи",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Your%20Friends%20%26%20Neighbors",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Your%20Friends%20%26%20Neighbors"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 31,
+          "stars": 0,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "—",
+            "wife": "—"
+          },
+          "actual": {
+            "me": "нравится",
+            "wife": "нравится"
+          },
+          "before": "Взрослая драмеди о богатом пригороде, статусе, преступлении и отношениях.",
+          "after": "Ваш эталон качественного вечернего отдыха: интересно, взрослые персонажи, хочется смотреть дальше и можно не анализировать."
+        }
+      ]
+    },
+    {
+      "id": "b39fbfc4707d",
+      "title": "Холод / Cold",
+      "year": 2026,
+      "media_type": "сериал",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=%D0%A5%D0%BE%D0%BB%D0%BE%D0%B4",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=%D0%A5%D0%BE%D0%BB%D0%BE%D0%B4"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 32,
+          "stars": 0,
+          "tags": [
+            "россия",
+            "отдых"
+          ],
+          "prediction": {
+            "me": "—",
+            "wife": "—"
+          },
+          "actual": {
+            "me": "не топ, но хорошо",
+            "wife": "не топ, но хорошо"
+          },
+          "before": "Российский сериал для вечернего просмотра: ставка прежде всего на сюжетное вовлечение.",
+          "after": "Для вас обоих — добротный отдых, не топовый уровень, но хороший вариант на вечер."
+        }
+      ]
+    },
+    {
+      "id": "9bcef4ef77fd",
+      "title": "Pluribus / Плюрибус",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Pluribus",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Pluribus"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 33,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.1",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Sci-fi Винса Гиллигана о мире, где коллективное счастье становится почти тотальным состоянием. Индивидуальность против очень удобной системы.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 51,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.1",
+            "wife": "8.3"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Коллективное счастье как потенциальная антиутопия: что остаётся от человека, если исчезает болезненная отдельность?",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 58,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "9.3",
+            "wife": "8.1"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Коллективное счастье против отдельности: почти лабораторная постановка вопроса, нужен ли человеку собственный дискомфорт, чтобы оставаться собой.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "174cbbc72787",
+      "title": "The Studio / Киностудия",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Studio",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Studio"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 34,
+          "stars": 2,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "8.6",
+            "wife": "8.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Индустрия кино как машина статуса, компромиссов и абсурда; быстрая комедия, где форма и производственная среда постоянно сталкиваются.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 59,
+          "stars": 2,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "8.8",
+            "wife": "7.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Киноиндустрия как абсурдная статусная машина; быстрый темп и наблюдение за тем, как система производит поведение.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "a6b02d5e8a07",
+      "title": "The Girlfriend / Девушка моего сына",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Girlfriend",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Girlfriend"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 35,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "7.7",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Мать и новая девушка сына смотрят друг на друга как на угрозу; вопрос не только кто лжёт, но кто контролирует саму версию реальности.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 74,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "7.6",
+            "wife": "8.9"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Мать и девушка сына конкурируют не только за человека, но и за право определить, что вообще происходит.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "dbc74d7cd466",
+      "title": "Sirens / Сирены",
+      "year": 2025,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sirens",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sirens"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 36,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "7.8",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Женские отношения, власть, привлекательность и богатая закрытая среда — социальная игра с эмоциональным крючком.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 75,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "7.7",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Женские отношения, привлекательность, власть и богатая закрытая среда. Потенциально очень её поле.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "33233b1d276d",
+      "title": "Disclaimer / Дисклеймер",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Disclaimer",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Disclaimer"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 37,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "8.0",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Интимность, вина и постепенная перестройка того, кому зритель верит. История специально управляет нашей моральной позицией.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 71,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "7.9",
+            "wife": "8.9"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Женщина обнаруживает книгу, которая раскрывает её скрытое прошлое. Интимность, вина и управление зрительской симпатией.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "9cce768fda2b",
+      "title": "The Perfect Couple / Идеальная пара",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Perfect%20Couple",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Perfect%20Couple"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 38,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "7.0",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Богатая семья, свадьба, убийство и сеть отношений. Скорее качественное вовлечение и отдых, чем тяжёлая авторская работа.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 72,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "6.9",
+            "wife": "8.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Богатая семья, свадьба, убийство, красивые люди и сеть отношений. Сильнее по вовлечению, чем по философской глубине.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "849aa713b120",
+      "title": "The Buccaneers / Буканьерки",
+      "year": "2023–",
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Buccaneers",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Buccaneers"
+      },
+      "placements": [
+        {
+          "category": "series",
+          "order": 39,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "6.8",
+            "wife": "8.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Молодые американки входят в британскую аристократическую среду: романтика, класс, свобода и социальные ожидания.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 73,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "6.7",
+            "wife": "8.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Молодые американки входят в британскую аристократическую среду: желание, класс, свобода и правила красивого мира.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "cf988fe29958",
+      "title": "Beau Is Afraid / Все страхи Бо",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Beau%20Is%20Afraid",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Beau%20Is%20Afraid"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 46,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "6.6"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Трёхчасовая машина тревоги Ари Астера: мир подчиняется внутреннему страху героя. Риск — автор слишком заметно крутит ручки.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 60,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "6.6"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Максимально авторская машина тревоги. Может попасть в твою любовь к форме, но рискует раздражать слишком заметным авторским давлением.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "467c010c8075",
+      "title": "Kinds of Kindness / Виды доброты",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Kinds%20of%20Kindness",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Kinds%20of%20Kindness"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 47,
+          "stars": 0,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "7.0",
+            "wife": "5.8"
+          },
+          "actual": {
+            "me": "не завершён",
+            "wife": "бросила"
+          },
+          "before": "Три холодных притчи Лантимоса о контроле, зависимости, вере и добровольном подчинении.",
+          "after": "Жена остановилась примерно на половине–двух третях; тебе можно было бы вернуться, но сильного желания нет. Контрольный антипример искусственности конструкции."
+        },
+        {
+          "category": "me",
+          "order": 65,
+          "stars": 0,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "7.0",
+            "wife": "5.8"
+          },
+          "actual": {
+            "me": "не завершён",
+            "wife": "бросила"
+          },
+          "before": "Холодные эксперименты с подчинением и контролем.",
+          "after": "Для тебя остаётся потенциальный повторный заход, но теперь прогноз ниже: слишком видимая конструкция автора."
+        }
+      ]
+    },
+    {
+      "id": "d19e508d1727",
+      "title": "The Menu / Меню",
+      "year": 2022,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Menu",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Menu"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 48,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.4",
+            "wife": "8.1"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Вне основного периода, но точное попадание по механике: закрытая элитная среда, чёрный юмор, ритуал и классовая агрессия.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "66120f690c6c",
+      "title": "Weapons / Орудия",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Weapons",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Weapons"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 53,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.3",
+            "wife": "8.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Исчезновение детей собирается из разных точек зрения; жанровая загадка постепенно меняет собственную форму.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "c5d32a8ddc7e",
+      "title": "Eddington / Эддингтон",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Eddington",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Eddington"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 54,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.5",
+            "wife": "7.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Социальная реальность маленького города распадается на конкурирующие версии правды, идентичности и власти.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "9e2744144270",
+      "title": "Shōgun / Сёгун",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sh%C5%8Dgun",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sh%C5%8Dgun"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 55,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "9.0",
+            "wife": "8.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Власть, ритуал, язык и культурная несовместимость. Большая система раскрывается через очень конкретные человеческие стратегии.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "db75d4218c16",
+      "title": "The Sympathizer / Сочувствующий",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Sympathizer",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Sympathizer"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 56,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.7",
+            "wife": "7.2"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Шпион с двойной идентичностью существует между идеологиями и ролями; форма подчёркивает ненадёжность собственного «я».",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "103d3306decf",
+      "title": "Fallout / Фоллаут",
+      "year": 2024,
+      "media_type": "сериал",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Fallout",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fallout"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 57,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "me": "8.3",
+            "wife": "7.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Чёрный юмор, жестокий мир и институции, которые продолжают управлять людьми даже после конца цивилизации.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "e5b36ed294af",
+      "title": "The Boy and the Heron / Мальчик и птица",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Boy%20and%20the%20Heron",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Boy%20and%20the%20Heron"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 61,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "8.8",
+            "wife": "7.7"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Миядзаки о потере, мире как конструкции и отказе наследовать идеальный порядок. Образы важнее буквальной расшифровки.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "7ab25ef2b658",
+      "title": "Perfect Days / Идеальные дни",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Perfect%20Days",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Perfect%20Days"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 62,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "9.0",
+            "wife": "7.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Повторяющаяся жизнь без обязательного требования превратить каждую минуту в продукт. Очень близко к твоей нынешней теме присутствия.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "d52915e33074",
+      "title": "The Holdovers / Оставленные",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Holdovers",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Holdovers"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 63,
+          "stars": 1,
+          "tags": [],
+          "prediction": {
+            "me": "8.1",
+            "wife": "8.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Три одиноких человека вынуждены провести праздники вместе. Классическое человеческое кино без концептуального фейерверка.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "3e643129c1b1",
+      "title": "The Zone of Interest / Зона интересов",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Zone%20of%20Interest",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Zone%20of%20Interest"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 64,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "9.1",
+            "wife": "6.9"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Ужас существует не в центре кадра, а в устройстве повседневной среды. Человек раскрывается через нормальность системы.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "4b18999f77fc",
+      "title": "The Phoenician Scheme / Финикийская схема",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Phoenician%20Scheme",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Phoenician%20Scheme"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 66,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.4",
+            "wife": "7.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Уэс Андерсон: искусственная форма, семейная связь, капитал и контроль. Вероятность зависит от того, будет ли за дизайном достаточно живого человека.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "03bd145ded75",
+      "title": "Marty Supreme / Марти Великолепный",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Marty%20Supreme",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Marty%20Supreme"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 67,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "9.3",
+            "wife": "8.0"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Гиперактивный амбициозный герой превращает собственную жизнь в непрерывную ставку. Safdie-энергия, телесность и самоизобретение.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "da2e357c352b",
+      "title": "Priscilla / Присцилла",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Priscilla",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Priscilla"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 78,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "me": "7.2",
+            "wife": "8.8"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Молодая женщина внутри красивой, желанной и ограничивающей среды; отношения и власть читаются через повседневность.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "1d22d16e485e",
+      "title": "Queer / Квир",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Queer",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Queer"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 80,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "7.4",
+            "wife": "8.4"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Желание, зависимость и невозможность получить от другого подтверждение нужной интенсивности близости.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "857f4ed58c92",
+      "title": "Materialists / Материалистка",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Materialists",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Materialists"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 83,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "me": "7.4",
+            "wife": "8.5"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Романтический выбор рассматривается одновременно как желание, социальный капитал и рациональная стратегия.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "41fc72678034",
+      "title": "Sirât / Сират",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Sir%C3%A2t",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Sir%C3%A2t"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 84,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "me": "8.0",
+            "wife": "7.7"
+          },
+          "actual": {
+            "me": "—",
+            "wife": "—"
+          },
+          "before": "Телесное, атмосферное путешествие и сильное переживание среды; риск — эмоциональный вход может оказаться слишком непрямым.",
+          "after": null
+        }
+      ]
+    },
+    {
+      "id": "f67dfb41b778",
+      "title": "Babygirl / Плохая девочка",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "seen",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Babygirl",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Babygirl"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 85,
+          "stars": 0,
+          "tags": [],
+          "prediction": {
+            "me": "—",
+            "wife": "—"
+          },
+          "actual": {
+            "me": "просмотрено",
+            "wife": "просмотрено"
+          },
+          "before": "Эротическая психологическая история о власти, желании, возрасте и контроле внутри внешне устроенной взрослой жизни.",
+          "after": "Просмотрено до карты; детальные оценки не восстанавливаю без ваших исходных комментариев."
+        }
+      ]
+    }
+  ]
+}
