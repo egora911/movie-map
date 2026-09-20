@@ -256,7 +256,7 @@ function bindUi(){
   var status=document.getElementById('agentStatus');
   var history=[];
   var api=(window.MOVIE_AGENT_API||'').trim();
-  if(!api && /\\.vercel\\.app$/i.test(location.hostname)) api='/api/chat';
+  if(!api && /\.vercel\.app$/i.test(location.hostname)) api='/api/chat';
 
   function add(role,text){
     var div=document.createElement('div');
