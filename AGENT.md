@@ -15,3 +15,5 @@ Read-only AI agent for the Movie Map.
 - `OPENAI_MODEL` — optional, defaults to `gpt-5.6-luna`.
 
 Never commit the API key to GitHub.
+
+Preview branch: `agent/read-only-v1`.
