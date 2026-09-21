@@ -83,46 +83,40 @@ function getCatalogStats() {
   };
 }
 
-const tools = [
+const functionDeclarations = [
   {
-    type: "function",
     name: "search_movies",
-    description: "Search and filter the user's Movie Map. Use this for recommendations, shortlists, watched/unwatched questions, categories, tags and score-based selection.",
+    description: "Search and filter the user's Movie Map. Use this for recommendations, watched/unwatched questions, categories, tags and score-based selection.",
     parameters: {
-      type: "object",
+      type: "OBJECT",
       properties: {
-        query: { type: "string", description: "Optional words to search across title, descriptions, categories and tags." },
-        category: { type: "string", enum: ["films","series","weird","me","her"] },
-        media_type: { type: "string", enum: ["фильм","сериал"] },
-        state: { type: "string", enum: ["seen","todo"] },
-        tag: { type: "string", description: "Exact tag such as отдых or россия." },
-        min_stars: { type: "number", minimum: 0, maximum: 3 },
-        limit: { type: "integer", minimum: 1, maximum: 30 }
-      },
-      additionalProperties: false
+        query: { type: "STRING", description: "Optional words to search across title, descriptions, categories and tags." },
+        category: { type: "STRING", enum: ["films","series","weird","me","her"] },
+        media_type: { type: "STRING", enum: ["фильм","сериал"] },
+        state: { type: "STRING", enum: ["seen","todo"] },
+        tag: { type: "STRING", description: "Exact tag such as отдых or россия." },
+        min_stars: { type: "NUMBER", description: "Minimum stars from 0 to 3." },
+        limit: { type: "INTEGER", description: "Maximum results from 1 to 30." }
+      }
     }
   },
   {
-    type: "function",
     name: "get_movie",
     description: "Get the complete structured record for one movie or series by id or a distinctive part of its title.",
     parameters: {
-      type: "object",
+      type: "OBJECT",
       properties: {
-        id_or_title: { type: "string" }
+        id_or_title: { type: "STRING" }
       },
-      required: ["id_or_title"],
-      additionalProperties: false
+      required: ["id_or_title"]
     }
   },
   {
-    type: "function",
     name: "get_catalog_stats",
     description: "Get Movie Map counts and category definitions.",
     parameters: {
-      type: "object",
-      properties: {},
-      additionalProperties: false
+      type: "OBJECT",
+      properties: {}
     }
   }
 ];
@@ -134,32 +128,78 @@ function executeTool(name, args) {
   return { error: "Unknown tool: " + name };
 }
 
-function extractText(response) {
-  const parts = [];
-  for (const item of response.output || []) {
-    if (item.type !== "message") continue;
-    for (const c of item.content || []) {
-      if (c.type === "output_text" && c.text) parts.push(c.text);
-    }
-  }
-  return parts.join("\n").trim();
+function geminiKey() {
+  // Support the exact recommended name plus the mixed-case name currently visible in Vercel.
+  return process.env.GEMINI_API_KEY || process.env.Gemini_API_Key || "";
 }
 
-async function callOpenAI(payload) {
-  const r = await fetch("https://api.openai.com/v1/responses", {
+function geminiModel() {
+  return process.env.GEMINI_MODEL || "gemini-2.5-flash-lite";
+}
+
+async function callGemini(contents) {
+  const key = geminiKey();
+  if (!key) throw new Error("GEMINI_API_KEY is not configured for this environment");
+
+  const model = geminiModel();
+  const url = "https://generativelanguage.googleapis.com/v1beta/models/" +
+    encodeURIComponent(model) + ":generateContent";
+
+  const instructions = [
+    "Ты — Movie Map Agent v1, read-only агент персональной карты кино.",
+    "Отвечай по-русски, компактно и по делу.",
+    "Для любых утверждений о содержимом карты обязательно используй инструменты. Не выдумывай фильмы, оценки, теги, просмотренность или предпочтения.",
+    "Рекомендации делай только из Movie Map. Для рекомендации обычно исключай state=seen, если пользователь явно не просит иначе.",
+    "Учитывай прогнозы me/wife, stars, категории, теги и тексты ДО/ПОСЛЕ.",
+    "Если данных недостаточно, так и скажи.",
+    "Ты НЕ МОЖЕШЬ менять JSON, shortlist, оценки или карточки. Если просят изменить данные, объясни, что v1 read-only, и скажи какое изменение понял.",
+    "Когда рекомендуешь несколько вариантов, объясни одним коротким предложением почему каждый подходит."
+  ].join("\n");
+
+  const r = await fetch(url, {
     method: "POST",
     headers: {
-      "Authorization": "Bearer " + process.env.OPENAI_API_KEY,
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "x-goog-api-key": key
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: instructions }] },
+      contents,
+      tools: [{ functionDeclarations }],
+      generationConfig: { maxOutputTokens: 900 }
+    })
   });
+
   const data = await r.json();
   if (!r.ok) {
-    const msg = data && data.error && data.error.message ? data.error.message : "OpenAI API error " + r.status;
+    const msg = data && data.error && data.error.message
+      ? data.error.message
+      : "Gemini API error " + r.status;
     throw new Error(msg);
   }
   return data;
+}
+
+function getCandidateContent(response) {
+  return response && response.candidates && response.candidates[0]
+    ? response.candidates[0].content
+    : null;
+}
+
+function extractFunctionCalls(content) {
+  if (!content || !Array.isArray(content.parts)) return [];
+  return content.parts
+    .filter(p => p && p.functionCall)
+    .map(p => p.functionCall);
+}
+
+function extractText(content) {
+  if (!content || !Array.isArray(content.parts)) return "";
+  return content.parts
+    .filter(p => p && typeof p.text === "string")
+    .map(p => p.text)
+    .join("\n")
+    .trim();
 }
 
 function allowedOrigin(origin) {
@@ -179,7 +219,7 @@ module.exports = async function handler(req, res) {
 
   if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
-  if (!process.env.OPENAI_API_KEY) return res.status(500).json({ error: "OPENAI_API_KEY is not configured" });
+  if (!geminiKey()) return res.status(500).json({ error: "GEMINI_API_KEY is not configured for this environment" });
 
   try {
     const body = typeof req.body === "string" ? JSON.parse(req.body) : (req.body || {});
@@ -187,56 +227,42 @@ module.exports = async function handler(req, res) {
     if (!message) return res.status(400).json({ error: "Empty message" });
 
     const history = Array.isArray(body.history) ? body.history.slice(-8) : [];
-    const input = history
+    const contents = history
       .filter(m => m && (m.role === "user" || m.role === "assistant"))
-      .map(m => ({ role: m.role, content: String(m.content || "").slice(0, 2500) }));
-    input.push({ role: "user", content: message });
+      .map(m => ({
+        role: m.role === "assistant" ? "model" : "user",
+        parts: [{ text: String(m.content || "").slice(0, 2500) }]
+      }));
+    contents.push({ role: "user", parts: [{ text: message }] });
 
-    const instructions = [
-      "Ты — Movie Map Agent v1, read-only агент персональной карты кино.",
-      "Отвечай по-русски, компактно и по делу.",
-      "Для любых утверждений о содержимом карты обязательно используй инструменты. Не выдумывай фильмы, оценки, теги, просмотренность или предпочтения.",
-      "Рекомендации делай только из Movie Map. Для рекомендации обычно исключай state=seen, если пользователь явно не просит иначе.",
-      "Учитывай прогнозы me/wife, stars, категории, теги и тексты ДО/ПОСЛЕ.",
-      "Если данных недостаточно, так и скажи.",
-      "Ты НЕ МОЖЕШЬ менять JSON, shortlist, оценки или карточки. Если просят изменить данные, объясни, что v1 read-only, и скажи какое изменение понял.",
-      "Когда рекомендуешь несколько вариантов, объясни одним коротким предложением почему каждый подходит."
-    ].join("\n");
-
-    const base = {
-      model: process.env.OPENAI_MODEL || "gpt-5.6-luna",
-      instructions,
-      tools,
-      tool_choice: "auto",
-      max_output_tokens: 900
-    };
-
-    let response = await callOpenAI({ ...base, input });
+    let response = await callGemini(contents);
+    let content = getCandidateContent(response);
     let turns = 0;
+
     while (turns < 5) {
-      const calls = (response.output || []).filter(x => x.type === "function_call");
+      const calls = extractFunctionCalls(content);
       if (!calls.length) break;
-      const outputs = calls.map(call => {
-        let args = {};
-        try { args = JSON.parse(call.arguments || "{}"); } catch (_) {}
-        return {
-          type: "function_call_output",
-          call_id: call.call_id,
-          output: JSON.stringify(executeTool(call.name, args))
-        };
+
+      contents.push(content);
+      contents.push({
+        role: "user",
+        parts: calls.map(call => ({
+          functionResponse: {
+            name: call.name,
+            response: { result: executeTool(call.name, call.args || {}) }
+          }
+        }))
       });
-      response = await callOpenAI({
-        ...base,
-        previous_response_id: response.id,
-        input: outputs
-      });
+
+      response = await callGemini(contents);
+      content = getCandidateContent(response);
       turns++;
     }
 
-    const answer = extractText(response) || "Не удалось сформировать ответ.";
+    const answer = extractText(content) || "Не удалось сформировать ответ.";
     return res.status(200).json({
       answer,
-      model: response.model || process.env.OPENAI_MODEL || "gpt-5.6-luna"
+      model: geminiModel()
     });
   } catch (err) {
     return res.status(500).json({ error: String(err && err.message ? err.message : err) });
