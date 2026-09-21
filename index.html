@@ -9,7 +9,40 @@
 .save-dialog{width:min(430px,100%);background:#171a1f;border:1px solid #555d69;border-radius:14px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .save-dialog h3{margin:0 0 8px;font-size:17px}.save-dialog p{font-size:12px;line-height:1.45;color:#b8bec7}
 .save-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}.save-actions button{cursor:pointer;touch-action:manipulation}
-</style></head><body><div class="wrap"><div class="top"><h1>🎬 Карта кино — v15 Save Fixed</h1><div class="sub">⭐ интересная · ⭐⭐ высокая · ⭐⭐⭐ приоритет · 📌 ваш shortlist на ближайшие просмотры · 🔮 прогноз · ★ факт</div><div class="save-zone"><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div><div class="filters" id="cat"><button class="active" data-k="cat" data-v="all">Все категории</button><button data-k="cat" data-v="films">❤️ Фильмы для д</button><button data-k="cat" data-v="series">📺 Сериалы для </button><button data-k="cat" data-v="weird">🌀 Странное кин</button><button data-k="cat" data-v="me">👨 Кино / сериа</button><button data-k="cat" data-v="her">👩 Кино / сериа</button></div><div class="filters"><button data-k="type" data-v="фильм">🎬 Фильм</button><button data-k="type" data-v="сериал">📺 Сериал</button><button data-k="state" data-v="seen">✓ Просмотрено</button><button data-k="state" data-v="todo">○ Не просмотрено</button><button data-k="stars" data-v="top">⭐⭐⭐ Топ</button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button data-k="tag" data-v="россия">🇷🇺 Россия</button><button class="reset" id="reset">↺ Все / сбросить</button></div><div class="summary" id="summary"></div></div><section data-sec="films"><h2>❤️ Фильмы для двоих <span style="color:#777;font-weight:400">(20)</span></h2></section><section data-sec="series"><h2>📺 Сериалы для двоих <span style="color:#777;font-weight:400">(19)</span></h2></section><section data-sec="weird"><h2>🌀 Странное кино / сериал для двоих <span style="color:#777;font-weight:400">(15)</span></h2></section><section data-sec="me"><h2>👨 Кино / сериал для меня <span style="color:#777;font-weight:400">(16)</span></h2></section><section data-sec="her"><h2>👩 Кино / сериал для неё <span style="color:#777;font-weight:400">(15)</span></h2></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+
+/* Movie Map Agent v1 */
+.agent-launch{display:flex;align-items:center;gap:8px;margin:7px 0 2px}
+#agentOpen{font-weight:800;border-color:#586273;cursor:pointer}
+.agent-hint{font-size:10px;color:#858c96}
+.agent-overlay{display:none;position:fixed;inset:0;z-index:60000;background:rgba(0,0,0,.72);padding:12px;align-items:flex-end;justify-content:center}
+.agent-overlay.open{display:flex}
+.agent-shell{width:min(720px,100%);max-height:min(82vh,760px);display:flex;flex-direction:column;background:#111419;border:1px solid #424955;border-radius:15px;box-shadow:0 20px 70px rgba(0,0,0,.55);overflow:hidden}
+.agent-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #2c3139}
+.agent-head strong{font-size:14px}.agent-ro{font-size:9.5px;color:#9199a5;border:1px solid #343a44;border-radius:999px;padding:2px 6px}.agent-close{margin-left:auto;cursor:pointer}
+.agent-messages{min-height:180px;overflow:auto;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.agent-msg{max-width:88%;font-size:12px;line-height:1.38;white-space:pre-wrap;border-radius:11px;padding:8px 10px}
+.agent-msg.bot{background:#191d23;color:#e2e5e9;align-self:flex-start}
+.agent-msg.user{background:#e9edf2;color:#11151a;align-self:flex-end}
+.agent-form{display:flex;gap:7px;padding:9px;border-top:1px solid #2c3139}
+#agentInput{flex:1;resize:none;min-height:42px;max-height:110px;background:#0d1014;color:#eee;border:1px solid #373d47;border-radius:10px;padding:8px 9px;font:inherit;font-size:12px}
+#agentSend{border-radius:10px;font-weight:800;cursor:pointer}
+.agent-status{font-size:9.5px;color:#89919c;padding:0 12px 9px}
+@media(min-width:720px){.agent-overlay{align-items:center}.agent-shell{max-height:78vh}}
+
+</style></head><body><div class="wrap"><div class="top"><h1>🎬 Карта кино — v15 Save Fixed</h1><div class="sub">⭐ интересная · ⭐⭐ высокая · ⭐⭐⭐ приоритет · 📌 ваш shortlist на ближайшие просмотры · 🔮 прогноз · ★ факт</div><div class="save-zone"><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div><div class="filters" id="cat"><button class="active" data-k="cat" data-v="all">Все категории</button><button data-k="cat" data-v="films">❤️ Фильмы для д</button><button data-k="cat" data-v="series">📺 Сериалы для </button><button data-k="cat" data-v="weird">🌀 Странное кин</button><button data-k="cat" data-v="me">👨 Кино / сериа</button><button data-k="cat" data-v="her">👩 Кино / сериа</button></div><div class="filters"><button data-k="type" data-v="фильм">🎬 Фильм</button><button data-k="type" data-v="сериал">📺 Сериал</button><button data-k="state" data-v="seen">✓ Просмотрено</button><button data-k="state" data-v="todo">○ Не просмотрено</button><button data-k="stars" data-v="top">⭐⭐⭐ Топ</button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button data-k="tag" data-v="россия">🇷🇺 Россия</button><button class="reset" id="reset">↺ Все / сбросить</button></div><div class="summary" id="summary"></div><div class="agent-launch"><button id="agentOpen" type="button">🤖 Спросить Movie Map</button><span class="agent-hint">AI · только чтение</span></div></div><section data-sec="films"><h2>❤️ Фильмы для двоих <span style="color:#777;font-weight:400">(20)</span></h2></section><section data-sec="series"><h2>📺 Сериалы для двоих <span style="color:#777;font-weight:400">(19)</span></h2></section><section data-sec="weird"><h2>🌀 Странное кино / сериал для двоих <span style="color:#777;font-weight:400">(15)</span></h2></section><section data-sec="me"><h2>👨 Кино / сериал для меня <span style="color:#777;font-weight:400">(16)</span></h2></section><section data-sec="her"><h2>👩 Кино / сериал для неё <span style="color:#777;font-weight:400">(15)</span></h2></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+
+<div id="agentOverlay" class="agent-overlay">
+  <div class="agent-shell" role="dialog" aria-modal="true" aria-label="Movie Map Agent">
+    <div class="agent-head"><strong>🤖 Movie Map Agent</strong><span class="agent-ro">v1 · read-only</span><button id="agentClose" class="agent-close" type="button">✕</button></div>
+    <div id="agentMessages" class="agent-messages"><div class="agent-msg bot">Спроси меня о вашей карте: что посмотреть, что осталось непросмотренным, какие варианты сильнее для двоих и почему.</div></div>
+    <form id="agentForm" class="agent-form">
+      <textarea id="agentInput" rows="2" maxlength="2500" placeholder="Например: что посмотреть вдвоём сегодня, не слишком тяжёлое?"></textarea>
+      <button id="agentSend" type="submit">Отправить</button>
+    </form>
+    <div id="agentStatus" class="agent-status">Агент читает movies.json через безопасный backend и ничего не меняет.</div>
+  </div>
+</div>
+
 <script id="embeddedShortlist" type="application/json">[]</script>
 <div id="saveOverlay" class="save-overlay">
   <div class="save-dialog">
@@ -210,4 +243,76 @@ function bindUi(){
    console.error(err);
  }
 })();
-</script></div></body></html>
+</script>
+<script>
+(function(){
+  var openButton=document.getElementById('agentOpen');
+  var overlay=document.getElementById('agentOverlay');
+  var closeButton=document.getElementById('agentClose');
+  var form=document.getElementById('agentForm');
+  var input=document.getElementById('agentInput');
+  var send=document.getElementById('agentSend');
+  var messages=document.getElementById('agentMessages');
+  var status=document.getElementById('agentStatus');
+  var history=[];
+  var api=(window.MOVIE_AGENT_API||'').trim();
+  if(!api && /\.vercel\.app$/i.test(location.hostname)) api='/api/chat';
+
+  function add(role,text){
+    var div=document.createElement('div');
+    div.className='agent-msg '+(role==='user'?'user':'bot');
+    div.textContent=text;
+    messages.appendChild(div);
+    messages.scrollTop=messages.scrollHeight;
+  }
+  function open(){overlay.classList.add('open');window.setTimeout(function(){input.focus()},40)}
+  function close(){overlay.classList.remove('open')}
+
+  openButton.addEventListener('click',open);
+  closeButton.addEventListener('click',close);
+  overlay.addEventListener('click',function(e){if(e.target===overlay) close()});
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();form.requestSubmit();}
+  });
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var q=input.value.trim();
+    if(!q) return;
+    if(!api){
+      add('bot','Backend агента пока не подключён к этому адресу. Для теста открой Vercel-preview этой ветки.');
+      return;
+    }
+    var prior=history.slice(-8);
+    add('user',q);
+    history.push({role:'user',content:q});
+    input.value='';
+    send.disabled=true;
+    status.textContent='Думаю и читаю Movie Map…';
+    try{
+      var r=await fetch(api,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({message:q,history:prior})
+      });
+      var data=await r.json();
+      if(!r.ok) throw new Error(data.error||('HTTP '+r.status));
+      add('assistant',data.answer);
+      history.push({role:'assistant',content:data.answer});
+      status.textContent='Модель: '+(data.model||'OpenAI')+' · read-only';
+    }catch(err){
+      add('bot','Ошибка агента: '+String(err&&err.message?err.message:err));
+      status.textContent='Ошибка соединения с backend';
+    }finally{
+      send.disabled=false;
+      input.focus();
+    }
+  });
+
+  if(location.protocol==='file:'){
+    status.textContent='В автономном HTML карта работает, AI-чат требует интернет и backend.';
+  }
+})();
+</script>
+
+</div></body></html>
