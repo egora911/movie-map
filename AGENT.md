@@ -17,3 +17,5 @@ Read-only AI agent for the Movie Map.
 Never commit the API key to GitHub.
 
 Preview branch: `agent/read-only-v1`.
+
+Gemini preview env enabled.
