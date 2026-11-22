@@ -175,7 +175,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "b08c6e50d285",
@@ -313,7 +319,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "5d0a1d8a3d12",
@@ -408,7 +420,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "27c3708391b0",
@@ -483,7 +501,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "5f2b573c820e",
@@ -574,7 +598,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "e7a0a14e3d21",
@@ -669,7 +699,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "e1f1636fa3c3",
@@ -764,7 +800,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "3917205d36ac",
@@ -841,7 +883,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "cb466f7bffb3",
@@ -932,7 +980,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "c1d807ea42dd",
@@ -1007,7 +1061,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "2578ccaffd77",
@@ -1143,7 +1203,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "246d7519df41",
@@ -1303,7 +1369,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "2f4b0ac675b8",
@@ -1455,7 +1527,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "7925baaaf395",
@@ -1611,7 +1689,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "93f5326069dc",
@@ -1724,7 +1808,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "967ae6447315",
@@ -1819,7 +1909,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "5765f7f11f6e",
@@ -1928,7 +2024,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "0e9229421daa",
@@ -2024,7 +2126,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "56ef07b1d83f",
@@ -2119,7 +2227,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "b077b95583d6",
@@ -2214,7 +2328,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "972b44bb2d7b",
@@ -2291,7 +2411,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "218b0c7e99fb",
@@ -2366,7 +2492,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "329bfffc8644",
@@ -2441,7 +2573,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "be73d241afed",
@@ -2516,7 +2654,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "05b74354dced",
@@ -2591,7 +2735,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "08acb5d01de5",
@@ -2750,7 +2900,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "7c694ab04067",
@@ -2828,7 +2984,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "72005cd3bec5",
@@ -3454,7 +3616,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "174cbbc72787",
@@ -3549,7 +3717,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "a6b02d5e8a07",
@@ -3640,7 +3814,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "dbc74d7cd466",
@@ -3731,7 +3911,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "33233b1d276d",
@@ -3913,7 +4099,13 @@
           "together": "ai_33233b1d276d_together_v1"
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "9cce768fda2b",
@@ -4008,7 +4200,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "849aa713b120",
@@ -4103,7 +4301,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "cf988fe29958",
@@ -4198,7 +4402,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "467c010c8075",
@@ -4339,7 +4549,13 @@
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "d19e508d1727",
@@ -4416,7 +4632,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "66120f690c6c",
@@ -4493,7 +4715,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "c5d32a8ddc7e",
@@ -4570,7 +4798,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "9e2744144270",
@@ -4645,7 +4879,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "db75d4218c16",
@@ -4722,7 +4962,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "103d3306decf",
@@ -4799,7 +5045,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "e5b36ed294af",
@@ -4874,7 +5126,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "7ab25ef2b658",
@@ -4949,7 +5207,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "d52915e33074",
@@ -5024,7 +5288,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "3e643129c1b1",
@@ -5099,7 +5369,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "4b18999f77fc",
@@ -5176,7 +5452,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "03bd145ded75",
@@ -5251,7 +5533,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "da2e357c352b",
@@ -5326,7 +5614,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "1d22d16e485e",
@@ -5401,7 +5695,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "857f4ed58c92",
@@ -5476,7 +5776,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "41fc72678034",
@@ -5553,7 +5859,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     },
     {
       "id": "f67dfb41b778",
@@ -5628,7 +5940,13 @@
           "together": null
         }
       },
-      "recommendations": []
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_08_initial",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     }
   ],
   "external_enrichment": {
@@ -5638,5 +5956,13 @@
     "unmatched": [],
     "notes": "All 58 works have poster, description, Kinopoisk rating and IMDb rating. TMDB rating is shown when supplied by the source API."
   },
-  "recommendation_batches": []
+  "recommendation_batches": [
+    {
+      "id": "rec_2026_08_initial",
+      "period": "2026-08",
+      "label": "Август 2026 · первая подборка",
+      "source": "30_ci_chat",
+      "type": "initial_recommendation_set"
+    }
+  ]
 }
