@@ -1,6 +1,9 @@
 name: Enrich November movie metadata (manual)
 
 on:
+  push:
+    paths:
+      - 'scripts/enrichment-request.json'
   workflow_dispatch:
     inputs:
       apply:
@@ -35,8 +38,8 @@ jobs:
           POISKKINO_API_KEY: ${{ secrets.POISKKINO_API_KEY }}
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
-          APPLY: ${{ inputs.apply }}
-          INCLUDE_TMDB: ${{ inputs.include_tmdb }}
+          APPLY: ${{ github.event_name == 'push' || inputs.apply }}
+          INCLUDE_TMDB: ${{ github.event_name == 'push' || inputs.include_tmdb }}
         run: |
           set -euo pipefail
           flags=""
@@ -50,7 +53,7 @@ jobs:
           node tests/naming-audit.cjs
           git diff --check
       - name: Commit enriched metadata to main
-        if: ${{ inputs.apply }}
+        if: ${{ github.event_name == 'push' || inputs.apply }}
         run: |
           if git diff --quiet -- movies.json; then
             echo "No verified enrichment changes"
