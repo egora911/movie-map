@@ -3,16 +3,16 @@
   "source": "movie_map_online",
   "description": "Structured Movie Map data extracted from the canonical v15 HTML. A work is unique by id; category-specific presentation data is preserved in placements.",
   "counts": {
-    "unique_works": 58,
-    "rendered_cards": 85,
+    "unique_works": 83,
+    "rendered_cards": 121,
     "seen": 15,
-    "todo": 43
+    "todo": 68
   },
   "categories": [
     {
       "id": "films",
       "label": "Фильмы для двоих",
-      "expected_cards": 20
+      "expected_cards": 37
     },
     {
       "id": "series",
@@ -22,17 +22,17 @@
     {
       "id": "weird",
       "label": "Странное кино / сериал для двоих",
-      "expected_cards": 15
+      "expected_cards": 21
     },
     {
       "id": "me",
       "label": "Кино / сериал для Егора",
-      "expected_cards": 16
+      "expected_cards": 21
     },
     {
       "id": "her",
       "label": "Кино / сериал для Анны",
-      "expected_cards": 15
+      "expected_cards": 23
     }
   ],
   "works": [
@@ -603,6 +603,11 @@
           "batch_id": "rec_2026_08_initial",
           "event": "added",
           "source": "30_ci_chat"
+        },
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "reconfirmed",
+          "source": "30_ci_chat"
         }
       ]
     },
@@ -887,6 +892,11 @@
         {
           "batch_id": "rec_2026_08_initial",
           "event": "added",
+          "source": "30_ci_chat"
+        },
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "reconfirmed",
           "source": "30_ci_chat"
         }
       ]
@@ -1813,6 +1823,11 @@
           "batch_id": "rec_2026_08_initial",
           "event": "added",
           "source": "30_ci_chat"
+        },
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "reconfirmed",
+          "source": "30_ci_chat"
         }
       ]
     },
@@ -2231,6 +2246,11 @@
         {
           "batch_id": "rec_2026_08_initial",
           "event": "added",
+          "source": "30_ci_chat"
+        },
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "reconfirmed",
           "source": "30_ci_chat"
         }
       ]
@@ -4637,6 +4657,11 @@
           "batch_id": "rec_2026_08_initial",
           "event": "added",
           "source": "30_ci_chat"
+        },
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "reconfirmed",
+          "source": "30_ci_chat"
         }
       ]
     },
@@ -5538,6 +5563,11 @@
           "batch_id": "rec_2026_08_initial",
           "event": "added",
           "source": "30_ci_chat"
+        },
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "reconfirmed",
+          "source": "30_ci_chat"
         }
       ]
     },
@@ -5947,6 +5977,1727 @@
           "source": "30_ci_chat"
         }
       ]
+    },
+    {
+      "id": "202e92ddde44",
+      "title": "The Drama / Вот это драма!",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Drama",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Drama"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 86,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "9.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Неделя перед свадьбой превращается в испытание доверия после неожиданного признания. Тот же нерв, что в Disclaimer: что происходит с близостью, когда внезапно меняется моральный образ человека? Зендея — отдельный плюс для Анны.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 87,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "9.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Неделя перед свадьбой превращается в испытание доверия после неожиданного признания. Тот же нерв, что в Disclaimer: что происходит с близостью, когда внезапно меняется моральный образ человека? Зендея — отдельный плюс для Анны.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "3c5bf2c5e65d",
+      "title": "The Invite / Приглашение",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Invite",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Invite"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 88,
+          "stars": 3,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "9.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Супружеская пара приглашает на ужин темпераментных соседей; из светской беседы вырастают игры желания, власти, откровенности и семейного раздражения. Четверо взрослых, остроумные диалоги и плотная драматургия — умный отдых без лишнего пафоса.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 89,
+          "stars": 3,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "9.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Супружеская пара приглашает на ужин темпераментных соседей; из светской беседы вырастают игры желания, власти, откровенности и семейного раздражения. Четверо взрослых, остроумные диалоги и плотная драматургия — умный отдых без лишнего пафоса.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "343eab22ea33",
+      "title": "Possible Love / Возможная любовь",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Possible%20Love",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Possible%20Love"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 90,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.3",
+            "anna": "8.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Две семейные пары из разных социальных миров вступают в отношения, где камера, наблюдение, классовые различия и желание постепенно меняют роли. Особенно интересная точка пересечения May December и твоей идеи о том, как наблюдатель создаёт чужую реальность. Риск для Анны — 164 минуты медленного развития.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 91,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.3",
+            "anna": "8.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Две семейные пары из разных социальных миров вступают в отношения, где камера, наблюдение, классовые различия и желание постепенно меняют роли. Особенно интересная точка пересечения May December и твоей идеи о том, как наблюдатель создаёт чужую реальность. Риск для Анны — 164 минуты медленного развития.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "ed0f23640ebb",
+      "title": "Wuthering Heights / Грозовой перевал",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Wuthering%20Heights",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Wuthering%20Heights"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 92,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.0",
+            "anna": "9.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Эмералд Феннелл после Saltburn: токсическое притяжение, класс, сексуальность и предельно стилизованный мир. Анне вероятны сильные чувства и красивые герои; для Егора риск — визуальный жест может быть громче психологической глубины.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 93,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.0",
+            "anna": "9.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Эмералд Феннелл после Saltburn: токсическое притяжение, класс, сексуальность и предельно стилизованный мир. Анне вероятны сильные чувства и красивые герои; для Егора риск — визуальный жест может быть громче психологической глубины.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "21d3c78444d7",
+      "title": "Send Help / На помощь!",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Send%20Help",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Send%20Help"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 94,
+          "stars": 2,
+          "tags": [
+            "отдых",
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.5"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "После авиакатастрофы начальник и недооценённая сотрудница оказываются на острове, где привычная иерархия переворачивается. Чёрный юмор, телесная жесть, борьба за власть; динамично и с сюрпризами, а не авторская лекция.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "bbf5c9607c52",
+      "title": "The Christophers / Кристоферы",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Christophers",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Christophers"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 95,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.7",
+            "anna": "8.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Дети пожилого художника нанимают подделывательницу, чтобы получить доступ к его незавершённым работам. Семейные отношения, искусство как собственность и власть, хитрая игра ролей; Содерберг и сильный актёрский дуэт.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "db3f45b777c1",
+      "title": "Obsession / Одержимость",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Obsession",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Obsession"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 96,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.0",
+            "anna": "8.4"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Безответная влюблённость превращается в опасную реальность после мистического желания. Компактный жестокий хоррор о контроле и невозможности заставить другого любить; эмоциональная интрига сильная, но кровавость высока.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "0f08b06c07de",
+      "title": "La Bola Negra / Чёрный шар",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=La%20Bola%20Negra",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=La%20Bola%20Negra"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 97,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Три эпохи испанской истории переплетают скрытую любовь, классовые границы и память. Красивое, чувственное и нелинейное кино; для обоих возможен сильный отклик, но хронометраж 157 минут потребует внимания.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 98,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Три эпохи испанской истории переплетают скрытую любовь, классовые границы и память. Красивое, чувственное и нелинейное кино; для обоих возможен сильный отклик, но хронометраж 157 минут потребует внимания.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "06e3d9b5b508",
+      "title": "Good Luck, Have Fun, Don't Die / Удачи, веселитесь, не умирайте",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Good%20Luck%2C%20Have%20Fun%2C%20Don't%20Die",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Good%20Luck%2C%20Have%20Fun%2C%20Don't%20Die"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 99,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.7",
+            "anna": "7.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Незнакомец из будущего приходит в закусочную и набирает случайных людей для спасения мира. Сам Рокуэлл, абсурд и sci-fi-сатира на технологии; Егору — за лихую форму, Анне может оказаться слишком шумным.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "8560b657d744",
+      "title": "Project Hail Mary / Проект «Аве Мария»",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Project%20Hail%20Mary",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Project%20Hail%20Mary"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 100,
+          "stars": 2,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "8.3"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Учитель науки приходит в себя на далёком космическом корабле без памяти о миссии. Научная изобретательность постепенно соединяется с очень человеческой историей дружбы; умное большое приключение с эмоциональным центром.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "10856c3bcefd",
+      "title": "Nirvanna the Band the Show the Movie / Нирванна — фильм",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Nirvanna%20the%20Band%20the%20Show%20the%20Movie",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Nirvanna%20the%20Band%20the%20Show%20the%20Movie"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 101,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.3",
+            "anna": "7.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Комедийный дуэт из-за неудачного плана неожиданно оказывается в 2008 году. Метакомедия, временная петля, монтажные трюки и самоирония; для Егора как эксперимент с формой, Анне юмор может не подойти.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "c5d55d3113cf",
+      "title": "Hoppers / Прыгуны",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Hoppers",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hoppers"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 102,
+          "stars": 1,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "8.5",
+            "anna": "8.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Pixar: человеческое сознание переселяют в роботизированных животных, чтобы говорить с дикой природой. Весёлая анимация с неожиданной социальной сатирой и темой другой точки зрения — разгрузка между тяжёлыми драмами.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "597d707989b8",
+      "title": "Mother Mary / Мать Мэри",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Mother%20Mary",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Mother%20Mary"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 103,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.0",
+            "anna": "8.5"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Поп-звезда перед возвращением на сцену встречается с давней подругой и бывшей художницей по костюмам. Слава, обиды, зависимость и женская близость в очень стилизованной психодраме. Риск — загадочность и форма могут вытеснять ясный сюжет.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "5693960ce374",
+      "title": "Black Bag / Чёрный чемодан",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Black%20Bag",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Black%20Bag"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 104,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "8.8"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Двое супругов — разведчики; один вынужден расследовать подозрение в предательстве другого. Короткий, точный шпионский триллер о доверии и контроле, с Кейт Бланшетт и Майклом Фассбендером: после Disclaimer почти обязательный выбор.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "90ba0118342d",
+      "title": "Companion / Компаньон",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Companion",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Companion"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 105,
+          "stars": 2,
+          "tags": [
+            "странное",
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "8.5",
+            "anna": "8.5"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Романтический уик-энд в компании друзей превращается в остроумный sci-fi-триллер о власти, идентичности и программировании близости. Лучше знать о сюжете как можно меньше; длительность меньше 100 минут.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 106,
+          "stars": 2,
+          "tags": [
+            "странное",
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "8.5",
+            "anna": "8.5"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Романтический уик-энд в компании друзей превращается в остроумный sci-fi-триллер о власти, идентичности и программировании близости. Лучше знать о сюжете как можно меньше; длительность меньше 100 минут.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "2b7992e5d49d",
+      "title": "The Assessment / Оценка",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Assessment",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Assessment"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 107,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.7",
+            "anna": "8.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "В будущем государство проверяет пару на право иметь ребёнка; инспектор поселяется у них на неделю. Интимные отношения под взглядом института, власть и социальная нормальность — на пересечении Severance и Disclaimer.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 108,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.7",
+            "anna": "8.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "В будущем государство проверяет пару на право иметь ребёнка; инспектор поселяется у них на неделю. Интимные отношения под взглядом института, власть и социальная нормальность — на пересечении Severance и Disclaimer.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "cf16f3ed7adb",
+      "title": "The Housemaid / Горничная",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Housemaid",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Housemaid"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 109,
+          "stars": 2,
+          "tags": [
+            "отдых"
+          ],
+          "prediction": {
+            "egor": "7.7",
+            "anna": "9.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Молодая женщина устраивается прислугой в богатый дом, где образ идеальной семьи постепенно распадается. Быстрая интрига, статус, сексуальность и сильные повороты; Анне вероятно очень зайдёт, Егору может показаться нарочитым.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "fbdb01a237f5",
+      "title": "Hedda / Гедда",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Hedda",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hedda"
+      },
+      "placements": [
+        {
+          "category": "her",
+          "order": 110,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.2",
+            "anna": "8.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Одна светская вечеринка превращается в психологическую игру любви, подавленных желаний и контроля. Современная версия Ибсена, сильная женщина, красивый и токсичный мир; немного театральности — осознанный риск.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "c13b1b970669",
+      "title": "Strange Darling",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Strange%20Darling",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Strange%20Darling"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 111,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "История опасной встречи на одну ночь рассказана так, что зритель постоянно вынужден пересматривать собственную моральную оценку происходящего. Очень близко к тому, что вам обоим понравилось в Disclaimer; лучше не смотреть трейлер и избегать спойлеров.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 112,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "История опасной встречи на одну ночь рассказана так, что зритель постоянно вынужден пересматривать собственную моральную оценку происходящего. Очень близко к тому, что вам обоим понравилось в Disclaimer; лучше не смотреть трейлер и избегать спойлеров.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "7a5e32a8bb9a",
+      "title": "Blink Twice / Моргни дважды",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Blink%20Twice",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Blink%20Twice"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 113,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.2",
+            "anna": "8.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Работница попадает на частный остров миллиардера, где роскошь и сексуальная свобода постепенно оказываются обманчивой декорацией. Классовый мир Saltburn и переворот зрительского восприятия; предупреждение: тема сексуального насилия.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 114,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.2",
+            "anna": "8.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Работница попадает на частный остров миллиардера, где роскошь и сексуальная свобода постепенно оказываются обманчивой декорацией. Классовый мир Saltburn и переворот зрительского восприятия; предупреждение: тема сексуального насилия.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "5676ed5bcc24",
+      "title": "Love Lies Bleeding / Любовь истекает кровью",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Love%20Lies%20Bleeding",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Love%20Lies%20Bleeding"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 115,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.1",
+            "anna": "8.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Любовь сотрудницы спортзала и бодибилдерши ведёт в криминальную семейную сеть. Телесность, желание и власть работают мощно, но гротескный финал может напомнить Егору спорную эскалацию Субстанции.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 116,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.1",
+            "anna": "8.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Любовь сотрудницы спортзала и бодибилдерши ведёт в криминальную семейную сеть. Телесность, желание и власть работают мощно, но гротескный финал может напомнить Егору спорную эскалацию Субстанции.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "8a2829aa69a5",
+      "title": "Fair Play / Честная игра",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Fair%20Play",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fair%20Play"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 117,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.4",
+            "anna": "8.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "В финансовой компании повышение одного из партнёров разрушает равновесие любовной пары. Карьера, гендер, амбиции, секс и власть; почти психологический родственник Challengers, но риск дидактичных диалогов.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "85c34e4515c4",
+      "title": "Decision to Leave / Решение уйти",
+      "year": 2022,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Decision%20to%20Leave",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Decision%20to%20Leave"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 118,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Детектив подозревает вдову погибшего, но расследование становится историей желания, наблюдения и ненадёжных интерпретаций. Пак Чхан-ук управляет камерой и моральной оптикой, не сводя людей к простым ответам.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 119,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Детектив подозревает вдову погибшего, но расследование становится историей желания, наблюдения и ненадёжных интерпретаций. Пак Чхан-ук управляет камерой и моральной оптикой, не сводя людей к простым ответам.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "9aba598f5eb3",
+      "title": "Tár / Тар",
+      "year": 2022,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=T%C3%A1r",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=T%C3%A1r"
+      },
+      "placements": [
+        {
+          "category": "me",
+          "order": 120,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "7.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Кейт Бланшетт играет знаменитую дирижёрку, чья власть и репутация постепенно рушатся. Искусство, социальный приговор и неоднозначная героиня — для Егора глубокий контрольный фильм после Disclaimer; Анне может показаться холодным и длинным.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "310938ee4c54",
+      "title": "Triangle of Sadness / Треугольник печали",
+      "year": 2022,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Triangle%20of%20Sadness",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Triangle%20of%20Sadness"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 121,
+          "stars": 1,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "7.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Модельная пара оказывается среди сверхбогатых пассажиров яхты, где социальные роли вскоре переворачиваются. Чёрная сатира в духе White Lotus, но грубее, длиннее и с риском слишком очевидной авторской позиции.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
     }
   ],
   "external_enrichment": {
@@ -5963,6 +7714,13 @@
       "label": "Август 2026 · первая подборка",
       "source": "30_ci_chat",
       "type": "initial_recommendation_set"
+    },
+    {
+      "id": "rec_2026_11_deep_01",
+      "period": "2026-11",
+      "label": "Ноябрь 2026 · глубокий поиск",
+      "source": "30_ci_chat",
+      "type": "deep_recommendation_search"
     }
   ]
 }
