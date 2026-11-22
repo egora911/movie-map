@@ -43,7 +43,63 @@ async function checkCatalogRecovery(browser){
    await watch.click();
    assert.equal(await page.locator('.card:visible').getAttribute('data-tomorrow'),'1');
    assert(await page.locator('#saveStandalone').isEnabled());
+   await page.locator('#saveStandalone').click();
+   const download=page.waitForEvent('download');
+   await page.locator('#saveConfirm').click();
+   const htmlPath=(await (await download).path())+'.html';
+   await (await download).saveAs(htmlPath);
+   const offline=await browser.newContext({offline:true});
+   try{
+     const saved=await offline.newPage();
+     const web=[];
+     saved.on('request',r=>{if(/^https?:/.test(r.url()))web.push(r.url())});
+     await saved.goto('file://'+htmlPath);
+     await saved.locator('.card:visible').first().waitFor();
+     assert.equal(await saved.locator('.card:visible').count(),totalCards);
+     assert.equal(await saved.locator('.card[data-tomorrow="1"] .title').innerText(),await page.locator('.card:visible .title').innerText());
+     assert.deepEqual(web,[]);
+   }finally{await offline.close()}
  }finally{await context.close()}
+}
+
+async function checkKeyboardAndSearch(page){
+ const moved=await page.evaluate(()=>{
+   const registry=document.getElementById('allRegistry');
+   const observer=new MutationObserver(()=>{});
+   observer.observe(registry,{childList:true});
+   const input=document.getElementById('movieSearch');
+   for(const term of ['Sa','Saltburn','']){
+     input.value=term;input.dispatchEvent(new Event('input',{bubbles:true}));
+   }
+   const count=observer.takeRecords().reduce((n,row)=>n+row.addedNodes.length,0);
+   observer.disconnect();
+   return count;
+ });
+ assert.equal(moved,0,'search must keep cards in place');
+ const watch=page.locator('#allRegistry .watch').first();
+ await watch.focus();
+ await page.keyboard.press('Space');
+ assert.equal(await watch.getAttribute('aria-pressed'),'true');
+ await page.keyboard.press('Enter');
+ assert.equal(await watch.getAttribute('aria-pressed'),'false');
+ const title=page.locator('#allRegistry .movie-title-trigger').first();
+ await title.focus();await page.keyboard.press('Enter');
+ const focused=()=>page.evaluate(()=>document.activeElement.id);
+ assert.equal(await focused(),'movieClose');
+ await page.locator('#movieShare').focus();
+ await page.keyboard.press('Shift+Tab');
+ assert(await page.evaluate(()=>document.querySelector('#movieShell').contains(document.activeElement)));
+ await page.keyboard.press('Tab');
+ assert.equal(await focused(),'movieShare');
+ const poster=page.locator('#movieShell [data-poster-open]');
+ await poster.focus();await page.keyboard.press('Enter');
+ assert.equal(await focused(),'posterClose');
+ await page.keyboard.press('Tab');
+ assert.equal(await focused(),'posterClose');
+ await page.keyboard.press('Escape');
+ assert(await poster.evaluate(el=>el===document.activeElement));
+ await page.keyboard.press('Escape');
+ assert(await title.evaluate(el=>el===document.activeElement));
 }
 
 (async()=>{
@@ -169,6 +225,7 @@ async function checkCatalogRecovery(browser){
      assert(result.sentimentalMembershipText.includes('Фильмы 2х')&&result.sentimentalMembershipText.includes('ещё:')&&result.sentimentalMembershipText.includes('Для Анны'),'Sentimental Value must show current list before cross-list');
      assert(result.sentimentalStars.includes('⭐'),'stars must remain alongside title, at old tomorrow position');
      if(cfg.name==='desktop'){
+       await checkKeyboardAndSearch(page);
        assert(result.sortOffset>=3&&result.sortOffset<24,'sort must follow title directly: '+result.sortOffset);
        assert(Math.abs(result.sortLine)<18,'sort must be on title line');
        assert(result.categoryOffset>=3&&result.categoryOffset<28,'category tabs must follow sort on same row');
