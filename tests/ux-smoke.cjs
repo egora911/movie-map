@@ -58,20 +58,28 @@ async function init(){
  });
  await test('section counters and in-context sort',()=>{
    assert.equal(visible(),85);
-   assert.equal(count('films'),'(20/85)');
+   assert.equal(count('all'),'(85/85)');
+   assert.equal(count('films'),'(0/85)');
+   assert.equal(d.querySelectorAll('#allRegistry .card').length,85,'All = one continuous register of 85 placements');
+   assert.equal(d.querySelectorAll('#allRegistry .card-origin').length,85,'each All row labels its category');
+   assert([...d.querySelectorAll('section[data-sec="all"] .card')].every(c=>!!c.dataset.cat),'all rows keep original category');
    for(const sec of d.querySelectorAll('section[data-sec]')){
-     assert.equal(sec.querySelector('.section-head h2').nextElementSibling.classList.contains('section-sort'),true);
+     assert(sec.querySelector('.section-head h2 .section-sort'),'sort button must be INSIDE title, never at far right');
    }
-   click('section[data-sec="films"] .section-sort');
+   click('section[data-sec="all"] .section-sort');
    assert.equal(d.querySelector('section[data-sec="series"] .section-sort').dataset.sort,'ru-asc');
-   click('#reset'); assert.equal(count('films'),'(20/85)');
+   click('#reset');assert.equal(count('all'),'(85/85)');
  });
  await test('category and review filters',()=>{
    click('[data-k="cat"][data-v="films"]');assert.equal(visible(),20);assert.equal(count('films'),'(20/85)');
+   assert.equal(d.querySelectorAll('#allRegistry .card').length,0,'cards moved back to their category without cloning');
+   assert(d.getElementById('allRegistry').classList.contains('hidden'));
    click('[data-k="cat"][data-v="all"]');
+   assert.equal(d.querySelectorAll('#allRegistry .card').length,85);
+   assert.equal(visible(),85);
    click('#reviewMode');assert.equal(visible(),2);assert.equal(d.getElementById('reviewMode').dataset.mode,'has');
    click('#reviewMode');assert.equal(visible(),83);assert.equal(d.getElementById('reviewMode').dataset.mode,'none');
-   click('#reset'); assert.equal(visible(),85);
+   click('#reset'); assert.equal(visible(),85);assert.equal(count('all'),'(85/85)');
  });
  await test('stars and country filters',()=>{
    click('#starsMode');assert.equal(d.getElementById('starsMode').dataset.mode,'3');
@@ -91,6 +99,8 @@ async function init(){
  await test('copy movie before/after, package and threads',async()=>{
    const detail=d.getElementById('movieDetailBody');
    assert(detail.querySelector('.thread-copy-menu'));
+   assert(detail.querySelector('.placement-copy-title .copy-icon')||detail.querySelector('.section-title-row .copy-icon'));
+   assert(detail.querySelector('.review-section-title .review-copy-tools'));
    const thread=detail.querySelector('[data-copy-thread="review:me"]');
    assert(thread,'all Egor copy action visible in detail markup');
    thread.click();await tick();
@@ -100,12 +110,15 @@ async function init(){
    click('#movieClose');
    const salt=[...d.querySelectorAll('.card')].find(el=>el.dataset.key===db.works[0].id);
    assert(salt.querySelector('.pre .copy-icon'));
+   assert(salt.querySelector('.pre .copy-icon').previousElementSibling.classList.contains('k'),'DО copy must follow the heading immediately');
    salt.querySelector('.pre .copy-icon').click();await tick();
    assert(copied.includes('Студент из Оксфорда'));
    const hasAfter=[...d.querySelectorAll('.card')].find(el=>el.querySelector('.post .copy-icon'));
    assert(hasAfter,'at least one after copy icon');
+   assert(hasAfter.querySelector('.post .copy-icon').previousElementSibling.classList.contains('k'),'ПОСЛЕ copy beside heading');
    hasAfter.querySelector('.post .copy-icon').click();await tick();
    assert(copied.length>20);
+   assert(!d.getElementById('reviewOverlay').classList.contains('open'),'copying an interactive ПОСЛЕ must not open the GPT popup');
  });
  await test('review popup visible three-level copy actions',async()=>{
    const disclaimer=d.querySelector('.card[data-key="33233b1d276d"]');
