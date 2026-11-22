@@ -430,9 +430,16 @@ function bindUi(){
      document.querySelectorAll('[data-k=cat]').forEach(x=>x.classList.toggle('active',x===b));
    }else if(k==='tag'||k==='excludeTag'){
      const list=st[k];
+     const opposite=k==='tag'?'excludeTag':'tag';
      const i=list.indexOf(v);
-     if(i>=0){list.splice(i,1);b.classList.remove('active');}
-     else{list.push(v);b.classList.add('active');}
+     if(i>=0){
+       list.splice(i,1);b.classList.remove('active');
+     }else{
+       const oi=st[opposite].indexOf(v);
+       if(oi>=0)st[opposite].splice(oi,1);
+       document.querySelectorAll('[data-k="'+opposite+'"][data-v="'+v+'"]').forEach(x=>x.classList.remove('active'));
+       list.push(v);b.classList.add('active');
+     }
    }else{
      if(st[k]===v){st[k]=null;b.classList.remove('active');}
      else{
@@ -644,7 +651,7 @@ function bindUi(){
    const poster=work.poster||external.poster||'';
    title.textContent=work.title;
    meta.textContent=String(work.year)+' · '+work.media_type+' · '+(work.state==='seen'?'просмотрено':'не просмотрено');
-   const catHtml='<div class="detail-chips">'+cats.map(cat=>categoryChip(cat,'')).join('')+'</div>';
+   const catHtml='<div class="detail-chips">'+cats.map(cat=>{const m=CATEGORY_META[cat]||{label:cat,icon:'•'};return '<span class="cross-chip">'+m.icon+' '+esc(m.label)+'</span>';}).join('')+'</div>';
    const posterHtml=poster?'<img class="detail-poster" src="'+esc(poster)+'" alt="">':'';
    const after=primary.after||'';
    const ai=work.ai_comments||{};
