@@ -265,9 +265,30 @@ async function init(){
    assert(card.includes('data-ai-together='));
    assert(card.includes('Открыть полный отзыв Егора'));
    assert.deepEqual(contract.errorsForMovieMap({...db,works:db.works.map(w=>w.id===canonical.id?canonical:w)}),[]);
-   const fake={...canonical,review_history:{egor:[{id:'event_review_1',type:'legacy_current',date:'2026-11-16',text:canonical.reviews.egor}],anna:[]},ai_comment_history:{egor:[{id:'event_ai_1',type:'backfill',version:1,text:canonical.ai_comments.egor}],anna:[],together:[]}};
+   const fake={...canonical,history_current:undefined,review_history:{egor:[{id:'event_review_1',type:'legacy_current',date:'2026-11-16',text:canonical.reviews.egor}],anna:[]},ai_comment_history:{egor:[{id:'event_ai_1',type:'backfill',version:1,text:canonical.ai_comments.egor}],anna:[],together:[]}};
    assert.equal(contract.errorsForMovieMap({...db,works:db.works.map(w=>w.id===fake.id?fake:w)}).length,0);
    assert.equal(w.personHistory(fake,'review_history','egor').length,1);
+ });
+ await test('canonical migrated history stays exactly materialized',()=>{
+   if(Number(db.schema_version)<2)return;
+   const contract=require('../scripts/history-contract.cjs');
+   assert.equal(contract.errorsForMovieMap(db,{requireCanonical:true}).length,0);
+   assert.equal(db.works.filter(w=>w.review_history&&w.ai_comment_history).length,58);
+   const w0=db.works.find(w=>w.id==='33233b1d276d');
+   assert.equal(w0.review_history.egor.length,1);
+   assert.equal(w0.review_history.anna.length,1);
+   for(const p of ['egor','anna']){
+     assert.equal(w0.review_history[p][0].text,w0.reviews[p]);
+     assert.equal(w0.ai_comment_history[p][0].text,w0.ai_comments[p]);
+     assert.equal(w0.history_current.review[p],w0.review_history[p][0].id);
+     assert.equal(w0.history_current.ai[p],w0.ai_comment_history[p][0].id);
+   }
+   assert.equal(w0.ai_comment_history.together[0].text,w0.ai_comments.together);
+   assert.equal(w0.history_current.ai.together,w0.ai_comment_history.together[0].id);
+   assert(w0.placements.every(x=>x.actual.egor==='9'&&x.actual.anna==='10'));
+   assert(db.works.every(w=>w.origin));
+   assert.equal(db.works.length,58);
+   assert.equal(db.works.reduce((n,w)=>n+w.placements.length,0),85);
  });
  await test('System naming and API tools use Egor/Anna only',()=>{
    const labels=[...d.querySelectorAll('[data-k="cat"],.review-nav-chips button,.review-mode-label,#catalogTitleText,.score .c.lab')].map(x=>x.textContent).join(' ');
