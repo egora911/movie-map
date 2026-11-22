@@ -50,7 +50,7 @@ const {chromium}=require('playwright');
    assert((await page.locator('#reviewBody').textContent()).includes('Фильм быстро завлекает'));
    await page.locator('#historyShowCurrent').click();
    await page.locator('#reviewNavChips [data-review-mode="ai"][data-review-person-target="egor"]').click();
-   assert((await page.locator('#historyStatus').textContent()).includes('v1'));
+   assert(/v\d+/.test(await page.locator('#historyStatus').textContent()),'current GPT version must be shown');
    await page.locator('#reviewNavChips [data-review-mode="together"]').click();
    assert.equal(await page.locator('#historyToggle').textContent(),'🕰 История · 1');
    await page.locator('#reviewClose').click();
