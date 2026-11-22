@@ -608,7 +608,7 @@ async function ensureCards(){
  }
  const summary=document.getElementById('summary');
  if(summary) summary.textContent='Загрузка данных…';
- const response=await fetch('./movies.json',{cache:'no-store'});
+ const response=await fetch('./movies.json',{cache:'no-cache'});
  if(!response.ok) throw new Error('movies.json: HTTP '+response.status);
  const data=await response.json();
  if(!data||!Array.isArray(data.works)) throw new Error('Некорректная структура movies.json');
