@@ -1,3 +1,4 @@
+(async function main(){
 const fs = require('node:fs');
 
 const token = String(process.env.POISKKINO_API_KEY || '').trim();
@@ -152,3 +153,5 @@ db.external_enrichment={
 fs.writeFileSync(DB_PATH,JSON.stringify(db,null,2)+'\n');
 console.log('DONE matched='+ok.length+' missed='+missed.length);
 if (missed.length) console.log('MISSED',JSON.stringify(missed,null,2));
+
+})().catch(err=>{console.error(err);process.exit(1);});
