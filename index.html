@@ -60,6 +60,25 @@
  .section-head .section-sort{font-size:8.8px;align-self:baseline}
 }
 @media(max-width:420px){.tagline{font-size:8.8px;line-height:1.23}}
+/* Discoverable three-level review copying and before/after copy icons. */
+.pre .copy-icon,.post .copy-icon,.detail-text .copy-icon{margin-left:6px;vertical-align:middle}
+.review-copybar{flex-wrap:wrap;justify-content:flex-end}
+.review-copybar button{font-size:9.3px;white-space:nowrap}
+.review-section-title{flex-wrap:wrap;justify-content:space-between;gap:8px}
+.review-copy-tools{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.review-copy-tools button,.thread-copy-menu summary{font-size:9.4px;padding:5px 8px;cursor:pointer;border-radius:8px}
+.review-copy-tools button:disabled{opacity:.38;cursor:not-allowed}
+.thread-copy-menu{position:relative;display:inline-block}
+.thread-copy-menu summary{display:list-item;list-style:none;border:1px solid #394451;background:#171d24;color:#dae4ee;white-space:nowrap;user-select:none}
+.thread-copy-menu summary::-webkit-details-marker{display:none}
+.thread-copy-menu summary::after{content:' ▾';color:#8993a0}
+.thread-copy-menu[open] summary{border-color:#7491b0}
+.thread-copy-options{position:absolute;right:0;top:calc(100% + 5px);min-width:200px;background:#1b2028;border:1px solid #505d6c;border-radius:9px;padding:5px;z-index:10;box-shadow:0 14px 36px #000a;display:grid;gap:3px}
+.thread-copy-options button{text-align:left;white-space:nowrap;border-radius:6px;background:#202631;width:100%;font-size:10px}
+.thread-copy-options button:hover{background:#303e50}
+.copy-package{border-color:#485d73!important;background:#1c2937!important}
+.detail-empty-review{font-size:11px;color:#89939d;padding:8px 2px 2px}
+@media(max-width:560px){.review-copybar{gap:4px}.review-copybar button{padding:4px 6px;font-size:8.5px}.review-mode-row{align-items:flex-start}.review-copy-tools{width:100%;gap:5px}.thread-copy-options{left:0;right:auto}}
 </style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><section data-sec="films"><div class="section-head"><h2>❤️ Фильмы для двоих <span class="section-count" data-section-count>(20/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="series"><div class="section-head"><h2>📺 Сериалы для двоих <span class="section-count" data-section-count>(19/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="weird"><div class="section-head"><h2>🌀 Странное кино / сериал для двоих <span class="section-count" data-section-count>(15/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="me"><div class="section-head"><h2>👨 Кино / сериал для Егора <span class="section-count" data-section-count>(16/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="her"><div class="section-head"><h2>👩 Кино / сериал для Анны <span class="section-count" data-section-count>(15/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div class="section-head"><h2>⧉ Все фильмы / сериалы с задвоением <span id="duplicateCount" class="section-count">(0/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
@@ -113,9 +132,9 @@
     <div class="review-mode-row">
       <div id="reviewModeLabel" class="review-mode-label"></div>
       <div class="review-copybar">
-        <button id="reviewCopyCurrent" type="button" title="Копировать текущий отзыв / комментарий" aria-label="Копировать текущий отзыв или комментарий">📋</button>
-        <button id="reviewCopyThread" type="button" title="Копировать все отзывы этого типа" aria-label="Копировать все отзывы этого типа">📚</button>
-        <button id="reviewCopyMovie" type="button" title="Копировать весь пакет отзывов текущего фильма" aria-label="Копировать весь пакет отзывов текущего фильма">🗂</button>
+        <button id="reviewCopyCurrent" type="button" title="Копировать текущий отзыв / комментарий" aria-label="Копировать текущий отзыв или комментарий">📋 Текст</button>
+        <button id="reviewCopyThread" type="button" title="Копировать все отзывы этого типа" aria-label="Копировать все отзывы этого типа">📚 Вся ветка</button>
+        <button id="reviewCopyMovie" type="button" title="Копировать весь пакет отзывов текущего фильма" aria-label="Копировать весь пакет отзывов текущего фильма">🗂 Пакет фильма</button>
       </div>
     </div>
     <div id="reviewBody" class="review-body"></div>
@@ -276,6 +295,32 @@ function copyButton(text,label){
  if(!text)return'';
  return '<button type="button" class="copy-icon" data-copy-text="'+esc(text)+'" title="'+esc(label||'Копировать')+'" aria-label="'+esc(label||'Копировать')+'">📋</button>';
 }
+function reviewThreadText(kind){
+ const kinds={
+  'review:wife':['Отзыв Анны',w=>w.reviews&&w.reviews.wife],
+  'review:me':['Отзыв Егора',w=>w.reviews&&w.reviews.me],
+  'ai:wife':['GPT · Анна',w=>w.ai_comments&&w.ai_comments.wife],
+  'ai:me':['GPT · Егор',w=>w.ai_comments&&w.ai_comments.me],
+  'ai:together':['Общий GPT-итог',w=>w.ai_comments&&w.ai_comments.together]
+ };
+ const spec=kinds[kind];if(!spec)return'';
+ return (getMovieData().works||[]).map(w=>{
+   const body=String(spec[1](w)||'').trim();
+   return body?w.title+'\n'+spec[0]+'\n'+body:'';
+ }).filter(Boolean).join('\n\n──────────\n\n');
+}
+function movieReviewPackageText(work){
+ if(!work)return'';
+ const reviews=work.reviews||{},ai=work.ai_comments||{};
+ const entries=[
+  ['Анна',reviews.wife],
+  ['GPT · Анна',ai.wife],
+  ['Егор',reviews.me],
+  ['GPT · Егор',ai.me],
+  ['Общий GPT-итог',ai.together]
+ ].filter(item=>String(item[1]||'').trim());
+ return entries.length?[work.title,...entries.map(([label,txt])=>label+'\n'+String(txt).trim())].join('\n\n'):'';
+}
 function reviewDataAttrs(work,p){
  const actual=p.actual||{};
  const reviews=work.reviews||{};
@@ -322,11 +367,13 @@ function cardHtml(work,p){
  const others=[...new Set((work.placements||[]).map(x=>x.category))].filter(cat=>cat!==p.category);
  const cross=others.length?'<div class="crosslists"><span>↔ ещё:</span>'+others.map(cat=>categoryChip(cat,p.category)).join('')+'</div>':'';
  const jointAi=work.ai_comments&&typeof work.ai_comments.together==='string'&&work.ai_comments.together.trim();
- const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
+ const before=p.before?String(p.before):'';
+ const beforeHtml='<div class="pre"><span class="k">💡 ДО</span> · '+esc(before)+copyButton(before,'Копировать ДО')+'</div>';
+ const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+copyButton(p.after,'Копировать ПОСЛЕ')+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+(((work.reviews&&work.reviews.me)||(work.reviews&&work.reviews.wife))?'1':'0')+'" data-search="'+esc(norm(work.title))+'">'+
  '<div class="left"><div class="row1"><span class="n">'+String(p.order).padStart(2,'0')+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span><span class="badge"><span class="stars">'+stars+'</span>'+status+'</span><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+externalRatingsHtml(work,false)+cross+'</div>'+
  '<div class="score"><div></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+'</div>'+
- '<div><div class="layers"><div class="pre"><span class="k">💡 ДО</span> · '+esc(p.before||'')+'</div>'+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
+ '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
 }
 async function ensureCards(){
  if(document.querySelector('.card')){
@@ -639,14 +686,23 @@ function bindUi(){
  updateSearchClear();
 }
 document.addEventListener('click',async function(e){
- const b=e.target.closest('[data-copy-text]');
+ const b=e.target.closest('[data-copy-text],[data-copy-package],[data-copy-thread]');
  if(!b)return;
  e.preventDefault();e.stopPropagation();
+ let value=b.dataset.copyText||'';
+ if(b.hasAttribute('data-copy-package')){
+   const w=(getMovieData().works||[]).find(w=>w.id===b.dataset.copyPackage);
+   value=movieReviewPackageText(w);
+ }else if(b.hasAttribute('data-copy-thread')){
+   value=reviewThreadText(b.dataset.copyThread);
+ }
  const original=b.textContent;
- const ok=await copyTextToClipboard(b.dataset.copyText||'');
- b.textContent=ok?'✓':'!';
+ const ok=await copyTextToClipboard(value);
+ b.textContent=ok?'✓ Скопировано':'! Нет данных';
  b.classList.toggle('copy-ok',ok);
- window.setTimeout(()=>{b.textContent=original;b.classList.remove('copy-ok')},1000);
+ const menu=b.closest('details');
+ if(menu)menu.open=false;
+ window.setTimeout(()=>{b.textContent=original;b.classList.remove('copy-ok')},1100);
 });
 (async function initMovieMap(){
  try{
@@ -801,7 +857,14 @@ document.addEventListener('click',async function(e){
    const posterHtml=poster?'<button type="button" class="detail-poster-button" data-poster-open="'+esc(poster)+'" aria-label="Увеличить постер"><img class="detail-poster" src="'+esc(poster)+'" alt="'+esc(work.title)+'"></button>':'';
    const after=primary.after||'';
    const ai=work.ai_comments||{};
-   const placementNotes=placements.length>1?'<div class="detail-section"><h3>Размещение в списках</h3>'+placements.map(p=>'<div class="detail-review"><div class="detail-review-head">'+(CATEGORY_META[p.category]?CATEGORY_META[p.category].icon+' '+CATEGORY_META[p.category].label:esc(p.category))+'</div><div class="detail-text">💡 ДО · '+esc(p.before||'')+'</div></div>').join('')+'</div>':'';
+   const placementNotes=placements.length>1?'<div class="detail-section"><h3>Размещение в списках</h3>'+placements.map(p=>'<div class="detail-review"><div class="detail-review-head">'+(CATEGORY_META[p.category]?CATEGORY_META[p.category].icon+' '+CATEGORY_META[p.category].label:esc(p.category))+'</div><div class="detail-text">💡 ДО · '+esc(p.before||'')+' '+copyButton(p.before,'Копировать ДО в списке '+(CATEGORY_META[p.category]?CATEGORY_META[p.category].label:p.category))+'</div></div>').join('')+'</div>':'';
+   const soloBefore=placements.length===1&&primary.before?'<div class="detail-section"><div class="section-title-row"><h3>💡 До просмотра</h3>'+copyButton(primary.before,'Копировать ДО')+'</div><div class="detail-text">'+esc(primary.before)+'</div></div>':'';
+   const reviewMenu='<details class="thread-copy-menu"><summary title="Копировать все отзывы выбранного типа по всей Movie Map">📚 Все по типу</summary><div class="thread-copy-options">'+[
+     ['review:wife','Отзывы Анны'],['ai:wife','GPT · Анна'],['review:me','Отзывы Егора'],['ai:me','GPT · Егор'],['ai:together','Все GPT-итоги']
+   ].map(x=>'<button type="button" data-copy-thread="'+x[0]+'" title="Копировать: '+x[1]+' по всей Movie Map">'+x[1]+'</button>').join('')+'</div></details>';
+   const hasReviewPackage=!!movieReviewPackageText(work);
+   const copyTools='<div class="review-copy-tools">'+reviewMenu+'<button type="button" class="copy-package" data-copy-package="'+esc(work.id)+'" title="Копировать все отзывы этого фильма: Анна, GPT Анна, Егор, GPT Егор, общий GPT"'+(hasReviewPackage?'':' disabled')+'>🗂 Весь пакет фильма</button></div>';
+   const reviewSection='<div class="detail-section"><div class="section-title-row review-section-title"><h3>Отзывы и копирование</h3>'+copyTools+'</div>'+((work.reviews&&(work.reviews.me||work.reviews.wife))?reviewBlock(work,'wife')+reviewBlock(work,'me'):'<div class="detail-empty-review">Пока нет полных человеческих отзывов для этого фильма.</div>')+'</div>';
    const exactImdb=external.imdb_id?'https://www.imdb.com/title/'+encodeURIComponent(external.imdb_id)+'/':work.links.imdb;
    const exactKp=external.kp_id?'https://www.kinopoisk.ru/film/'+encodeURIComponent(external.kp_id)+'/':work.links.kinopoisk;
    const exactTmdb=external.tmdb_id?'https://www.themoviedb.org/'+(work.media_type==='сериал'?'tv':'movie')+'/'+encodeURIComponent(external.tmdb_id):'';
@@ -809,9 +872,9 @@ document.addEventListener('click',async function(e){
    const kpBlock=overview?'<div class="detail-section"><div class="section-title-row"><h3>'+(kpDescription?'Описание · Кинопоиск':'Описание / контекст')+'</h3>'+copyButton(overview,'Копировать описание Кинопоиска')+'</div><div class="detail-text">'+esc(overview)+'</div>'+(external.source?'<div class="detail-source">Данные: '+esc(external.source)+'</div>':'')+'</div>':'';
    const tmdbBlock=tmdbDescription?'<div class="detail-section"><div class="section-title-row"><h3>Описание · TMDB</h3>'+copyButton(tmdbDescription,'Копировать описание TMDB')+'</div><div class="detail-text">'+esc(tmdbDescription)+'</div></div>':'';
    body.innerHTML='<div class="detail-hero">'+posterHtml+'<div><div class="detail-section"><div class="section-title-row"><h3>В списках</h3></div>'+catHtml+'</div>'+kpBlock+tmdbBlock+'<div class="detail-section"><div class="section-title-row"><h3>Рейтинги агрегаторов</h3></div>'+externalRatingsHtml(work,true)+'</div><div class="detail-section"><div class="section-title-row"><h3>Наши оценки</h3></div>'+scoreBlock(primary)+'</div><div class="detail-section detail-links">'+externalLinks+'</div></div></div>'+
-     placementNotes+
-     (after?'<div class="detail-section"><div class="section-title-row"><h3>📝 После просмотра</h3></div><div class="detail-text">'+esc(after)+'</div></div>':'')+
-     ((work.reviews&&work.reviews.me)||(work.reviews&&work.reviews.wife)?'<div class="detail-section"><div class="section-title-row"><h3>Полные отзывы</h3></div>'+reviewBlock(work,'me')+reviewBlock(work,'wife')+'</div>':'')+
+     (soloBefore||'')+placementNotes+
+     (after?'<div class="detail-section"><div class="section-title-row"><h3>📝 После просмотра</h3>'+copyButton(after,'Копировать ПОСЛЕ')+'</div><div class="detail-text">'+esc(after)+'</div></div>':'')+
+     reviewSection+
      (ai.together?'<div class="detail-section"><div class="section-title-row"><h3>🤖 GPT · итог по двум отзывам</h3>'+copyButton(ai.together,'Копировать общий GPT-итог')+'</div><div class="detail-text detail-gpt">'+esc(ai.together)+'</div></div>':'');
    picker.classList.add('hidden');pickerSearch.value='';
  }
@@ -973,7 +1036,13 @@ document.addEventListener('click',async function(e){
     position.textContent=people.length>1?(idx+1)+' из '+people.length:'';
     renderNav();
   }
-  function render(){if(!model)return;model.mode==='together'?renderJoint():renderPerson();}
+  function render(){
+    if(!model)return;
+    model.mode==='together'?renderJoint():renderPerson();
+    copyCurrent.title='Копировать текущий: '+currentTypeLabel();
+    copyThread.title='Копировать все «'+currentTypeLabel()+'» по всей Movie Map';
+    copyMovie.title='Копировать все отзывы этого фильма: Анна → GPT Анна → Егор → GPT Егор → общий GPT';
+  }
   function readModel(el){
     return {
       id:el.dataset.workId||'',
@@ -1002,30 +1071,13 @@ document.addEventListener('click',async function(e){
   }
   function threadText(){
     if(!model)return'';
-    const blocks=[];
-    (getMovieData().works||[]).forEach(work=>{
-      let value='';
-      if(model.mode==='together')value=(work.ai_comments&&work.ai_comments.together)||'';
-      else if(model.mode==='ai')value=(work.ai_comments&&work.ai_comments[model.person])||'';
-      else value=(work.reviews&&work.reviews[model.person])||'';
-      value=String(value||'').trim();
-      if(value)blocks.push(work.title+'\n'+currentTypeLabel()+'\n'+value);
-    });
-    return blocks.join('\n\n──────────\n\n');
+    const kind=model.mode==='together'?'ai:together':model.mode+':'+model.person;
+    return reviewThreadText(kind);
   }
   function moviePackageText(){
     if(!model)return'';
-    const work=(getMovieData().works||[]).find(w=>w.id===model.id)||null;
-    if(!work)return'';
-    const reviews=work.reviews||{},ai=work.ai_comments||{};
-    const parts=[work.title];
-    const add=(label,value)=>{value=String(value||'').trim();if(value)parts.push(label+'\n'+value)};
-    add('Анна',reviews.wife);
-    add('GPT · Анна',ai.wife);
-    add('Егор',reviews.me);
-    add('GPT · Егор',ai.me);
-    add('GPT · общий итог',ai.together);
-    return parts.join('\n\n');
+    const work=(getMovieData().works||[]).find(w=>w.id===model.id);
+    return movieReviewPackageText(work);
   }
   async function copyViaButton(button,text){
     const original=button.textContent;
