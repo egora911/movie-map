@@ -229,6 +229,40 @@ async function init(){
    assert.equal(visible(),duplicates.filter(x=>x.placements.some(p=>p.category==='her')).length);
    click('#reset');
  });
+
+ await test('screenshot facet chips cover forecasts, facts, KP/IMDb and before/after',()=>{
+   const buttons=[...d.querySelectorAll('[data-extra-filter]')];
+   assert.deepEqual(buttons.map(b=>b.dataset.extraFilter),['prediction','fact','sites','texts']);
+   const hasScore=v=>v!=null&&/[0-9]/.test(String(v));
+   const countMatching=fn=>db.works.reduce((n,x)=>n+x.placements.filter(p=>fn(x,p)).length,0);
+   click('[data-extra-filter="prediction"]');
+   assert.equal(visible(),countMatching((x,p)=>hasScore(w.personValue(p.prediction,'egor'))||hasScore(w.personValue(p.prediction,'anna'))));
+   click('#reset');
+   click('[data-extra-filter="fact"]');
+   assert.equal(visible(),countMatching((x,p)=>hasScore(w.personValue(p.actual,'egor'))||hasScore(w.personValue(p.actual,'anna'))));
+   click('#reset');
+   click('[data-extra-filter="sites"]');
+   assert.equal(visible(),countMatching(x=>Number(x.external?.ratings?.kp)>0));
+   click('[data-extra-filter="sites"]');
+   assert.equal(visible(),countMatching(x=>Number(x.external?.ratings?.imdb)>0));
+   click('#reset');
+   click('[data-extra-filter="texts"]');
+   assert.equal(visible(),countMatching((x,p)=>!!String(p.before||'').trim()));
+   click('#reset');
+   // Combined facets still dedupe by work ID, after filtering eligible placements.
+   for(let i=0;i<3;i++)click('#dupMode');
+   click('[data-extra-filter="sites"]');
+   const expected=db.works.filter(x=>x.placements.length>1&&Number(x.external?.ratings?.kp)>0).length;
+   assert.equal(visible(),expected);
+   assert.equal(new Set([...d.querySelectorAll('section[data-sec] .card:not(.hidden)')].map(c=>c.dataset.key)).size,visible());
+   click('#reset');
+   click('#duplicateListToggle');
+   click('[data-extra-filter="sites"]');
+   assert.equal(d.querySelectorAll('#duplicateList .duplicate-row').length,expected);
+   click('#reset');
+   assert.equal(visible(),85);
+   assert(buttons.every(b=>b.dataset.mode==='all'));
+ });
  await test('multiselect film years and year sort',()=>{
    click('#yearPickerToggle');
    const boxes=[...d.querySelectorAll('input[data-year-choice]')];

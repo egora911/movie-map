@@ -205,7 +205,7 @@
 .history-entry-meta{color:#a1acba;font-size:9.3px;line-height:1.25;overflow-wrap:anywhere;white-space:normal}
 .review-shell.history-open .review-body{min-height:65px;flex:1 1 auto}
 @media(max-width:560px){.history-toolbar{padding:6px 12px 0;gap:5px}.history-panel{max-height:min(25dvh,165px)}.review-shell.history-open .review-body{min-height:100px}.history-entry{padding:7px 8px!important}}
-</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button><button type="button" data-extra-filter="prediction" data-mode="all" title="Наличие прогнозов для Егора и Анны">🔮 Прогноз: все</button><button type="button" data-extra-filter="fact" data-mode="all" title="Наличие фактических оценок">★ Факт: все</button><button type="button" data-extra-filter="sites" data-mode="all" title="Наличие оценок Кинопоиска и IMDb">🌐 Сайты: все</button><button type="button" data-extra-filter="texts" data-mode="all" title="Наличие текстов ДО и ПОСЛЕ">📝 Тексты: все</button></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
   <div class="agent-shell" role="dialog" aria-modal="true" aria-label="Movie Map Agent">
@@ -356,7 +356,7 @@
 })();
 </script>
 <script>
-const st={cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[]};
+const st={cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[],extraModes:{prediction:'all',fact:'all',sites:'all',texts:'all'}};
 const SHORTLIST_KEY='movie_map_shortlist_v1';
 const CATEGORY_META={
  films:{label:'Фильмы 2х',icon:'❤️'},
@@ -582,6 +582,45 @@ async function ensureCards(){
    if(section) section.insertAdjacentHTML('beforeend',cardHtml(work,p));
  });
 }
+
+const EXTRA_FILTERS={
+ prediction:{modes:['all','has','both','none','missing-egor','missing-anna'],labels:{all:'🔮 Прогноз: все',has:'🔮 есть прогноз',both:'🔮 у двоих',none:'🔮 нет прогнозов','missing-egor':'🔮 нет Егора','missing-anna':'🔮 нет Анны'}},
+ fact:{modes:['all','has','both','none','missing-egor','missing-anna'],labels:{all:'★ Факт: все',has:'★ есть оценки',both:'★ у двоих',none:'★ нет оценок','missing-egor':'★ нет Егора','missing-anna':'★ нет Анны'}},
+ sites:{modes:['all','kp','imdb','both','no-kp','no-imdb','none'],labels:{all:'🌐 Сайты: все',kp:'🌐 есть КП',imdb:'🌐 есть IMDb',both:'🌐 КП + IMDb','no-kp':'🌐 нет КП','no-imdb':'🌐 нет IMDb',none:'🌐 нет оценок'}},
+ texts:{modes:['all','before','after','both','missing-before','missing-after','none'],labels:{all:'📝 Тексты: все',before:'📝 есть ДО',after:'📝 есть ПОСЛЕ',both:'📝 ДО + ПОСЛЕ','missing-before':'📝 нет ДО','missing-after':'📝 нет ПОСЛЕ',none:'📝 нет обоих'}}
+};
+function hasNumericScore(value){return value!=null&&/[0-9]/.test(String(value));}
+function pairFieldsPass(mode,egor,anna){
+ if(mode==='all')return true;
+ if(mode==='has')return egor||anna;
+ if(mode==='both')return egor&&anna;
+ if(mode==='none')return !egor&&!anna;
+ if(mode==='missing-egor')return !egor&&anna;
+ if(mode==='missing-anna')return !anna&&egor;
+ return false;
+}
+function extraPlacementPasses(work,p){
+ const modes=st.extraModes;
+ const pred=p.prediction||{},fact=p.actual||{},ratings=work.external&&work.external.ratings||{};
+ if(!pairFieldsPass(modes.prediction,hasNumericScore(personValue(pred,'egor')),hasNumericScore(personValue(pred,'anna'))))return false;
+ if(!pairFieldsPass(modes.fact,hasNumericScore(personValue(fact,'egor')),hasNumericScore(personValue(fact,'anna'))))return false;
+ const kp=Number(ratings.kp)>0,imdb=Number(ratings.imdb)>0;
+ if(!(modes.sites==='all'||modes.sites==='kp'&&kp||modes.sites==='imdb'&&imdb||modes.sites==='both'&&kp&&imdb||modes.sites==='no-kp'&&!kp||modes.sites==='no-imdb'&&!imdb||modes.sites==='none'&&!kp&&!imdb))return false;
+ const before=!!String(p.before||'').trim(),after=!!String(p.after||'').trim();
+ return modes.texts==='all'||modes.texts==='before'&&before||modes.texts==='after'&&after||modes.texts==='both'&&before&&after||modes.texts==='missing-before'&&!before||modes.texts==='missing-after'&&!after||modes.texts==='none'&&!before&&!after;
+}
+function extraCardPasses(c){
+ const work=(getMovieData().works||[]).find(w=>w.id===c.dataset.key);
+ if(!work)return false;
+ return (work.placements||[]).some(p=>p.category===c.dataset.cat&&Number(p.order)===Number(c.dataset.order)&&extraPlacementPasses(work,p));
+}
+function updateExtraFilterButtons(){
+ document.querySelectorAll('[data-extra-filter]').forEach(b=>{
+   const key=b.dataset.extraFilter,mode=st.extraModes[key];
+   b.dataset.mode=mode;b.textContent=EXTRA_FILTERS[key].labels[mode];b.classList.toggle('active',mode!=='all');
+ });
+}
+
 function cardPasses(c){
  const tags=c.dataset.tags.split(' ').filter(Boolean);
  const isDup=c.dataset.duplicate==='1';
@@ -597,6 +636,7 @@ function cardPasses(c){
    (st.stars===null||Number(c.dataset.stars)===Number(st.stars))&&
    (!st.tomorrow||c.dataset.tomorrow==='1')&&
    (st.dupMode==='all'||(st.dupMode==='exclude'&&!isDup)||((st.dupMode==='only'||st.dupMode==='unique')&&isDup))&&
+   extraCardPasses(c)&&
    (!st.q||c.dataset.search.includes(norm(st.q)));
 }
 function originalCardRank(c){
@@ -645,24 +685,8 @@ function sortCards(){
 }
 function workPassesDuplicateView(work){
  if((work.placements||[]).length<2)return false;
- if(st.q&&!norm(work.title).includes(norm(st.q)))return false;
- if(st.type&&work.media_type!==st.type)return false;
- if(st.state&&work.state!==st.state)return false;
- const placements=work.placements||[];
- if(st.tag.length&&!placements.some(p=>st.tag.every(t=>(p.tags||[]).includes(t))))return false;
- if(st.excludeTag.length&&placements.every(p=>st.excludeTag.some(t=>(p.tags||[]).includes(t))))return false;
- const hasRu=placements.some(p=>(p.tags||[]).includes('россия'));
- if(st.countryMode==='ru'&&!hasRu)return false;
- if(st.countryMode==='nonru'&&hasRu)return false;
- const hasReview=hasHumanReview(work,'egor')||hasHumanReview(work,'anna');
- if(st.reviewMode==='has'&&!hasReview)return false;
- if(st.reviewMode==='none'&&hasReview)return false;
- if(st.reviewMode==='missing-egor'&&(!hasReview||hasHumanReview(work,'egor')))return false;
- if(st.reviewMode==='missing-anna'&&(!hasReview||hasHumanReview(work,'anna')))return false;
- if(st.originMode!=='all'&&originBucket(work)!==st.originMode)return false;
- if(st.years.length&&!st.years.includes(firstYear(work.year)))return false;
- if(st.stars!==null&&!placements.some(p=>Number(p.stars||0)===Number(st.stars)))return false;
- return true;
+ // The grouped view uses the same per-placement predicates as the regular cards.
+ return [...document.querySelectorAll('section[data-sec] .card')].some(c=>c.dataset.key===work.id&&cardPasses(c));
 }
 function updateSectionCounters(){
  const total=document.querySelectorAll('section[data-sec] .card').length;
@@ -824,6 +848,7 @@ function updateDupModeButton(){
  b.classList.toggle('dup-mode-exclude',st.dupMode==='exclude');
  b.classList.toggle('dup-mode-only',st.dupMode==='only');
  b.classList.toggle('dup-mode-unique',st.dupMode==='unique');
+ updateExtraFilterButtons();
 }
 function bindUi(){
  const bs=[...document.querySelectorAll('button[data-k]')];
@@ -857,7 +882,7 @@ function bindUi(){
    apply();
  });
  document.getElementById('reset').onclick=()=>{
-   Object.assign(st,{cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[]});
+   Object.assign(st,{cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[],extraModes:{prediction:'all',fact:'all',sites:'all',texts:'all'}});
    bs.forEach(b=>b.classList.remove('active'));
    document.querySelector('[data-k=cat][data-v=all]').classList.add('active');
    const search=document.getElementById('movieSearch');if(search)search.value='';
@@ -912,6 +937,11 @@ function bindUi(){
    updateReviewModeButton();apply();
  });
 
+ document.querySelectorAll('[data-extra-filter]').forEach(b=>b.addEventListener('click',function(){
+   const key=b.dataset.extraFilter,options=EXTRA_FILTERS[key].modes;
+   st.extraModes[key]=options[(options.indexOf(st.extraModes[key])+1)%options.length];
+   updateExtraFilterButtons();apply();
+ }));
  document.getElementById('originMode').addEventListener('click',function(){
    const modes=['all','gpt','couple','egor','anna','unknown'];
    st.originMode=modes[(modes.indexOf(st.originMode)+1)%modes.length];
