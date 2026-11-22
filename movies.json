@@ -5985,8 +5985,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Drama",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Drama"
+        "imdb": "https://www.imdb.com/title/tt33071426/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6530127/",
+        "tmdb": "https://www.themoviedb.org/movie/1325734"
       },
       "placements": [
         {
@@ -6052,7 +6053,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6530127,
+        "imdb_id": "tt33071426",
+        "tmdb_id": 1325734,
+        "matched_name": "Вот это драма!",
+        "matched_year": 2026,
+        "overview": "Эмма и Чарли заканчивают приготовления к свадьбе. За ужином с друзьями разговор заходит о худших поступках каждого. После признания Эммы Чарли приходится заново решать, насколько хорошо он знает женщину, на которой собирается жениться.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6530127.jpg",
+        "ratings": {
+          "kp": 6.6,
+          "imdb": 7.1,
+          "tmdb": 6.903,
+          "votes_kp": 327154,
+          "votes_imdb": 146822,
+          "votes_tmdb": 2044
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6530127/reviews/",
+            "count": 63
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1325734/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "3c5bf2c5e65d",
@@ -6061,8 +6091,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Invite",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Invite"
+        "imdb": "https://www.imdb.com/title/tt14173636/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5138994/",
+        "tmdb": "https://www.themoviedb.org/movie/950028"
       },
       "placements": [
         {
@@ -6132,7 +6163,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5138994,
+        "imdb_id": "tt14173636",
+        "tmdb_id": 950028,
+        "matched_name": "Приглашение",
+        "matched_year": 2026,
+        "overview": "Джо и Анджела приглашают на ужин соседей сверху. У супругов накопилось немало претензий друг к другу, и откровенность гостей превращает вечер за общим столом в разговор, которого хозяева давно избегали.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5138994.jpg",
+        "ratings": {
+          "kp": 7.0,
+          "imdb": 7.4,
+          "tmdb": 7.2,
+          "votes_kp": 27525,
+          "votes_imdb": 107703,
+          "votes_tmdb": 932
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5138994/reviews/",
+            "count": 12
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/950028/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "343eab22ea33",
@@ -6141,8 +6201,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Possible%20Love",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Possible%20Love"
+        "imdb": "https://www.imdb.com/title/tt37803364/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/8063590/",
+        "tmdb": "https://www.themoviedb.org/movie/1483525"
       },
       "placements": [
         {
@@ -6208,7 +6269,37 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 8063590,
+        "imdb_id": "tt37803364",
+        "tmdb_id": 1483525,
+        "matched_name": "Возможная любовь",
+        "matched_year": 2026,
+        "overview": "После увольнения с завода рабочий и его жена знакомятся с документалисткой. Та хочет снять о них фильм. Работа сближает две семейные пары, но за вопросом о том, кто кого снимает, проступают различия в положении и всё более личные желания.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_8063590.jpg",
+        "ratings": {
+          "kp": 7.1,
+          "imdb": 7.6,
+          "tmdb": 7.3,
+          "votes_kp": 706,
+          "votes_imdb": 5337,
+          "votes_tmdb": 91
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/8063590/reviews/",
+            "count": 3
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1483525/reviews",
+            "count": null
+          }
+        },
+        "tmdb_rating_source": "https://streamrank.tv/cinema/1483525-possible-love"
+      }
     },
     {
       "id": "ed0f23640ebb",
@@ -6217,8 +6308,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Wuthering%20Heights",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Wuthering%20Heights"
+        "imdb": "https://www.imdb.com/title/tt32897959/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6398650/",
+        "tmdb": "https://www.themoviedb.org/movie/1316092"
       },
       "placements": [
         {
@@ -6284,7 +6376,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6398650,
+        "imdb_id": "tt32897959",
+        "tmdb_id": 1316092,
+        "matched_name": "Грозовой перевал",
+        "matched_year": 2026,
+        "overview": "Кэтрин Эрншо и Хитклифф выросли вместе в поместье на йоркширских пустошах. Взрослея, они сталкиваются с разницей в положении и с выбором, который надолго их разлучит. Версия Эмиральд Феннел сосредоточена на их влечении и на цене нанесённых друг другу обид.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6398650.jpg",
+        "ratings": {
+          "kp": 6.5,
+          "imdb": 6.1,
+          "tmdb": 6.6,
+          "votes_kp": 98133,
+          "votes_imdb": 97383,
+          "votes_tmdb": 1442
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6398650/reviews/",
+            "count": 54
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1316092/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "21d3c78444d7",
@@ -6293,8 +6414,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Send%20Help",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Send%20Help"
+        "imdb": "https://www.imdb.com/title/tt8036976/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/7045510/",
+        "tmdb": "https://www.themoviedb.org/movie/1198994"
       },
       "placements": [
         {
@@ -6347,7 +6469,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 7045510,
+        "imdb_id": "tt8036976",
+        "tmdb_id": 1198994,
+        "matched_name": "На помощь!",
+        "matched_year": 2025,
+        "overview": "После авиакатастрофы на острове остаются сотрудница компании Линда и её начальник Брэдли. В офисе он распоряжался её будущим. На острове еда, укрытие и шансы на спасение зависят прежде всего от её умений.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_7045510.jpg",
+        "ratings": {
+          "kp": 6.4,
+          "imdb": 6.7,
+          "tmdb": 6.989,
+          "votes_kp": 60486,
+          "votes_imdb": 164870,
+          "votes_tmdb": 2490
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/7045510/reviews/",
+            "count": 19
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1198994/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "bbf5c9607c52",
@@ -6356,8 +6507,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Christophers",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Christophers"
+        "imdb": "https://www.imdb.com/title/tt34966562/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6739486/",
+        "tmdb": "https://www.themoviedb.org/movie/1400357"
       },
       "placements": [
         {
@@ -6407,7 +6559,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6739486,
+        "imdb_id": "tt34966562",
+        "tmdb_id": 1400357,
+        "matched_name": "Кристоферы",
+        "matched_year": 2025,
+        "overview": "Дети известного художника рассчитывают унаследовать его картины. Узнав о незавершённых полотнах, они нанимают женщину, способную дописать их отцовской рукой. Ей предстоит попасть в мастерскую и выдержать встречу с самим автором.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6739486.jpg",
+        "ratings": {
+          "kp": 6.5,
+          "imdb": 6.8,
+          "tmdb": 6.8,
+          "votes_kp": 675,
+          "votes_imdb": 7265,
+          "votes_tmdb": 86
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6739486/reviews/",
+            "count": null
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1400357/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "db3f45b777c1",
@@ -6416,8 +6597,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Obsession",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Obsession"
+        "imdb": "https://www.imdb.com/title/tt37287335/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/10355286/",
+        "tmdb": "https://www.themoviedb.org/movie/1339713"
       },
       "placements": [
         {
@@ -6469,7 +6651,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 10355286,
+        "imdb_id": "tt37287335",
+        "tmdb_id": 1339713,
+        "matched_name": "Обсессия",
+        "matched_year": 2025,
+        "overview": "Юноша мечтает, чтобы его давняя подруга ответила ему взаимностью. Он загадывает желание, и девушка действительно меняет своё отношение к нему. Поначалу это похоже на удачу, пока он не замечает, во что превратилась её привязанность.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_10355286.jpg",
+        "ratings": {
+          "kp": 6.9,
+          "imdb": 7.8,
+          "tmdb": 8.2,
+          "votes_kp": 453851,
+          "votes_imdb": 437886,
+          "votes_tmdb": 6549
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/10355286/reviews/",
+            "count": 74
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1339713/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "0f08b06c07de",
@@ -6478,8 +6689,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=La%20Bola%20Negra",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=La%20Bola%20Negra"
+        "imdb": "https://www.imdb.com/title/tt35511966/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/11921460/",
+        "tmdb": "https://www.themoviedb.org/movie/1422041"
       },
       "placements": [
         {
@@ -6545,7 +6757,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 11921460,
+        "imdb_id": "tt35511966",
+        "tmdb_id": 1422041,
+        "matched_name": "Чёрный шар",
+        "matched_year": 2026,
+        "overview": "Три истории разворачиваются в Испании в разные эпохи. Мужчины, которым приходится скрывать свою любовь, почти ничего не знают друг о друге. Их связывает то, как частная жизнь становится общественной тайной и какие следы эта тайна оставляет следующим поколениям.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_11921460.jpg",
+        "ratings": {
+          "kp": 8.1,
+          "imdb": 8.2,
+          "tmdb": 8.064,
+          "votes_kp": 520,
+          "votes_imdb": 15574,
+          "votes_tmdb": 194
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/11921460/reviews/",
+            "count": 2
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1422041/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "06e3d9b5b508",
@@ -6554,8 +6795,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Good%20Luck%2C%20Have%20Fun%2C%20Don't%20Die",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Good%20Luck%2C%20Have%20Fun%2C%20Don't%20Die"
+        "imdb": "https://www.imdb.com/title/tt1341338/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/463492/",
+        "tmdb": "https://www.themoviedb.org/movie/1119449"
       },
       "placements": [
         {
@@ -6607,7 +6849,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 463492,
+        "imdb_id": "tt1341338",
+        "tmdb_id": 1119449,
+        "matched_name": "Удачи, веселья, не сдохни",
+        "matched_year": 2025,
+        "overview": "В лос-анджелесской закусочной незнакомец объявляет, что прибыл из будущего. За одну ночь ему нужно собрать среди посетителей команду, способную предотвратить катастрофу, связанную с искусственным интеллектом. У каждого за столиком есть основания ему не верить.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_463492.jpg",
+        "ratings": {
+          "kp": 7.0,
+          "imdb": 7.0,
+          "tmdb": 7.113,
+          "votes_kp": 54332,
+          "votes_imdb": 88418,
+          "votes_tmdb": 1186
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/463492/reviews/",
+            "count": 32
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1119449/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "8560b657d744",
@@ -6616,8 +6887,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Project%20Hail%20Mary",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Project%20Hail%20Mary"
+        "imdb": "https://www.imdb.com/title/tt12042730/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/1382256/",
+        "tmdb": "https://www.themoviedb.org/movie/687163"
       },
       "placements": [
         {
@@ -6669,7 +6941,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 1382256,
+        "imdb_id": "tt12042730",
+        "tmdb_id": 687163,
+        "matched_name": "Проект «Конец света»",
+        "matched_year": 2026,
+        "overview": "Учитель естественных наук приходит в себя на борту космического корабля. Рядом никого, и он не помнит, зачем отправился в полёт. Восстанавливая ход экспериментов, он выясняет, что от его работы зависит судьба Солнца, и обнаруживает неожиданного союзника.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_1382256.jpg",
+        "ratings": {
+          "kp": 8.4,
+          "imdb": 8.2,
+          "tmdb": 8.629,
+          "votes_kp": 290811,
+          "votes_imdb": 607539,
+          "votes_tmdb": 8753
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/1382256/reviews/",
+            "count": 86
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/687163/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "10856c3bcefd",
@@ -6678,8 +6979,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Nirvanna%20the%20Band%20the%20Show%20the%20Movie",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Nirvanna%20the%20Band%20the%20Show%20the%20Movie"
+        "imdb": "https://www.imdb.com/title/tt35522483/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/11280739/",
+        "tmdb": "https://www.themoviedb.org/movie/1154538"
       },
       "placements": [
         {
@@ -6731,7 +7033,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 11280739,
+        "imdb_id": "tt35522483",
+        "tmdb_id": 1154538,
+        "matched_name": "Шоу «Группы Нирванна». Фильм",
+        "matched_year": 2025,
+        "overview": "Мэтт и Джей мечтают дать концерт в клубе «Риволи» в Торонто. Очередная попытка попасть на сцену забрасывает музыкантов в 2008 год. Теперь на кону и долгожданное выступление, и история их собственной дружбы.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_11280739.jpg",
+        "ratings": {
+          "kp": 7.1,
+          "imdb": 7.6,
+          "tmdb": 7.6,
+          "votes_kp": 871,
+          "votes_imdb": 15213,
+          "votes_tmdb": 157
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/11280739/reviews/",
+            "count": 2
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1154538/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "c5d55d3113cf",
@@ -6740,8 +7071,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Hoppers",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hoppers"
+        "imdb": "https://www.imdb.com/title/tt26443616/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6111021/",
+        "tmdb": "https://www.themoviedb.org/movie/1327819"
       },
       "placements": [
         {
@@ -6793,7 +7125,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6111021,
+        "imdb_id": "tt26443616",
+        "tmdb_id": 1327819,
+        "matched_name": "Прыгуны",
+        "matched_year": 2026,
+        "overview": "Мейбл получает возможность управлять механическим бобром, перенесённым в настоящую колонию. Она хочет спасти любимый уголок природы и обнаруживает, что у зверей есть собственные правила и совсем другие представления о людях.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6111021.jpg",
+        "ratings": {
+          "kp": 7.5,
+          "imdb": 7.2,
+          "tmdb": 8.123,
+          "votes_kp": 48347,
+          "votes_imdb": 91385,
+          "votes_tmdb": 2521
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6111021/reviews/",
+            "count": 15
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1327819/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "597d707989b8",
@@ -6802,8 +7163,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Mother%20Mary",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Mother%20Mary"
+        "imdb": "https://www.imdb.com/title/tt27200708/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5890226/",
+        "tmdb": "https://www.themoviedb.org/movie/1102883"
       },
       "placements": [
         {
@@ -6855,7 +7217,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5890226,
+        "imdb_id": "tt27200708",
+        "tmdb_id": 1102883,
+        "matched_name": "Мать Мария",
+        "matched_year": 2026,
+        "overview": "Накануне возвращения на сцену поп-звезда обращается к Сэм, которая когда-то создавала её костюмы и была её близкой подругой. Работа над новым сценическим образом вынуждает обеих вспомнить, как закончился их союз.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5890226.jpg",
+        "ratings": {
+          "kp": 5.5,
+          "imdb": 5.4,
+          "tmdb": 5.703,
+          "votes_kp": 5003,
+          "votes_imdb": 12604,
+          "votes_tmdb": 227
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5890226/reviews/",
+            "count": 5
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1102883/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "5693960ce374",
@@ -6864,8 +7255,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Black%20Bag",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Black%20Bag"
+        "imdb": "https://www.imdb.com/title/tt30988739/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5449060/",
+        "tmdb": "https://www.themoviedb.org/movie/1233575"
       },
       "placements": [
         {
@@ -6915,7 +7307,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5449060,
+        "imdb_id": "tt30988739",
+        "tmdb_id": 1233575,
+        "matched_name": "Чёрный чемодан – двойная игра",
+        "matched_year": 2025,
+        "overview": "Британскому разведчику Джорджу поручают выяснить, кто из его коллег причастен к утечке. В списке подозреваемых оказывается его жена Кэтрин. Обычный ужин в их доме становится способом проверить показания людей, умеющих лгать профессионально.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5449060.jpg",
+        "ratings": {
+          "kp": 6.2,
+          "imdb": 6.7,
+          "tmdb": 6.4,
+          "votes_kp": 21702,
+          "votes_imdb": 100738,
+          "votes_tmdb": 1434
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5449060/reviews/",
+            "count": 14
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1233575/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "90ba0118342d",
@@ -6924,8 +7345,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Companion",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Companion"
+        "imdb": "https://www.imdb.com/title/tt26584495/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6275518/",
+        "tmdb": "https://www.themoviedb.org/movie/1084199"
       },
       "placements": [
         {
@@ -6997,7 +7419,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6275518,
+        "imdb_id": "tt26584495",
+        "tmdb_id": 1084199,
+        "matched_name": "Компаньон",
+        "matched_year": 2025,
+        "overview": "Айрис и Джош приезжают к друзьям в уединённый дом у озера. После гибели одного из присутствующих Айрис обнаруживает, что от неё скрывали важнейшую часть её собственной истории. Это меняет расстановку сил среди гостей.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6275518.jpg",
+        "ratings": {
+          "kp": 6.5,
+          "imdb": 6.9,
+          "tmdb": 6.994,
+          "votes_kp": 66315,
+          "votes_imdb": 197354,
+          "votes_tmdb": 2788
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6275518/reviews/",
+            "count": 19
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1084199/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "2b7992e5d49d",
@@ -7006,8 +7457,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Assessment",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Assessment"
+        "imdb": "https://www.imdb.com/title/tt32768323/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6042919/",
+        "tmdb": "https://www.themoviedb.org/movie/1317088"
       },
       "placements": [
         {
@@ -7077,7 +7529,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6042919,
+        "imdb_id": "tt32768323",
+        "tmdb_id": 1317088,
+        "matched_name": "Оценка",
+        "matched_year": 2024,
+        "overview": "В будущем получить разрешение на ребёнка можно только после государственной проверки. В дом пары на неделю вселяется инспектор. Её испытания постепенно стирают границу между оценкой готовности к родительству и вмешательством в отношения супругов.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6042919.jpg",
+        "ratings": {
+          "kp": 6.8,
+          "imdb": 6.6,
+          "tmdb": 6.8,
+          "votes_kp": 5191,
+          "votes_imdb": 26313,
+          "votes_tmdb": 506
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6042919/reviews/",
+            "count": 6
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1317088/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "cf16f3ed7adb",
@@ -7086,8 +7567,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Housemaid",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Housemaid"
+        "imdb": "https://www.imdb.com/title/tt27543632/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6750360/",
+        "tmdb": "https://www.themoviedb.org/movie/1368166"
       },
       "placements": [
         {
@@ -7139,7 +7621,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6750360,
+        "imdb_id": "tt27543632",
+        "tmdb_id": 1368166,
+        "matched_name": "Горничная",
+        "matched_year": 2025,
+        "overview": "Милли получает работу с проживанием в роскошном доме Нины и Эндрю. Ей нужен заработок и шанс начать заново, поэтому поначалу она терпит непредсказуемые требования хозяйки. Вскоре сама возможность уйти становится для неё вопросом.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6750360.jpg",
+        "ratings": {
+          "kp": 7.6,
+          "imdb": 6.7,
+          "tmdb": 7.243,
+          "votes_kp": 1110147,
+          "votes_imdb": 215369,
+          "votes_tmdb": 3341
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6750360/reviews/",
+            "count": 58
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1368166/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "fbdb01a237f5",
@@ -7148,8 +7659,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Hedda",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hedda"
+        "imdb": "https://www.imdb.com/title/tt27953589/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/6458111/",
+        "tmdb": "https://www.themoviedb.org/movie/997113"
       },
       "placements": [
         {
@@ -7199,7 +7711,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 6458111,
+        "imdb_id": "tt27953589",
+        "tmdb_id": 997113,
+        "matched_name": "Гедда",
+        "matched_year": 2025,
+        "overview": "В Англии 1950-х Гедда и её муж устраивают приём в новом доме. От успеха вечера зависит его академическая карьера. Среди гостей появляется бывшая возлюбленная Гедды, тоже претендующая на профессорскую должность.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_6458111.jpg",
+        "ratings": {
+          "kp": 5.6,
+          "imdb": 5.8,
+          "tmdb": 5.4,
+          "votes_kp": 1073,
+          "votes_imdb": 5319,
+          "votes_tmdb": 132
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/6458111/reviews/",
+            "count": 3
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/997113/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "c13b1b970669",
@@ -7208,8 +7749,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Strange%20Darling",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Strange%20Darling"
+        "imdb": "https://www.imdb.com/title/tt22375054/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5126216/",
+        "tmdb": "https://www.themoviedb.org/movie/1029281"
       },
       "placements": [
         {
@@ -7279,7 +7821,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5126216,
+        "imdb_id": "tt22375054",
+        "tmdb_id": 1029281,
+        "matched_name": "Сталкер",
+        "matched_year": 2023,
+        "overview": "Женщина бежит от вооружённого преследователя после ночи, начавшейся со случайного знакомства. Фильм возвращается к разным моментам той встречи, и каждый пропущенный эпизод меняет представление о том, кто кому угрожает.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5126216.jpg",
+        "ratings": {
+          "kp": 6.7,
+          "imdb": 7.0,
+          "tmdb": 6.872,
+          "votes_kp": 15247,
+          "votes_imdb": 74104,
+          "votes_tmdb": 1099
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5126216/reviews/",
+            "count": 11
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1029281/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "7a5e32a8bb9a",
@@ -7288,8 +7859,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Blink%20Twice",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Blink%20Twice"
+        "imdb": "https://www.imdb.com/title/tt14858658/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/4630624/",
+        "tmdb": "https://www.themoviedb.org/movie/840705"
       },
       "placements": [
         {
@@ -7359,7 +7931,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 4630624,
+        "imdb_id": "tt14858658",
+        "tmdb_id": 840705,
+        "matched_name": "Подай знак",
+        "matched_year": 2024,
+        "overview": "На благотворительном вечере официантка Фрида знакомится с миллиардером Слейтером Кингом и принимает приглашение на его остров. Дни у бассейна начинают сливаться один с другим. Когда Фрида замечает провалы в воспоминаниях, остальные гости ведут себя так, словно всё в порядке.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_4630624.jpg",
+        "ratings": {
+          "kp": 6.5,
+          "imdb": 6.5,
+          "tmdb": 6.688,
+          "votes_kp": 70953,
+          "votes_imdb": 136294,
+          "votes_tmdb": 2120
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/4630624/reviews/",
+            "count": 15
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/840705/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "5676ed5bcc24",
@@ -7368,8 +7969,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Love%20Lies%20Bleeding",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Love%20Lies%20Bleeding"
+        "imdb": "https://www.imdb.com/title/tt19637052/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5024158/",
+        "tmdb": "https://www.themoviedb.org/movie/948549"
       },
       "placements": [
         {
@@ -7439,7 +8041,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5024158,
+        "imdb_id": "tt19637052",
+        "tmdb_id": 948549,
+        "matched_name": "Любовь истекает кровью",
+        "matched_year": 2024,
+        "overview": "Лу работает в спортзале в маленьком американском городе. Там она знакомится с Джеки, культуристкой по пути на соревнования в Лас-Вегас. Их роман втягивает обеих в семейные дела Лу, где за решениями её отца стоит реальное насилие.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5024158.jpg",
+        "ratings": {
+          "kp": 6.2,
+          "imdb": 6.6,
+          "tmdb": 6.576,
+          "votes_kp": 8226,
+          "votes_imdb": 66163,
+          "votes_tmdb": 1066
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5024158/reviews/",
+            "count": 3
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/948549/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "8a2829aa69a5",
@@ -7448,8 +8079,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Fair%20Play",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fair%20Play"
+        "imdb": "https://www.imdb.com/title/tt16304446/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/4876660/",
+        "tmdb": "https://www.themoviedb.org/movie/910571"
       },
       "placements": [
         {
@@ -7499,7 +8131,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 4876660,
+        "imdb_id": "tt16304446",
+        "tmdb_id": 910571,
+        "matched_name": "Все средства хороши",
+        "matched_year": 2023,
+        "overview": "Эмили и Люк работают в одном нью-йоркском фонде и скрывают от коллег свою помолвку. Когда повышение получает Эмили, она становится начальницей Люка. Решения, которые днём приходится принимать на работе, продолжают их преследовать дома.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_4876660.jpg",
+        "ratings": {
+          "kp": 6.5,
+          "imdb": 6.4,
+          "tmdb": 6.357,
+          "votes_kp": 9360,
+          "votes_imdb": 48251,
+          "votes_tmdb": 680
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/4876660/reviews/",
+            "count": 4
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/910571/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "85c34e4515c4",
@@ -7508,8 +8169,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Decision%20to%20Leave",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Decision%20to%20Leave"
+        "imdb": "https://www.imdb.com/title/tt12477480/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/1435399/",
+        "tmdb": "https://www.themoviedb.org/movie/705996"
       },
       "placements": [
         {
@@ -7575,7 +8237,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 1435399,
+        "imdb_id": "tt12477480",
+        "tmdb_id": 705996,
+        "matched_name": "Решение уйти",
+        "matched_year": 2022,
+        "overview": "Расследуя гибель альпиниста, детектив знакомится с его вдовой Со-рэ. Наблюдение за подозреваемой становится частью его повседневной жизни. Чем больше он о ней узнаёт, тем труднее отделить улики от собственной привязанности.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_1435399.jpg",
+        "ratings": {
+          "kp": 7.1,
+          "imdb": 7.2,
+          "tmdb": 7.32,
+          "votes_kp": 67298,
+          "votes_imdb": 72293,
+          "votes_tmdb": 1661
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/1435399/reviews/",
+            "count": 37
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/705996/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "9aba598f5eb3",
@@ -7584,8 +8275,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=T%C3%A1r",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=T%C3%A1r"
+        "imdb": "https://www.imdb.com/title/tt14444726/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/4511218/",
+        "tmdb": "https://www.themoviedb.org/movie/817758"
       },
       "placements": [
         {
@@ -7635,7 +8327,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 4511218,
+        "imdb_id": "tt14444726",
+        "tmdb_id": 817758,
+        "matched_name": "Тар",
+        "matched_year": 2022,
+        "overview": "Дирижёр Лидия Тар готовит с берлинским оркестром запись Пятой симфонии Малера. Она привыкла определять, кто получает шанс выйти на сцену. Когда возникают вопросы о её обращении с молодыми музыкантами, профессиональная власть Лидии сама оказывается предметом разбирательства.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_4511218.jpg",
+        "ratings": {
+          "kp": 7.1,
+          "imdb": 7.4,
+          "tmdb": 7.075,
+          "votes_kp": 18887,
+          "votes_imdb": 111782,
+          "votes_tmdb": 1634
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/4511218/reviews/",
+            "count": 36
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/817758/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "310938ee4c54",
@@ -7644,8 +8365,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Triangle%20of%20Sadness",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Triangle%20of%20Sadness"
+        "imdb": "https://www.imdb.com/title/tt7322224/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/1348487/",
+        "tmdb": "https://www.themoviedb.org/movie/497828"
       },
       "placements": [
         {
@@ -7697,7 +8419,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 1348487,
+        "imdb_id": "tt7322224",
+        "tmdb_id": 497828,
+        "matched_name": "Треугольник печали",
+        "matched_year": 2022,
+        "overview": "Модели Карл и Яя отправляются в круиз на роскошной яхте. Пока всё идёт по плану, пассажиры распоряжаются, а экипаж исполняет их прихоти. После катастрофы выясняется, чьи умения действительно позволяют группе выжить.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_1348487.jpg",
+        "ratings": {
+          "kp": 6.5,
+          "imdb": 7.2,
+          "tmdb": 7.0,
+          "votes_kp": 432805,
+          "votes_imdb": 222292,
+          "votes_tmdb": 3108
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/1348487/reviews/",
+            "count": 81
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/497828/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "f330066e621a",
@@ -7706,8 +8457,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Beloved",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Beloved"
+        "imdb": "https://www.imdb.com/title/tt33451014/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/11893236/",
+        "tmdb": "https://www.themoviedb.org/movie/1074074"
       },
       "placements": [
         {
@@ -7773,7 +8525,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 11893236,
+        "imdb_id": "tt33451014",
+        "tmdb_id": 1074074,
+        "matched_name": "Любовь моя",
+        "matched_year": 2026,
+        "overview": "Знаменитый режиссёр предлагает роль взрослой дочери, с которой давно не близок. Она соглашается, и они встречаются на съёмочной площадке. Для съёмочной группы он автор фильма, а для неё ещё и отец, который теперь требует сыграть нужное ему чувство.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_11893236.jpg",
+        "ratings": {
+          "kp": 7.2,
+          "imdb": 7.2,
+          "tmdb": 6.9,
+          "votes_kp": 3196,
+          "votes_imdb": 4518,
+          "votes_tmdb": 112
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/11893236/reviews/",
+            "count": 6
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1074074/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "b03ffad521a8",
@@ -7782,8 +8563,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Woman%20Unknown",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Woman%20Unknown"
+        "imdb": "https://www.imdb.com/title/tt34888026/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/13347404/",
+        "tmdb": "https://www.themoviedb.org/movie/1511780"
       },
       "placements": [
         {
@@ -7849,7 +8631,37 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 13347404,
+        "imdb_id": "tt34888026",
+        "tmdb_id": 1511780,
+        "matched_name": "Неизвестная женщина",
+        "matched_year": 2026,
+        "overview": "В послевоенной Дании Мари готовится выйти замуж за состоятельного вдовца, у которого работала няней. Она скрывает связь с немецким солдатом во время оккупации. Если о прошлом узнают, под угрозой окажется и брак, и её место в доме.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_13347404.jpg",
+        "ratings": {
+          "kp": null,
+          "imdb": 7.2,
+          "tmdb": null,
+          "votes_kp": null,
+          "votes_imdb": 333,
+          "votes_tmdb": 0
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/13347404/reviews/",
+            "count": null
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1511780/reviews",
+            "count": null
+          }
+        },
+        "tmdb_rating_source": "https://iff.day/busan/31/film/woman-unknown-2026"
+      }
     },
     {
       "id": "874169ee3084",
@@ -7858,8 +8670,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Fatherland",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fatherland"
+        "imdb": "https://www.imdb.com/title/tt37304295/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/9806716/",
+        "tmdb": "https://www.themoviedb.org/movie/1437696"
       },
       "placements": [
         {
@@ -7925,7 +8738,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 9806716,
+        "imdb_id": "tt37304295",
+        "tmdb_id": 1437696,
+        "matched_name": "Отечество",
+        "matched_year": 2026,
+        "overview": "В 1949 году Томас Манн возвращается в Германию после долгой эмиграции. Вместе с дочерью Эрикой он едет из Франкфурта в Веймар через страну, разделённую на зоны оккупации. Официальные чествования писателя чередуются с личными разговорами в дороге.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_9806716.jpg",
+        "ratings": {
+          "kp": 7.4,
+          "imdb": 7.4,
+          "tmdb": 7.3,
+          "votes_kp": 239,
+          "votes_imdb": 5163,
+          "votes_tmdb": 71
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/9806716/reviews/",
+            "count": 1
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1437696/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "03316f983fa8",
@@ -7934,8 +8776,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Minotaur",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Minotaur"
+        "imdb": "https://www.imdb.com/title/tt37118301/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/10937064/",
+        "tmdb": "https://www.themoviedb.org/movie/848700"
       },
       "placements": [
         {
@@ -8001,7 +8844,37 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 10937064,
+        "imdb_id": "tt37118301",
+        "tmdb_id": 848700,
+        "matched_name": "Минотавр",
+        "matched_year": 2026,
+        "overview": "Осенью 2022 года предприниматель Глеб Морозов пытается удержать на плаву свой бизнес. Одновременно он начинает подозревать жену в измене. Желание установить, что происходит дома, оборачивается решениями, последствия которых выходят за пределы семьи.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_10937064.jpg",
+        "ratings": {
+          "kp": 7.1,
+          "imdb": 7.6,
+          "tmdb": 7.5,
+          "votes_kp": 1518,
+          "votes_imdb": 2570,
+          "votes_tmdb": 55
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/10937064/reviews/",
+            "count": 1
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/848700/reviews",
+            "count": null
+          }
+        },
+        "tmdb_rating_source": "https://iff.day/busan/31/film/minotaur-2026"
+      }
     },
     {
       "id": "2222942a9508",
@@ -8010,8 +8883,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=All%20of%20a%20Sudden",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=All%20of%20a%20Sudden"
+        "imdb": "https://www.imdb.com/title/tt36834996/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/8064588/",
+        "tmdb": "https://www.themoviedb.org/movie/1476614"
       },
       "placements": [
         {
@@ -8077,7 +8951,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 8064588,
+        "imdb_id": "tt36834996",
+        "tmdb_id": 1476614,
+        "matched_name": "Внезапно",
+        "matched_year": 2026,
+        "overview": "Руководительница дома ухода под Парижем знакомится с японской театральной постановщицей, которая тяжело больна. У них разные взгляды на то, как следует заботиться о человеке. Разговоры и встречи постепенно становятся важной частью жизни обеих.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_8064588.jpg",
+        "ratings": {
+          "kp": 7.5,
+          "imdb": 7.9,
+          "tmdb": 7.858,
+          "votes_kp": 224,
+          "votes_imdb": 2193,
+          "votes_tmdb": 74
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/8064588/reviews/",
+            "count": null
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1476614/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "deffb55df451",
@@ -8086,8 +8989,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Fjord",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fjord"
+        "imdb": "https://www.imdb.com/title/tt35410859/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/7029820/",
+        "tmdb": "https://www.themoviedb.org/movie/1401459"
       },
       "placements": [
         {
@@ -8153,7 +9057,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 7029820,
+        "imdb_id": "tt35410859",
+        "tmdb_id": 1401459,
+        "matched_name": "Фьорд",
+        "matched_year": 2026,
+        "overview": "Семья с румынскими корнями, живущая в Норвегии, попадает в поле зрения служб защиты детей. Привычные для родителей решения получают совсем иное толкование у соседей и властей. Разбирательство затрагивает и детей, и отношения между семьями.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_7029820.jpg",
+        "ratings": {
+          "kp": 7.6,
+          "imdb": 7.6,
+          "tmdb": 7.2,
+          "votes_kp": 3708,
+          "votes_imdb": 7889,
+          "votes_tmdb": 101
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/7029820/reviews/",
+            "count": null
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1401459/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "b56512adffbc",
@@ -8162,8 +9095,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=La%20Grazia",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=La%20Grazia"
+        "imdb": "https://www.imdb.com/title/tt34886821/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/8496238/",
+        "tmdb": "https://www.themoviedb.org/movie/1397364"
       },
       "placements": [
         {
@@ -8229,7 +9163,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 8496238,
+        "imdb_id": "tt34886821",
+        "tmdb_id": 1397364,
+        "matched_name": "Грация",
+        "matched_year": 2025,
+        "overview": "В последние месяцы президентства итальянскому главе государства предстоит решить судьбу прошений о помиловании и закона об эвтаназии. Эти вопросы возвращают его к воспоминаниям об умершей жене и к сомнениям, с которыми он так и не разобрался.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_8496238.jpg",
+        "ratings": {
+          "kp": 7.5,
+          "imdb": 7.3,
+          "tmdb": 7.329,
+          "votes_kp": 28121,
+          "votes_imdb": 12310,
+          "votes_tmdb": 468
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/8496238/reviews/",
+            "count": 17
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1397364/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "c0dce5a211bf",
@@ -8238,8 +9201,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=It%20Was%20Just%20an%20Accident",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=It%20Was%20Just%20an%20Accident"
+        "imdb": "https://www.imdb.com/title/tt36491653/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/7605773/",
+        "tmdb": "https://www.themoviedb.org/movie/1456349"
       },
       "placements": [
         {
@@ -8305,7 +9269,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 7605773,
+        "imdb_id": "tt36491653",
+        "tmdb_id": 1456349,
+        "matched_name": "Простая случайность",
+        "matched_year": 2025,
+        "overview": "В иранской автомастерской случайный посетитель напоминает механику о тюремном надзирателе, которого тот знал по звуку шагов. Чтобы проверить догадку, он разыскивает других бывших заключённых. Им предстоит решить, насколько они могут доверять своей памяти.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_7605773.jpg",
+        "ratings": {
+          "kp": 7.1,
+          "imdb": 7.4,
+          "tmdb": 7.163,
+          "votes_kp": 9872,
+          "votes_imdb": 40993,
+          "votes_tmdb": 720
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/7605773/reviews/",
+            "count": 14
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1456349/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "16ee0d461eca",
@@ -8314,8 +9307,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=The%20Secret%20Agent",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Secret%20Agent"
+        "imdb": "https://www.imdb.com/title/tt27847051/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/7605767/",
+        "tmdb": "https://www.themoviedb.org/movie/1220564"
       },
       "placements": [
         {
@@ -8381,7 +9375,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 7605767,
+        "imdb_id": "tt27847051",
+        "tmdb_id": 1220564,
+        "matched_name": "Секретный агент",
+        "matched_year": 2025,
+        "overview": "В 1977 году мужчина под чужим именем приезжает в бразильский Ресифи во время карнавала. Он хочет увидеть сына и найти путь из страны. Пока празднует весь город, ему приходится полагаться на сеть людей, укрывающих преследуемых.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_7605767.jpg",
+        "ratings": {
+          "kp": 6.4,
+          "imdb": 7.2,
+          "tmdb": 7.136,
+          "votes_kp": 17146,
+          "votes_imdb": 65779,
+          "votes_tmdb": 953
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/7605767/reviews/",
+            "count": 14
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1220564/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "656bc2c30677",
@@ -8390,8 +9413,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Resurrection",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Resurrection"
+        "imdb": "https://www.imdb.com/title/tt29002950/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5998826/",
+        "tmdb": "https://www.themoviedb.org/movie/878608"
       },
       "placements": [
         {
@@ -8461,7 +9485,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5998826,
+        "imdb_id": "tt29002950",
+        "tmdb_id": 878608,
+        "matched_name": "Воскрешение",
+        "matched_year": 2025,
+        "overview": "В мире, где отказ от сновидений продлевает жизнь, остались люди, способные видеть сны. За одним из них зритель проходит через несколько эпох китайской истории. Каждое новое воплощение меняет и чувственный мир героя, и сам язык фильма.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5998826.jpg",
+        "ratings": {
+          "kp": 7.3,
+          "imdb": 7.2,
+          "tmdb": 7.101,
+          "votes_kp": 3180,
+          "votes_imdb": 6208,
+          "votes_tmdb": 138
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5998826/reviews/",
+            "count": 7
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/878608/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "2f16e62ace95",
@@ -8470,8 +9523,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Parthenope",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Parthenope"
+        "imdb": "https://www.imdb.com/title/tt23853982/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5504261/",
+        "tmdb": "https://www.themoviedb.org/movie/1109255"
       },
       "placements": [
         {
@@ -8537,7 +9591,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5504261,
+        "imdb_id": "tt23853982",
+        "tmdb_id": 1109255,
+        "matched_name": "Партенопа",
+        "matched_year": 2024,
+        "overview": "Партенопа родилась в Неаполе и носит имя, связанное с историей города. Фильм следует за ней от молодости до зрелости. Летние встречи, утраты и учёба постепенно меняют её взгляд и на собственную красоту, и на родные места.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5504261.jpg",
+        "ratings": {
+          "kp": 6.8,
+          "imdb": 6.5,
+          "tmdb": 6.669,
+          "votes_kp": 117810,
+          "votes_imdb": 22330,
+          "votes_tmdb": 803
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5504261/reviews/",
+            "count": 30
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/1109255/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "05bb2668d822",
@@ -8546,8 +9629,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=A%20Different%20Man",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=A%20Different%20Man"
+        "imdb": "https://www.imdb.com/title/tt21097228/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5024886/",
+        "tmdb": "https://www.themoviedb.org/movie/989662"
       },
       "placements": [
         {
@@ -8617,7 +9701,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5024886,
+        "imdb_id": "tt21097228",
+        "tmdb_id": 989662,
+        "matched_name": "Другой человек",
+        "matched_year": 2024,
+        "overview": "Нью-йоркский актёр Эдвард проходит экспериментальное лечение, которое меняет его внешность. Позднее он узнаёт о спектакле по мотивам собственной жизни. В борьбе за роль своего прежнего «я» у него появляется неожиданный соперник.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5024886.jpg",
+        "ratings": {
+          "kp": 6.8,
+          "imdb": 6.8,
+          "tmdb": 6.9,
+          "votes_kp": 11030,
+          "votes_imdb": 40770,
+          "votes_tmdb": 538
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5024886/reviews/",
+            "count": 20
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/989662/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "d04ccc3b06eb",
@@ -8626,8 +9739,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=Hamnet",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hamnet"
+        "imdb": "https://www.imdb.com/title/tt14905854/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/5454868/",
+        "tmdb": "https://www.themoviedb.org/movie/858024"
       },
       "placements": [
         {
@@ -8693,7 +9807,36 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 5454868,
+        "imdb_id": "tt14905854",
+        "tmdb_id": 858024,
+        "matched_name": "Хамнет: История, вдохновившая «Гамлета»",
+        "matched_year": 2025,
+        "overview": "В Англии конца XVI века Агнес и молодой Уильям Шекспир создают семью. Он всё чаще уезжает работать в Лондон, а она остаётся с детьми. Смерть их сына Хамнета по-разному меняет жизнь супругов и отзывается в театральной работе Уильяма.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5454868.jpg",
+        "ratings": {
+          "kp": 7.6,
+          "imdb": 7.8,
+          "tmdb": 7.7,
+          "votes_kp": 27044,
+          "votes_imdb": 142934,
+          "votes_tmdb": 1753
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/5454868/reviews/",
+            "count": 41
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/858024/reviews",
+            "count": null
+          }
+        }
+      }
     },
     {
       "id": "ce303d159458",
@@ -8702,8 +9845,9 @@
       "media_type": "фильм",
       "state": "todo",
       "links": {
-        "imdb": "https://www.imdb.com/find/?q=La%20Chimera",
-        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=La%20Chimera"
+        "imdb": "https://www.imdb.com/title/tt14561712/",
+        "kinopoisk": "https://www.kinopoisk.ru/film/4860047/",
+        "tmdb": "https://www.themoviedb.org/movie/837335"
       },
       "placements": [
         {
@@ -8769,15 +9913,56 @@
           "event": "added",
           "source": "30_ci_chat"
         }
-      ]
+      ],
+      "external": {
+        "source": "Кинопоиск, IMDb, TMDB",
+        "kp_id": 4860047,
+        "imdb_id": "tt14561712",
+        "tmdb_id": 837335,
+        "matched_name": "Химера",
+        "matched_year": 2023,
+        "overview": "Англичанин Артур выходит из итальянской тюрьмы и возвращается к знакомым расхитителям гробниц. Они ценят его способность находить этрусские захоронения. Для товарищей под землёй спрятан заработок, а самого Артура туда тянет память о пропавшей возлюбленной.",
+        "overview_source": "Movie Map",
+        "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_4860047.jpg",
+        "ratings": {
+          "kp": 6.9,
+          "imdb": 7.2,
+          "tmdb": 7.3,
+          "votes_kp": 19525,
+          "votes_imdb": 23773,
+          "votes_tmdb": 645
+        },
+        "public_reviews": {
+          "kp": {
+            "url": "https://www.kinopoisk.ru/film/4860047/reviews/",
+            "count": 14
+          },
+          "tmdb": {
+            "url": "https://www.themoviedb.org/movie/837335/reviews",
+            "count": null
+          }
+        }
+      }
     }
   ],
   "external_enrichment": {
-    "source": "poiskkino.dev",
-    "enriched_at": "2026-11-22T12:32:41.670Z",
-    "matched": 58,
+    "source": "poiskkino.dev; Кинопоиск, IMDb, TMDB",
+    "enriched_at": "2026-11-22T19:32:33Z",
+    "matched": 97,
     "unmatched": [],
-    "notes": "All 58 works have poster, description, Kinopoisk rating and IMDb rating. TMDB rating is shown when supplied by the source API."
+    "notes": "58 records imported from poiskkino.dev. The 39 November additions have verified external title and review links, posters and Russian editorial synopses. Ratings are snapshots.",
+    "november_sources": {
+      "batch_id": "rec_2026_11_deep_01",
+      "kinopoisk": "Public title pages linked from each work",
+      "imdb": "https://datasets.imdbws.com/title.ratings.tsv.gz",
+      "tmdb": "https://huggingface.co/datasets/NdeyeAidaNdour/tmdb-movies-2000-2026",
+      "tmdb_snapshot": "2026-11-10",
+      "tmdb_other": "See tmdb_rating_source on individual works.",
+      "id_crosschecks": [
+        "Cinemeta",
+        "Wikidata"
+      ]
+    }
   },
   "recommendation_batches": [
     {

@@ -630,6 +630,16 @@ function externalRatingsHtml(work,detail){
  const cls=detail?'detail-external-ratings':'external-ratings';
  return '<div class="'+cls+'">'+items.map(x=>'<span class="external-rating '+x[0]+'">'+x[1]+' <b>'+x[2]+'</b></span>').join('')+reviewLinks.join('')+'</div>';
 }
+function externalTitleLinks(work){
+ const external=work.external||{}, links=work.links||{};
+ const type=work.media_type==='сериал'?'tv':'movie';
+ const destinations=[
+   ['IMDb',external.imdb_id?'https://www.imdb.com/title/'+encodeURIComponent(external.imdb_id)+'/':links.imdb],
+   ['Кинопоиск',external.kp_id?'https://www.kinopoisk.ru/film/'+encodeURIComponent(external.kp_id)+'/':links.kinopoisk],
+   ['TMDB',external.tmdb_id?'https://www.themoviedb.org/'+type+'/'+encodeURIComponent(external.tmdb_id):links.tmdb]
+ ];
+ return destinations.filter(([,url])=>url).map(([name,url])=>'<a target="_blank" rel="noopener noreferrer" href="'+esc(url)+'">'+name+' ↗</a>').join('');
+}
 function cardHtml(work,p){
  const stars='⭐'.repeat(Number(p.stars||0));
  const status=work.state==='seen'?'<span class="state-mark seen" title="Просмотрено">✓</span>':'<span class="state-mark todo" title="Не просмотрено">○</span>';
@@ -648,7 +658,7 @@ function cardHtml(work,p){
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+((hasHumanReview(work,'egor')||hasHumanReview(work,'anna'))?'1':'0')+'" data-has-review-egor="'+(hasHumanReview(work,'egor')?'1':'0')+'" data-has-review-anna="'+(hasHumanReview(work,'anna')?'1':'0')+'" data-origin="'+originBucket(work)+'" data-batches="'+esc([...new Set(recommendationEvents(work).map(e=>e.batch_id))].join(' '))+'" data-year="'+firstYear(work.year)+'" data-search="'+esc(norm(work.title))+'">'+
  '<div class="left"><div class="row1"><span class="card-index"><span class="n">'+String(p.order).padStart(2,'0')+'</span>'+status+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span>'+starBadge+'</div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+membership+'</div>'+
  '<div class="score"><div class="score-shortlist"><button class="watch" type="button" aria-pressed="false" title="Смотреть завтра">📌 завтра</button></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(personValue(p.prediction,'egor'))+'</div><div class="c">'+esc(personValue(p.prediction,'anna'))+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'egor')+factCellHtml(work,p,'anna')+(externalRatingsHtml(work,false)?'<div class="score-ext-label lab">🌐 сайты</div><div class="score-ext-values">'+externalRatingsHtml(work,false)+'</div>':'')+'</div>'+
- '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
+ '<div><div class="layers">'+beforeHtml+after+'</div><div class="links">'+externalTitleLinks(work)+'</div></div></article>';
 }
 async function ensureCards(){
  if(document.querySelector('.card')){
@@ -1331,9 +1341,9 @@ initMovieMap();
    const primary=placements[0]||{};
    const cats=[...new Set(placements.map(p=>p.category))];
    const external=work.external||{};
-   const kpDescription=String(external.kp_description||external.kp_short_description||external.overview||'').trim();
+   const kpDescription=String(external.kp_description||external.kp_short_description||'').trim();
    const tmdbDescription=String(external.tmdb_overview||external.tmdb_description||'').trim();
-   const overview=kpDescription||work.overview||primary.before||'';
+   const overview=kpDescription||external.overview||work.overview||primary.before||'';
    const poster=work.poster||external.poster||'';
    title.textContent=work.title;
    meta.textContent=String(work.year)+' · '+work.media_type+' · '+(work.state==='seen'?'просмотрено':'не просмотрено');
@@ -1349,11 +1359,10 @@ initMovieMap();
    const hasReviewPackage=!!movieReviewPackageText(work);
    const copyTools='<div class="review-copy-tools">'+reviewMenu+'<button type="button" class="copy-package" data-copy-package="'+esc(work.id)+'" title="Копировать все отзывы этого фильма: Анна, GPT Анна, Егор, GPT Егор, общий GPT"'+(hasReviewPackage?'':' disabled')+'>🗂 Весь пакет фильма</button></div>';
    const reviewSection='<div class="detail-section"><div class="section-title-row review-section-title"><h3>Отзывы и копирование</h3>'+copyTools+'</div>'+((hasHumanReview(work,'egor')||hasHumanReview(work,'anna'))?reviewBlock(work,'anna')+reviewBlock(work,'egor'):'<div class="detail-empty-review">Пока нет полных человеческих отзывов для этого фильма.</div>')+'</div>';
-   const exactImdb=external.imdb_id?'https://www.imdb.com/title/'+encodeURIComponent(external.imdb_id)+'/':work.links.imdb;
-   const exactKp=external.kp_id?'https://www.kinopoisk.ru/film/'+encodeURIComponent(external.kp_id)+'/':work.links.kinopoisk;
-   const exactTmdb=external.tmdb_id?'https://www.themoviedb.org/'+(work.media_type==='сериал'?'tv':'movie')+'/'+encodeURIComponent(external.tmdb_id):'';
-   const externalLinks='<a target="_blank" href="'+esc(exactImdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(exactKp)+'">Кинопоиск ↗</a>'+(exactTmdb?'<a target="_blank" href="'+esc(exactTmdb)+'">TMDB ↗</a>':'');
-   const kpBlock=overview?'<div class="detail-section"><div class="section-title-row"><h3>'+(kpDescription?'Описание · Кинопоиск':'Описание / контекст')+'</h3>'+copyButton(overview,'Копировать описание Кинопоиска')+'</div><div class="detail-text">'+esc(overview)+'</div>'+(external.source?'<div class="detail-source">Данные: '+esc(external.source)+'</div>':'')+'</div>':'';
+   const externalLinks=externalTitleLinks(work);
+   const overviewLabel=kpDescription?'Описание · Кинопоиск':external.overview_source?'Описание · '+external.overview_source:'Описание / контекст';
+   const kpSourceLink=external.overview_source&&external.kp_id?'<a target="_blank" rel="noopener noreferrer" href="https://www.kinopoisk.ru/film/'+encodeURIComponent(external.kp_id)+'/">Описание на Кинопоиске ↗</a>':'';
+   const kpBlock=overview?'<div class="detail-section"><div class="section-title-row"><h3>'+esc(overviewLabel)+'</h3>'+copyButton(overview,'Копировать описание')+'</div><div class="detail-text">'+esc(overview)+'</div>'+(kpSourceLink?'<div class="detail-links">'+kpSourceLink+'</div>':external.source?'<div class="detail-source">Данные: '+esc(external.source)+'</div>':'')+'</div>':'';
    const tmdbBlock=tmdbDescription?'<div class="detail-section"><div class="section-title-row"><h3>Описание · TMDB</h3>'+copyButton(tmdbDescription,'Копировать описание TMDB')+'</div><div class="detail-text">'+esc(tmdbDescription)+'</div></div>':'';
    body.innerHTML='<div class="detail-hero">'+posterHtml+'<div><div class="detail-section"><div class="section-title-row"><h3>В списках</h3></div>'+catHtml+'</div>'+recommendationHistoryHtml(work)+kpBlock+tmdbBlock+'<div class="detail-section"><div class="section-title-row"><h3>Рейтинги агрегаторов</h3></div>'+externalRatingsHtml(work,true)+'</div><div class="detail-section"><div class="section-title-row"><h3>Наши оценки</h3></div>'+scoreBlock(primary)+'</div><div class="detail-section detail-links">'+externalLinks+'</div></div></div>'+
      (soloBefore||'')+placementNotes+
