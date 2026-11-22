@@ -1,18 +1,35 @@
-name: TMDB enrichment probe
+name: Enrich Movie Map from TMDB
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [data/tmdb-enrichment]
     paths:
       - 'scripts/enrich-tmdb.js'
       - '.github/workflows/tmdb-enrich.yml'
 permissions:
-  contents: read
+  contents: write
 jobs:
-  probe:
+  enrich:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: data/tmdb-enrichment
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/enrich-tmdb.js
+      - name: Enrich movies.json
+        env:
+          TMDB_BEARER_TOKEN: ${{ secrets.TMDB_BEARER_TOKEN }}
+        run: node scripts/enrich-tmdb.js
+      - name: Commit enrichment
+        run: |
+          if git diff --quiet -- movies.json; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "movie-map-bot"
+          git config user.email "movie-map-bot@users.noreply.github.com"
+          git add movies.json
+          git commit -m "Enrich Movie Map with TMDB metadata"
+          git push origin HEAD:data/tmdb-enrichment
