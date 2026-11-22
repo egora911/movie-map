@@ -40,8 +40,7 @@
 .review-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-top:1px solid #2d333c}
 .review-nav button{cursor:pointer;min-width:42px}.review-position{font-size:9.5px;color:#89919d;text-align:center}
 .review-single .review-tabs,.review-single .review-nav{display:none}
-.review-kind{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px 0}.review-kind-label{font-size:9.5px;color:#89919d}.review-kind-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.review-kind-actions button{font-size:9.5px;padding:4px 8px;cursor:pointer}.review-kind-actions button.primary{border-color:#5e748f;color:#cfe6ff}.review-body.ai{color:#dcecff;background:linear-gradient(180deg,rgba(49,82,119,.12),rgba(49,82,119,0))}.post.has-ai{cursor:pointer}.post.has-ai:hover{color:#fff}.post-ai-mark{display:inline-block;margin-left:5px;color:#7fc4ff;font-size:9px;vertical-align:1px}
-@media(max-width:560px){.review-overlay{align-items:flex-end;padding:0}.review-shell{width:100%;max-height:80dvh;border-radius:18px 18px 0 0;border-left:0;border-right:0;border-bottom:0}.review-head{padding:12px 14px 10px}.review-body{font-size:13.5px;line-height:1.52;padding:14px 16px 20px;min-height:180px}.review-nav{padding:9px 12px 11px}.review-kind{align-items:flex-start}.review-kind-actions{max-width:72%}}
+@media(max-width:560px){.review-overlay{align-items:flex-end;padding:0}.review-shell{width:100%;max-height:80dvh;border-radius:18px 18px 0 0;border-left:0;border-right:0;border-bottom:0}.review-head{padding:12px 14px 10px}.review-body{font-size:13.5px;line-height:1.52;padding:14px 16px 20px;min-height:180px}.review-nav{padding:9px 12px 11px}}
 
 </style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><h1>🎬 Лабиринт кино - Аня и Егор</h1><div class="summary" id="summary"></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для него</button><button data-k="cat" data-v="her">👩 Для неё</button></div><div class="filters"><button class="reset" id="reset" title="Сбросить все фильтры" aria-label="Сбросить все фильтры">↺</button><button data-k="type" data-v="фильм">🎬 Фильм</button><button data-k="type" data-v="сериал">📺 Сериал</button><button data-k="state" data-v="seen"><span class="state-mark seen" title="Просмотрено">✓</span> Просмотрено</button><button data-k="state" data-v="todo"><span class="state-mark todo" title="Не просмотрено">○</span> Не просмотрено</button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button data-k="tag" data-v="россия">🇷🇺 Россия</button><button data-k="stars" data-v="3">⭐⭐⭐ Топ</button><button data-k="stars" data-v="2">⭐⭐</button><button data-k="stars" data-v="1">⭐</button><button data-k="stars" data-v="0" title="Без звёзд" aria-label="Без звёзд"><span class="star-none">☆</span></button></div></div><section data-sec="films"><h2>❤️ Фильмы для двоих <span style="color:#777;font-weight:400">(20)</span></h2></section><section data-sec="series"><h2>📺 Сериалы для двоих <span style="color:#777;font-weight:400">(19)</span></h2></section><section data-sec="weird"><h2>🌀 Странное кино / сериал для двоих <span style="color:#777;font-weight:400">(15)</span></h2></section><section data-sec="me"><h2>👨 Кино / сериал для меня <span style="color:#777;font-weight:400">(16)</span></h2></section><section data-sec="her"><h2>👩 Кино / сериал для неё <span style="color:#777;font-weight:400">(15)</span></h2></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
@@ -68,7 +67,6 @@
       <button id="reviewClose" class="review-close" type="button" aria-label="Закрыть отзыв">✕</button>
     </div>
     <div id="reviewTabs" class="review-tabs"></div>
-    <div class="review-kind"><div id="reviewKindLabel" class="review-kind-label"></div><div id="reviewKindActions" class="review-kind-actions"></div></div>
     <div id="reviewBody" class="review-body"></div>
     <div class="review-nav">
       <button id="reviewPrev" type="button" aria-label="Предыдущий отзыв">‹</button>
@@ -167,19 +165,6 @@ function esc(v){
    .replace(/'/g,'&#39;');
 }
 
-function reviewDataAttrs(work,p){
- const actual=p.actual||{};
- const reviews=work.reviews||{};
- const ai=work.ai_comments||{};
- return ' data-title="'+esc(work.title)+'"'+
-   ' data-score-me="'+esc(actual.me==null?'—':actual.me)+'"'+
-   ' data-score-wife="'+esc(actual.wife==null?'—':actual.wife)+'"'+
-   ' data-review-me="'+esc(typeof reviews.me==='string'?reviews.me:'')+'"'+
-   ' data-review-wife="'+esc(typeof reviews.wife==='string'?reviews.wife:'')+'"'+
-   ' data-ai-me="'+esc(typeof ai.me==='string'?ai.me:'')+'"'+
-   ' data-ai-wife="'+esc(typeof ai.wife==='string'?ai.wife:'')+'"'+
-   ' data-ai-together="'+esc(typeof ai.together==='string'?ai.together:'')+'"';
-}
 function factCellHtml(work,p,person){
  const actual=p.actual||{};
  const score=actual[person]==null?'—':actual[person];
@@ -187,15 +172,14 @@ function factCellHtml(work,p,person){
  const review=typeof reviews[person]==='string'?reviews[person].trim():'';
  if(!review) return '<div class="c fact">'+esc(score)+'</div>';
  const who=person==='me'?'Егора':'Ани';
- return '<div class="c fact"><button type="button" class="fact-review-trigger" data-person="'+person+'"'+reviewDataAttrs(work,p)+' aria-label="Открыть полный отзыв '+who+'">'+esc(score)+'<span class="review-dot" aria-hidden="true"></span></button></div>';
+ return '<div class="c fact"><button type="button" class="fact-review-trigger" data-person="'+person+'" data-title="'+esc(work.title)+'" data-score-me="'+esc(actual.me==null?'—':actual.me)+'" data-score-wife="'+esc(actual.wife==null?'—':actual.wife)+'" data-review-me="'+esc(typeof reviews.me==='string'?reviews.me:'')+'" data-review-wife="'+esc(typeof reviews.wife==='string'?reviews.wife:'')+'" aria-label="Открыть полный отзыв '+who+'">'+esc(score)+'<span class="review-dot" aria-hidden="true"></span></button></div>';
 }
 
 function cardHtml(work,p){
  const stars='⭐'.repeat(Number(p.stars||0));
  const status=work.state==='seen'?'<span class="state-mark seen" title="Просмотрено">✓</span>':'<span class="state-mark todo" title="Не просмотрено">○</span>';
  const tags=Array.isArray(p.tags)?p.tags.join(' '):(p.tags||'');
- const aiTogether=work.ai_comments&&typeof work.ai_comments.together==='string'&&work.ai_comments.together.trim();
- const after=p.after?'<div class="post'+(aiTogether?' has-ai':'')+'"'+(aiTogether?' role="button" tabindex="0" data-after-ai="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(aiTogether?'<span class="post-ai-mark">🤖 итог</span>':'')+'</div>':'';
+ const after=p.after?'<div class="post"><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'">'+
  '<div class="left"><div class="row1"><span class="n">'+String(p.order).padStart(2,'0')+'</span><span class="title">'+esc(work.title)+'</span><span class="badge"><span class="stars">'+stars+'</span>'+status+'</span><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div></div>'+
  '<div class="score"><div></div><div class="c lab">Я</div><div class="c lab">Жена</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+'</div>'+
@@ -392,8 +376,6 @@ function bindUi(){
   const title=document.getElementById('reviewTitle');
   const sub=document.getElementById('reviewSub');
   const tabs=document.getElementById('reviewTabs');
-  const kindLabel=document.getElementById('reviewKindLabel');
-  const kindActions=document.getElementById('reviewKindActions');
   const body=document.getElementById('reviewBody');
   const closeButton=document.getElementById('reviewClose');
   const prevButton=document.getElementById('reviewPrev');
@@ -403,83 +385,38 @@ function bindUi(){
 
   function personName(person){return person==='me'?'Егор':'Аня'}
   function personScore(person){if(!model)return'—';return person==='me'?(model.scoreMe||'—'):(model.scoreWife||'—')}
-  function reviewFor(person){return !model?'':(person==='me'?model.reviewMe:model.reviewWife)}
-  function aiFor(person){return !model?'':(person==='me'?model.aiMe:model.aiWife)}
-  function availablePeople(mode){
+  function availablePeople(){
     if(!model)return[];
     const out=[];
-    if(mode==='ai'){
-      if(model.aiMe)out.push('me');
-      if(model.aiWife)out.push('wife');
-    }else{
-      if(model.reviewMe)out.push('me');
-      if(model.reviewWife)out.push('wife');
-    }
+    if(model.reviewMe)out.push('me');
+    if(model.reviewWife)out.push('wife');
     return out;
   }
   function render(){
-    if(!model)return;
-    if(model.mode==='together'){
-      body.textContent=model.aiTogether;
-      body.classList.add('ai');
-      title.textContent=model.title;
-      sub.textContent='Итоговый комментарий ИИ · оба отзыва';
-      tabs.innerHTML='';
-      kindLabel.textContent='🤖 Итог ИИ';
-      kindActions.innerHTML=[
-        model.reviewMe?'<button type="button" data-open-mode="review" data-open-person="me">Егор</button>':'',
-        model.reviewWife?'<button type="button" data-open-mode="review" data-open-person="wife">Аня</button>':''
-      ].join('');
-      shell.classList.add('review-single');
-      position.textContent='';
-      return;
-    }
-    const people=availablePeople(model.mode);
-    if(!people.length){
-      if(model.aiTogether){model.mode='together';render();}
-      return;
-    }
+    const people=availablePeople();
+    if(!people.length)return;
     if(!people.includes(model.person))model.person=people[0];
-    const idx=people.indexOf(model.person);
-    const isAi=model.mode==='ai';
-    body.textContent=isAi?aiFor(model.person):reviewFor(model.person);
-    body.classList.toggle('ai',isAi);
+    const currentIndex=people.indexOf(model.person);
+    body.textContent=model.person==='me'?model.reviewMe:model.reviewWife;
     title.textContent=model.title;
     sub.textContent=personName(model.person)+' · оценка '+personScore(model.person);
     tabs.innerHTML=people.map(function(person){
       const active=person===model.person?' active':'';
       return '<button type="button" class="'+active+'" data-review-person="'+person+'">'+personName(person)+' · '+personScore(person)+'</button>';
     }).join('');
-    kindLabel.textContent=isAi?'🤖 Комментарий ИИ':'💬 Дословный отзыв';
-    const actions=[];
-    if(isAi && reviewFor(model.person)) actions.push('<button type="button" data-open-mode="review">← Отзыв</button>');
-    if(!isAi && aiFor(model.person)) actions.push('<button type="button" class="primary" data-open-mode="ai">🤖 Комментарий ИИ</button>');
-    if(model.aiTogether) actions.push('<button type="button" class="primary" data-open-mode="together">🤖 Итог ИИ</button>');
-    kindActions.innerHTML=actions.join('');
     shell.classList.toggle('review-single',people.length<2);
-    position.textContent=people.length>1?(idx+1)+' из '+people.length:'';
+    position.textContent=people.length>1?(currentIndex+1)+' из '+people.length:'';
   }
-  function modelFrom(el){
-    return {
-      title:el.dataset.title||'Полный отзыв',
-      person:el.dataset.person||'me',
-      mode:'review',
-      scoreMe:el.dataset.scoreMe||'—',
-      scoreWife:el.dataset.scoreWife||'—',
-      reviewMe:(el.dataset.reviewMe||'').trim(),
-      reviewWife:(el.dataset.reviewWife||'').trim(),
-      aiMe:(el.dataset.aiMe||'').trim(),
-      aiWife:(el.dataset.aiWife||'').trim(),
-      aiTogether:(el.dataset.aiTogether||'').trim()
+  function openFrom(trigger){
+    model={
+      title:trigger.dataset.title||'Полный отзыв',
+      person:trigger.dataset.person||'me',
+      scoreMe:trigger.dataset.scoreMe||'—',
+      scoreWife:trigger.dataset.scoreWife||'—',
+      reviewMe:(trigger.dataset.reviewMe||'').trim(),
+      reviewWife:(trigger.dataset.reviewWife||'').trim()
     };
-  }
-  function openFrom(el,mode){
-    model=modelFrom(el);
-    if(mode) model.mode=mode;
-    if(model.mode==='review'&&!reviewFor(model.person)){
-      const p=availablePeople('review'); if(p.length)model.person=p[0];
-    }
-    if(model.mode==='together'&&!model.aiTogether)return;
+    if(!availablePeople().length)return;
     render();
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden','false');
@@ -491,11 +428,9 @@ function bindUi(){
     overlay.setAttribute('aria-hidden','true');
     document.body.style.overflow='';
     model=null;
-    body.classList.remove('ai');
   }
   function move(step){
-    if(!model||model.mode==='together')return;
-    const people=availablePeople(model.mode);
+    const people=availablePeople();
     if(people.length<2)return;
     const index=people.indexOf(model.person);
     model.person=people[(index+step+people.length)%people.length];
@@ -503,31 +438,20 @@ function bindUi(){
   }
   document.addEventListener('click',function(event){
     const trigger=event.target.closest('.fact-review-trigger');
-    if(trigger){openFrom(trigger,'review');return}
-    const after=event.target.closest('[data-after-ai="1"]');
-    if(after){openFrom(after,'together');return}
+    if(trigger){openFrom(trigger);return}
     const tab=event.target.closest('[data-review-person]');
-    if(tab&&model){model.person=tab.dataset.reviewPerson;render();return}
-    const action=event.target.closest('[data-open-mode]');
-    if(action&&model){
-      const mode=action.dataset.openMode;
-      if(action.dataset.openPerson)model.person=action.dataset.openPerson;
-      model.mode=mode;
-      render();
-    }
-  });
-  document.addEventListener('keydown',function(event){
-    const after=event.target&&event.target.closest?event.target.closest('[data-after-ai="1"]'):null;
-    if(after&&(event.key==='Enter'||event.key===' ')){event.preventDefault();openFrom(after,'together');return}
-    if(!overlay.classList.contains('open'))return;
-    if(event.key==='Escape')close();
-    if(event.key==='ArrowLeft')move(-1);
-    if(event.key==='ArrowRight')move(1);
+    if(tab&&model){model.person=tab.dataset.reviewPerson;render()}
   });
   closeButton.addEventListener('click',close);
   prevButton.addEventListener('click',function(){move(-1)});
   nextButton.addEventListener('click',function(){move(1)});
   overlay.addEventListener('click',function(event){if(event.target===overlay)close()});
+  document.addEventListener('keydown',function(event){
+    if(!overlay.classList.contains('open'))return;
+    if(event.key==='Escape')close();
+    if(event.key==='ArrowLeft')move(-1);
+    if(event.key==='ArrowRight')move(1);
+  });
   body.addEventListener('touchstart',function(event){
     const t=event.changedTouches&&event.changedTouches[0];if(!t)return;
     touchStartX=t.clientX;touchStartY=t.clientY;
