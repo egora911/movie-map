@@ -3,16 +3,16 @@
   "source": "movie_map_online",
   "description": "Structured Movie Map data extracted from the canonical v15 HTML. A work is unique by id; category-specific presentation data is preserved in placements.",
   "counts": {
-    "unique_works": 83,
-    "rendered_cards": 121,
+    "unique_works": 97,
+    "rendered_cards": 149,
     "seen": 15,
-    "todo": 68
+    "todo": 82
   },
   "categories": [
     {
       "id": "films",
       "label": "Фильмы для двоих",
-      "expected_cards": 37
+      "expected_cards": 50
     },
     {
       "id": "series",
@@ -22,17 +22,17 @@
     {
       "id": "weird",
       "label": "Странное кино / сериал для двоих",
-      "expected_cards": 21
+      "expected_cards": 23
     },
     {
       "id": "me",
       "label": "Кино / сериал для Егора",
-      "expected_cards": 21
+      "expected_cards": 30
     },
     {
       "id": "her",
       "label": "Кино / сериал для Анны",
-      "expected_cards": 23
+      "expected_cards": 27
     }
   ],
   "works": [
@@ -7664,6 +7664,1078 @@
             "anna": "—"
           },
           "before": "Модельная пара оказывается среди сверхбогатых пассажиров яхты, где социальные роли вскоре переворачиваются. Чёрная сатира в духе White Lotus, но грубее, длиннее и с риском слишком очевидной авторской позиции.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "f330066e621a",
+      "title": "The Beloved / Любимый",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Beloved",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Beloved"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 122,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.2",
+            "anna": "9.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Родриго Сорогойен: знаменитый режиссёр приглашает взрослую дочь-актрису в свой новый фильм; творческое сближение вскрывает семейные обиды и власть. Почти идеальная пара к Sentimental Value: искусство, семейный конфликт и реальная цена отцовского гения.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 123,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.2",
+            "anna": "9.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Родриго Сорогойен: знаменитый режиссёр приглашает взрослую дочь-актрису в свой новый фильм; творческое сближение вскрывает семейные обиды и власть. Почти идеальная пара к Sentimental Value: искусство, семейный конфликт и реальная цена отцовского гения.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "b03ffad521a8",
+      "title": "Woman Unknown / Неизвестная женщина",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Woman%20Unknown",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Woman%20Unknown"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 124,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Победитель Венеции-2026: молодая служанка выходит замуж за богатого вдовца, но скрытая связь военного времени угрожает новому статусу. Классовая среда, сексуальный стыд и общественное осуждение в духе Disclaimer; риск — холодная драматургия.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 125,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Победитель Венеции-2026: молодая служанка выходит замуж за богатого вдовца, но скрытая связь военного времени угрожает новому статусу. Классовая среда, сексуальный стыд и общественное осуждение в духе Disclaimer; риск — холодная драматургия.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "874169ee3084",
+      "title": "Fatherland / Родина",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Fatherland",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fatherland"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 126,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Павел Павликовский: Томас Манн и дочь Эрика возвращаются в послевоенную Германию и едут через расколотую страну. Память, вина, семья и авторская лаконичность; всего около 82 минут, приоритет важного кино независимо от развлечения.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 127,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Павел Павликовский: Томас Манн и дочь Эрика возвращаются в послевоенную Германию и едут через расколотую страну. Память, вина, семья и авторская лаконичность; всего около 82 минут, приоритет важного кино независимо от развлечения.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "03316f983fa8",
+      "title": "Minotaur / Минотавр",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Minotaur",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Minotaur"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 128,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "7.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Андрей Звягинцев: обеспеченный руководитель пытается удержать привычный порядок жизни в России 2022 года, но внешний кризис и личное давление доводят всё до насилия. Отчасти тот же вопрос о хрупкости благополучия, что тебя зацепил в Disclaimer; тяжёлое кино.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 129,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "7.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Андрей Звягинцев: обеспеченный руководитель пытается удержать привычный порядок жизни в России 2022 года, но внешний кризис и личное давление доводят всё до насилия. Отчасти тот же вопрос о хрупкости благополучия, что тебя зацепил в Disclaimer; тяжёлое кино.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "2222942a9508",
+      "title": "All of a Sudden / Внезапно",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=All%20of%20a%20Sudden",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=All%20of%20a%20Sudden"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 130,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "8.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Рюсукэ Хамагути: директор дома ухода и японская театральная режиссёрка, тяжело больная, сближаются через споры об уважении к людям, работе и конечности жизни. Медленное диалоговое кино на 196 минут; ценность скорее в живом наблюдении, чем в плот-твистах.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 131,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "8.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Рюсукэ Хамагути: директор дома ухода и японская театральная режиссёрка, тяжело больная, сближаются через споры об уважении к людям, работе и конечности жизни. Медленное диалоговое кино на 196 минут; ценность скорее в живом наблюдении, чем в плот-твистах.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "deffb55df451",
+      "title": "Fjord / Фьорд",
+      "year": 2026,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Fjord",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Fjord"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 132,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "8.4",
+            "anna": "7.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Кристиан Мунджиу, Золотая пальмовая ветвь-2026: конфликт двух семей в Норвегии перерастает в спор о детях, традициях и праве общества выносить моральный приговор. Кино для разговора даже при не самой высокой личной оценке; риск — заметная авторская проблематика.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 133,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "8.4",
+            "anna": "7.7"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Кристиан Мунджиу, Золотая пальмовая ветвь-2026: конфликт двух семей в Норвегии перерастает в спор о детях, традициях и праве общества выносить моральный приговор. Кино для разговора даже при не самой высокой личной оценке; риск — заметная авторская проблематика.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "b56512adffbc",
+      "title": "La Grazia / Благодать",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=La%20Grazia",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=La%20Grazia"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 134,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.4",
+            "anna": "8.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Новый Паоло Соррентино и Тони Сервилло: президент Италии перед окончанием срока решает непростые этические и личные вопросы, вспоминая жену и отношения с дочерью. После La Grande Bellezza и Sentimental Value — обязательная встреча с авторской формой, паузой, красотой и человечностью.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 135,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.4",
+            "anna": "8.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Новый Паоло Соррентино и Тони Сервилло: президент Италии перед окончанием срока решает непростые этические и личные вопросы, вспоминая жену и отношения с дочерью. После La Grande Bellezza и Sentimental Value — обязательная встреча с авторской формой, паузой, красотой и человечностью.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "c0dce5a211bf",
+      "title": "It Was Just an Accident / Простая случайность",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=It%20Was%20Just%20an%20Accident",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=It%20Was%20Just%20an%20Accident"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 136,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Джафар Панахи: бывшие узники подозревают случайного мужчину в том, что он был их мучителем, и пытаются решить, допустима ли месть. Чёрная комедия, движение моральной оптики и вопросы без удобного ответа — важное кино для твоего критерия 'автор не судья'.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 137,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.2"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Джафар Панахи: бывшие узники подозревают случайного мужчину в том, что он был их мучителем, и пытаются решить, допустима ли месть. Чёрная комедия, движение моральной оптики и вопросы без удобного ответа — важное кино для твоего критерия 'автор не судья'.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "16ee0d461eca",
+      "title": "The Secret Agent / Секретный агент",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=The%20Secret%20Agent",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=The%20Secret%20Agent"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 138,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Клебер Мендонса Филью: Бразилия 1977 года, человек скрывается от преследования среди карнавала, полиции и повседневной коррупции. Очень кинематографичная смесь триллера, чёрного юмора, исторической памяти и живой среды; длительность 161 минута.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 139,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.1",
+            "anna": "8.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Клебер Мендонса Филью: Бразилия 1977 года, человек скрывается от преследования среди карнавала, полиции и повседневной коррупции. Очень кинематографичная смесь триллера, чёрного юмора, исторической памяти и живой среды; длительность 161 минута.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "656bc2c30677",
+      "title": "Resurrection / Воскрешение",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Resurrection",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Resurrection"
+      },
+      "placements": [
+        {
+          "category": "weird",
+          "order": 140,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "6.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Би Гань: мир, где люди отказались от снов ради бессмертия; путешествие по эпохам и стилям кинематографа через чужие видения. Возможно, важнейший формальный эксперимент подборки: имеет смысл увидеть даже если оценка окажется невысокой; 163 минуты, для Анны высокий риск потери эмоциональной нити.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 141,
+          "stars": 3,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "9.0",
+            "anna": "6.9"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Би Гань: мир, где люди отказались от снов ради бессмертия; путешествие по эпохам и стилям кинематографа через чужие видения. Возможно, важнейший формальный эксперимент подборки: имеет смысл увидеть даже если оценка окажется невысокой; 163 минуты, для Анны высокий риск потери эмоциональной нити.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "2f16e62ace95",
+      "title": "Parthenope / Партенопа",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Parthenope",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Parthenope"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 142,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "8.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Паоло Соррентино возвращается в Неаполь: жизнь молодой женщины складывается из красоты, желания, встреч, времени и самой ткани города. Естественный наследник атмосферы La Grande Bellezza, но критики спорят, достаточно ли глубины под визуальным великолепием. Смотреть как авторский опыт, не как гарантию 9/10.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 143,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "8.8",
+            "anna": "8.0"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Паоло Соррентино возвращается в Неаполь: жизнь молодой женщины складывается из красоты, желания, встреч, времени и самой ткани города. Естественный наследник атмосферы La Grande Bellezza, но критики спорят, достаточно ли глубины под визуальным великолепием. Смотреть как авторский опыт, не как гарантию 9/10.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "05bb2668d822",
+      "title": "A Different Man / Другой человек",
+      "year": 2024,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=A%20Different%20Man",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=A%20Different%20Man"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 144,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Актёр меняет лицо после медицинской процедуры и обнаруживает, что новая внешность не спасает его от внутренней ловушки. Чёрная психологическая сатира с Себастианом Стэном: рядом с The Substance, но с другим соотношением телесности, самоощущения и чужого взгляда.",
+          "after": null
+        },
+        {
+          "category": "weird",
+          "order": 145,
+          "stars": 2,
+          "tags": [
+            "странное"
+          ],
+          "prediction": {
+            "egor": "8.6",
+            "anna": "8.6"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Актёр меняет лицо после медицинской процедуры и обнаруживает, что новая внешность не спасает его от внутренней ловушки. Чёрная психологическая сатира с Себастианом Стэном: рядом с The Substance, но с другим соотношением телесности, самоощущения и чужого взгляда.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "d04ccc3b06eb",
+      "title": "Hamnet / Хамнет",
+      "year": 2025,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=Hamnet",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=Hamnet"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 146,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.4",
+            "anna": "9.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Хлоя Чжао: личная трагедия семьи Шекспира и вопрос, как горе превращается в художественное произведение. Сильная актёрская игра, природная красота и переживание утраты; для Анны вероятен очень глубокий эмоциональный вход, для Егора риск чрезмерной слезной драматургии.",
+          "after": null
+        },
+        {
+          "category": "her",
+          "order": 147,
+          "stars": 2,
+          "tags": [],
+          "prediction": {
+            "egor": "8.4",
+            "anna": "9.1"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Хлоя Чжао: личная трагедия семьи Шекспира и вопрос, как горе превращается в художественное произведение. Сильная актёрская игра, природная красота и переживание утраты; для Анны вероятен очень глубокий эмоциональный вход, для Егора риск чрезмерной слезной драматургии.",
+          "after": null
+        }
+      ],
+      "origin": {
+        "type": "gpt_recommendation",
+        "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
+      },
+      "recommendations": [
+        {
+          "batch_id": "rec_2026_11_deep_01",
+          "event": "added",
+          "source": "30_ci_chat"
+        }
+      ]
+    },
+    {
+      "id": "ce303d159458",
+      "title": "La Chimera / Химера",
+      "year": 2023,
+      "media_type": "фильм",
+      "state": "todo",
+      "links": {
+        "imdb": "https://www.imdb.com/find/?q=La%20Chimera",
+        "kinopoisk": "https://www.kinopoisk.ru/index.php?kp_query=La%20Chimera"
+      },
+      "placements": [
+        {
+          "category": "films",
+          "order": 148,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.2",
+            "anna": "8.4"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Аличе Рорвахер: тосканские расхитители этрусских гробниц, потерянная любовь, фольклор, магия и абсурд повседневности. Джош О’Коннор, образы на границе живого и мёртвого — очень перспективно после La Grande Bellezza: здесь кинематограф важнее скорости сюжета.",
+          "after": null
+        },
+        {
+          "category": "me",
+          "order": 149,
+          "stars": 3,
+          "tags": [],
+          "prediction": {
+            "egor": "9.2",
+            "anna": "8.4"
+          },
+          "actual": {
+            "egor": "—",
+            "anna": "—"
+          },
+          "before": "Аличе Рорвахер: тосканские расхитители этрусских гробниц, потерянная любовь, фольклор, магия и абсурд повседневности. Джош О’Коннор, образы на границе живого и мёртвого — очень перспективно после La Grande Bellezza: здесь кинематограф важнее скорости сюжета.",
           "after": null
         }
       ],
