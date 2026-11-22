@@ -26,12 +26,12 @@
     },
     {
       "id": "me",
-      "label": "Для Егор",
+      "label": "для Егор",
       "expected_cards": 16
     },
     {
       "id": "her",
-      "label": "Для Анна",
+      "label": "для Анна",
       "expected_cards": 15
     }
   ],
