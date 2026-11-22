@@ -91,7 +91,20 @@
  .titlebar .header-actions>button{font-size:8.3px;padding:4px 5px}
  .titlebar #saveStatus{display:none}
 }
-</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><section data-sec="films"><div class="section-head"><h2>❤️ Фильмы для двоих <span class="section-count" data-section-count>(20/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="series"><div class="section-head"><h2>📺 Сериалы для двоих <span class="section-count" data-section-count>(19/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="weird"><div class="section-head"><h2>🌀 Странное кино / сериал для двоих <span class="section-count" data-section-count>(15/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="me"><div class="section-head"><h2>👨 Кино / сериал для Егора <span class="section-count" data-section-count>(16/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="her"><div class="section-head"><h2>👩 Кино / сериал для Анны <span class="section-count" data-section-count>(15/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div class="section-head"><h2>⧉ Все фильмы / сериалы с задвоением <span id="duplicateCount" class="section-count">(0/85)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+
+/* Compact titles and guaranteed in-heading sort controls */
+.section-head{display:block!important;max-width:100%}
+.section-head h2{display:block!important;margin:16px 0 5px!important;flex:none!important;line-height:1.33;min-width:0}
+.section-head h2 .section-sort{display:inline-flex!important;vertical-align:middle!important;margin:0 0 0 6px!important;align-items:center!important;font-size:9.5px!important;white-space:nowrap!important;line-height:1.15!important}
+.section-head .section-count{white-space:nowrap}
+.card .title{font-size:12.5px!important;line-height:1.12!important;font-weight:630!important;letter-spacing:-.006em}
+.card .row1{align-items:center}
+.card-origin{display:none;color:#9ca7b4;font-size:9.5px;font-weight:500;margin-left:6px;white-space:normal}
+#allRegistry .card-origin{display:inline}
+#allRegistry .card{border-bottom:1px solid #292d34}
+#allRegistry .card .meta{line-height:1.23}
+@media(max-width:560px){.section-head h2 .section-sort{font-size:8.7px!important;margin-left:5px!important}.card .title{font-size:12px!important;line-height:1.12!important}}
+</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"><div class="section-head"><h2>🎞 Все фильмы и сериалы <span class="section-count" data-section-count>(85/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div></section><section data-sec="films"><div class="section-head"><h2>❤️ Фильмы для двоих <span class="section-count" data-section-count>(20/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div></section><section data-sec="series"><div class="section-head"><h2>📺 Сериалы для двоих <span class="section-count" data-section-count>(19/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div></section><section data-sec="weird"><div class="section-head"><h2>🌀 Странное кино / сериал для двоих <span class="section-count" data-section-count>(15/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div></section><section data-sec="me"><div class="section-head"><h2>👨 Кино / сериал для Егора <span class="section-count" data-section-count>(16/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div></section><section data-sec="her"><div class="section-head"><h2>👩 Кино / сериал для Анны <span class="section-count" data-section-count>(15/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div class="section-head"><h2>⧉ Все фильмы / сериалы с задвоением <span id="duplicateCount" class="section-count">(0/85)</span> <button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></h2></div><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
   <div class="agent-shell" role="dialog" aria-modal="true" aria-label="Movie Map Agent">
@@ -376,6 +389,8 @@ function cardHtml(work,p){
  const status=work.state==='seen'?'<span class="state-mark seen" title="Просмотрено">✓</span>':'<span class="state-mark todo" title="Не просмотрено">○</span>';
  const tags=Array.isArray(p.tags)?p.tags.join(' '):(p.tags||'');
  const isDuplicate=(work.placements||[]).length>1;
+ const thisCategory=CATEGORY_META[p.category]||{icon:'•',label:p.category};
+ const originLabel='<span class="card-origin" title="Раздел: '+esc(thisCategory.label)+'">'+esc(thisCategory.icon)+' '+esc(thisCategory.label)+'</span>';
  const others=[...new Set((work.placements||[]).map(x=>x.category))].filter(cat=>cat!==p.category);
  const cross=others.length?'<div class="crosslists"><span>↔ ещё:</span>'+others.map(cat=>categoryChip(cat,p.category)).join('')+'</div>':'';
  const jointAi=work.ai_comments&&typeof work.ai_comments.together==='string'&&work.ai_comments.together.trim();
@@ -383,7 +398,7 @@ function cardHtml(work,p){
  const beforeHtml='<div class="pre"><span class="k">💡 ДО</span> · '+esc(before)+copyButton(before,'Копировать ДО')+'</div>';
  const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+copyButton(p.after,'Копировать ПОСЛЕ')+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+(((work.reviews&&work.reviews.me)||(work.reviews&&work.reviews.wife))?'1':'0')+'" data-search="'+esc(norm(work.title))+'">'+
- '<div class="left"><div class="row1"><span class="n">'+String(p.order).padStart(2,'0')+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span><span class="badge"><span class="stars">'+stars+'</span>'+status+'</span><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+externalRatingsHtml(work,false)+cross+'</div>'+
+ '<div class="left"><div class="row1"><span class="n">'+String(p.order).padStart(2,'0')+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span><span class="badge"><span class="stars">'+stars+'</span>'+status+'</span><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+originLabel+'</div>'+externalRatingsHtml(work,false)+cross+'</div>'+
  '<div class="score"><div></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+'</div>'+
  '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
 }
@@ -426,22 +441,41 @@ function cardPasses(c){
    (st.dupMode==='all'||(st.dupMode==='exclude'&&!isDup)||(st.dupMode==='only'&&isDup))&&
    (!st.q||c.dataset.search.includes(norm(st.q)));
 }
+function originalCardRank(c){
+ const sectionOrder=['films','series','weird','me','her'];
+ const catIndex=sectionOrder.indexOf(c.dataset.cat);
+ return (catIndex<0?99:catIndex)*10000+Number(c.dataset.order||0);
+}
 function cardSortKey(c,mode){
  const title=c.querySelector('.title')?c.querySelector('.title').textContent:'';
  if(mode==='ru-asc'||mode==='ru-desc')return titlePart(title,'ru');
  if(mode==='en-asc'||mode==='en-desc')return titlePart(title,'en');
  if(mode==='stars-desc'||mode==='stars-asc')return Number(c.dataset.stars||0);
- return Number(c.dataset.order||0);
+ return originalCardRank(c);
+}
+function moveCardsToCurrentView(){
+ const flat=document.getElementById('allRegistry');
+ if(!flat)return;
+ const cards=[...document.querySelectorAll('section[data-sec] .card')];
+ if(st.cat==='all'&&!st.duplicateList){
+   cards.forEach(c=>flat.appendChild(c));
+ }else{
+   cards.forEach(c=>{
+     const sec=document.querySelector('section[data-sec="'+c.dataset.cat+'"]');
+     if(sec&&c.parentElement!==sec)sec.appendChild(c);
+   });
+ }
 }
 function sortCards(){
  document.querySelectorAll('section[data-sec]').forEach(sec=>{
    const cards=[...sec.querySelectorAll('.card')];
    cards.sort((a,b)=>{
-     if(st.sort==='original')return cardSortKey(a,'original')-cardSortKey(b,'original');
-     if(st.sort==='stars-desc')return cardSortKey(b,st.sort)-cardSortKey(a,st.sort)||Number(a.dataset.order)-Number(b.dataset.order);
-     if(st.sort==='stars-asc')return cardSortKey(a,st.sort)-cardSortKey(b,st.sort)||Number(a.dataset.order)-Number(b.dataset.order);
+     const tie=originalCardRank(a)-originalCardRank(b);
+     if(st.sort==='original')return tie;
+     if(st.sort==='stars-desc')return cardSortKey(b,st.sort)-cardSortKey(a,st.sort)||tie;
+     if(st.sort==='stars-asc')return cardSortKey(a,st.sort)-cardSortKey(b,st.sort)||tie;
      const dir=st.sort.endsWith('desc')?-1:1;
-     return dir*String(cardSortKey(a,st.sort)).localeCompare(String(cardSortKey(b,st.sort)),st.sort.startsWith('ru')?'ru':'en');
+     return dir*String(cardSortKey(a,st.sort)).localeCompare(String(cardSortKey(b,st.sort)),st.sort.startsWith('ru')?'ru':'en')||tie;
    });
    cards.forEach(c=>sec.appendChild(c));
  });
@@ -488,7 +522,8 @@ function renderDuplicateList(){
  return works.length;
 }
 function apply(){
- const baseCards=[...document.querySelectorAll('.card')];
+ moveCardsToCurrentView();
+ const baseCards=[...document.querySelectorAll('section[data-sec] .card')];
  const normalSections=[...document.querySelectorAll('section[data-sec]')];
  const dupPanel=document.getElementById('duplicateListPanel');
  let n=0;
