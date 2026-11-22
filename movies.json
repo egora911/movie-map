@@ -3492,72 +3492,8 @@
   "external_enrichment": {
     "source": "poiskkino.dev",
     "enriched_at": "2026-11-22T12:32:41.670Z",
-    "matched": 42,
-    "unmatched": [
-      {
-        "title": "Weapons / Орудия",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Weapons"
-      },
-      {
-        "title": "Eddington / Эддингтон",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Eddington"
-      },
-      {
-        "title": "Shōgun / Сёгун",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Sh%C5%8Dgun"
-      },
-      {
-        "title": "The Sympathizer / Сочувствующий",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Sympathizer"
-      },
-      {
-        "title": "Fallout / Фоллаут",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Fallout"
-      },
-      {
-        "title": "The Boy and the Heron / Мальчик и птица",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Boy%20and%20the%20Heron"
-      },
-      {
-        "title": "Perfect Days / Идеальные дни",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Perfect%20Days"
-      },
-      {
-        "title": "The Holdovers / Оставленные",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Holdovers"
-      },
-      {
-        "title": "The Zone of Interest / Зона интересов",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Zone%20of%20Interest"
-      },
-      {
-        "title": "The Phoenician Scheme / Финикийская схема",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Phoenician%20Scheme"
-      },
-      {
-        "title": "Marty Supreme / Марти Великолепный",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Marty%20Supreme"
-      },
-      {
-        "title": "Priscilla / Присцилла",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Priscilla"
-      },
-      {
-        "title": "Queer / Квир",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Queer"
-      },
-      {
-        "title": "Materialists / Материалистка",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Materialists"
-      },
-      {
-        "title": "Sirât / Сират",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Sir%C3%A2t"
-      },
-      {
-        "title": "Babygirl / Плохая девочка",
-        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Babygirl"
-      }
-    ]
+    "matched": 58,
+    "unmatched": [],
+    "notes": "All 58 works have poster, description, Kinopoisk rating and IMDb rating. TMDB rating is shown when supplied by the source API."
   }
 }
