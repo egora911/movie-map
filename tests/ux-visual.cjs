@@ -34,8 +34,20 @@ const {chromium}=require('playwright');
        const sortBox=sort.getBoundingClientRect();
        const catBox=cat.getBoundingClientRect();
        const firstCatBox=firstCategory.getBoundingClientRect();
-       const firstTitle=document.querySelector('#allRegistry .card .title');
+       const firstCard=document.querySelector('#allRegistry .card');
+       const firstTitle=firstCard.querySelector('.title');
        const titleCss=getComputedStyle(firstTitle);
+       const watch=firstCard.querySelector('.score .watch');
+       const forecast=firstCard.querySelector('.score .lab:not(.fact)');
+       const ext=firstCard.querySelector('.score .score-ext-values');
+       const fact=firstCard.querySelector('.score .c.fact');
+       const meta=firstCard.querySelector('.meta');
+       const membership=firstCard.querySelector('.card-memberships');
+       const rect=e=>{const r=e.getBoundingClientRect();return{left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}};
+       const sentimental=[...document.querySelectorAll('#allRegistry .card[data-cat="films"]')].find(c=>c.querySelector('.title')?.textContent?.includes('Sentimental Value'));
+       const membershipSent=sentimental?.querySelector('.card-memberships');
+       const crossSent=membershipSent?.querySelector('.crosslists');
+       const starsSent=sentimental?.querySelector('.row1 .stars');
        const root=document.documentElement;
        return {
          viewport:innerWidth,
@@ -61,7 +73,22 @@ const {chromium}=require('playwright');
          categorySectionsVisible:[...document.querySelectorAll('section[data-sec]')].filter(x=>x.id!=='allRegistry'&&!x.classList.contains('hidden')).length,
          movieFontSize:titleCss.fontSize,
          movieFontWeight:titleCss.fontWeight,
-         movieLineHeight:titleCss.lineHeight
+         movieLineHeight:titleCss.lineHeight,
+         watchRect:rect(watch),
+         forecastRect:rect(forecast),
+         factRect:rect(fact),
+         externalRect:rect(ext),
+         membershipRect:rect(membership),
+         metaRect:rect(meta),
+         membershipText:membership.textContent,
+         sentimentalMembershipText:membershipSent?.textContent||'',
+         sentimentalMembershipRect:membershipSent?rect(membershipSent):null,
+         sentimentalCrossRect:crossSent?rect(crossSent):null,
+         sentimentalStars:starsSent?.textContent||'',
+         titleWatchExists:!!firstCard.querySelector('.row1 .watch'),
+         leftRatingsExists:!!firstCard.querySelector('.left .external-ratings'),
+         scoreRatingsCount:firstCard.querySelectorAll('.score .external-rating').length,
+         shortlistCount:document.querySelectorAll('#allRegistry .score .watch').length
        };
      });
      console.log('VISUAL',cfg.name,JSON.stringify(result));
@@ -87,13 +114,29 @@ const {chromium}=require('playwright');
      assert.equal(result.categorySectionsVisible,0,'no other list sections should show in All');
      assert(Number.parseFloat(result.movieFontSize)<=12.5,'movie title must be reduced by one font unit');
      assert(Number.parseFloat(result.movieFontWeight)<720,'movie title must be lighter');
+     assert.equal(result.titleWatchExists,false,'tomorrow must be removed from movie title');
+     assert.equal(result.leftRatingsExists,false,'aggregator ratings must be moved from under title');
+     assert.equal(result.shortlistCount,85,'all 85 shortlist actions preserved');
+     assert.equal(result.scoreRatingsCount,2,'Saltburn must show KP and IMDb below personal scores');
+     assert(result.watchRect.bottom<=result.forecastRect.top+1.5,'tomorrow must sit directly above forecast label');
+     assert(result.externalRect.top>=result.factRect.bottom-2,'aggregators must be under actual score cells');
+     assert(result.membershipRect.top>=result.metaRect.top,'membership must follow year and type');
+     assert(result.membershipText.includes('Фильмы 2х'),'category origin visible in next line');
+     assert(result.sentimentalMembershipText.includes('Фильмы 2х')&&result.sentimentalMembershipText.includes('ещё:')&&result.sentimentalMembershipText.includes('для Анна'),'Sentimental Value must show current list before cross-list');
+     assert(result.sentimentalStars.includes('⭐'),'stars must remain alongside title, at old tomorrow position');
      if(cfg.name==='desktop'){
        assert(result.sortOffset>=3&&result.sortOffset<24,'sort must follow title directly: '+result.sortOffset);
        assert(Math.abs(result.sortLine)<18,'sort must be on title line');
        assert(result.categoryOffset>=3&&result.categoryOffset<28,'category tabs must follow sort on same row');
        assert(Math.abs(result.categoryLine)<20,'category nav should be alongside sort on desktop');
+       assert(Math.abs(result.sentimentalMembershipRect.top-result.sentimentalCrossRect.top)<14,'origin and cross category must share a single line on desktop');
      }
      await page.screenshot({path:'ux-'+cfg.name+'.png',fullPage:false});
+     const firstWatch=page.locator('#allRegistry .score .watch').first();
+     await firstWatch.click();
+     assert.equal(await page.locator('#allRegistry .card').first().getAttribute('data-tomorrow'),'1','shortlist toggles in score column');
+     await firstWatch.click();
+     assert.equal(await page.locator('#allRegistry .card').first().getAttribute('data-tomorrow'),'0','shortlist toggles off');
      await page.locator('#allRegistry .movie-title-trigger').first().click();
      await page.waitForSelector('#movieOverlay.open');
      const detail=await page.evaluate(()=>{
