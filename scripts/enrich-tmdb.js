@@ -1,166 +1,137 @@
 const fs = require('node:fs');
 
-const token = String(process.env.TMDB_BEARER_TOKEN || '').trim();
-if (!token) {
-  throw new Error('Missing TMDB_BEARER_TOKEN GitHub Actions secret');
-}
+const token = String(process.env.POISKKINO_API_KEY || '').trim();
+if (!token) throw new Error('Missing POISKKINO_API_KEY GitHub Actions secret');
 
-const path = 'movies.json';
-const db = JSON.parse(fs.readFileSync(path, 'utf8'));
-
-const headers = {
-  accept: 'application/json',
-  Authorization: 'Bearer ' + token
-};
-
+const DB_PATH = 'movies.json';
+const db = JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
+const API = 'https://eu-api.poiskkino.dev/v1.5';
+const headers = {'X-API-KEY': token, accept: 'application/json'};
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 const norm = s => String(s || '')
-  .toLocaleLowerCase('en-US')
+  .toLocaleLowerCase('ru-RU')
   .normalize('NFKD')
   .replace(/[\u0300-\u036f]/g, '')
   .replace(/ё/g, 'е')
   .replace(/[^a-zа-я0-9]+/gi, ' ')
   .trim();
 
-function latinTitle(work) {
-  const parts = String(work.title || '').split('/').map(x => x.trim()).filter(Boolean);
-  return parts.find(x => /[A-Za-z]/.test(x)) || parts[0] || work.title;
+function parts(work) {
+  return String(work.title || '').split('/').map(x => x.trim()).filter(Boolean);
 }
-
 function startYear(year) {
   const m = String(year || '').match(/\d{4}/);
   return m ? Number(m[0]) : null;
 }
-
-function candidateTitle(c, type) {
-  return type === 'tv' ? (c.name || c.original_name) : (c.title || c.original_title);
+function expectedSeries(work) {
+  return work.media_type === 'сериал';
 }
-
-function candidateYear(c, type) {
-  const value = type === 'tv' ? c.first_air_date : c.release_date;
-  const m = String(value || '').match(/^\d{4}/);
-  return m ? Number(m[0]) : null;
+function itemNames(x) {
+  return [x.name, x.alternativeName, x.enName].filter(Boolean);
 }
-
-function candidateScore(c, work, type) {
-  const q = norm(latinTitle(work));
-  const names = type === 'tv'
-    ? [c.name, c.original_name]
-    : [c.title, c.original_title];
+function scoreCandidate(x, work) {
+  const qs = parts(work).map(norm);
+  const names = itemNames(x).map(norm);
   let score = 0;
-  for (const name of names.filter(Boolean)) {
-    const n = norm(name);
-    if (n === q) score = Math.max(score, 100);
-    else if (n.includes(q) || q.includes(n)) score = Math.max(score, 70);
+  for (const q of qs) {
+    for (const n of names) {
+      if (!q || !n) continue;
+      if (q === n) score = Math.max(score, 100);
+      else if (n.includes(q) || q.includes(n)) score = Math.max(score, 72);
+    }
   }
   const y = startYear(work.year);
-  const cy = candidateYear(c, type);
-  if (y && cy) score += y === cy ? 25 : Math.max(0, 8 - Math.abs(y - cy) * 4);
-  score += Math.min(10, Number(c.popularity || 0) / 50);
+  const cy = Number(x.year) || null;
+  if (y && cy) score += y === cy ? 25 : Math.max(0, 8 - Math.abs(y-cy)*4);
+  if (typeof x.isSeries === 'boolean') score += (x.isSeries === expectedSeries(work)) ? 12 : -30;
+  if (x.type && expectedSeries(work) && /series|tv-series|anime/i.test(String(x.type))) score += 5;
+  if (x.type && !expectedSeries(work) && /movie|cartoon|anime/i.test(String(x.type))) score += 5;
   return score;
 }
 
 async function getJson(url) {
-  const r = await fetch(url, { headers });
-  if (!r.ok) throw new Error(r.status + ' ' + r.statusText + ' for ' + url);
+  const r = await fetch(url,{headers});
+  if (!r.ok) throw new Error(r.status+' '+r.statusText+' for '+url);
   return r.json();
 }
 
-async function findWork(work) {
-  const type = work.media_type === 'сериал' ? 'tv' : 'movie';
-  const q = latinTitle(work);
-  const y = startYear(work.year);
-  const params = new URLSearchParams({
-    query: q,
-    include_adult: 'false',
-    language: 'en-US',
-    page: '1'
+async function search(work) {
+  const qs = parts(work);
+  let candidates = [];
+  for (const q of qs) {
+    const url = API + '/movie/search?page=1&limit=10&query=' + encodeURIComponent(q);
+    const json = await getJson(url);
+    const docs = Array.isArray(json.docs) ? json.docs : (Array.isArray(json) ? json : []);
+    candidates.push(...docs);
+    if (docs.length) break;
+    await sleep(120);
+  }
+  const seen = new Set();
+  candidates = candidates.filter(x => {
+    const k = x.id || JSON.stringify([x.name,x.year]);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
   });
-  if (y) params.set(type === 'tv' ? 'first_air_date_year' : 'year', String(y));
-
-  const searchUrl = 'https://api.themoviedb.org/3/search/' + type + '?' + params.toString();
-  const search = await getJson(searchUrl);
-  let candidates = Array.isArray(search.results) ? search.results : [];
-
-  // If year-filtered search found nothing, retry without year.
-  if (!candidates.length && y) {
-    params.delete(type === 'tv' ? 'first_air_date_year' : 'year');
-    const retry = await getJson('https://api.themoviedb.org/3/search/' + type + '?' + params.toString());
-    candidates = Array.isArray(retry.results) ? retry.results : [];
-  }
-  if (!candidates.length) return { work, match: null, reason: 'no search results' };
-
   const ranked = candidates
-    .map(c => ({ c, score: candidateScore(c, work, type) }))
-    .sort((a, b) => b.score - a.score);
+    .map(x => ({x,score:scoreCandidate(x,work)}))
+    .sort((a,b)=>b.score-a.score);
   const best = ranked[0];
-  if (!best || best.score < 60) {
-    return { work, match: null, reason: 'low confidence: ' + (best ? best.score.toFixed(1) : 'n/a') };
-  }
-
-  // Prefer Russian overview, fall back to English.
-  const base = 'https://api.themoviedb.org/3/' + type + '/' + best.c.id;
-  const ru = await getJson(base + '?language=ru-RU');
-  let overview = String(ru.overview || '').trim();
-  let details = ru;
-  if (!overview) {
-    const en = await getJson(base + '?language=en-US');
-    overview = String(en.overview || '').trim();
-    if (!details.poster_path && en.poster_path) details = en;
-  }
-  const posterPath = details.poster_path || best.c.poster_path || null;
-
-  return {
-    work,
-    match: {
-      source: 'TMDB',
-      media_type: type,
-      tmdb_id: best.c.id,
-      matched_title: candidateTitle(best.c, type),
-      matched_year: candidateYear(best.c, type),
-      confidence: Math.round(best.score),
-      overview,
-      poster: posterPath ? 'https://image.tmdb.org/t/p/w500' + posterPath : null
-    }
-  };
+  if (!best || best.score < 65) return {match:null, reason:'low confidence/no results'};
+  return {match:best.x, score:Math.round(best.score)};
 }
 
-const ok = [];
-const missed = [];
+function chooseOverview(x) {
+  return String(x.shortDescription || x.description || '').trim();
+}
+function choosePoster(x) {
+  return x && x.poster && (x.poster.url || x.poster.previewUrl) || null;
+}
 
-for (let i = 0; i < db.works.length; i++) {
-  const work = db.works[i];
+const ok=[], missed=[];
+for (let i=0;i<db.works.length;i++) {
+  const work=db.works[i];
   try {
-    const result = await findWork(work);
-    if (!result.match) {
-      missed.push({ title: work.title, reason: result.reason });
-      console.log('MISS', work.title, '-', result.reason);
+    const {match,score}=await search(work);
+    if (!match) {
+      missed.push({title:work.title,reason:'no confident match'});
+      console.log('MISS',work.title);
     } else {
-      work.external = result.match;
+      const overview=chooseOverview(match);
+      const poster=choosePoster(match);
+      work.external={
+        source:'poiskkino.dev',
+        kp_id:match.id || null,
+        tmdb_id:match.externalId && match.externalId.tmdb || null,
+        imdb_id:match.externalId && match.externalId.imdb || null,
+        matched_name:match.name || match.alternativeName || null,
+        matched_year:match.year || null,
+        confidence:score,
+        overview,
+        poster
+      };
       ok.push(work.title);
       console.log(
-        'OK', String(i + 1).padStart(2, '0') + '/' + db.works.length,
-        work.title, '=>', result.match.tmdb_id,
-        result.match.matched_title, result.match.matched_year,
-        'score=' + result.match.confidence,
-        result.match.poster ? 'poster' : 'no-poster',
-        result.match.overview ? 'overview' : 'no-overview'
+        'OK',String(i+1).padStart(2,'0')+'/'+db.works.length,
+        work.title,'=>',match.id,match.name||match.alternativeName,
+        match.year,'score='+score,poster?'poster':'no-poster',overview?'overview':'no-overview'
       );
     }
-  } catch (e) {
-    missed.push({ title: work.title, reason: String(e && e.message || e) });
-    console.log('ERR', work.title, '-', String(e && e.message || e));
+  } catch(e) {
+    missed.push({title:work.title,reason:String(e&&e.message||e)});
+    console.log('ERR',work.title,'-',String(e&&e.message||e));
   }
-  await sleep(320);
+  await sleep(220);
 }
 
-db.external_enrichment = {
-  source: 'TMDB',
-  enriched_at: new Date().toISOString(),
-  matched: ok.length,
-  unmatched: missed
+db.external_enrichment={
+  source:'poiskkino.dev',
+  enriched_at:new Date().toISOString(),
+  matched:ok.length,
+  unmatched:missed
 };
 
-fs.writeFileSync(path, JSON.stringify(db, null, 2) + '\n');
-console.log('DONE matched=' + ok.length + ' missed=' + missed.length);
-if (missed.length) console.log('MISSED', JSON.stringify(missed, null, 2));
+fs.writeFileSync(DB_PATH,JSON.stringify(db,null,2)+'\n');
+console.log('DONE matched='+ok.length+' missed='+missed.length);
+if (missed.length) console.log('MISSED',JSON.stringify(missed,null,2));
