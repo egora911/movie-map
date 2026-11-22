@@ -591,12 +591,12 @@ function cardPasses(c){
    (!st.tag.length||st.tag.every(t=>tags.includes(t)))&&
    (!st.excludeTag.length||st.excludeTag.every(t=>!tags.includes(t)))&&
    (st.countryMode==='all'||(st.countryMode==='ru'&&tags.includes('россия'))||(st.countryMode==='nonru'&&!tags.includes('россия')))&&
-   (st.reviewMode==='all'||(st.reviewMode==='has'&&c.dataset.hasReview==='1')||(st.reviewMode==='none'&&c.dataset.hasReview!=='1')||(st.reviewMode==='missing-egor'&&c.dataset.hasReviewEgor!=='1')||(st.reviewMode==='missing-anna'&&c.dataset.hasReviewAnna!=='1'))&&
+   (st.reviewMode==='all'||(st.reviewMode==='has'&&c.dataset.hasReview==='1')||(st.reviewMode==='none'&&c.dataset.hasReview!=='1')||(st.reviewMode==='missing-egor'&&c.dataset.hasReview==='1'&&c.dataset.hasReviewEgor!=='1')||(st.reviewMode==='missing-anna'&&c.dataset.hasReview==='1'&&c.dataset.hasReviewAnna!=='1'))&&
    (st.originMode==='all'||c.dataset.origin===st.originMode)&&
    (!st.years.length||st.years.includes(c.dataset.year))&&
    (st.stars===null||Number(c.dataset.stars)===Number(st.stars))&&
    (!st.tomorrow||c.dataset.tomorrow==='1')&&
-   (st.dupMode==='all'||(st.dupMode==='exclude'&&!isDup)||(st.dupMode==='only'&&isDup))&&
+   (st.dupMode==='all'||(st.dupMode==='exclude'&&!isDup)||((st.dupMode==='only'||st.dupMode==='unique')&&isDup))&&
    (!st.q||c.dataset.search.includes(norm(st.q)));
 }
 function originalCardRank(c){
@@ -657,8 +657,8 @@ function workPassesDuplicateView(work){
  const hasReview=hasHumanReview(work,'egor')||hasHumanReview(work,'anna');
  if(st.reviewMode==='has'&&!hasReview)return false;
  if(st.reviewMode==='none'&&hasReview)return false;
- if(st.reviewMode==='missing-egor'&&hasHumanReview(work,'egor'))return false;
- if(st.reviewMode==='missing-anna'&&hasHumanReview(work,'anna'))return false;
+ if(st.reviewMode==='missing-egor'&&(!hasReview||hasHumanReview(work,'egor')))return false;
+ if(st.reviewMode==='missing-anna'&&(!hasReview||hasHumanReview(work,'anna')))return false;
  if(st.originMode!=='all'&&originBucket(work)!==st.originMode)return false;
  if(st.years.length&&!st.years.includes(firstYear(work.year)))return false;
  if(st.stars!==null&&!placements.some(p=>Number(p.stars||0)===Number(st.stars)))return false;
@@ -704,8 +704,13 @@ function apply(){
  }
  if(dupPanel)dupPanel.classList.add('hidden');
  sortCards();
+ const shownWorkIds=new Set();
  baseCards.forEach(c=>{
-   const ok=cardPasses(c);
+   let ok=cardPasses(c);
+   if(ok&&st.dupMode==='unique'){
+     if(shownWorkIds.has(c.dataset.key))ok=false;
+     else shownWorkIds.add(c.dataset.key);
+   }
    c.classList.toggle('hidden',!ok);
    if(ok)n++;
  });
@@ -812,12 +817,13 @@ function updateSearchClear(){
 function updateDupModeButton(){
  const b=document.getElementById('dupMode');
  if(!b)return;
- const labels={all:'⧉ Повторы: все',exclude:'⧉ Повторы: исключить',only:'⧉ Повторы: только'};
+ const labels={all:'⧉ Повторы: все',exclude:'⧉ Повторы: исключить',only:'⧉ Повторы: только',unique:'⧉ Повторы: уникальные'};
  b.textContent=labels[st.dupMode];
  b.dataset.mode=st.dupMode;
  b.classList.toggle('active',st.dupMode!=='all');
  b.classList.toggle('dup-mode-exclude',st.dupMode==='exclude');
  b.classList.toggle('dup-mode-only',st.dupMode==='only');
+ b.classList.toggle('dup-mode-unique',st.dupMode==='unique');
 }
 function bindUi(){
  const bs=[...document.querySelectorAll('button[data-k]')];
@@ -869,7 +875,9 @@ function bindUi(){
    apply();
  };
  document.getElementById('dupMode').addEventListener('click',function(){
-   st.dupMode=st.dupMode==='all'?'exclude':st.dupMode==='exclude'?'only':'all';
+   const modes=['all','exclude','only','unique'];
+   st.dupMode=modes[(modes.indexOf(st.dupMode)+1)%modes.length];
+   if(st.duplicateList){st.duplicateList=false;document.getElementById('duplicateListToggle').classList.remove('active');}
    updateDupModeButton();
    apply();
  });
@@ -877,6 +885,7 @@ function bindUi(){
    st.duplicateList=!st.duplicateList;
    this.classList.toggle('active',st.duplicateList);
    if(st.duplicateList){
+     st.dupMode='all';updateDupModeButton();
      st.cat='all';
      document.querySelectorAll('[data-k=cat]').forEach(x=>x.classList.toggle('active',x.dataset.v==='all'));
    }

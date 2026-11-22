@@ -208,12 +208,25 @@ async function init(){
  await test('missing Egor/Anna human review modes',()=>{
    for(let i=0;i<3;i++)click('#reviewMode');
    assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-egor');
-   const expected=db.works.reduce((n,x)=>n+x.placements.length*(w.personValue(x.reviews,'egor')?.trim()?0:1),0);
+   const expected=db.works.reduce((n,x)=>n+x.placements.length*((w.personValue(x.reviews,'anna')?.trim()||w.personValue(x.reviews,'egor')?.trim())&&!w.personValue(x.reviews,'egor')?.trim()?1:0),0);
    assert.equal(visible(),expected);
    click('#reviewMode');
    assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-anna');
-   const anna=db.works.reduce((n,x)=>n+x.placements.length*(w.personValue(x.reviews,'anna')?.trim()?0:1),0);
+   const anna=db.works.reduce((n,x)=>n+x.placements.length*((w.personValue(x.reviews,'anna')?.trim()||w.personValue(x.reviews,'egor')?.trim())&&!w.personValue(x.reviews,'anna')?.trim()?1:0),0);
    assert.equal(visible(),anna);
+   click('#reset');
+ });
+
+ await test('four duplicate modes with unique work representatives',()=>{
+   const duplicates=db.works.filter(x=>x.placements.length>1),sum=duplicates.reduce((n,x)=>n+x.placements.length,0);
+   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'exclude');assert.equal(visible(),85-sum);
+   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'only');assert.equal(visible(),sum);
+   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'unique');assert.equal(visible(),duplicates.length);
+   const rows=[...d.querySelectorAll('section[data-sec] .card:not(.hidden)')];
+   assert.equal(new Set(rows.map(c=>c.dataset.key)).size,rows.length);
+   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'all');assert.equal(visible(),85);
+   click('[data-k="cat"][data-v="her"]');for(let i=0;i<3;i++)click('#dupMode');
+   assert.equal(visible(),duplicates.filter(x=>x.placements.some(p=>p.category==='her')).length);
    click('#reset');
  });
  await test('multiselect film years and year sort',()=>{
