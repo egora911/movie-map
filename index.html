@@ -23,6 +23,25 @@
 .agent-status{font-size:9.5px;color:#89919c;padding:0 12px 9px}
 @media(max-width:560px){.save-overlay{padding-top:62px}.agent-overlay{padding-top:52px}.agent-shell{max-height:calc(100dvh - 70px)}}@media(min-width:720px){.agent-shell{max-height:min(78dvh,720px)}}
 
+/* Full personal reviews */
+.fact-review-trigger{font:inherit;color:inherit;background:transparent;border:0;border-radius:0;padding:0;white-space:normal;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:4px;max-width:100%;font-weight:inherit;line-height:inherit}
+.fact-review-trigger:hover{color:#fff}
+.fact-review-trigger:focus-visible{outline:2px solid #8f98a6;outline-offset:3px;border-radius:4px}
+.review-dot{width:5px;height:5px;border-radius:50%;background:#65b8ff;box-shadow:0 0 7px rgba(101,184,255,.75);flex:0 0 auto}
+.review-overlay{display:none;position:fixed;inset:0;z-index:65000;background:rgba(0,0,0,.76);align-items:flex-start;justify-content:center;padding:clamp(58px,9vh,92px) 14px 20px;overflow-y:auto}
+.review-overlay.open{display:flex}
+.review-shell{width:min(680px,100%);max-height:min(78dvh,760px);display:flex;flex-direction:column;background:#12151a;border:1px solid #454c57;border-radius:16px;box-shadow:0 24px 75px rgba(0,0,0,.58);overflow:hidden}
+.review-head{display:flex;align-items:flex-start;gap:10px;padding:12px 14px 9px;border-bottom:1px solid #2d333c}
+.review-title{min-width:0;flex:1}.review-title strong{display:block;font-size:14px;line-height:1.25}
+.review-sub{font-size:9.5px;color:#89919d;margin-top:3px}.review-close{cursor:pointer;margin-left:auto}
+.review-tabs{display:flex;gap:6px;padding:9px 12px 0}.review-tabs button{font-size:10px;padding:5px 9px;cursor:pointer}
+.review-tabs button.active{background:#eee;color:#111;border-color:#eee}
+.review-body{font-size:13px;line-height:1.5;color:#e4e7eb;padding:14px 16px 16px;overflow:auto;white-space:pre-wrap;min-height:110px;overscroll-behavior:contain}
+.review-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-top:1px solid #2d333c}
+.review-nav button{cursor:pointer;min-width:42px}.review-position{font-size:9.5px;color:#89919d;text-align:center}
+.review-single .review-tabs,.review-single .review-nav{display:none}
+@media(max-width:560px){.review-overlay{align-items:flex-end;padding:0}.review-shell{width:100%;max-height:80dvh;border-radius:18px 18px 0 0;border-left:0;border-right:0;border-bottom:0}.review-head{padding:12px 14px 10px}.review-body{font-size:13.5px;line-height:1.52;padding:14px 16px 20px;min-height:180px}.review-nav{padding:9px 12px 11px}}
+
 </style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><h1>🎬 Лабиринт кино - Аня и Егор</h1><div class="summary" id="summary"></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для него</button><button data-k="cat" data-v="her">👩 Для неё</button></div><div class="filters"><button class="reset" id="reset" title="Сбросить все фильтры" aria-label="Сбросить все фильтры">↺</button><button data-k="type" data-v="фильм">🎬 Фильм</button><button data-k="type" data-v="сериал">📺 Сериал</button><button data-k="state" data-v="seen"><span class="state-mark seen" title="Просмотрено">✓</span> Просмотрено</button><button data-k="state" data-v="todo"><span class="state-mark todo" title="Не просмотрено">○</span> Не просмотрено</button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button data-k="tag" data-v="россия">🇷🇺 Россия</button><button data-k="stars" data-v="3">⭐⭐⭐ Топ</button><button data-k="stars" data-v="2">⭐⭐</button><button data-k="stars" data-v="1">⭐</button><button data-k="stars" data-v="0" title="Без звёзд" aria-label="Без звёзд"><span class="star-none">☆</span></button></div></div><section data-sec="films"><h2>❤️ Фильмы для двоих <span style="color:#777;font-weight:400">(20)</span></h2></section><section data-sec="series"><h2>📺 Сериалы для двоих <span style="color:#777;font-weight:400">(19)</span></h2></section><section data-sec="weird"><h2>🌀 Странное кино / сериал для двоих <span style="color:#777;font-weight:400">(15)</span></h2></section><section data-sec="me"><h2>👨 Кино / сериал для меня <span style="color:#777;font-weight:400">(16)</span></h2></section><section data-sec="her"><h2>👩 Кино / сериал для неё <span style="color:#777;font-weight:400">(15)</span></h2></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
@@ -34,6 +53,26 @@
       <button id="agentSend" type="submit">Отправить</button>
     </form>
     <div id="agentStatus" class="agent-status">Агент читает movies.json через безопасный backend и ничего не меняет.</div>
+  </div>
+</div>
+
+
+<div id="reviewOverlay" class="review-overlay" aria-hidden="true">
+  <div id="reviewShell" class="review-shell" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+    <div class="review-head">
+      <div class="review-title">
+        <strong id="reviewTitle">Полный отзыв</strong>
+        <div id="reviewSub" class="review-sub"></div>
+      </div>
+      <button id="reviewClose" class="review-close" type="button" aria-label="Закрыть отзыв">✕</button>
+    </div>
+    <div id="reviewTabs" class="review-tabs"></div>
+    <div id="reviewBody" class="review-body"></div>
+    <div class="review-nav">
+      <button id="reviewPrev" type="button" aria-label="Предыдущий отзыв">‹</button>
+      <div id="reviewPosition" class="review-position"></div>
+      <button id="reviewNext" type="button" aria-label="Следующий отзыв">›</button>
+    </div>
   </div>
 </div>
 
@@ -125,6 +164,17 @@ function esc(v){
    .replace(/"/g,'&quot;')
    .replace(/'/g,'&#39;');
 }
+
+function factCellHtml(work,p,person){
+ const actual=p.actual||{};
+ const score=actual[person]==null?'—':actual[person];
+ const reviews=work.reviews||{};
+ const review=typeof reviews[person]==='string'?reviews[person].trim():'';
+ if(!review) return '<div class="c fact">'+esc(score)+'</div>';
+ const who=person==='me'?'Егора':'Ани';
+ return '<div class="c fact"><button type="button" class="fact-review-trigger" data-person="'+person+'" data-title="'+esc(work.title)+'" data-score-me="'+esc(actual.me==null?'—':actual.me)+'" data-score-wife="'+esc(actual.wife==null?'—':actual.wife)+'" data-review-me="'+esc(typeof reviews.me==='string'?reviews.me:'')+'" data-review-wife="'+esc(typeof reviews.wife==='string'?reviews.wife:'')+'" aria-label="Открыть полный отзыв '+who+'">'+esc(score)+'<span class="review-dot" aria-hidden="true"></span></button></div>';
+}
+
 function cardHtml(work,p){
  const stars='⭐'.repeat(Number(p.stars||0));
  const status=work.state==='seen'?'<span class="state-mark seen" title="Просмотрено">✓</span>':'<span class="state-mark todo" title="Не просмотрено">○</span>';
@@ -132,7 +182,7 @@ function cardHtml(work,p){
  const after=p.after?'<div class="post"><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'">'+
  '<div class="left"><div class="row1"><span class="n">'+String(p.order).padStart(2,'0')+'</span><span class="title">'+esc(work.title)+'</span><span class="badge"><span class="stars">'+stars+'</span>'+status+'</span><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div></div>'+
- '<div class="score"><div></div><div class="c lab">Я</div><div class="c lab">Жена</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div><div class="c fact">'+esc(p.actual.me)+'</div><div class="c fact">'+esc(p.actual.wife)+'</div></div>'+
+ '<div class="score"><div></div><div class="c lab">Я</div><div class="c lab">Жена</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+'</div>'+
  '<div><div class="layers"><div class="pre"><span class="k">💡 ДО</span> · '+esc(p.before||'')+'</div>'+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
 }
 async function ensureCards(){
@@ -318,4 +368,100 @@ function bindUi(){
 })();
 </script>
 
-</div></body></html>
+</div>
+<script>
+(function(){
+  const overlay=document.getElementById('reviewOverlay');
+  const shell=document.getElementById('reviewShell');
+  const title=document.getElementById('reviewTitle');
+  const sub=document.getElementById('reviewSub');
+  const tabs=document.getElementById('reviewTabs');
+  const body=document.getElementById('reviewBody');
+  const closeButton=document.getElementById('reviewClose');
+  const prevButton=document.getElementById('reviewPrev');
+  const nextButton=document.getElementById('reviewNext');
+  const position=document.getElementById('reviewPosition');
+  let model=null,touchStartX=0,touchStartY=0;
+
+  function personName(person){return person==='me'?'Егор':'Аня'}
+  function personScore(person){if(!model)return'—';return person==='me'?(model.scoreMe||'—'):(model.scoreWife||'—')}
+  function availablePeople(){
+    if(!model)return[];
+    const out=[];
+    if(model.reviewMe)out.push('me');
+    if(model.reviewWife)out.push('wife');
+    return out;
+  }
+  function render(){
+    const people=availablePeople();
+    if(!people.length)return;
+    if(!people.includes(model.person))model.person=people[0];
+    const currentIndex=people.indexOf(model.person);
+    body.textContent=model.person==='me'?model.reviewMe:model.reviewWife;
+    title.textContent=model.title;
+    sub.textContent=personName(model.person)+' · оценка '+personScore(model.person);
+    tabs.innerHTML=people.map(function(person){
+      const active=person===model.person?' active':'';
+      return '<button type="button" class="'+active+'" data-review-person="'+person+'">'+personName(person)+' · '+personScore(person)+'</button>';
+    }).join('');
+    shell.classList.toggle('review-single',people.length<2);
+    position.textContent=people.length>1?(currentIndex+1)+' из '+people.length:'';
+  }
+  function openFrom(trigger){
+    model={
+      title:trigger.dataset.title||'Полный отзыв',
+      person:trigger.dataset.person||'me',
+      scoreMe:trigger.dataset.scoreMe||'—',
+      scoreWife:trigger.dataset.scoreWife||'—',
+      reviewMe:(trigger.dataset.reviewMe||'').trim(),
+      reviewWife:(trigger.dataset.reviewWife||'').trim()
+    };
+    if(!availablePeople().length)return;
+    render();
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    closeButton.focus();
+  }
+  function close(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    model=null;
+  }
+  function move(step){
+    const people=availablePeople();
+    if(people.length<2)return;
+    const index=people.indexOf(model.person);
+    model.person=people[(index+step+people.length)%people.length];
+    render();
+  }
+  document.addEventListener('click',function(event){
+    const trigger=event.target.closest('.fact-review-trigger');
+    if(trigger){openFrom(trigger);return}
+    const tab=event.target.closest('[data-review-person]');
+    if(tab&&model){model.person=tab.dataset.reviewPerson;render()}
+  });
+  closeButton.addEventListener('click',close);
+  prevButton.addEventListener('click',function(){move(-1)});
+  nextButton.addEventListener('click',function(){move(1)});
+  overlay.addEventListener('click',function(event){if(event.target===overlay)close()});
+  document.addEventListener('keydown',function(event){
+    if(!overlay.classList.contains('open'))return;
+    if(event.key==='Escape')close();
+    if(event.key==='ArrowLeft')move(-1);
+    if(event.key==='ArrowRight')move(1);
+  });
+  body.addEventListener('touchstart',function(event){
+    const t=event.changedTouches&&event.changedTouches[0];if(!t)return;
+    touchStartX=t.clientX;touchStartY=t.clientY;
+  },{passive:true});
+  body.addEventListener('touchend',function(event){
+    const t=event.changedTouches&&event.changedTouches[0];if(!t)return;
+    const dx=t.clientX-touchStartX,dy=t.clientY-touchStartY;
+    if(Math.abs(dx)>=55&&Math.abs(dx)>Math.abs(dy)*1.25)move(dx<0?1:-1);
+  },{passive:true});
+})();
+</script>
+
+</body></html>
