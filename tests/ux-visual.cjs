@@ -20,14 +20,16 @@ const {chromium}=require('playwright');
      const errors=[];
      page.on('pageerror',e=>errors.push(e.message));
      await page.goto('http://127.0.0.1:8765/');
-     await page.waitForSelector('section[data-sec="films"] .card');
+     await page.waitForSelector('#allRegistry .card');
      const result=await page.evaluate(()=>{
        const title=document.querySelector('h1');
        const tag=document.querySelector('.tagline');
        const main=document.querySelector('.tagline-main'),personal=document.querySelector('.tagline-personal');
-       const sort=document.querySelector('section[data-sec="films"] .section-sort');
-       const h=document.querySelector('section[data-sec="films"] h2');
-       const sortBox=sort.getBoundingClientRect(),hBox=h.getBoundingClientRect();
+       const sort=document.querySelector('#allRegistry h2 .section-sort');
+       const counter=document.querySelector('#allRegistry [data-section-count]');
+       const sortBox=sort.getBoundingClientRect(),counterBox=counter.getBoundingClientRect();
+       const firstTitle=document.querySelector('#allRegistry .card .title');
+       const titleCss=getComputedStyle(firstTitle);
        const root=document.documentElement;
        return {
          viewport:innerWidth,
@@ -36,21 +38,32 @@ const {chromium}=require('playwright');
          titleHeight:Math.round(title.getBoundingClientRect().height),
          firstColor:getComputedStyle(main).color,
          secondColor:getComputedStyle(personal).color,
-         sortOffset:Math.round(sortBox.left-hBox.right),
-         sortLine:Math.round(sortBox.top-hBox.top),
-         count:document.querySelector('section[data-sec="films"] [data-section-count]').textContent
+         sortOffset:Math.round(sortBox.left-counterBox.right),
+         sortLine:Math.round(sortBox.top-counterBox.top),
+         count:counter.textContent,
+         allRows:document.querySelectorAll('#allRegistry .card').length,
+         originTags:document.querySelectorAll('#allRegistry .card-origin').length,
+         categorySectionsVisible:[...document.querySelectorAll('section[data-sec]')].filter(x=>x.id!=='allRegistry'&&!x.classList.contains('hidden')).length,
+         movieFontSize:titleCss.fontSize,
+         movieFontWeight:titleCss.fontWeight,
+         movieLineHeight:titleCss.lineHeight
        };
      });
      console.log('VISUAL',cfg.name,JSON.stringify(result));
      assert(result.scrollWidth<=cfg.width+2,'horizontal overflow '+cfg.name+' '+result.scrollWidth+' > '+cfg.width);
      assert(result.tagHeight<95,'tagline too tall '+cfg.name);
      assert.notEqual(result.firstColor,result.secondColor,'tagline parts must differ');
-     assert.equal(result.count,'(20/85)');
-     if(cfg.name==='desktop'){
-       assert(result.sortOffset>=-5&&result.sortOffset<30,'sort not next to heading: '+result.sortOffset);
+     assert.equal(result.count,'(85/85)');
+     assert.equal(result.allRows,85,'All must contain 85 real cards');
+     assert.equal(result.originTags,85,'All must show each card category');
+     assert.equal(result.categorySectionsVisible,0,'no other list sections should show in All');
+     assert(Number.parseFloat(result.movieFontSize)<=12.5,'movie title must be reduced by one font unit');
+     assert(Number.parseFloat(result.movieFontWeight)<720,'movie title must be lighter');
+     if(cfg.name==='desktop'||cfg.name==='mobile'){
+       assert(result.sortOffset>=3&&result.sortOffset<24,'sort must sit immediately after counter: '+result.sortOffset);
      }
      await page.screenshot({path:'ux-'+cfg.name+'.png',fullPage:false});
-     await page.locator('section[data-sec="films"] .movie-title-trigger').first().click();
+     await page.locator('#allRegistry .movie-title-trigger').first().click();
      await page.waitForSelector('#movieOverlay.open');
      const detail=await page.evaluate(()=>{
        const el=document.querySelector('#movieShell'),r=el.getBoundingClientRect();
@@ -99,6 +112,11 @@ const {chromium}=require('playwright');
        console.log('STANDALONE',n,'cards, state',JSON.stringify(fileState),'errors',JSON.stringify(fileErrors),'saved HTML bytes',html.length);
        assert.equal(n,85,'standalone must show 85 cards');
        assert.equal(fileState.visible,85,'standalone must show 85 visible cards');
+       assert.equal(await filePage.locator('#allRegistry .card').count(),85,'standalone All should be a single register');
+       await filePage.locator('[data-k="cat"][data-v="films"]').click();
+       assert.equal(await filePage.locator('section[data-sec="films"] .card:not(.hidden)').count(),20,'standalone category navigation must work');
+       await filePage.locator('[data-k="cat"][data-v="all"]').click();
+       assert.equal(await filePage.locator('#allRegistry .card:not(.hidden)').count(),85,'standalone must restore flat All');
        assert.deepEqual(fileErrors,[],'standalone JavaScript errors');
        await filePage.close();
      }
