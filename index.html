@@ -167,6 +167,15 @@
  .card .score .score-ext-values .external-rating{font-size:8.5px}
 }
 
+.batch-popover{width:min(260px,calc(100vw - 16px))}
+.batch-options{display:flex;flex-direction:column;gap:4px}
+.batch-option{display:block;width:100%;text-align:left;border-radius:8px;padding:7px 9px;line-height:1.25;font-size:10.5px;white-space:normal;cursor:pointer}
+.batch-option.active{font-weight:650}
+.recommendation-history{margin-top:7px;border:1px solid #343d48;border-radius:8px;background:#141922;padding:6px 9px;font-size:10px}
+.recommendation-history summary{cursor:pointer;color:#c1cfdf}
+.recommendation-history ol{margin:7px 0 2px;padding-left:22px;color:#b9c5d2;line-height:1.5}
+.recommendation-history li+li{margin-top:3px}
+@media(max-width:560px){.batch-popover{max-height:45dvh}.recommendation-history{font-size:9.5px}}
 /* Work-level origin and multiselect years, safe in sticky mobile filter strips. */
 .card .card-memberships .origin-source,.detail-chips .origin-source,.duplicate-meta .origin-source{
  display:inline-flex;align-items:center;flex:0 0 auto;border:1px solid #455161;border-radius:999px;
@@ -205,7 +214,7 @@
 .history-entry-meta{color:#a1acba;font-size:9.3px;line-height:1.25;overflow-wrap:anywhere;white-space:normal}
 .review-shell.history-open .review-body{min-height:65px;flex:1 1 auto}
 @media(max-width:560px){.history-toolbar{padding:6px 12px 0;gap:5px}.history-panel{max-height:min(25dvh,165px)}.review-shell.history-open .review-body{min-height:100px}.history-entry{padding:7px 8px!important}}
-</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button><button type="button" data-extra-filter="prediction" data-mode="all" title="Наличие прогнозов для Егора и Анны">🔮 Прогноз: все</button><button type="button" data-extra-filter="fact" data-mode="all" title="Наличие фактических оценок">★ Факт: все</button><button type="button" data-extra-filter="sites" data-mode="all" title="Наличие оценок Кинопоиска и IMDb">🌐 Сайты: все</button><button type="button" data-extra-filter="texts" data-mode="all" title="Наличие текстов ДО и ПОСЛЕ">📝 Тексты: все</button></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="batchPickerToggle" type="button" data-batch-id="all" aria-expanded="false" aria-controls="batchPopover" title="Партия GPT-рекомендаций">Партия: все ▾</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button><button type="button" data-extra-filter="prediction" data-mode="all" title="Наличие прогнозов для Егора и Анны">🔮 Прогноз: все</button><button type="button" data-extra-filter="fact" data-mode="all" title="Наличие фактических оценок">★ Факт: все</button><button type="button" data-extra-filter="sites" data-mode="all" title="Наличие оценок Кинопоиска и IMDb">🌐 Сайты: все</button><button type="button" data-extra-filter="texts" data-mode="all" title="Наличие текстов ДО и ПОСЛЕ">📝 Тексты: все</button></div></div><div id="batchPopover" class="year-popover batch-popover hidden" role="group" aria-label="Партии GPT-рекомендаций"><div class="year-popover-top"><strong>Партии рекомендаций</strong></div><div class="batch-options" id="batchOptions"></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
   <div class="agent-shell" role="dialog" aria-modal="true" aria-label="Movie Map Agent">
@@ -356,7 +365,7 @@
 })();
 </script>
 <script>
-const st={cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[],extraModes:{prediction:'all',fact:'all',sites:'all',texts:'all'}};
+const st={batchId:'all',cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[],extraModes:{prediction:'all',fact:'all',sites:'all',texts:'all'}};
 const SHORTLIST_KEY='movie_map_shortlist_v1';
 const CATEGORY_META={
  films:{label:'Фильмы 2х',icon:'❤️'},
@@ -410,9 +419,43 @@ function originBucket(work){
  if(o.type==='user_added'&&o.added_by==='anna')return 'anna';
  return 'unknown';
 }
+
+/* Recommendation history is work-level; never infer a day from its YYYY-MM period. */
+const RECOMMENDATION_SHORT=['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'];
+const RECOMMENDATION_LONG=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+const RECOMMENDATION_ACTIONS={added:'впервые рекомендован',reconfirmed:'подтверждён повторно',reprioritized:'изменён приоритет'};
+function recommendationEvents(work){return Array.isArray(work&&work.recommendations)?work.recommendations:[];}
+function recommendationBatches(){
+ const value=getMovieData().recommendation_batches;
+ return Array.isArray(value)?value:[];
+}
+function recommendationBatch(id){return recommendationBatches().find(b=>b.id===id);}
+function recommendationMonth(period,full){
+ const m=/^(\d{4})-(0[1-9]|1[0-2])$/.exec(String(period||''));
+ if(!m)return '';
+ const k=Number(m[2])-1;
+ return full?RECOMMENDATION_LONG[k]+' '+m[1]:RECOMMENDATION_SHORT[k]+' '+m[1].slice(2);
+}
+function recommendationTimeline(work){
+ return recommendationEvents(work).map(e=>{
+   const batch=recommendationBatch(e.batch_id);
+   return batch?{event:e,batch,short:recommendationMonth(batch.period,false),long:recommendationMonth(batch.period,true)}:null;
+ }).filter(Boolean);
+}
+function recommendationHistoryHtml(work){
+ const timeline=recommendationTimeline(work);
+ if(!timeline.length)return '';
+ return '<details class="recommendation-history"><summary>🕰 Рекомендации GPT · '+timeline.length+'</summary><ol>'+
+ timeline.map(x=>'<li><strong>'+esc(x.long)+'</strong> · '+esc(RECOMMENDATION_ACTIONS[x.event.event]||x.event.event)+'</li>').join('')+
+ '</ol></details>';
+}
+
 function originChipHtml(work){
- const k=originBucket(work);
- return '<span class="origin-source origin-'+k+'" title="Источник первоначального добавления: '+ORIGIN_LABELS[k]+'">'+ORIGIN_LABELS[k]+'</span>';
+ const k=originBucket(work),timeline=recommendationTimeline(work);
+ const latest=timeline.length?timeline[timeline.length-1]:null;
+ const label=ORIGIN_LABELS[k]+(k==='gpt'&&latest?' · '+latest.short:'');
+ const history=timeline.length?'\nРекомендации GPT:\n'+timeline.map(x=>x.short+' · '+(RECOMMENDATION_ACTIONS[x.event.event]||x.event.event)).join('\n'):'';
+ return '<span class="origin-source origin-'+k+'" title="'+esc('Источник первоначального добавления: '+ORIGIN_LABELS[k]+history)+'">'+esc(label)+'</span>';
 }
 function firstYear(v){
  const m=String(v==null?'':v).match(/(?:19|20)\d{2}/);
@@ -553,7 +596,7 @@ function cardHtml(work,p){
  const before=p.before?String(p.before):'';
  const beforeHtml='<div class="pre"><span class="k">💡 ДО</span> · '+esc(before)+'</div>';
  const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
- return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+((hasHumanReview(work,'egor')||hasHumanReview(work,'anna'))?'1':'0')+'" data-has-review-egor="'+(hasHumanReview(work,'egor')?'1':'0')+'" data-has-review-anna="'+(hasHumanReview(work,'anna')?'1':'0')+'" data-origin="'+originBucket(work)+'" data-year="'+firstYear(work.year)+'" data-search="'+esc(norm(work.title))+'">'+
+ return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+((hasHumanReview(work,'egor')||hasHumanReview(work,'anna'))?'1':'0')+'" data-has-review-egor="'+(hasHumanReview(work,'egor')?'1':'0')+'" data-has-review-anna="'+(hasHumanReview(work,'anna')?'1':'0')+'" data-origin="'+originBucket(work)+'" data-batches="'+esc([...new Set(recommendationEvents(work).map(e=>e.batch_id))].join(' '))+'" data-year="'+firstYear(work.year)+'" data-search="'+esc(norm(work.title))+'">'+
  '<div class="left"><div class="row1"><span class="card-index"><span class="n">'+String(p.order).padStart(2,'0')+'</span>'+status+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span>'+starBadge+'</div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+membership+'</div>'+
  '<div class="score"><div class="score-shortlist"><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(personValue(p.prediction,'egor'))+'</div><div class="c">'+esc(personValue(p.prediction,'anna'))+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'egor')+factCellHtml(work,p,'anna')+(externalRatingsHtml(work,false)?'<div class="score-ext-label lab">🌐 сайты</div><div class="score-ext-values">'+externalRatingsHtml(work,false)+'</div>':'')+'</div>'+
  '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
@@ -632,6 +675,7 @@ function cardPasses(c){
    (st.countryMode==='all'||(st.countryMode==='ru'&&tags.includes('россия'))||(st.countryMode==='nonru'&&!tags.includes('россия')))&&
    (st.reviewMode==='all'||(st.reviewMode==='has'&&c.dataset.hasReview==='1')||(st.reviewMode==='none'&&c.dataset.hasReview!=='1')||(st.reviewMode==='missing-egor'&&c.dataset.hasReview==='1'&&c.dataset.hasReviewEgor!=='1')||(st.reviewMode==='missing-anna'&&c.dataset.hasReview==='1'&&c.dataset.hasReviewAnna!=='1'))&&
    (st.originMode==='all'||c.dataset.origin===st.originMode)&&
+   (st.batchId==='all'||c.dataset.batches.split(' ').includes(st.batchId))&&
    (!st.years.length||st.years.includes(c.dataset.year))&&
    (st.stars===null||Number(c.dataset.stars)===Number(st.stars))&&
    (!st.tomorrow||c.dataset.tomorrow==='1')&&
@@ -800,6 +844,29 @@ function updateOriginModeButton(){
  b.dataset.mode=st.originMode;
  b.classList.toggle('active',st.originMode!=='all');
 }
+
+function updateBatchPicker(){
+ const toggle=document.getElementById('batchPickerToggle'),options=document.getElementById('batchOptions');
+ if(!toggle||!options)return;
+ const selected=recommendationBatch(st.batchId);
+ const name=selected?recommendationMonth(selected.period,true):'';
+ toggle.textContent='Партия: '+(name?name.charAt(0).toUpperCase()+name.slice(1):'все')+' ▾';
+ toggle.dataset.batchId=st.batchId;toggle.classList.toggle('active',st.batchId!=='all');
+ const items=[{id:'all',label:'Все партии'},...recommendationBatches().map(b=>({
+   id:b.id,label:(recommendationMonth(b.period,true)||b.period)+' · '+b.label
+ }))];
+ options.innerHTML=items.map(x=>'<button type="button" class="batch-option'+(st.batchId===x.id?' active':'')+'" data-batch-option="'+esc(x.id)+'">'+esc(x.label)+'</button>').join('');
+}
+function closeBatchPopover(){
+ document.getElementById('batchPopover').classList.add('hidden');
+ document.getElementById('batchPickerToggle').setAttribute('aria-expanded','false');
+}
+function positionBatchPopover(){
+ const b=document.getElementById('batchPickerToggle'),p=document.getElementById('batchPopover'),r=b.getBoundingClientRect();
+ p.style.left=Math.max(8,Math.min(r.left,window.innerWidth-268))+'px';
+ p.style.top=Math.max(8,Math.min(window.innerHeight-120,r.bottom+6))+'px';
+}
+
 function updateYearPicker(){
  const b=document.getElementById('yearPickerToggle'),box=document.getElementById('yearOptions');
  if(!b||!box)return;
@@ -882,7 +949,7 @@ function bindUi(){
    apply();
  });
  document.getElementById('reset').onclick=()=>{
-   Object.assign(st,{cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[],extraModes:{prediction:'all',fact:'all',sites:'all',texts:'all'}});
+   Object.assign(st,{batchId:'all',cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[],extraModes:{prediction:'all',fact:'all',sites:'all',texts:'all'}});
    bs.forEach(b=>b.classList.remove('active'));
    document.querySelector('[data-k=cat][data-v=all]').classList.add('active');
    const search=document.getElementById('movieSearch');if(search)search.value='';
@@ -893,6 +960,7 @@ function bindUi(){
    updateCountryModeButton();
    updateReviewModeButton();
    updateOriginModeButton();
+   updateBatchPicker();closeBatchPopover();
    updateStarsModeButton();
    updateYearPicker();
    closeYearPopover();
@@ -947,13 +1015,36 @@ function bindUi(){
    st.originMode=modes[(modes.indexOf(st.originMode)+1)%modes.length];
    updateOriginModeButton();apply();
  });
+
+ updateBatchPicker();
+ const batchToggle=document.getElementById('batchPickerToggle');
+ const batchPopover=document.getElementById('batchPopover');
+ batchToggle.addEventListener('click',event=>{
+   event.stopPropagation();
+   const opening=batchPopover.classList.contains('hidden');
+   if(opening){closeYearPopover();positionBatchPopover();batchPopover.classList.remove('hidden');}
+   else closeBatchPopover();
+   batchToggle.setAttribute('aria-expanded',opening?'true':'false');
+ });
+ batchPopover.addEventListener('click',event=>{
+   event.stopPropagation();
+   const choice=event.target.closest('[data-batch-option]');
+   if(!choice)return;
+   st.batchId=choice.dataset.batchOption;
+   updateBatchPicker();closeBatchPopover();apply();
+ });
+ document.addEventListener('click',event=>{
+   if(!batchPopover.contains(event.target)&&event.target!==batchToggle)closeBatchPopover();
+ });
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')closeBatchPopover()});
+
  buildYearPicker();
  const toggle=document.getElementById('yearPickerToggle');
  const popover=document.getElementById('yearPopover');
  toggle.addEventListener('click',function(e){
    e.stopPropagation();
    const isOpen=popover.classList.contains('hidden');
-   if(isOpen){positionYearPopover();popover.classList.remove('hidden')}
+   if(isOpen){closeBatchPopover();positionYearPopover();popover.classList.remove('hidden')}
    else closeYearPopover();
    toggle.setAttribute('aria-expanded',isOpen?'true':'false');
  });
@@ -1193,7 +1284,7 @@ document.addEventListener('click',async function(e){
    const externalLinks='<a target="_blank" href="'+esc(exactImdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(exactKp)+'">Кинопоиск ↗</a>'+(exactTmdb?'<a target="_blank" href="'+esc(exactTmdb)+'">TMDB ↗</a>':'');
    const kpBlock=overview?'<div class="detail-section"><div class="section-title-row"><h3>'+(kpDescription?'Описание · Кинопоиск':'Описание / контекст')+'</h3>'+copyButton(overview,'Копировать описание Кинопоиска')+'</div><div class="detail-text">'+esc(overview)+'</div>'+(external.source?'<div class="detail-source">Данные: '+esc(external.source)+'</div>':'')+'</div>':'';
    const tmdbBlock=tmdbDescription?'<div class="detail-section"><div class="section-title-row"><h3>Описание · TMDB</h3>'+copyButton(tmdbDescription,'Копировать описание TMDB')+'</div><div class="detail-text">'+esc(tmdbDescription)+'</div></div>':'';
-   body.innerHTML='<div class="detail-hero">'+posterHtml+'<div><div class="detail-section"><div class="section-title-row"><h3>В списках</h3></div>'+catHtml+'</div>'+kpBlock+tmdbBlock+'<div class="detail-section"><div class="section-title-row"><h3>Рейтинги агрегаторов</h3></div>'+externalRatingsHtml(work,true)+'</div><div class="detail-section"><div class="section-title-row"><h3>Наши оценки</h3></div>'+scoreBlock(primary)+'</div><div class="detail-section detail-links">'+externalLinks+'</div></div></div>'+
+   body.innerHTML='<div class="detail-hero">'+posterHtml+'<div><div class="detail-section"><div class="section-title-row"><h3>В списках</h3></div>'+catHtml+'</div>'+recommendationHistoryHtml(work)+kpBlock+tmdbBlock+'<div class="detail-section"><div class="section-title-row"><h3>Рейтинги агрегаторов</h3></div>'+externalRatingsHtml(work,true)+'</div><div class="detail-section"><div class="section-title-row"><h3>Наши оценки</h3></div>'+scoreBlock(primary)+'</div><div class="detail-section detail-links">'+externalLinks+'</div></div></div>'+
      (soloBefore||'')+placementNotes+
      (after?'<div class="detail-section"><div class="section-title-row"><h3>📝 После просмотра</h3>'+copyButton(after,'Копировать ПОСЛЕ')+'</div><div class="detail-text">'+esc(after)+'</div></div>':'')+
      reviewSection+

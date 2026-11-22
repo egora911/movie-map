@@ -205,6 +205,56 @@ async function init(){
    assert.equal(visible(),unknownRows);
    click('#reset');assert.equal(visible(),85);
  });
+
+ await test('Recommendation Batches schema, safe legacy display, and filter',()=>{
+   const {recommendationErrors}=require('../scripts/recommendation-contract.cjs');
+   const {appendRecommendationEvent}=require('../scripts/recommendation-events.cjs');
+   assert.deepEqual(recommendationErrors(db),[]);
+   assert(db.works.every(x=>Array.isArray(x.recommendations)));
+   assert.equal(w.recommendationMonth('2026-08',false),'авг 26');
+   assert.equal(w.recommendationMonth('2026-11',false),'ноя 26');
+   const basic={origin:{type:'gpt_recommendation',added_by:'chatgpt'},recommendations:[]};
+   assert.equal(w.originChipHtml(basic).includes('✦ GPT'),true);
+   assert.equal(w.recommendationHistoryHtml(basic),'');
+   const dummyBatches=[{id:'rec_2026_08_initial',period:'2026-08',label:'Август 2026',source:'30_ci_chat',type:'initial_recommendation_set'},
+                       {id:'rec_2026_11_deep_01',period:'2026-11',label:'Ноябрь 2026',source:'30_ci_chat',type:'deep_recommendation_search'}];
+   const first=appendRecommendationEvent(basic,{batch_id:'rec_2026_08_initial',event:'added'},dummyBatches);
+   const second=appendRecommendationEvent(first,{batch_id:'rec_2026_11_deep_01',event:'reconfirmed'},dummyBatches);
+   assert.equal(basic.recommendations.length,0,'append-only helper does not mutate');
+   assert.equal(second.recommendations.length,2);
+   assert.throws(()=>appendRecommendationEvent(second,{batch_id:'rec_2026_11_deep_01',event:'reconfirmed'},dummyBatches));
+   const model=w.getMovieData(),previous=model.recommendation_batches;
+   try{
+     model.recommendation_batches=dummyBatches;
+     const chip=w.originChipHtml(second);
+     assert.match(chip,/✦ GPT · ноя 26/);
+     assert.match(chip,/авг 26/);
+     assert.match(w.recommendationHistoryHtml(second),/впервые рекомендован/);
+     assert.match(w.recommendationHistoryHtml(second),/подтверждён повторно/);
+   }finally{model.recommendation_batches=previous}
+   assert(d.getElementById('batchPickerToggle'));
+   click('#batchPickerToggle');
+   assert(!d.getElementById('batchPopover').classList.contains('hidden'));
+   click('[data-batch-option="all"]');
+   assert(d.getElementById('batchPopover').classList.contains('hidden'));
+   const august=db.recommendation_batches.find(x=>x.id==='rec_2026_08_initial');
+   if(august){
+     const gpt=db.works.filter(x=>x.origin?.type==='gpt_recommendation'&&x.origin?.added_by==='chatgpt');
+     assert.equal(gpt.length,53);
+     assert(gpt.every(x=>x.recommendations.some(e=>e.batch_id===august.id&&e.event==='added')));
+     assert(db.works.filter(x=>x.origin?.type!=='gpt_recommendation').every(x=>x.recommendations.length===0));
+     click('#batchPickerToggle');click('[data-batch-option="rec_2026_08_initial"]');
+     const rows=gpt.reduce((n,x)=>n+x.placements.length,0);
+     assert.equal(visible(),rows);
+     assert([...d.querySelectorAll('section[data-sec] .card:not(.hidden) .origin-source.origin-gpt')].every(x=>x.textContent.includes('авг 26')));
+     click('#reset');
+   }else{
+     assert(db.works.every(x=>x.recommendations.length===0));
+     assert.equal(d.querySelectorAll('#batchOptions [data-batch-option]').length,1);
+     click('#reset');
+   }
+ });
+
  await test('missing Egor/Anna human review modes',()=>{
    for(let i=0;i<3;i++)click('#reviewMode');
    assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-egor');

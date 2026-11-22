@@ -174,7 +174,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "b08c6e50d285",
@@ -311,7 +312,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "5d0a1d8a3d12",
@@ -405,7 +407,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "27c3708391b0",
@@ -479,7 +482,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "5f2b573c820e",
@@ -569,7 +573,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "e7a0a14e3d21",
@@ -663,7 +668,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "e1f1636fa3c3",
@@ -757,7 +763,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "3917205d36ac",
@@ -833,7 +840,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "cb466f7bffb3",
@@ -923,7 +931,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "c1d807ea42dd",
@@ -997,7 +1006,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "2578ccaffd77",
@@ -1132,7 +1142,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "246d7519df41",
@@ -1291,7 +1302,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "2f4b0ac675b8",
@@ -1442,7 +1454,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "7925baaaf395",
@@ -1597,7 +1610,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "93f5326069dc",
@@ -1709,7 +1723,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "967ae6447315",
@@ -1803,7 +1818,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "5765f7f11f6e",
@@ -1911,7 +1927,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "0e9229421daa",
@@ -2006,7 +2023,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "56ef07b1d83f",
@@ -2100,7 +2118,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "b077b95583d6",
@@ -2194,7 +2213,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "972b44bb2d7b",
@@ -2270,7 +2290,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "218b0c7e99fb",
@@ -2344,7 +2365,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "329bfffc8644",
@@ -2418,7 +2440,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "be73d241afed",
@@ -2492,7 +2515,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "05b74354dced",
@@ -2566,7 +2590,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "08acb5d01de5",
@@ -2724,7 +2749,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "7c694ab04067",
@@ -2801,7 +2827,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "72005cd3bec5",
@@ -2897,7 +2924,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "37bf1a7916c0",
@@ -2973,7 +3001,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "c699db434506",
@@ -3049,7 +3078,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "c95a34cdb0cf",
@@ -3171,7 +3201,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "b39fbfc4707d",
@@ -3309,7 +3340,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "9bcef4ef77fd",
@@ -3421,7 +3453,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "174cbbc72787",
@@ -3515,7 +3548,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "a6b02d5e8a07",
@@ -3605,7 +3639,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "dbc74d7cd466",
@@ -3695,7 +3730,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "33233b1d276d",
@@ -3876,7 +3912,8 @@
           "anna": "ai_33233b1d276d_anna_v2",
           "together": "ai_33233b1d276d_together_v1"
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "9cce768fda2b",
@@ -3970,7 +4007,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "849aa713b120",
@@ -4064,7 +4102,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "cf988fe29958",
@@ -4158,7 +4197,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "467c010c8075",
@@ -4298,7 +4338,8 @@
         "source": "30_ci_chat",
         "author": "ChatGPT",
         "style": "personal_contextual_v2"
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "d19e508d1727",
@@ -4374,7 +4415,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "66120f690c6c",
@@ -4450,7 +4492,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "c5d32a8ddc7e",
@@ -4526,7 +4569,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "9e2744144270",
@@ -4600,7 +4644,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "db75d4218c16",
@@ -4676,7 +4721,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "103d3306decf",
@@ -4752,7 +4798,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "e5b36ed294af",
@@ -4826,7 +4873,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "7ab25ef2b658",
@@ -4900,7 +4948,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "d52915e33074",
@@ -4974,7 +5023,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "3e643129c1b1",
@@ -5048,7 +5098,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "4b18999f77fc",
@@ -5124,7 +5175,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "03bd145ded75",
@@ -5198,7 +5250,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "da2e357c352b",
@@ -5272,7 +5325,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "1d22d16e485e",
@@ -5346,7 +5400,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "857f4ed58c92",
@@ -5420,7 +5475,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "41fc72678034",
@@ -5496,7 +5552,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     },
     {
       "id": "f67dfb41b778",
@@ -5570,7 +5627,8 @@
           "anna": null,
           "together": null
         }
-      }
+      },
+      "recommendations": []
     }
   ],
   "external_enrichment": {
@@ -5579,5 +5637,6 @@
     "matched": 58,
     "unmatched": [],
     "notes": "All 58 works have poster, description, Kinopoisk rating and IMDb rating. TMDB rating is shown when supplied by the source API."
-  }
+  },
+  "recommendation_batches": []
 }
