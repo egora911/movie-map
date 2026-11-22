@@ -166,7 +166,28 @@
  .card .score{grid-template-columns:76px minmax(0,1fr) minmax(0,1fr)}
  .card .score .score-ext-values .external-rating{font-size:8.5px}
 }
-</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 для Егор</button><button data-k="cat" data-v="her">👩 для Анна</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+
+/* Work-level origin and multiselect years, safe in sticky mobile filter strips. */
+.card .card-memberships .origin-source,.detail-chips .origin-source,.duplicate-meta .origin-source{
+ display:inline-flex;align-items:center;flex:0 0 auto;border:1px solid #455161;border-radius:999px;
+ background:#1a2029;color:#bfcee0;padding:2px 6px;margin-left:4px;font-size:8.7px;line-height:1.2;white-space:nowrap
+}
+.origin-source.origin-gpt{border-color:#826e4d;color:#ffe2a1}
+.origin-source.origin-couple{border-color:#586c77;color:#b7e7db}
+.origin-source.origin-egor,.origin-source.origin-anna{border-color:#536578;color:#c0d7f0}
+.origin-source.origin-unknown{border-color:#333941;color:#828a95;background:#15191f}
+.year-popover{position:fixed;z-index:9000;width:220px;max-width:calc(100vw - 16px);max-height:min(55dvh,420px);
+ overflow-y:auto;background:#171c23;border:1px solid #596475;border-radius:10px;
+ box-shadow:0 14px 40px #000b;padding:9px}
+.year-popover-top{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px}
+.year-popover-top strong{font-size:11px}
+.year-popover-top button{font-size:9px;padding:4px 7px;cursor:pointer}
+.year-options{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.year-option{display:flex;gap:6px;align-items:center;padding:5px 6px;border:1px solid #333b45;border-radius:7px;color:#dce1e9;font-size:11px;cursor:pointer}
+.year-option input{accent-color:#9eb5d8}
+#yearPickerToggle{cursor:pointer}
+@media(max-width:560px){.card .card-memberships .origin-source{font-size:8px;padding:2px 5px}.year-popover{width:210px;max-height:45dvh}}
+</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 для Егор</button><button data-k="cat" data-v="her">👩 для Анна</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
   <div class="agent-shell" role="dialog" aria-modal="true" aria-label="Movie Map Agent">
@@ -311,7 +332,7 @@
 })();
 </script>
 <script>
-const st={cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all'};
+const st={cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[]};
 const SHORTLIST_KEY='movie_map_shortlist_v1';
 const CATEGORY_META={
  films:{label:'Фильмы 2х',icon:'❤️'},
@@ -329,6 +350,13 @@ function titlePart(title,lang){
  return norm(found||parts[0]||title);
 }
 function compareWorks(a,b,mode){
+ if(mode==='year-desc'||mode==='year-asc'){
+   const ay=Number(firstYear(a.year)),by=Number(firstYear(b.year));
+   if(!ay&&!by)return 0;
+   if(!ay)return 1;
+   if(!by)return -1;
+   return mode==='year-desc'?by-ay:ay-by;
+ }
  if(mode==='ru-asc'||mode==='ru-desc'){
    const n=titlePart(a.title,'ru').localeCompare(titlePart(b.title,'ru'),'ru');
    return mode==='ru-desc'?-n:n;
@@ -345,6 +373,32 @@ function compareWorks(a,b,mode){
  const bo=Math.min(...(b.placements||[]).map(p=>Number(p.order)||9999));
  return ao-bo;
 }
+
+/* Work origin schema: {type:"gpt_recommendation"|"user_added"|"watched_history"|"unknown",
+  added_by:"chatgpt"|"egor"|"anna"|"couple"|"unknown"}. Legacy missing = unknown. */
+const ORIGIN_LABELS={gpt:'✦ GPT',couple:'👫 Мы',egor:'👨 Егор',anna:'👩 Анна',unknown:'? unknown'};
+function originBucket(work){
+ const o=work&&work.origin;
+ if(!o||typeof o!=='object')return 'unknown';
+ if(o.type==='gpt_recommendation'&&o.added_by==='chatgpt')return 'gpt';
+ if((o.type==='watched_history'||o.type==='user_added')&&o.added_by==='couple')return 'couple';
+ if(o.type==='user_added'&&o.added_by==='egor')return 'egor';
+ if(o.type==='user_added'&&o.added_by==='anna')return 'anna';
+ return 'unknown';
+}
+function originChipHtml(work){
+ const k=originBucket(work);
+ return '<span class="origin-source origin-'+k+'" title="Источник первоначального добавления: '+ORIGIN_LABELS[k]+'">'+ORIGIN_LABELS[k]+'</span>';
+}
+function firstYear(v){
+ const m=String(v==null?'':v).match(/(?:19|20)\d{2}/);
+ return m?m[0]:'';
+}
+function hasHumanReview(work,person){
+ const r=work&&work.reviews||{};
+ return typeof r[person]==='string'&&!!r[person].trim();
+}
+
 function categoryChip(cat,current){
  const meta=CATEGORY_META[cat]||{label:cat,icon:'•'};
  return '<button type="button" class="category-chip'+(cat===current?' active':'')+'" data-cross-cat="'+esc(cat)+'">'+meta.icon+' '+esc(meta.label)+'</button>';
@@ -456,12 +510,12 @@ function cardHtml(work,p){
  const originLabel='<span class="card-origin" title="Раздел: '+esc(thisCategory.label)+'">'+esc(thisCategory.icon)+' '+esc(thisCategory.label)+'</span>';
  const others=[...new Set((work.placements||[]).map(x=>x.category))].filter(cat=>cat!==p.category);
  const cross=others.length?'<span class="crosslists"><span>ещё:</span>'+others.map(cat=>categoryChip(cat,p.category)).join('')+'</span>':'';
- const membership='<div class="card-memberships">'+originLabel+cross+'</div>';
+ const membership='<div class="card-memberships">'+originLabel+cross+originChipHtml(work)+'</div>';
  const jointAi=work.ai_comments&&typeof work.ai_comments.together==='string'&&work.ai_comments.together.trim();
  const before=p.before?String(p.before):'';
  const beforeHtml='<div class="pre"><span class="k">💡 ДО</span> · '+esc(before)+'</div>';
  const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
- return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+(((work.reviews&&work.reviews.me)||(work.reviews&&work.reviews.wife))?'1':'0')+'" data-search="'+esc(norm(work.title))+'">'+
+ return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+((hasHumanReview(work,'me')||hasHumanReview(work,'wife'))?'1':'0')+'" data-has-review-me="'+(hasHumanReview(work,'me')?'1':'0')+'" data-has-review-wife="'+(hasHumanReview(work,'wife')?'1':'0')+'" data-origin="'+originBucket(work)+'" data-year="'+firstYear(work.year)+'" data-search="'+esc(norm(work.title))+'">'+
  '<div class="left"><div class="row1"><span class="card-index"><span class="n">'+String(p.order).padStart(2,'0')+'</span>'+status+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span>'+starBadge+'</div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+membership+'</div>'+
  '<div class="score"><div class="score-shortlist"><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+(externalRatingsHtml(work,false)?'<div class="score-ext-label lab">🌐 сайты</div><div class="score-ext-values">'+externalRatingsHtml(work,false)+'</div>':'')+'</div>'+
  '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
@@ -499,7 +553,9 @@ function cardPasses(c){
    (!st.tag.length||st.tag.every(t=>tags.includes(t)))&&
    (!st.excludeTag.length||st.excludeTag.every(t=>!tags.includes(t)))&&
    (st.countryMode==='all'||(st.countryMode==='ru'&&tags.includes('россия'))||(st.countryMode==='nonru'&&!tags.includes('россия')))&&
-   (st.reviewMode==='all'||(st.reviewMode==='has'&&c.dataset.hasReview==='1')||(st.reviewMode==='none'&&c.dataset.hasReview!=='1'))&&
+   (st.reviewMode==='all'||(st.reviewMode==='has'&&c.dataset.hasReview==='1')||(st.reviewMode==='none'&&c.dataset.hasReview!=='1')||(st.reviewMode==='missing-me'&&c.dataset.hasReviewMe!=='1')||(st.reviewMode==='missing-wife'&&c.dataset.hasReviewWife!=='1'))&&
+   (st.originMode==='all'||c.dataset.origin===st.originMode)&&
+   (!st.years.length||st.years.includes(c.dataset.year))&&
    (st.stars===null||Number(c.dataset.stars)===Number(st.stars))&&
    (!st.tomorrow||c.dataset.tomorrow==='1')&&
    (st.dupMode==='all'||(st.dupMode==='exclude'&&!isDup)||(st.dupMode==='only'&&isDup))&&
@@ -538,6 +594,11 @@ function sortCards(){
      if(st.sort==='original')return tie;
      if(st.sort==='stars-desc')return cardSortKey(b,st.sort)-cardSortKey(a,st.sort)||tie;
      if(st.sort==='stars-asc')return cardSortKey(a,st.sort)-cardSortKey(b,st.sort)||tie;
+     if(st.sort==='year-asc'||st.sort==='year-desc'){
+       const av=Number(a.dataset.year),bv=Number(b.dataset.year);
+       if(!av||!bv)return !av&&!bv?tie:(!av?1:-1);
+       return (st.sort==='year-asc'?av-bv:bv-av)||tie;
+     }
      const dir=st.sort.endsWith('desc')?-1:1;
      return dir*String(cardSortKey(a,st.sort)).localeCompare(String(cardSortKey(b,st.sort)),st.sort.startsWith('ru')?'ru':'en')||tie;
    });
@@ -558,6 +619,10 @@ function workPassesDuplicateView(work){
  const hasReview=!!(work.reviews&&(work.reviews.me||work.reviews.wife));
  if(st.reviewMode==='has'&&!hasReview)return false;
  if(st.reviewMode==='none'&&hasReview)return false;
+ if(st.reviewMode==='missing-me'&&hasHumanReview(work,'me'))return false;
+ if(st.reviewMode==='missing-wife'&&hasHumanReview(work,'wife'))return false;
+ if(st.originMode!=='all'&&originBucket(work)!==st.originMode)return false;
+ if(st.years.length&&!st.years.includes(firstYear(work.year)))return false;
  if(st.stars!==null&&!placements.some(p=>Number(p.stars||0)===Number(st.stars)))return false;
  return true;
 }
@@ -580,7 +645,7 @@ function renderDuplicateList(){
  const works=(data.works||[]).filter(workPassesDuplicateView).sort((a,b)=>compareWorks(a,b,st.sort));
  if(box) box.innerHTML=works.map(work=>{
    const cats=[...new Set((work.placements||[]).map(p=>p.category))];
-   return '<div class="duplicate-row"><div><div class="duplicate-title" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</div><div class="duplicate-meta">'+esc(work.year)+' · '+esc(work.media_type)+' · '+cats.length+' списка</div></div><div class="duplicate-cats">'+cats.map(cat=>categoryChip(cat,'')).join('')+'</div></div>';
+   return '<div class="duplicate-row"><div><div class="duplicate-title" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</div><div class="duplicate-meta">'+esc(work.year)+' · '+esc(work.media_type)+' · '+cats.length+' списка '+originChipHtml(work)+'</div></div><div class="duplicate-cats">'+cats.map(cat=>categoryChip(cat,'')).join('')+'</div></div>';
  }).join('');
  if(panel)panel.classList.remove('hidden');
  return works.length;
@@ -635,7 +700,9 @@ function updateSortButton(){
    'en-asc':'A–Z Eng',
    'en-desc':'Z–A Eng',
    'stars-desc':'⭐ 3→0',
-   'stars-asc':'☆ 0→3'
+   'stars-asc':'☆ 0→3',
+   'year-desc':'📅 2026→старые',
+   'year-asc':'📅 старые→2026'
  };
  document.querySelectorAll('[data-section-sort]').forEach(b=>{
    b.textContent=labels[st.sort]||labels.original;
@@ -655,9 +722,44 @@ function updateCountryModeButton(){
 }
 function updateReviewModeButton(){
  const b=document.getElementById('reviewMode');if(!b)return;
- const labels={all:'Отзывы: все',has:'💬 есть отзывы',none:'∅ нет отзывов'};
+ const labels={all:'Отзывы: все',has:'💬 есть отзывы',none:'∅ нет отзывов','missing-me':'нет Егор','missing-wife':'нет Анна'};
  b.textContent=labels[st.reviewMode];b.dataset.mode=st.reviewMode;b.classList.toggle('active',st.reviewMode!=='all');
 }
+
+function updateOriginModeButton(){
+ const b=document.getElementById('originMode');
+ if(!b)return;
+ b.textContent=st.originMode==='all'?'Источник: все':ORIGIN_LABELS[st.originMode];
+ b.dataset.mode=st.originMode;
+ b.classList.toggle('active',st.originMode!=='all');
+}
+function updateYearPicker(){
+ const b=document.getElementById('yearPickerToggle'),box=document.getElementById('yearOptions');
+ if(!b||!box)return;
+ const selection=st.years.slice().sort((a,b)=>Number(b)-Number(a));
+ b.textContent=!selection.length?'Годы: все ▾':selection.length<=2?'Годы: '+selection.join(', ')+' ▾':'Годы: '+selection.length+' выбрано ▾';
+ b.classList.toggle('active',selection.length>0);
+ box.querySelectorAll('input[data-year-choice]').forEach(input=>input.checked=st.years.includes(input.value));
+}
+function buildYearPicker(){
+ const el=document.getElementById('yearOptions');
+ if(!el)return;
+ const years=[...new Set((getMovieData().works||[]).map(w=>firstYear(w.year)).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
+ el.innerHTML=years.map(y=>'<label class="year-option"><input type="checkbox" data-year-choice value="'+y+'"><span>'+y+'</span></label>').join('');
+ updateYearPicker();
+}
+function positionYearPopover(){
+ const b=document.getElementById('yearPickerToggle');
+ const p=document.getElementById('yearPopover');
+ const r=b.getBoundingClientRect();
+ p.style.left=Math.max(8,Math.min(r.left,window.innerWidth-230))+'px';
+ p.style.top=Math.min(window.innerHeight-120,r.bottom+6)+'px';
+}
+function closeYearPopover(){
+ document.getElementById('yearPopover').classList.add('hidden');
+ document.getElementById('yearPickerToggle').setAttribute('aria-expanded','false');
+}
+
 function updateStarsModeButton(){
  const b=document.getElementById('starsMode');if(!b)return;
  const key=st.stars===null?'all':String(st.stars);
@@ -711,7 +813,7 @@ function bindUi(){
    apply();
  });
  document.getElementById('reset').onclick=()=>{
-   Object.assign(st,{cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all'});
+   Object.assign(st,{cat:'all',type:null,state:null,stars:null,tag:[],excludeTag:[],tomorrow:null,dupMode:'all',duplicateList:false,q:'',sort:'original',countryMode:'all',reviewMode:'all',originMode:'all',years:[]});
    bs.forEach(b=>b.classList.remove('active'));
    document.querySelector('[data-k=cat][data-v=all]').classList.add('active');
    const search=document.getElementById('movieSearch');if(search)search.value='';
@@ -721,7 +823,10 @@ function bindUi(){
    updateTypeModeButton();
    updateCountryModeButton();
    updateReviewModeButton();
+   updateOriginModeButton();
    updateStarsModeButton();
+   updateYearPicker();
+   closeYearPopover();
    updateSearchClear();
    apply();
  };
@@ -740,7 +845,7 @@ function bindUi(){
    apply();
  });
  document.querySelectorAll('[data-section-sort]').forEach(sort=>sort.addEventListener('click',function(){
-   const modes=['original','ru-asc','ru-desc','en-asc','en-desc','stars-desc','stars-asc'];
+   const modes=['original','ru-asc','ru-desc','en-asc','en-desc','stars-desc','stars-asc','year-desc','year-asc'];
    st.sort=modes[(modes.indexOf(st.sort)+1)%modes.length];
    updateSortButton();apply();
  }));
@@ -755,10 +860,37 @@ function bindUi(){
    updateCountryModeButton();apply();
  });
  document.getElementById('reviewMode').addEventListener('click',function(){
-   const modes=['all','has','none'];
+   const modes=['all','has','none','missing-me','missing-wife'];
    st.reviewMode=modes[(modes.indexOf(st.reviewMode)+1)%modes.length];
    updateReviewModeButton();apply();
  });
+
+ document.getElementById('originMode').addEventListener('click',function(){
+   const modes=['all','gpt','couple','egor','anna','unknown'];
+   st.originMode=modes[(modes.indexOf(st.originMode)+1)%modes.length];
+   updateOriginModeButton();apply();
+ });
+ buildYearPicker();
+ const toggle=document.getElementById('yearPickerToggle');
+ const popover=document.getElementById('yearPopover');
+ toggle.addEventListener('click',function(e){
+   e.stopPropagation();
+   const isOpen=popover.classList.contains('hidden');
+   if(isOpen){positionYearPopover();popover.classList.remove('hidden')}
+   else closeYearPopover();
+   toggle.setAttribute('aria-expanded',isOpen?'true':'false');
+ });
+ popover.addEventListener('click',e=>e.stopPropagation());
+ document.getElementById('yearOptions').addEventListener('change',function(e){
+   if(!e.target.matches('input[data-year-choice]'))return;
+   st.years=[...this.querySelectorAll('input[data-year-choice]:checked')].map(x=>x.value);
+   updateYearPicker();apply();
+ });
+ document.getElementById('yearClear').addEventListener('click',function(){
+   st.years=[];updateYearPicker();apply();
+ });
+ document.addEventListener('click',function(e){if(!popover.contains(e.target)&&e.target!==toggle)closeYearPopover()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeYearPopover()});
  document.getElementById('starsMode').addEventListener('click',function(){
    const modes=[null,3,2,1,0];
    st.stars=modes[(modes.indexOf(st.stars)+1)%modes.length];
@@ -793,7 +925,9 @@ function bindUi(){
  updateTypeModeButton();
  updateCountryModeButton();
  updateReviewModeButton();
+ updateOriginModeButton();
  updateStarsModeButton();
+ updateYearPicker();
  updateSearchClear();
 }
 document.addEventListener('click',async function(e){
@@ -964,7 +1098,7 @@ document.addEventListener('click',async function(e){
    const poster=work.poster||external.poster||'';
    title.textContent=work.title;
    meta.textContent=String(work.year)+' · '+work.media_type+' · '+(work.state==='seen'?'просмотрено':'не просмотрено');
-   const catHtml='<div class="detail-chips">'+cats.map(cat=>{const m=CATEGORY_META[cat]||{label:cat,icon:'•'};return '<span class="cross-chip">'+m.icon+' '+esc(m.label)+'</span>';}).join('')+'</div>';
+   const catHtml='<div class="detail-chips">'+cats.map(cat=>{const m=CATEGORY_META[cat]||{label:cat,icon:'•'};return '<span class="cross-chip">'+m.icon+' '+esc(m.label)+'</span>';}).join('')+originChipHtml(work)+'</div>';
    const posterHtml=poster?'<button type="button" class="detail-poster-button" data-poster-open="'+esc(poster)+'" aria-label="Увеличить постер"><img class="detail-poster" src="'+esc(poster)+'" alt="'+esc(work.title)+'"></button>':'';
    const after=primary.after||'';
    const ai=work.ai_comments||{};

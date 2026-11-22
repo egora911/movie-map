@@ -183,6 +183,61 @@ async function init(){
    assert(api.includes('me = Егор, wife = Анна'));
    assert(!/Для меня|Для неё|Для жены|Для него/i.test([...d.querySelectorAll('[data-k="cat"],.card-origin,#catalogTitleText')].map(x=>x.textContent).join(' ')));
  });
+
+ await test('origin schema, fallback and unified chip',()=>{
+   assert.equal(w.originBucket({}),'unknown');
+   assert.equal(w.originBucket({origin:{type:'gpt_recommendation',added_by:'chatgpt'}}),'gpt');
+   assert.equal(w.originBucket({origin:{type:'watched_history',added_by:'couple'}}),'couple');
+   assert.equal(w.originBucket({origin:{type:'user_added',added_by:'egor'}}),'egor');
+   assert.equal(w.originBucket({origin:{type:'user_added',added_by:'anna'}}),'anna');
+   assert.equal(w.originBucket({origin:{type:'gpt_recommendation',added_by:'unknown'}}),'unknown');
+   assert.equal(d.querySelectorAll('#allRegistry .card[data-origin]').length,85);
+   assert.equal(d.querySelectorAll('#allRegistry .card .origin-source').length,85);
+   assert(d.querySelector('#originMode'),'origin filter must be visible');
+   click('#originMode');assert.equal(d.querySelector('#originMode').dataset.mode,'gpt');
+   const gptRows=db.works.filter(x=>w.originBucket(x)==='gpt').reduce((n,x)=>n+x.placements.length,0);
+   assert.equal(visible(),gptRows);
+   click('#reset');
+   for(let i=0;i<5;i++)click('#originMode');
+   assert.equal(d.querySelector('#originMode').dataset.mode,'unknown');
+   const unknownRows=db.works.filter(x=>w.originBucket(x)==='unknown').reduce((n,x)=>n+x.placements.length,0);
+   assert.equal(visible(),unknownRows);
+   click('#reset');assert.equal(visible(),85);
+ });
+ await test('missing Egor/Anna human review modes',()=>{
+   for(let i=0;i<3;i++)click('#reviewMode');
+   assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-me');
+   const expected=db.works.reduce((n,x)=>n+x.placements.length*(typeof x.reviews?.me==='string'&&x.reviews.me.trim()?0:1),0);
+   assert.equal(visible(),expected);
+   click('#reviewMode');
+   assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-wife');
+   const anna=db.works.reduce((n,x)=>n+x.placements.length*(typeof x.reviews?.wife==='string'&&x.reviews.wife.trim()?0:1),0);
+   assert.equal(visible(),anna);
+   click('#reset');
+ });
+ await test('multiselect film years and year sort',()=>{
+   click('#yearPickerToggle');
+   const boxes=[...d.querySelectorAll('input[data-year-choice]')];
+   assert(boxes.length>=5);
+   assert(boxes.some(x=>x.value==='2023')&&boxes.some(x=>x.value==='2025'));
+   for(const y of ['2023','2025']){
+     const input=boxes.find(x=>x.value===y);
+     input.checked=true;input.dispatchEvent(new w.Event('change',{bubbles:true}));
+   }
+   assert([...d.querySelectorAll('.card:not(.hidden)')].every(c=>['2023','2025'].includes(c.dataset.year)));
+   click('#yearClear');
+   assert.equal(visible(),85);
+   click('#reset');
+   for(let i=0;i<7;i++)click('#catalogToolbar .section-sort');
+   assert.equal(d.querySelector('.section-sort').dataset.sort,'year-desc');
+   const yearsDesc=[...d.querySelectorAll('#allRegistry .card:not(.hidden)')].map(x=>Number(x.dataset.year));
+   assert(yearsDesc.every((x,i)=>i===0||yearsDesc[i-1]>=x),'desc sort must be chronological');
+   click('#catalogToolbar .section-sort');
+   assert.equal(d.querySelector('.section-sort').dataset.sort,'year-asc');
+   const yearsAsc=[...d.querySelectorAll('#allRegistry .card:not(.hidden)')].map(x=>Number(x.dataset.year));
+   assert(yearsAsc.every((x,i)=>i===0||yearsAsc[i-1]<=x),'asc sort must be chronological');
+   click('#reset');
+ });
  await test('Golden Fleece save code preserved',()=>{
    assert(html.includes('clone=document.documentElement.cloneNode(true)'));
    assert(html.includes('embedded.textContent=JSON.stringify(selected)'));
