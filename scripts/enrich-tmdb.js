@@ -58,14 +58,13 @@ async function getJson(url) {
 }
 
 async function search(work) {
-  const qs = parts(work);
+  const qs = parts(work).slice(0,2);
   let candidates = [];
   for (const q of qs) {
     const url = API + '/movie/search?page=1&limit=10&query=' + encodeURIComponent(q);
     const json = await getJson(url);
     const docs = Array.isArray(json.docs) ? json.docs : (Array.isArray(json) ? json : []);
     candidates.push(...docs);
-    if (docs.length) break;
     await sleep(120);
   }
   const seen = new Set();
