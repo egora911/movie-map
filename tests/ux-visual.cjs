@@ -73,8 +73,17 @@ const {chromium}=require('playwright');
        const filePage=await context.newPage();
        const fileErrors=[];filePage.on('pageerror',e=>fileErrors.push(e.message));
        await filePage.goto('file://'+savedPath);
-       await filePage.waitForSelector('section[data-sec="films"] .card',{state:'attached',timeout:4000});
-       await filePage.waitForTimeout(150);
+       await filePage.waitForTimeout(300);
+       console.log('SAVED FILE CHECK',JSON.stringify({
+         filePath:savedPath,
+         fileBytes:html.length,
+         embeddedCardTags:(html.match(/<article\\b[^>]*class="card/g)||[]).length,
+         embeddedDataStart:html.includes('id="embeddedMovieData"'),
+         title:await filePage.title(),
+         location:filePage.url(),
+         htmlLength:(await filePage.content()).length,
+         browserErrors:fileErrors
+       }));
        const n=await filePage.locator('section[data-sec] .card').count();
        const fileState=await filePage.evaluate(()=>({
          visible:document.querySelectorAll('section[data-sec] .card:not(.hidden)').length,
