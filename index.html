@@ -195,7 +195,7 @@ function cardHtml(work,p){
  const status=work.state==='seen'?'<span class="state-mark seen" title="Просмотрено">✓</span>':'<span class="state-mark todo" title="Не просмотрено">○</span>';
  const tags=Array.isArray(p.tags)?p.tags.join(' '):(p.tags||'');
  const jointAi=work.ai_comments&&typeof work.ai_comments.together==='string'&&work.ai_comments.together.trim();
- const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 итог</span>':'')+'</div>':'';
+ const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'">'+
  '<div class="left"><div class="row1"><span class="n">'+String(p.order).padStart(2,'0')+'</span><span class="title">'+esc(work.title)+'</span><span class="badge"><span class="stars">'+stars+'</span>'+status+'</span><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div></div>'+
  '<div class="score"><div></div><div class="c lab">Я</div><div class="c lab">Жена</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+'</div>'+
@@ -423,14 +423,14 @@ function bindUi(){
     body.textContent=model.aiTogether;
     body.classList.add('ai-view');
     title.textContent=model.title;
-    sub.textContent='ИИ · итог по двум отзывам';
+    sub.textContent='GPT · итог по двум отзывам';
     tabs.innerHTML='';
-    modeLabel.textContent='🤖 Итоговый комментарий';
+    modeLabel.textContent='🤖 GPT · итоговый комментарий';
     const actions=[];
     if(model.reviewMe)actions.push('<button type="button" data-review-mode="review" data-review-person-target="me">Отзыв Егора</button>');
     if(model.reviewWife)actions.push('<button type="button" data-review-mode="review" data-review-person-target="wife">Отзыв Ани</button>');
-    if(model.aiMe)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="me">ИИ · Егор</button>');
-    if(model.aiWife)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="wife">ИИ · Аня</button>');
+    if(model.aiMe)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="me">GPT · Егор</button>');
+    if(model.aiWife)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="wife">GPT · Аня</button>');
     modeActions.innerHTML=actions.join('');
     shell.classList.add('review-single');
     position.textContent='';
@@ -449,11 +449,11 @@ function bindUi(){
     title.textContent=model.title;
     sub.textContent=personName(model.person)+' · оценка '+personScore(model.person);
     tabs.innerHTML=personTabs(people);
-    modeLabel.textContent=isAi?'🤖 Комментарий ИИ':'💬 Дословный отзыв';
+    modeLabel.textContent=isAi?'🤖 GPT-комментарий':'💬 Дословный отзыв';
     const actions=[];
     if(isAi&&humanText(model.person))actions.push('<button type="button" data-review-mode="review">← К отзыву</button>');
-    if(!isAi&&aiText(model.person))actions.push('<button type="button" class="ai-action" data-review-mode="ai">🤖 Комментарий ИИ</button>');
-    if(model.aiTogether)actions.push('<button type="button" class="ai-action" data-review-mode="together">🤖 Итог ИИ</button>');
+    if(!isAi&&aiText(model.person))actions.push('<button type="button" class="ai-action" data-review-mode="ai">🤖 GPT-комментарий</button>');
+    if(model.aiTogether)actions.push('<button type="button" class="ai-action" data-review-mode="together">🤖 GPT-итог</button>');
     modeActions.innerHTML=actions.join('');
     shell.classList.toggle('review-single',people.length<2);
     position.textContent=people.length>1?(idx+1)+' из '+people.length:'';
