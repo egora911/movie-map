@@ -71,11 +71,22 @@ const {chromium}=require('playwright');
        assert(html.includes('id="embeddedMovieData"'),'embedded data missing in save');
        assert(html.includes('Отзывы и копирование'),'new copy UI missing in save');
        const filePage=await context.newPage();
+       const fileErrors=[];filePage.on('pageerror',e=>fileErrors.push(e.message));
        await filePage.goto('file://'+savedPath);
-       await filePage.waitForSelector('section[data-sec="films"] .card');
+       await filePage.waitForSelector('section[data-sec="films"] .card',{state:'attached',timeout:4000});
+       await filePage.waitForTimeout(150);
        const n=await filePage.locator('section[data-sec] .card').count();
+       const fileState=await filePage.evaluate(()=>({
+         visible:document.querySelectorAll('section[data-sec] .card:not(.hidden)').length,
+         firstCard:document.querySelector('section[data-sec] .card')?.className,
+         firstSection:document.querySelector('section[data-sec]')?.className,
+         error:document.querySelector('#empty')?.textContent,
+         count:document.querySelector('section[data-sec] [data-section-count]')?.textContent
+       }));
+       console.log('STANDALONE',n,'cards, state',JSON.stringify(fileState),'errors',JSON.stringify(fileErrors),'saved HTML bytes',html.length);
        assert.equal(n,85,'standalone must show 85 cards');
-       console.log('STANDALONE',n,'cards, saved HTML bytes',html.length);
+       assert.equal(fileState.visible,85,'standalone must show 85 visible cards');
+       assert.deepEqual(fileErrors,[],'standalone JavaScript errors');
        await filePage.close();
      }
      assert.deepEqual(errors,[],'browser JS errors '+cfg.name);
