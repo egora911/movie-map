@@ -1,7 +1,7 @@
 name: Enrich Movie Map from PoiskKino API
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [data/tmdb-enrichment]
     paths:
       - 'scripts/enrich-tmdb.js'
       - '.github/workflows/tmdb-enrich.yml'
