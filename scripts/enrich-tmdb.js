@@ -88,6 +88,18 @@ function chooseOverview(x) {
 function choosePoster(x) {
   return x && x.poster && (x.poster.url || x.poster.previewUrl) || null;
 }
+function chooseRatings(x) {
+  const r=x && x.rating || {};
+  const v=x && x.votes || {};
+  return {
+    kp: Number.isFinite(Number(r.kp)) ? Number(r.kp) : null,
+    imdb: Number.isFinite(Number(r.imdb)) ? Number(r.imdb) : null,
+    tmdb: Number.isFinite(Number(r.tmdb)) ? Number(r.tmdb) : null,
+    votes_kp: Number.isFinite(Number(v.kp)) ? Number(v.kp) : null,
+    votes_imdb: Number.isFinite(Number(v.imdb)) ? Number(v.imdb) : null,
+    votes_tmdb: Number.isFinite(Number(v.tmdb)) ? Number(v.tmdb) : null
+  };
+}
 
 const ok=[], missed=[];
 for (let i=0;i<db.works.length;i++) {
@@ -100,6 +112,7 @@ for (let i=0;i<db.works.length;i++) {
     } else {
       const overview=chooseOverview(match);
       const poster=choosePoster(match);
+      const ratings=chooseRatings(match);
       work.external={
         source:'poiskkino.dev',
         kp_id:match.id || null,
@@ -109,13 +122,17 @@ for (let i=0;i<db.works.length;i++) {
         matched_year:match.year || null,
         confidence:score,
         overview,
-        poster
+        kp_short_description:String(match.shortDescription || '').trim() || null,
+        kp_description:String(match.description || '').trim() || null,
+        poster,
+        ratings
       };
       ok.push(work.title);
       console.log(
         'OK',String(i+1).padStart(2,'0')+'/'+db.works.length,
         work.title,'=>',match.id,match.name||match.alternativeName,
-        match.year,'score='+score,poster?'poster':'no-poster',overview?'overview':'no-overview'
+        match.year,'score='+score,poster?'poster':'no-poster',overview?'overview':'no-overview',
+        'kp='+ratings.kp,'imdb='+ratings.imdb,'tmdb='+ratings.tmdb
       );
     }
   } catch(e) {
