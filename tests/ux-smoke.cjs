@@ -310,7 +310,7 @@ async function init(){
    assert(w.personValue(record.reviews,'egor').length>100);
    assert(record.placements.every(p=>p.actual.egor!==undefined&&p.actual.anna!==undefined));
  });
- await test('History UI supports two human events and GPT v1 → v2 without changing production JSON',async()=>{
+ await test('History UI supports human additions and GPT version increments without changing production JSON',async()=>{
    const {appendHumanEvent,appendAiEvent}=require('../scripts/history-events.cjs');
    const live=w.getMovieData().works.find(x=>x.id==='33233b1d276d');
    const snapshot=JSON.stringify(live);
@@ -345,13 +345,15 @@ async function init(){
      click('#historyShowCurrent');
      assert.equal(d.getElementById('reviewBody').textContent,revision.reviews.egor);
      click('#reviewNavChips [data-review-mode="ai"][data-review-person-target="egor"]');
-     assert.match(d.getElementById('historyStatus').textContent,/v2/);
+     const latestAiIndex=revision.ai_comment_history.egor.length-1;
+     const latestAiVersion=revision.ai_comment_history.egor[latestAiIndex].version;
+     assert.match(d.getElementById('historyStatus').textContent,new RegExp('v'+latestAiVersion));
      click('#historyToggle');
      assert.match(d.getElementById('historyPanel').textContent,/Контекст вкуса изменился/);
      assert.match(d.getElementById('historyPanel').textContent,/развивается/);
      click('#historyPanel [data-history-index="0"]');
      assert.equal(d.getElementById('reviewBody').textContent,revision.ai_comment_history.egor[0].text);
-     click('#historyPanel [data-history-index="1"]');
+     click('#historyPanel [data-history-index="'+latestAiIndex+'"]');
      assert.equal(d.getElementById('reviewBody').textContent,'Новая GPT-интерпретация v2.');
      click('#reviewClose');
    }finally{
