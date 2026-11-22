@@ -8,7 +8,7 @@ const path = require('node:path');
 
 const BATCH = 'rec_2026_11_deep_01';
 const base = (process.env.POISKKINO_API_BASE || 'https://eu-api.poiskkino.dev').replace(/\/+$/, '');
-const key = process.env.POISKKINO_API_KEY || '';
+const key = (process.env.POISKKINO_API_KEY || '').trim();
 const tmdbKey = process.env.TMDB_API_KEY || '';
 const tmdbBearer = process.env.TMDB_READ_ACCESS_TOKEN || '';
 const argv = process.argv.slice(2);
@@ -85,7 +85,12 @@ async function getJson(url,headers) {
   for (let attempt=0;attempt<4;attempt++){
     const resp=await fetch(url,{headers,signal:AbortSignal.timeout(15000)});
     if (resp.status===401) throw new Error('API unauthorized (401): check POISKKINO_API_KEY / TMDB credentials');
-    if (resp.status===403) throw new Error('API forbidden (403): quota or account permissions');
+    if (resp.status===403) {
+      const failure=await resp.json().catch(()=>({}));
+      const message=String(failure.message||failure.error||'');
+      const reason=/limit|quota|лимит|квот/i.test(message)?'quota or rate limit':'access denied';
+      throw new Error('API forbidden (403) '+new URL(url).pathname+' '+reason);
+    }
     if ((resp.status===429||resp.status>=500)&&attempt<3){await pause(1200*Math.pow(2,attempt));continue;}
     if (!resp.ok) throw new Error('API HTTP '+resp.status+' at '+new URL(url).pathname);
     return resp.json();
@@ -93,12 +98,9 @@ async function getJson(url,headers) {
   throw new Error('API retry limit reached');
 }
 async function search(query){
-  const url=base+'/v1.5/movie/search?limit=12&page=1&query='+encodeURIComponent(query);
+  const url=base+'/v1.5/movie/search?page=1&limit=10&query='+encodeURIComponent(query);
   const data=await getJson(url,{'X-API-KEY':key,'Accept':'application/json'});
   return Array.isArray(data.docs) ? data.docs : [];
-}
-async function detail(id){
-  return getJson(base+'/v1.5/movie/'+id,{'X-API-KEY':key,'Accept':'application/json'});
 }
 async function getTmdb(movieId,expectedYear){
   if (!movieId || (!tmdbKey&&!tmdbBearer)) return null;
@@ -140,7 +142,8 @@ async function run(){
       }
       if(chosen.status==='ambiguous'){report.ambiguous.push({title:work.title,choices:chosen.choices});continue;}
       if(chosen.status!=='matched'){report.unmatched.push(work.title);continue;}
-      const record=await detail(chosen.candidate.id);
+      // Search returns a full metadata record on the provider's search-only plan.
+      const record=chosen.candidate;
       const confirmed=chooseMatch(work,[record]);
       if(confirmed.status!=='matched'){report.errors.push({title:work.title,error:'Detail mismatch'});continue;}
       const external=toExternal(record,work.year);
@@ -155,6 +158,9 @@ async function run(){
         }catch(err){report.errors.push({title:work.title,error:'TMDB: '+String(err.message).replace(/api_key=[^&]+/g,'api_key=[redacted]')});}
       }
       work.external=external;
+      if(external.kp_id)work.links.kinopoisk='https://www.kinopoisk.ru/film/'+external.kp_id+'/';
+      if(external.imdb_id)work.links.imdb='https://www.imdb.com/title/'+external.imdb_id+'/';
+      if(external.tmdb_id)work.links.tmdb='https://www.themoviedb.org/movie/'+external.tmdb_id;
       report.matched.push({title:work.title,kp_id:external.kp_id,tmdb_id:external.tmdb_id,
         ratings:external.ratings,poster:!!external.poster,description:!!external.overview});
     }catch(err){
