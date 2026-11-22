@@ -26,12 +26,12 @@
     },
     {
       "id": "me",
-      "label": "Кино / сериал для меня",
+      "label": "Для Егор",
       "expected_cards": 16
     },
     {
       "id": "her",
-      "label": "Кино / сериал для неё",
+      "label": "Для Анна",
       "expected_cards": 15
     }
   ],
