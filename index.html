@@ -669,9 +669,9 @@ function bindUi(){
     modeLabel.textContent='🤖 GPT · итоговый комментарий';
     const actions=[];
     if(model.reviewMe)actions.push('<button type="button" data-review-mode="review" data-review-person-target="me">Отзыв Егора</button>');
-    if(model.reviewWife)actions.push('<button type="button" data-review-mode="review" data-review-person-target="wife">Отзыв Ани</button>');
+    if(model.reviewWife)actions.push('<button type="button" data-review-mode="review" data-review-person-target="wife">Отзыв Анны</button>');
     if(model.aiMe)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="me">GPT · Егор</button>');
-    if(model.aiWife)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="wife">GPT · Аня</button>');
+    if(model.aiWife)actions.push('<button type="button" class="ai-action" data-review-mode="ai" data-review-person-target="wife">GPT · Анна</button>');
     modeActions.innerHTML=actions.join('');
     shell.classList.add('review-single');
     position.textContent='';
