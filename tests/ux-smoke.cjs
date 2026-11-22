@@ -114,6 +114,36 @@ async function init(){
    assert.equal(d.querySelectorAll('section[data-sec] .card .pre .copy-icon').length,0);
    assert.equal(d.querySelectorAll('section[data-sec] .card .post .copy-icon').length,0);
  });
+ await test('screenshot layout: membership, stars, tomorrow and aggregator ratings',async()=>{
+   const saltWork=db.works.find(w=>w.title.startsWith('Saltburn'));
+   const salt=d.querySelector('#allRegistry .card[data-key="'+saltWork.id+'"]');
+   assert(salt,'Saltburn row exists in All');
+   assert.equal(salt.querySelector('.left .external-ratings'),null,'ratings must not remain under year');
+   assert.equal(salt.querySelector('.row1 .watch'),null,'tomorrow must not reduce movie title width');
+   assert.equal(salt.querySelector('.score .watch').textContent.trim(),'📌 завтра');
+   const scoreChildren=[...salt.querySelector('.score').children];
+   assert(scoreChildren[0].classList.contains('score-shortlist'),'tomorrow must occupy first header cell');
+   assert(scoreChildren[3].textContent.includes('прогноз'),'forecast follows immediately below tomorrow header');
+   assert.equal(salt.querySelector('.score .external-ratings .external-rating.kp').textContent.replace(/\\s+/g,' ').trim(),'КП 7.0');
+   assert.equal(salt.querySelector('.score .external-ratings .external-rating.imdb').textContent.replace(/\\s+/g,' ').trim(),'IMDb 7.0');
+   assert.equal(salt.querySelectorAll('.score-ext-values').length,1);
+   assert(!salt.querySelector('.row1 .badge')||!salt.querySelector('.row1 .badge').textContent.includes('завтра'));
+   const meta=salt.querySelector('.meta');
+   assert(meta.nextElementSibling.classList.contains('card-memberships'),'category line must be directly under year and type');
+   assert.equal(salt.querySelector('.card-memberships').children[0].classList.contains('card-origin'),true,'origin must be first');
+   const sentimental=db.works.find(w=>w.title.startsWith('Sentimental Value'));
+   const filmPlacement=d.querySelector('#allRegistry .card[data-key="'+sentimental.id+'"][data-cat="films"]');
+   assert(filmPlacement,'Sentimental Value Films 2x placement exists');
+   const line=filmPlacement.querySelector('.card-memberships');
+   assert.match(line.textContent,/Фильмы 2х/);
+   assert.match(line.textContent,/ещё:/);
+   assert.match(line.textContent,/для Анна/);
+   assert(line.querySelector('[data-cross-cat="her"]'),'cross-list chip must retain its navigation');
+   assert.equal(line.previousElementSibling.classList.contains('meta'),true);
+   assert.equal(d.querySelectorAll('#allRegistry .card .score-shortlist .watch').length,85,'all 85 placements have shortlist button in score');
+   const beforeCopy=d.querySelectorAll('#allRegistry .card .pre .copy-icon').length;
+   assert.equal(beforeCopy,0,'compact card does not have copy action');
+ });
  await test('detailed copy for ДО and ПОСЛЕ, thread, package',async()=>{
    const detail=d.getElementById('movieDetailBody');
    assert(detail.querySelector('.thread-copy-menu'));
