@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": "movie_map_online",
   "description": "Structured Movie Map data extracted from the canonical v15 HTML. A work is unique by id; category-specific presentation data is preserved in placements.",
   "counts": {
@@ -26,12 +26,12 @@
     },
     {
       "id": "me",
-      "label": "для Егор",
+      "label": "Кино / сериал для Егора",
       "expected_cards": 16
     },
     {
       "id": "her",
-      "label": "для Анна",
+      "label": "Кино / сериал для Анны",
       "expected_cards": 15
     }
   ],
@@ -53,12 +53,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "8.8",
-            "wife": "8.2"
+            "egor": "8.8",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "8–9",
-            "wife": "7.5"
+            "egor": "8–9",
+            "anna": "7.5"
           },
           "before": "Студент из Оксфорда попадает в закрытый мир очень богатой аристократической семьи. Секс, классовая зависть, красота и опасная игра.",
           "after": "Тебе особенно зашли позднее раскрытие «паразита», логика отношений, девиации вместо прямой эротики и сарказм над аристократической средой. Жене — картинка, но не хватило раскрытия Феликса."
@@ -88,6 +88,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -109,12 +129,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.7"
+            "egor": "8.0",
+            "anna": "8.7"
           },
           "actual": {
-            "me": "≈7–8",
-            "wife": "≈8–9"
+            "egor": "≈7–8",
+            "anna": "≈8–9"
           },
           "before": "Гротескное body-horror кино о теле, старении, женской идентичности и цене внешнего подтверждения собственной ценности.",
           "after": "Обоим понравились визуал, кастинг и актёры; жене примерно на 1–2 балла больше. Для тебя финальная эскалация слишком явно давила авторским жестом."
@@ -144,6 +164,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -165,12 +205,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.8",
-            "wife": "7.7"
+            "egor": "8.8",
+            "anna": "7.7"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Самый обычный профессор внезапно начинает сниться миллионам людей. Кауфмановская идея, чёрная комедия и социальная машина известности.",
           "after": null
@@ -183,12 +223,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.8",
-            "wife": "7.7"
+            "egor": "8.8",
+            "anna": "7.7"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Слава возникает буквально из чужих снов и превращает обычного человека в общественный объект.",
           "after": null
@@ -218,6 +258,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -237,12 +297,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "7.8",
-            "wife": "8.7"
+            "egor": "7.8",
+            "anna": "8.7"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Два очень разных родственника едут в Польшу по следам семейной истории. Память, близость и несовпадающие способы переживать боль.",
           "after": null
@@ -272,6 +332,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -291,12 +371,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "8.6",
-            "wife": "9.4"
+            "egor": "8.6",
+            "anna": "9.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Семья, память и искусство сталкиваются внутри отношений отца и дочерей. Творчество одновременно соединяет людей и использует их.",
           "after": null
@@ -307,12 +387,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "8.6",
-            "wife": "9.4"
+            "egor": "8.6",
+            "anna": "9.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Семейная рана и искусство как способ приблизиться к другому и одновременно использовать его.",
           "after": null
@@ -342,6 +422,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -363,12 +463,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.0",
-            "wife": "8.2"
+            "egor": "9.0",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "просмотрено",
-            "wife": "просмотрено"
+            "egor": "просмотрено",
+            "anna": "просмотрено"
           },
           "before": "Лантимос: паранойя, сломанная реальность и люди, чья уверенность в собственной картине мира становится опаснее самой картины.",
           "after": "Просмотрено до фиксации карты. Детальные оценки и впечатления пока не восстановлены — не придумываю их задним числом."
@@ -381,12 +481,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.0",
-            "wife": "8.2"
+            "egor": "9.0",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "просмотрено",
-            "wife": "просмотрено"
+            "egor": "просмотрено",
+            "anna": "просмотрено"
           },
           "before": "Паранойя, заговор и конфликт несовместимых карт реальности.",
           "after": "Просмотрено; ждём восстановления ваших точных оценок и комментариев."
@@ -416,6 +516,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -437,12 +557,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.4",
-            "wife": "7.5"
+            "egor": "8.4",
+            "anna": "7.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Sci-fi о человеке, которого система буквально может печатать заново. Абсурд, социальная сатира и уникальность при воспроизводимости.",
           "after": null
@@ -455,12 +575,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.5",
-            "wife": "7.4"
+            "egor": "8.5",
+            "anna": "7.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Идентичность становится технологически воспроизводимой, а человек — расходным ресурсом институции.",
           "after": null
@@ -490,6 +610,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -511,12 +651,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.2",
-            "wife": "8.3"
+            "egor": "9.2",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Большое нервное кино Пола Томаса Андерсона: семья и прошлое существуют внутри политической, исторической и абсурдной машины.",
           "after": null
@@ -546,6 +686,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -565,12 +725,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "9.1",
-            "wife": "7.3"
+            "egor": "9.1",
+            "anna": "7.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Архитектура, амбиция, власть и цена создания чего-то большого. Длительность должна работать как часть содержания.",
           "after": null
@@ -581,12 +741,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "9.1",
-            "wife": "7.3"
+            "egor": "9.1",
+            "anna": "7.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Архитектура как форма воли, зависимости и социального положения. Проверка твоего критерия «оплачивает ли длительность сама себя».",
           "after": null
@@ -616,6 +776,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -635,12 +815,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "8.8",
-            "wife": "8.3"
+            "egor": "8.8",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Жанровое кино с сильной авторской формой: музыка, телесность, сообщество и опасность собраны в энергичную конструкцию.",
           "after": null
@@ -670,6 +850,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -689,12 +889,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "7.0",
-            "wife": "6.0"
+            "egor": "7.0",
+            "anna": "6.0"
           },
           "actual": {
-            "me": "≈6–7",
-            "wife": "низко"
+            "egor": "≈6–7",
+            "anna": "низко"
           },
           "before": "Большой визуальный эпос: знакомый миф как материал для масштабного современного прочтения.",
           "after": "Фактически обоим не хватило содержательной отдачи. Тебе понравилась картинка, но длительность не была оплачена новой глубиной; жене было скучно и тягомотно."
@@ -724,6 +924,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -743,12 +963,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "9.5",
-            "wife": "9.5"
+            "egor": "9.5",
+            "anna": "9.5"
           },
           "actual": {
-            "me": "10",
-            "wife": "10"
+            "egor": "10",
+            "anna": "10"
           },
           "before": "Треугольник желания, теннис, амбиция и власть. Спортивный матч превращается в язык отношений.",
           "after": "Ваш нынешний общий эталон: жене — непосредственное переживание и Zendaya; тебе — камера, форма, кастинг и сосуществование животного, рационального и социального без морализаторства."
@@ -759,12 +979,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "9.5",
-            "wife": "9.5"
+            "egor": "9.5",
+            "anna": "9.5"
           },
           "actual": {
-            "me": "10",
-            "wife": "10"
+            "egor": "10",
+            "anna": "10"
           },
           "before": "Треугольник желания, спорта и власти.",
           "after": "Для неё — одно из лучших попаданий последнего времени; Zendaya — отдельный эмоциональный плюс."
@@ -794,6 +1014,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -813,12 +1053,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "7.5",
-            "wife": "9.3"
+            "egor": "7.5",
+            "anna": "9.3"
           },
           "actual": {
-            "me": "7",
-            "wife": "10"
+            "egor": "7",
+            "anna": "10"
           },
           "before": "Интимная история одиночества, близости, памяти и встречи взрослого человека с непрожитой утратой родителей.",
           "after": "Для жены почти уровень Challengers: ценность внутри самого переживания. Для тебя красиво и эмоционально, но после считывания механизма осталось меньше второго слоя."
@@ -829,12 +1069,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "7.5",
-            "wife": "9.3"
+            "egor": "7.5",
+            "anna": "9.3"
           },
           "actual": {
-            "me": "7",
-            "wife": "10"
+            "egor": "7",
+            "anna": "10"
           },
           "before": "Близость, утрата, память и невозможность окончательно закрыть прошлое.",
           "after": "Она прямо ставит фильм очень близко к Challengers: редкий пример полного проживания субъекта изнутри."
@@ -864,6 +1104,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -883,12 +1143,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "7.8",
-            "wife": "8.7"
+            "egor": "7.8",
+            "anna": "8.7"
           },
           "actual": {
-            "me": "7–8",
-            "wife": "8–9"
+            "egor": "7–8",
+            "anna": "8–9"
           },
           "before": "Актриса изучает женщину, чья давняя скандальная связь стала семьёй. Наблюдение постепенно перестаёт быть нейтральным.",
           "after": "Жене особенно интересна Elizabeth, входящая в семью; тебе — Joe и вопрос, чем его жизненный симулякр отличается от наших социально произведённых реальностей."
@@ -899,12 +1159,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "7.8",
-            "wife": "8.7"
+            "egor": "7.8",
+            "anna": "8.7"
           },
           "actual": {
-            "me": "7–8",
-            "wife": "8–9"
+            "egor": "7–8",
+            "anna": "8–9"
           },
           "before": "Актриса входит в чужую семью, чтобы сыграть её хозяйку, и сама становится участником системы отношений.",
           "after": "Ей особенно интересна линия Elizabeth и её внедрение в отношения; Joe вызывает сочувствие, но и вопрос о его инфантильности."
@@ -934,6 +1194,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -955,12 +1235,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.3",
-            "wife": "8.2"
+            "egor": "9.3",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Пак Чхан-ук превращает потерю работы в чёрную сатиру о конкуренции, семье и моральном распаде. Социальная машина работает через очень конкретного человека.",
           "after": null
@@ -973,12 +1253,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.3",
-            "wife": "8.2"
+            "egor": "9.3",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Чёрная социальная сатира Пак Чхан-ука: конкуренция за работу доводится до буквального устранения конкурентов.",
           "after": null
@@ -991,12 +1271,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.4",
-            "wife": "8.1"
+            "egor": "9.4",
+            "anna": "8.1"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Человек пытается вернуть контроль над жизнью и постепенно становится функцией конкурентной системы, с которой борется.",
           "after": null
@@ -1026,6 +1306,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1047,12 +1347,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.4",
-            "wife": "8.5"
+            "egor": "8.4",
+            "anna": "8.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Необычно собранная история о конечности, памяти и ценности прожитого — эмоциональная конструкция с формальным трюком.",
           "after": null
@@ -1065,12 +1365,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.4",
-            "wife": "8.5"
+            "egor": "8.4",
+            "anna": "8.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "История жизни рассказана через необычную структуру и ощущение конечности мира.",
           "after": null
@@ -1100,6 +1400,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1119,12 +1439,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.8"
+            "egor": "8.0",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Тихое, чёрно-комическое кино о травме и возвращении к собственной жизни без большой морализаторской речи.",
           "after": null
@@ -1137,12 +1457,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.8"
+            "egor": "8.0",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Травма без привычной драматической эксплуатации: сухой юмор, близость и возвращение к жизни.",
           "after": null
@@ -1153,12 +1473,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.9"
+            "egor": "8.0",
+            "anna": "8.9"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Очень человеческое кино о травме, дружбе и возвращении способности жить без эмоционального шантажа зрителя.",
           "after": null
@@ -1188,6 +1508,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1209,12 +1549,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.3"
+            "egor": "8.0",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Игра идентичностей, сексуальность и лёгкая криминальная интрига; умное жанровое кино без необходимости тяжело работать зрителем.",
           "after": null
@@ -1228,12 +1568,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.3"
+            "egor": "8.0",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Мужчина начинает играть выдуманные личности и обнаруживает, что роль способна переписать самого исполнителя.",
           "after": null
@@ -1263,6 +1603,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1284,12 +1644,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.5",
-            "wife": "8.5"
+            "egor": "8.5",
+            "anna": "8.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Почти камерная дуэль желания, роли, власти и контроля между двумя людьми; сексуальность здесь прежде всего механизм отношений.",
           "after": null
@@ -1302,12 +1662,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.5",
-            "wife": "8.5"
+            "egor": "8.5",
+            "anna": "8.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Камерная сексуально-психологическая дуэль, где роль и реальная власть всё время меняются местами.",
           "after": null
@@ -1337,6 +1697,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1358,12 +1738,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.1",
-            "wife": "7.4"
+            "egor": "8.1",
+            "anna": "7.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Отпуск превращается в распад идентичности, привилегии и моральных ограничений. Красиво, телесно и намеренно неприятно.",
           "after": null
@@ -1376,12 +1756,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.1",
-            "wife": "7.4"
+            "egor": "8.1",
+            "anna": "7.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Отпуск, привилегия и возможность избежать последствий постепенно размывают личность героя.",
           "after": null
@@ -1411,6 +1791,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1432,12 +1832,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.4",
-            "wife": "8.6"
+            "egor": "9.4",
+            "anna": "8.6"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "White Lotus × Severance × Линч: молодая пара снимает телешоу о «правильной» жизни и постепенно оказывается внутри всё более неприятной версии себя.",
           "after": null
@@ -1467,6 +1867,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1486,12 +1906,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "9.0",
-            "wife": "9.1"
+            "egor": "9.0",
+            "anna": "9.1"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Дорожный конфликт двух незнакомцев превращается в долгую взаимную одержимость. Ярость, абсурд, отношения и саморазрушение.",
           "after": null
@@ -1521,6 +1941,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1540,12 +1980,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "9.2",
-            "wife": "8.0"
+            "egor": "9.2",
+            "anna": "8.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Чёрно-белая Италия, холодная красота и человек, который примеряет чужую жизнь как костюм. Психопатология без лишних объяснений.",
           "after": null
@@ -1575,6 +2015,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1594,12 +2054,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "8.2",
-            "wife": "9.0"
+            "egor": "8.2",
+            "anna": "9.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Близость, зависимость, травма и нарушение границ без удобного деления людей на чистую жертву и чистого злодея.",
           "after": null
@@ -1629,6 +2089,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1648,12 +2128,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "9.0",
-            "wife": "9.0"
+            "egor": "9.0",
+            "anna": "9.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Четыре эпизода, снятые длинными непрерывными дублями: преступление подростка раскрывается через семью, школу, мужскую социализацию и взгляд взрослых.",
           "after": null
@@ -1683,6 +2163,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1704,12 +2204,12 @@
             "россия"
           ],
           "prediction": {
-            "me": "9.0",
-            "wife": "8.5"
+            "egor": "9.0",
+            "anna": "8.5"
           },
           "actual": {
-            "me": "не зашло",
-            "wife": "не зашло"
+            "egor": "не зашло",
+            "anna": "не зашло"
           },
           "before": "1990-е, тюрьма и идея продавать право исполнения смертного приговора родственникам жертв. Власть, ответственность и деньги превращаются в одну систему.",
           "after": "Остановились после 2–3 серий. Жена: тягомотно, не цепляет. Я: исходная идея классная — слегка достоевская конструкция о вседозволенности, перенесённая в 90-е. Хорошо работают отдельные линии других героев и сама фактура эпохи: грязь, первые деньги, стволы, ощущение, что 90-е были совсем не сахар. Но автора слишком много: он напрямую говорит словами главного героя и довольно грубо объясняет зрителю «что хорошо, что плохо», почти на уровне школьной морали. Плюс внутреннее время сериала сильно растянуто. В итоге не цепануло, хотя из этой идеи можно было сделать конфету."
@@ -1739,6 +2239,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1761,12 +2281,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "8.1",
-            "wife": "8.3"
+            "egor": "8.1",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Провинциальный журналист начинает видеть будущие убийства. Детективная интрига смешана с абсурдом маленького города и человеческими слабостями.",
           "after": null
@@ -1796,6 +2316,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1818,12 +2358,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.2",
-            "wife": "8.2"
+            "egor": "8.2",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Таинственный бар предлагает невозможный звонок умершему человеку — но цена разговора превращает желание в моральный эксперимент.",
           "after": null
@@ -1837,12 +2377,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.2",
-            "wife": "8.2"
+            "egor": "8.2",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Звонок умершему как услуга с ценой: мистическая идея быстро становится экспериментом над виной и желанием.",
           "after": null
@@ -1872,6 +2412,26 @@
       "origin": {
         "type": "watched_history",
         "added_by": "couple"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1893,12 +2453,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "actual": {
-            "me": "любим",
-            "wife": "любим"
+            "egor": "любим",
+            "anna": "любим"
           },
           "before": "Отпуск как лаборатория класса, желания, денег, секса и взаимного использования.",
           "after": "Один из ваших общих эталонов: социальная психология и отношения работают одновременно, но сериал остаётся увлекательным."
@@ -1928,6 +2488,26 @@
       "origin": {
         "type": "watched_history",
         "added_by": "couple"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -1949,12 +2529,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "actual": {
-            "me": "любим",
-            "wife": "любим"
+            "egor": "любим",
+            "anna": "любим"
           },
           "before": "Рабочая и личная личности буквально разделены. Формальная sci-fi идея превращается в исследование власти, идентичности и труда.",
           "after": "Общий любимый сериал — важная контрольная точка пересечения ваших вкусов."
@@ -1984,6 +2564,26 @@
       "origin": {
         "type": "watched_history",
         "added_by": "couple"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2005,12 +2605,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "actual": {
-            "me": "нравится",
-            "wife": "нравится"
+            "egor": "нравится",
+            "anna": "нравится"
           },
           "before": "Взрослая драмеди о богатом пригороде, статусе, преступлении и отношениях.",
           "after": "Ваш эталон качественного вечернего отдыха: интересно, взрослые персонажи, хочется смотреть дальше и можно не анализировать."
@@ -2040,6 +2640,26 @@
       "origin": {
         "type": "watched_history",
         "added_by": "couple"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2062,12 +2682,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "actual": {
-            "me": "не топ, но хорошо",
-            "wife": "не топ, но хорошо"
+            "egor": "не топ, но хорошо",
+            "anna": "не топ, но хорошо"
           },
           "before": "Российский сериал для вечернего просмотра: ставка прежде всего на сюжетное вовлечение.",
           "after": "Для вас обоих — добротный отдых, не топовый уровень, но хороший вариант на вечер."
@@ -2097,6 +2717,26 @@
       "origin": {
         "type": "watched_history",
         "added_by": "couple"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2118,12 +2758,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.1",
-            "wife": "8.3"
+            "egor": "9.1",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Sci-fi Винса Гиллигана о мире, где коллективное счастье становится почти тотальным состоянием. Индивидуальность против очень удобной системы.",
           "after": null
@@ -2136,12 +2776,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.1",
-            "wife": "8.3"
+            "egor": "9.1",
+            "anna": "8.3"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Коллективное счастье как потенциальная антиутопия: что остаётся от человека, если исчезает болезненная отдельность?",
           "after": null
@@ -2154,12 +2794,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "9.3",
-            "wife": "8.1"
+            "egor": "9.3",
+            "anna": "8.1"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Коллективное счастье против отдельности: почти лабораторная постановка вопроса, нужен ли человеку собственный дискомфорт, чтобы оставаться собой.",
           "after": null
@@ -2189,6 +2829,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2210,12 +2870,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "8.6",
-            "wife": "8.0"
+            "egor": "8.6",
+            "anna": "8.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Индустрия кино как машина статуса, компромиссов и абсурда; быстрая комедия, где форма и производственная среда постоянно сталкиваются.",
           "after": null
@@ -2228,12 +2888,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "8.8",
-            "wife": "7.8"
+            "egor": "8.8",
+            "anna": "7.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Киноиндустрия как абсурдная статусная машина; быстрый темп и наблюдение за тем, как система производит поведение.",
           "after": null
@@ -2263,6 +2923,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2282,12 +2962,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "7.7",
-            "wife": "8.8"
+            "egor": "7.7",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Мать и новая девушка сына смотрят друг на друга как на угрозу; вопрос не только кто лжёт, но кто контролирует саму версию реальности.",
           "after": null
@@ -2298,12 +2978,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "7.6",
-            "wife": "8.9"
+            "egor": "7.6",
+            "anna": "8.9"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Мать и девушка сына конкурируют не только за человека, но и за право определить, что вообще происходит.",
           "after": null
@@ -2333,6 +3013,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2352,12 +3052,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "7.8",
-            "wife": "8.8"
+            "egor": "7.8",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Женские отношения, власть, привлекательность и богатая закрытая среда — социальная игра с эмоциональным крючком.",
           "after": null
@@ -2368,12 +3068,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "7.7",
-            "wife": "8.8"
+            "egor": "7.7",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Женские отношения, привлекательность, власть и богатая закрытая среда. Потенциально очень её поле.",
           "after": null
@@ -2403,6 +3103,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2422,12 +3142,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "8.0",
-            "wife": "8.8"
+            "egor": "8.0",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "9",
-            "wife": "10"
+            "egor": "9",
+            "anna": "10"
           },
           "before": "Интимность, вина и постепенная перестройка того, кому зритель верит. История специально управляет нашей моральной позицией.",
           "after": "Обоих увлекла интрига и переворот зрительской оценки персонажей: Ане особенно понравилась смена полюсов и чувственные сцены, Егору — монтаж, операторская работа и то, как режиссёр вовлекает зрителя в поспешное общественное осуждение. Аня оценила сериал на 10/10, Егор — на 9/10: ему смазала впечатление скомканная финальная сцена отказа в прощении; Аня отметила неправдоподобие больничной сцены."
@@ -2438,29 +3158,29 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "7.9",
-            "wife": "8.9"
+            "egor": "7.9",
+            "anna": "8.9"
           },
           "actual": {
-            "me": "9",
-            "wife": "10"
+            "egor": "9",
+            "anna": "10"
           },
           "before": "Женщина обнаруживает книгу, которая раскрывает её скрытое прошлое. Интимность, вина и управление зрительской симпатией.",
           "after": "Обоих увлекла интрига и переворот зрительской оценки персонажей: Ане особенно понравилась смена полюсов и чувственные сцены, Егору — монтаж, операторская работа и то, как режиссёр вовлекает зрителя в поспешное общественное осуждение. Аня оценила сериал на 10/10, Егор — на 9/10: ему смазала впечатление скомканная финальная сцена отказа в прощении; Аня отметила неправдоподобие больничной сцены."
         }
       ],
       "reviews": {
-        "wife": "Интересно с 1й серии, сразу же появляется интрига. Героиня Бланшет успешная женщина, хорошая жена, что такого она сделала, что может обнулить все ее достоинства? Трагедия в океане, жалко молодого красивого парня до последней серии, после которой переворачивается восприятие этого человека, оказывается он сталкер, психопат и насильник. Также его отец из тихого деда превращается в одержимого маньяка. Здорово наблюдать за сменой полюсов в характерах. Красивые сцены интрижки, много секса. Все выглядит правдоподобно, кроме сцены с больницей, где лежит сын наркоман.",
-        "me": "Фильм быстро завлекает. Классический паттерн партнеров,  жена запрятала скелет прошлого, который может разрушить отстроенный привычный мир комфорта, верхнего достатка, безопасности, и это все оказывается легко разрушаемой  иллюзией.\nОтличный сценарий и монтаж первые 2/3 фильма постоянно переключают нас между сейчас и прошлым, заставляет нас стать соучастниками отмены, порицания, но и свидетелями чистого желания, влечения, запретных игр отпуска без второй половинки.\nКрасивая операторская работа. Небанально затронуто много тем: основы престижной жизни в благоустроенных кварталах лондона, потерянность и инфантилизм детей зажиточных семей, залечивающих свои раны наркотиками, легкая отмена  людей с хорошей репутацией, которых мы знали долгое время, как общество стало подверженным неврозам и без фактчеккинга и возможности оправдания легко провоцируемым на отмену и порицание.\nБолее того, режиссёр нас вовлекает в эту игру и заставляет стать соучастниками отмены и доказывает как же это легко сделать.\nКрасивые кадры как хорошие в целом люди, не потерявяшие осознанность, никогда не вылезавшие из своих машин, едут на общественном транспорте по своим делам и рефлексируют на простые темы, наблюдают за собой и легкими слоями сноббизма и сытой жизни, покрывшие из восприятие.\nВ концовке даже немного жаль (классический жесткий плот твист), что нам не дали взять грех на душу и вынести вердикт женщине, которая сама стала жертвой.\nКрасиво показали, как она все эти долгие годы несла свою боль жесточайшей травмы и не вынесла ее наружу, а была достойной матерью и женой. В то время когда сын тонент в жалости к себе, а муж моментально закутался в одеяло гордости и порицания после 15 лет совместной жизни.\nВот вам и доверие партнёров и зона безопасности.\n\nОценка 9/10\nСнизил за концовку.\nОтмена на отмену. Жена отказалась простить мужа.\nТочно не хотелось счастливого конца. \nНо и сам диалог вышел убогий и срезанный.\nМогла бы вязть паузу, что было бы логичнее после такого мощного стресса.\nДа именно концовка смазала."
+        "egor": "Фильм быстро завлекает. Классический паттерн партнеров,  жена запрятала скелет прошлого, который может разрушить отстроенный привычный мир комфорта, верхнего достатка, безопасности, и это все оказывается легко разрушаемой  иллюзией.\nОтличный сценарий и монтаж первые 2/3 фильма постоянно переключают нас между сейчас и прошлым, заставляет нас стать соучастниками отмены, порицания, но и свидетелями чистого желания, влечения, запретных игр отпуска без второй половинки.\nКрасивая операторская работа. Небанально затронуто много тем: основы престижной жизни в благоустроенных кварталах лондона, потерянность и инфантилизм детей зажиточных семей, залечивающих свои раны наркотиками, легкая отмена  людей с хорошей репутацией, которых мы знали долгое время, как общество стало подверженным неврозам и без фактчеккинга и возможности оправдания легко провоцируемым на отмену и порицание.\nБолее того, режиссёр нас вовлекает в эту игру и заставляет стать соучастниками отмены и доказывает как же это легко сделать.\nКрасивые кадры как хорошие в целом люди, не потерявяшие осознанность, никогда не вылезавшие из своих машин, едут на общественном транспорте по своим делам и рефлексируют на простые темы, наблюдают за собой и легкими слоями сноббизма и сытой жизни, покрывшие из восприятие.\nВ концовке даже немного жаль (классический жесткий плот твист), что нам не дали взять грех на душу и вынести вердикт женщине, которая сама стала жертвой.\nКрасиво показали, как она все эти долгие годы несла свою боль жесточайшей травмы и не вынесла ее наружу, а была достойной матерью и женой. В то время когда сын тонент в жалости к себе, а муж моментально закутался в одеяло гордости и порицания после 15 лет совместной жизни.\nВот вам и доверие партнёров и зона безопасности.\n\nОценка 9/10\nСнизил за концовку.\nОтмена на отмену. Жена отказалась простить мужа.\nТочно не хотелось счастливого конца. \nНо и сам диалог вышел убогий и срезанный.\nМогла бы вязть паузу, что было бы логичнее после такого мощного стресса.\nДа именно концовка смазала.",
+        "anna": "Интересно с 1й серии, сразу же появляется интрига. Героиня Бланшет успешная женщина, хорошая жена, что такого она сделала, что может обнулить все ее достоинства? Трагедия в океане, жалко молодого красивого парня до последней серии, после которой переворачивается восприятие этого человека, оказывается он сталкер, психопат и насильник. Также его отец из тихого деда превращается в одержимого маньяка. Здорово наблюдать за сменой полюсов в характерах. Красивые сцены интрижки, много секса. Все выглядит правдоподобно, кроме сцены с больницей, где лежит сын наркоман."
       },
       "review_dates": {
-        "wife": "2026-11-16",
-        "me": "2026-11-16"
+        "egor": "2026-11-16",
+        "anna": "2026-11-16"
       },
       "ai_comments": {
-        "wife": "У Ани здесь очень чистое попадание в её способ входить в историю. Её зацепило буквально с первой серии не «как это устроено», а вопрос: что должна была сделать такая женщина, чтобы вся её благополучная жизнь вдруг оказалась под угрозой? То есть интрига сразу становится для неё человеческой — не загадкой ради загадки, а угрозой конкретной женщине, её браку, репутации и привычному миру.\n\nИ дальше особенно показательно, что сильнее всего Аня запомнила именно смену отношения к персонажам. Молодой красивый парень почти весь сериал существует как объект сочувствия и желания, а потом полностью переворачивается; тихий старик-отец оказывается одержимым и опасным. Это очень похоже на то, что у неё работало в Big Little Lies, May December и All of Us Strangers: ей важно не просто следить за сюжетом, а постепенно пересобирать своё чувство к человеку. Когда сериал заставляет её несколько раз менять эмоциональную позицию, это для неё не обман зрителя, а удовольствие от глубины персонажа.\n\nОтдельно совсем не случайно, что она отметила красивые сцены интрижки и секс. Для Ани чувственность — это не декоративный бонус. Через телесность, желание и привлекательность персонажей она сильнее входит в отношения и начинает переживать их изнутри. Поэтому здесь сработала очень удачная комбинация: ранняя интрига + привлекательные люди + сексуальное напряжение + поздний моральный переворот. Это практически формула её сильного попадания.\n\nИ её 10/10 при одной конкретной претензии к больничной сцене тоже полезны для нашей модели. Аня вполне готова простить отдельную неправдоподобную сцену, если эмоциональная конструкция целиком держит её внутри истории. Для неё локальная логическая шероховатость не разрушает фильм, если отношения, интрига и изменение восприятия героев продолжают работать. Это важное отличие от тебя — и очень полезная настройка для следующих совместных рекомендаций.",
-        "me": "У тебя здесь, по-моему, сработала одна из самых твоих любимых вещей в кино: фильм не просто рассказывает о моральной ошибке людей, а сначала заставляет тебя самого эту ошибку совершить. Первые две трети ты честно участвуешь в обвинении Кэтрин — собираешь вместе удобную картину, видишь «скелет прошлого», считываешь измену, слабость, угрозу семье. А потом Куарон не столько сообщает новую информацию, сколько отбирает у тебя право чувствовать себя внешним судьёй. И вот это уже очень твоя территория.\n\nПоэтому мне кажется важным, что ты отдельно отметил монтаж настоящего и прошлого. Для тебя форма здесь не украшение: именно через монтаж тебя постепенно делают соучастником отмены. Это рифмуется с тем, что тебе понравилось в May December и Saltburn: человек интересен тебе не сам по себе и не как набор «хороших/плохих» качеств, а внутри системы взглядов, желаний, социальных ролей и чужих интерпретаций. И особенно хорошо работает кино, которое не объясняет эту систему сверху, а незаметно помещает тебя внутрь неё.\n\nЕщё мне очень нравится твоя реакция на благополучную среду сериала — машины, хорошие районы, нормальные в целом люди, которые вдруг оказываются чрезвычайно хрупкими перед стыдом, гордостью и страхом потери статуса. Это уже не просто сюжет про тайну супруги. Ты увидел, насколько тонким слоем держится ощущение безопасности у людей, которые вроде бы всё правильно построили. По сути, это та же тема, которая тебя цепляла в White Lotus и частично в Saltburn: внешне устойчивый мир оказывается системой очень уязвимых договорённостей.\n\nИ поэтому твои 9/10 из-за финала для меня особенно показательны. Тебе не нужен был ни счастливый конец, ни обязательное прощение мужа. Тебе хотелось, чтобы после такого сложного фильма человеческий конфликт остался столь же сложным. А финальный отказ в прощении показался слишком быстрым и окончательным — как будто фильм сам в последнюю минуту сделал то, против чего до этого выступал: вынес простой вердикт там, где всё было устроено гораздо неоднозначнее. Для будущих рекомендаций это важная настройка: сильный плот-твист тебе не мешает, но после него фильм должен сохранить сложность человека, а не свести её к последней эффектной точке.",
-        "together": "Disclaimer оказался редким случаем почти полного совместного попадания, но интересно, что вы пришли к высокой оценке разными маршрутами. Аню сериал взял прежде всего как психологическая и эмоциональная интрига: её держала смена полюсов — от сочувствия к молодому человеку до отвращения, от тихого отца до одержимого мстителя; плюс сработали чувственность, сексуальное напряжение и ощущение правдоподобной жизни внутри благополучной среды. Это хорошо подтверждает её устойчивый критерий: ей нужен ранний эмоциональный крючок и живые человеческие отношения, внутри которых постепенно меняется восприятие персонажей.\n\nУ Егора точка входа другая. Его особенно зацепила сама машина фильма: монтаж настоящего и прошлого, управление доверием зрителя и то, как режиссёр заставляет нас почти добровольно присоединиться к моральному приговору, а потом показывает, насколько легко мы его вынесли. Это очень в твою линию после May December и Saltburn: тебе нравится не когда фильм объясняет моральный механизм, а когда он делает зрителя участником этого механизма и лишь потом меняет оптику. Отсюда же и снижение до 9/10: финал для тебя оказался слабее основной конструкции именно потому, что после долгой неоднозначности слишком быстро закрыл человеческий конфликт прямым решением.\n\nВ совместном вкусе здесь проявилась важная зона пересечения: вам обоим хорошо заходят истории, где есть престижная, внешне устойчивая среда, сексуальное или эмоциональное напряжение и постепенное разрушение первоначального образа людей. Но для будущих рекомендаций есть и различие: Ане важнее, чтобы это быстро цепляло эмоционально и продолжало менять отношение к героям; тебе — чтобы фильм не разжёвывал мораль и не закрывал сложную конструкцию слишком прямолинейным финальным жестом. Поэтому особенно перспективны для вас вещи с ненадёжной перспективой, сильным монтажом/формой и моральной сменой ролей — но без дидактической развязки."
+        "together": "Disclaimer оказался редким случаем почти полного совместного попадания, но интересно, что вы пришли к высокой оценке разными маршрутами. Аню сериал взял прежде всего как психологическая и эмоциональная интрига: её держала смена полюсов — от сочувствия к молодому человеку до отвращения, от тихого отца до одержимого мстителя; плюс сработали чувственность, сексуальное напряжение и ощущение правдоподобной жизни внутри благополучной среды. Это хорошо подтверждает её устойчивый критерий: ей нужен ранний эмоциональный крючок и живые человеческие отношения, внутри которых постепенно меняется восприятие персонажей.\n\nУ Егора точка входа другая. Его особенно зацепила сама машина фильма: монтаж настоящего и прошлого, управление доверием зрителя и то, как режиссёр заставляет нас почти добровольно присоединиться к моральному приговору, а потом показывает, насколько легко мы его вынесли. Это очень в твою линию после May December и Saltburn: тебе нравится не когда фильм объясняет моральный механизм, а когда он делает зрителя участником этого механизма и лишь потом меняет оптику. Отсюда же и снижение до 9/10: финал для тебя оказался слабее основной конструкции именно потому, что после долгой неоднозначности слишком быстро закрыл человеческий конфликт прямым решением.\n\nВ совместном вкусе здесь проявилась важная зона пересечения: вам обоим хорошо заходят истории, где есть престижная, внешне устойчивая среда, сексуальное или эмоциональное напряжение и постепенное разрушение первоначального образа людей. Но для будущих рекомендаций есть и различие: Ане важнее, чтобы это быстро цепляло эмоционально и продолжало менять отношение к героям; тебе — чтобы фильм не разжёвывал мораль и не закрывал сложную конструкцию слишком прямолинейным финальным жестом. Поэтому особенно перспективны для вас вещи с ненадёжной перспективой, сильным монтажом/формой и моральной сменой ролей — но без дидактической развязки.",
+        "egor": "У тебя здесь, по-моему, сработала одна из самых твоих любимых вещей в кино: фильм не просто рассказывает о моральной ошибке людей, а сначала заставляет тебя самого эту ошибку совершить. Первые две трети ты честно участвуешь в обвинении Кэтрин — собираешь вместе удобную картину, видишь «скелет прошлого», считываешь измену, слабость, угрозу семье. А потом Куарон не столько сообщает новую информацию, сколько отбирает у тебя право чувствовать себя внешним судьёй. И вот это уже очень твоя территория.\n\nПоэтому мне кажется важным, что ты отдельно отметил монтаж настоящего и прошлого. Для тебя форма здесь не украшение: именно через монтаж тебя постепенно делают соучастником отмены. Это рифмуется с тем, что тебе понравилось в May December и Saltburn: человек интересен тебе не сам по себе и не как набор «хороших/плохих» качеств, а внутри системы взглядов, желаний, социальных ролей и чужих интерпретаций. И особенно хорошо работает кино, которое не объясняет эту систему сверху, а незаметно помещает тебя внутрь неё.\n\nЕщё мне очень нравится твоя реакция на благополучную среду сериала — машины, хорошие районы, нормальные в целом люди, которые вдруг оказываются чрезвычайно хрупкими перед стыдом, гордостью и страхом потери статуса. Это уже не просто сюжет про тайну супруги. Ты увидел, насколько тонким слоем держится ощущение безопасности у людей, которые вроде бы всё правильно построили. По сути, это та же тема, которая тебя цепляла в White Lotus и частично в Saltburn: внешне устойчивый мир оказывается системой очень уязвимых договорённостей.\n\nИ поэтому твои 9/10 из-за финала для меня особенно показательны. Тебе не нужен был ни счастливый конец, ни обязательное прощение мужа. Тебе хотелось, чтобы после такого сложного фильма человеческий конфликт остался столь же сложным. А финальный отказ в прощении показался слишком быстрым и окончательным — как будто фильм сам в последнюю минуту сделал то, против чего до этого выступал: вынес простой вердикт там, где всё было устроено гораздо неоднозначнее. Для будущих рекомендаций это важная настройка: сильный плот-твист тебе не мешает, но после него фильм должен сохранить сложность человека, а не свести её к последней эффектной точке.",
+        "anna": "У Ани здесь очень чистое попадание в её способ входить в историю. Её зацепило буквально с первой серии не «как это устроено», а вопрос: что должна была сделать такая женщина, чтобы вся её благополучная жизнь вдруг оказалась под угрозой? То есть интрига сразу становится для неё человеческой — не загадкой ради загадки, а угрозой конкретной женщине, её браку, репутации и привычному миру.\n\nИ дальше особенно показательно, что сильнее всего Аня запомнила именно смену отношения к персонажам. Молодой красивый парень почти весь сериал существует как объект сочувствия и желания, а потом полностью переворачивается; тихий старик-отец оказывается одержимым и опасным. Это очень похоже на то, что у неё работало в Big Little Lies, May December и All of Us Strangers: ей важно не просто следить за сюжетом, а постепенно пересобирать своё чувство к человеку. Когда сериал заставляет её несколько раз менять эмоциональную позицию, это для неё не обман зрителя, а удовольствие от глубины персонажа.\n\nОтдельно совсем не случайно, что она отметила красивые сцены интрижки и секс. Для Ани чувственность — это не декоративный бонус. Через телесность, желание и привлекательность персонажей она сильнее входит в отношения и начинает переживать их изнутри. Поэтому здесь сработала очень удачная комбинация: ранняя интрига + привлекательные люди + сексуальное напряжение + поздний моральный переворот. Это практически формула её сильного попадания.\n\nИ её 10/10 при одной конкретной претензии к больничной сцене тоже полезны для нашей модели. Аня вполне готова простить отдельную неправдоподобную сцену, если эмоциональная конструкция целиком держит её внутри истории. Для неё локальная логическая шероховатость не разрушает фильм, если отношения, интрига и изменение восприятия героев продолжают работать. Это важное отличие от тебя — и очень полезная настройка для следующих совместных рекомендаций."
       },
       "ai_comments_meta": {
         "source": "30_ci_chat",
@@ -2491,6 +3211,77 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [
+          {
+            "id": "review_33233b1d276d_egor_legacy_v1",
+            "type": "legacy_current",
+            "text": "Фильм быстро завлекает. Классический паттерн партнеров,  жена запрятала скелет прошлого, который может разрушить отстроенный привычный мир комфорта, верхнего достатка, безопасности, и это все оказывается легко разрушаемой  иллюзией.\nОтличный сценарий и монтаж первые 2/3 фильма постоянно переключают нас между сейчас и прошлым, заставляет нас стать соучастниками отмены, порицания, но и свидетелями чистого желания, влечения, запретных игр отпуска без второй половинки.\nКрасивая операторская работа. Небанально затронуто много тем: основы престижной жизни в благоустроенных кварталах лондона, потерянность и инфантилизм детей зажиточных семей, залечивающих свои раны наркотиками, легкая отмена  людей с хорошей репутацией, которых мы знали долгое время, как общество стало подверженным неврозам и без фактчеккинга и возможности оправдания легко провоцируемым на отмену и порицание.\nБолее того, режиссёр нас вовлекает в эту игру и заставляет стать соучастниками отмены и доказывает как же это легко сделать.\nКрасивые кадры как хорошие в целом люди, не потерявяшие осознанность, никогда не вылезавшие из своих машин, едут на общественном транспорте по своим делам и рефлексируют на простые темы, наблюдают за собой и легкими слоями сноббизма и сытой жизни, покрывшие из восприятие.\nВ концовке даже немного жаль (классический жесткий плот твист), что нам не дали взять грех на душу и вынести вердикт женщине, которая сама стала жертвой.\nКрасиво показали, как она все эти долгие годы несла свою боль жесточайшей травмы и не вынесла ее наружу, а была достойной матерью и женой. В то время когда сын тонент в жалости к себе, а муж моментально закутался в одеяло гордости и порицания после 15 лет совместной жизни.\nВот вам и доверие партнёров и зона безопасности.\n\nОценка 9/10\nСнизил за концовку.\nОтмена на отмену. Жена отказалась простить мужа.\nТочно не хотелось счастливого конца. \nНо и сам диалог вышел убогий и срезанный.\nМогла бы вязть паузу, что было бы логичнее после такого мощного стресса.\nДа именно концовка смазала.",
+            "source": "30_ci_chat",
+            "date": "2026-11-16",
+            "rating": "9"
+          }
+        ],
+        "anna": [
+          {
+            "id": "review_33233b1d276d_anna_legacy_v1",
+            "type": "legacy_current",
+            "text": "Интересно с 1й серии, сразу же появляется интрига. Героиня Бланшет успешная женщина, хорошая жена, что такого она сделала, что может обнулить все ее достоинства? Трагедия в океане, жалко молодого красивого парня до последней серии, после которой переворачивается восприятие этого человека, оказывается он сталкер, психопат и насильник. Также его отец из тихого деда превращается в одержимого маньяка. Здорово наблюдать за сменой полюсов в характерах. Красивые сцены интрижки, много секса. Все выглядит правдоподобно, кроме сцены с больницей, где лежит сын наркоман.",
+            "source": "30_ci_chat",
+            "date": "2026-11-16",
+            "rating": "10"
+          }
+        ]
+      },
+      "ai_comment_history": {
+        "egor": [
+          {
+            "id": "ai_33233b1d276d_egor_v1",
+            "version": 1,
+            "type": "backfill",
+            "recorded_at": "2026-11-22",
+            "reason": "Перенос текущего опубликованного GPT-комментария; исходная дата создания не подтверждена",
+            "source": "30_ci_chat",
+            "author": "ChatGPT",
+            "text": "У тебя здесь, по-моему, сработала одна из самых твоих любимых вещей в кино: фильм не просто рассказывает о моральной ошибке людей, а сначала заставляет тебя самого эту ошибку совершить. Первые две трети ты честно участвуешь в обвинении Кэтрин — собираешь вместе удобную картину, видишь «скелет прошлого», считываешь измену, слабость, угрозу семье. А потом Куарон не столько сообщает новую информацию, сколько отбирает у тебя право чувствовать себя внешним судьёй. И вот это уже очень твоя территория.\n\nПоэтому мне кажется важным, что ты отдельно отметил монтаж настоящего и прошлого. Для тебя форма здесь не украшение: именно через монтаж тебя постепенно делают соучастником отмены. Это рифмуется с тем, что тебе понравилось в May December и Saltburn: человек интересен тебе не сам по себе и не как набор «хороших/плохих» качеств, а внутри системы взглядов, желаний, социальных ролей и чужих интерпретаций. И особенно хорошо работает кино, которое не объясняет эту систему сверху, а незаметно помещает тебя внутрь неё.\n\nЕщё мне очень нравится твоя реакция на благополучную среду сериала — машины, хорошие районы, нормальные в целом люди, которые вдруг оказываются чрезвычайно хрупкими перед стыдом, гордостью и страхом потери статуса. Это уже не просто сюжет про тайну супруги. Ты увидел, насколько тонким слоем держится ощущение безопасности у людей, которые вроде бы всё правильно построили. По сути, это та же тема, которая тебя цепляла в White Lotus и частично в Saltburn: внешне устойчивый мир оказывается системой очень уязвимых договорённостей.\n\nИ поэтому твои 9/10 из-за финала для меня особенно показательны. Тебе не нужен был ни счастливый конец, ни обязательное прощение мужа. Тебе хотелось, чтобы после такого сложного фильма человеческий конфликт остался столь же сложным. А финальный отказ в прощении показался слишком быстрым и окончательным — как будто фильм сам в последнюю минуту сделал то, против чего до этого выступал: вынес простой вердикт там, где всё было устроено гораздо неоднозначнее. Для будущих рекомендаций это важная настройка: сильный плот-твист тебе не мешает, но после него фильм должен сохранить сложность человека, а не свести её к последней эффектной точке."
+          }
+        ],
+        "anna": [
+          {
+            "id": "ai_33233b1d276d_anna_v1",
+            "version": 1,
+            "type": "backfill",
+            "recorded_at": "2026-11-22",
+            "reason": "Перенос текущего опубликованного GPT-комментария; исходная дата создания не подтверждена",
+            "source": "30_ci_chat",
+            "author": "ChatGPT",
+            "text": "У Ани здесь очень чистое попадание в её способ входить в историю. Её зацепило буквально с первой серии не «как это устроено», а вопрос: что должна была сделать такая женщина, чтобы вся её благополучная жизнь вдруг оказалась под угрозой? То есть интрига сразу становится для неё человеческой — не загадкой ради загадки, а угрозой конкретной женщине, её браку, репутации и привычному миру.\n\nИ дальше особенно показательно, что сильнее всего Аня запомнила именно смену отношения к персонажам. Молодой красивый парень почти весь сериал существует как объект сочувствия и желания, а потом полностью переворачивается; тихий старик-отец оказывается одержимым и опасным. Это очень похоже на то, что у неё работало в Big Little Lies, May December и All of Us Strangers: ей важно не просто следить за сюжетом, а постепенно пересобирать своё чувство к человеку. Когда сериал заставляет её несколько раз менять эмоциональную позицию, это для неё не обман зрителя, а удовольствие от глубины персонажа.\n\nОтдельно совсем не случайно, что она отметила красивые сцены интрижки и секс. Для Ани чувственность — это не декоративный бонус. Через телесность, желание и привлекательность персонажей она сильнее входит в отношения и начинает переживать их изнутри. Поэтому здесь сработала очень удачная комбинация: ранняя интрига + привлекательные люди + сексуальное напряжение + поздний моральный переворот. Это практически формула её сильного попадания.\n\nИ её 10/10 при одной конкретной претензии к больничной сцене тоже полезны для нашей модели. Аня вполне готова простить отдельную неправдоподобную сцену, если эмоциональная конструкция целиком держит её внутри истории. Для неё локальная логическая шероховатость не разрушает фильм, если отношения, интрига и изменение восприятия героев продолжают работать. Это важное отличие от тебя — и очень полезная настройка для следующих совместных рекомендаций."
+          }
+        ],
+        "together": [
+          {
+            "id": "ai_33233b1d276d_together_v1",
+            "version": 1,
+            "type": "backfill",
+            "recorded_at": "2026-11-22",
+            "reason": "Перенос текущего опубликованного GPT-комментария; исходная дата создания не подтверждена",
+            "source": "30_ci_chat",
+            "author": "ChatGPT",
+            "text": "Disclaimer оказался редким случаем почти полного совместного попадания, но интересно, что вы пришли к высокой оценке разными маршрутами. Аню сериал взял прежде всего как психологическая и эмоциональная интрига: её держала смена полюсов — от сочувствия к молодому человеку до отвращения, от тихого отца до одержимого мстителя; плюс сработали чувственность, сексуальное напряжение и ощущение правдоподобной жизни внутри благополучной среды. Это хорошо подтверждает её устойчивый критерий: ей нужен ранний эмоциональный крючок и живые человеческие отношения, внутри которых постепенно меняется восприятие персонажей.\n\nУ Егора точка входа другая. Его особенно зацепила сама машина фильма: монтаж настоящего и прошлого, управление доверием зрителя и то, как режиссёр заставляет нас почти добровольно присоединиться к моральному приговору, а потом показывает, насколько легко мы его вынесли. Это очень в твою линию после May December и Saltburn: тебе нравится не когда фильм объясняет моральный механизм, а когда он делает зрителя участником этого механизма и лишь потом меняет оптику. Отсюда же и снижение до 9/10: финал для тебя оказался слабее основной конструкции именно потому, что после долгой неоднозначности слишком быстро закрыл человеческий конфликт прямым решением.\n\nВ совместном вкусе здесь проявилась важная зона пересечения: вам обоим хорошо заходят истории, где есть престижная, внешне устойчивая среда, сексуальное или эмоциональное напряжение и постепенное разрушение первоначального образа людей. Но для будущих рекомендаций есть и различие: Ане важнее, чтобы это быстро цепляло эмоционально и продолжало менять отношение к героям; тебе — чтобы фильм не разжёвывал мораль и не закрывал сложную конструкцию слишком прямолинейным финальным жестом. Поэтому особенно перспективны для вас вещи с ненадёжной перспективой, сильным монтажом/формой и моральной сменой ролей — но без дидактической развязки."
+          }
+        ]
+      },
+      "history_current": {
+        "review": {
+          "egor": "review_33233b1d276d_egor_legacy_v1",
+          "anna": "review_33233b1d276d_anna_legacy_v1"
+        },
+        "ai": {
+          "egor": "ai_33233b1d276d_egor_v1",
+          "anna": "ai_33233b1d276d_anna_v1",
+          "together": "ai_33233b1d276d_together_v1"
+        }
       }
     },
     {
@@ -2512,12 +3303,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "7.0",
-            "wife": "8.2"
+            "egor": "7.0",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Богатая семья, свадьба, убийство и сеть отношений. Скорее качественное вовлечение и отдых, чем тяжёлая авторская работа.",
           "after": null
@@ -2530,12 +3321,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "6.9",
-            "wife": "8.2"
+            "egor": "6.9",
+            "anna": "8.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Богатая семья, свадьба, убийство, красивые люди и сеть отношений. Сильнее по вовлечению, чем по философской глубине.",
           "after": null
@@ -2565,6 +3356,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2586,12 +3397,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "6.8",
-            "wife": "8.4"
+            "egor": "6.8",
+            "anna": "8.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Молодые американки входят в британскую аристократическую среду: романтика, класс, свобода и социальные ожидания.",
           "after": null
@@ -2604,12 +3415,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "6.7",
-            "wife": "8.4"
+            "egor": "6.7",
+            "anna": "8.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Молодые американки входят в британскую аристократическую среду: желание, класс, свобода и правила красивого мира.",
           "after": null
@@ -2639,6 +3450,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2660,12 +3491,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "6.6"
+            "egor": "8.0",
+            "anna": "6.6"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Трёхчасовая машина тревоги Ари Астера: мир подчиняется внутреннему страху героя. Риск — автор слишком заметно крутит ручки.",
           "after": null
@@ -2678,12 +3509,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "6.6"
+            "egor": "8.0",
+            "anna": "6.6"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Максимально авторская машина тревоги. Может попасть в твою любовь к форме, но рискует раздражать слишком заметным авторским давлением.",
           "after": null
@@ -2713,6 +3544,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2734,12 +3585,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "7.0",
-            "wife": "5.8"
+            "egor": "7.0",
+            "anna": "5.8"
           },
           "actual": {
-            "me": "не завершён",
-            "wife": "бросила"
+            "egor": "не завершён",
+            "anna": "бросила"
           },
           "before": "Три холодных притчи Лантимоса о контроле, зависимости, вере и добровольном подчинении.",
           "after": "Жена остановилась примерно на половине–двух третях; тебе можно было бы вернуться, но сильного желания нет. Контрольный антипример искусственности конструкции."
@@ -2752,12 +3603,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "7.0",
-            "wife": "5.8"
+            "egor": "7.0",
+            "anna": "5.8"
           },
           "actual": {
-            "me": "не завершён",
-            "wife": "бросила"
+            "egor": "не завершён",
+            "anna": "бросила"
           },
           "before": "Холодные эксперименты с подчинением и контролем.",
           "after": "Для тебя остаётся потенциальный повторный заход, но теперь прогноз ниже: слишком видимая конструкция автора."
@@ -2787,6 +3638,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2808,12 +3679,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.4",
-            "wife": "8.1"
+            "egor": "8.4",
+            "anna": "8.1"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Вне основного периода, но точное попадание по механике: закрытая элитная среда, чёрный юмор, ритуал и классовая агрессия.",
           "after": null
@@ -2843,6 +3714,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2864,12 +3755,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.3",
-            "wife": "8.0"
+            "egor": "8.3",
+            "anna": "8.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Исчезновение детей собирается из разных точек зрения; жанровая загадка постепенно меняет собственную форму.",
           "after": null
@@ -2899,6 +3790,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2920,12 +3831,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.5",
-            "wife": "7.2"
+            "egor": "8.5",
+            "anna": "7.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Социальная реальность маленького города распадается на конкурирующие версии правды, идентичности и власти.",
           "after": null
@@ -2955,6 +3866,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -2974,12 +3905,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "9.0",
-            "wife": "8.0"
+            "egor": "9.0",
+            "anna": "8.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Власть, ритуал, язык и культурная несовместимость. Большая система раскрывается через очень конкретные человеческие стратегии.",
           "after": null
@@ -3009,6 +3940,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3030,12 +3981,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.7",
-            "wife": "7.2"
+            "egor": "8.7",
+            "anna": "7.2"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Шпион с двойной идентичностью существует между идеологиями и ролями; форма подчёркивает ненадёжность собственного «я».",
           "after": null
@@ -3065,6 +4016,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3086,12 +4057,12 @@
             "отдых"
           ],
           "prediction": {
-            "me": "8.3",
-            "wife": "7.4"
+            "egor": "8.3",
+            "anna": "7.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Чёрный юмор, жестокий мир и институции, которые продолжают управлять людьми даже после конца цивилизации.",
           "after": null
@@ -3121,6 +4092,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3140,12 +4131,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "8.8",
-            "wife": "7.7"
+            "egor": "8.8",
+            "anna": "7.7"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Миядзаки о потере, мире как конструкции и отказе наследовать идеальный порядок. Образы важнее буквальной расшифровки.",
           "after": null
@@ -3175,6 +4166,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3194,12 +4205,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "9.0",
-            "wife": "7.0"
+            "egor": "9.0",
+            "anna": "7.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Повторяющаяся жизнь без обязательного требования превратить каждую минуту в продукт. Очень близко к твоей нынешней теме присутствия.",
           "after": null
@@ -3229,6 +4240,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3248,12 +4279,12 @@
           "stars": 1,
           "tags": [],
           "prediction": {
-            "me": "8.1",
-            "wife": "8.0"
+            "egor": "8.1",
+            "anna": "8.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Три одиноких человека вынуждены провести праздники вместе. Классическое человеческое кино без концептуального фейерверка.",
           "after": null
@@ -3283,6 +4314,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3302,12 +4353,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "9.1",
-            "wife": "6.9"
+            "egor": "9.1",
+            "anna": "6.9"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Ужас существует не в центре кадра, а в устройстве повседневной среды. Человек раскрывается через нормальность системы.",
           "after": null
@@ -3337,6 +4388,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3358,12 +4429,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.4",
-            "wife": "7.5"
+            "egor": "8.4",
+            "anna": "7.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Уэс Андерсон: искусственная форма, семейная связь, капитал и контроль. Вероятность зависит от того, будет ли за дизайном достаточно живого человека.",
           "after": null
@@ -3393,6 +4464,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3412,12 +4503,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "9.3",
-            "wife": "8.0"
+            "egor": "9.3",
+            "anna": "8.0"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Гиперактивный амбициозный герой превращает собственную жизнь в непрерывную ставку. Safdie-энергия, телесность и самоизобретение.",
           "after": null
@@ -3447,6 +4538,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3466,12 +4577,12 @@
           "stars": 3,
           "tags": [],
           "prediction": {
-            "me": "7.2",
-            "wife": "8.8"
+            "egor": "7.2",
+            "anna": "8.8"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Молодая женщина внутри красивой, желанной и ограничивающей среды; отношения и власть читаются через повседневность.",
           "after": null
@@ -3501,6 +4612,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3520,12 +4651,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "7.4",
-            "wife": "8.4"
+            "egor": "7.4",
+            "anna": "8.4"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Желание, зависимость и невозможность получить от другого подтверждение нужной интенсивности близости.",
           "after": null
@@ -3555,6 +4686,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3574,12 +4725,12 @@
           "stars": 2,
           "tags": [],
           "prediction": {
-            "me": "7.4",
-            "wife": "8.5"
+            "egor": "7.4",
+            "anna": "8.5"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Романтический выбор рассматривается одновременно как желание, социальный капитал и рациональная стратегия.",
           "after": null
@@ -3609,6 +4760,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3630,12 +4801,12 @@
             "странное"
           ],
           "prediction": {
-            "me": "8.0",
-            "wife": "7.7"
+            "egor": "8.0",
+            "anna": "7.7"
           },
           "actual": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "before": "Телесное, атмосферное путешествие и сильное переживание среды; риск — эмоциональный вход может оказаться слишком непрямым.",
           "after": null
@@ -3665,6 +4836,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     },
     {
@@ -3684,12 +4875,12 @@
           "stars": 0,
           "tags": [],
           "prediction": {
-            "me": "—",
-            "wife": "—"
+            "egor": "—",
+            "anna": "—"
           },
           "actual": {
-            "me": "просмотрено",
-            "wife": "просмотрено"
+            "egor": "просмотрено",
+            "anna": "просмотрено"
           },
           "before": "Эротическая психологическая история о власти, желании, возрасте и контроле внутри внешне устроенной взрослой жизни.",
           "after": "Просмотрено до карты; детальные оценки не восстанавливаю без ваших исходных комментариев."
@@ -3719,6 +4910,26 @@
       "origin": {
         "type": "gpt_recommendation",
         "added_by": "chatgpt"
+      },
+      "review_history": {
+        "egor": [],
+        "anna": []
+      },
+      "ai_comment_history": {
+        "egor": [],
+        "anna": [],
+        "together": []
+      },
+      "history_current": {
+        "review": {
+          "egor": null,
+          "anna": null
+        },
+        "ai": {
+          "egor": null,
+          "anna": null,
+          "together": null
+        }
       }
     }
   ],
