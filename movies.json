@@ -945,7 +945,28 @@
           "before": "Человек пытается вернуть контроль над жизнью и постепенно становится функцией конкурентной системы, с которой борется.",
           "after": null
         }
-      ]
+      ],
+      "external": {
+        "source": "poiskkino.dev",
+        "kp_id": 484791,
+        "tmdb_id": 639988,
+        "imdb_id": "tt1527793",
+        "matched_name": "Метод исключения",
+        "matched_year": 2025,
+        "confidence": 142,
+        "overview": "Он убьёт всех, чтобы получить эту работу. Изящный триллер со звездой «Игры в кальмара»",
+        "kp_short_description": "Он убьёт всех, чтобы получить эту работу. Изящный триллер со звездой «Игры в кальмара»",
+        "kp_description": "Четверть века проработав в бумажной промышленности, Ю Ман-су стал высококлассным специалистом. Он выкупил и отремонтировал принадлежавший отцу загородный дом и считает себя счастливым семьянином и состоявшимся человеком, поэтому сильным шоком для мужчины становится внезапное увольнение. Из-за кризиса в отрасли так и не найдя работу по специальности, через несколько месяцев Ман-су сталкивается с перспективой потери дома и от отчаяния решает физически устранить конкурентов на должность в компании мечты — таких же безработных бедолаг с блестящими резюме.",
+        "poster": "https://cdnrrviubnyuntopbez5.svc.cdn.yandex.net/get-kinopoisk-image/10703959/4571d9a5-446e-424e-a061-a90a4f3f6e20/600x900",
+        "ratings": {
+          "kp": 7.05,
+          "imdb": 7.5,
+          "tmdb": null,
+          "votes_kp": 112304,
+          "votes_imdb": 79687,
+          "votes_tmdb": null
+        }
+      }
     },
     {
       "id": "967ae6447315",
@@ -1222,23 +1243,23 @@
       ],
       "external": {
         "source": "poiskkino.dev",
-        "kp_id": 4632201,
-        "tmdb_id": 870518,
-        "imdb_id": "tt15364972",
-        "matched_name": "Стоп-слово",
-        "matched_year": 2022,
-        "confidence": 121,
-        "overview": "Доминатрикс начинает шантажировать клиента-миллионера. Фееричный камерный триллер с Маргарет Куолли",
-        "kp_short_description": "Доминатрикс начинает шантажировать клиента-миллионера. Фееричный камерный триллер с Маргарет Куолли",
-        "kp_description": "Ребекка и Хэл состоят в деловых отношениях: она — его идеальная доминатрикс, а он — её любимый богатый клиент. Получив в наследство многомиллионную компанию, Хэл решает прекратить эти тайные встречи, но такой поворот событий Ребекку не устраивает, и она угрожает, что расскажет всем о его необычном увлечении. Сексуальная игра превращается в психологическое противостояние.",
-        "poster": "https://cdnrrviubnyuntopbez5.svc.cdn.yandex.net/get-kinopoisk-image/6201401/9a429197-bf13-4bae-849d-d3fb868ecaa6/600x900",
+        "kp_id": 4472354,
+        "tmdb_id": 801970,
+        "imdb_id": "tt14351530",
+        "matched_name": "Убежище",
+        "matched_year": 2023,
+        "confidence": 142,
+        "overview": "Рик Педрони возвращается из Афганистана, но не домой, а в госпиталь для ветеранов. Он смотрит в одну точку и не говорит. Врачи объясняют его поведение посттравматическим стрессовым расстройством и прописывают ему терапию, но Кейт, жена Рика, обнаруживает, что он одержим злым духом. Теперь ей предстоит найти того, кто поможет спасти мужа от злых сил.",
+        "kp_short_description": null,
+        "kp_description": "Рик Педрони возвращается из Афганистана, но не домой, а в госпиталь для ветеранов. Он смотрит в одну точку и не говорит. Врачи объясняют его поведение посттравматическим стрессовым расстройством и прописывают ему терапию, но Кейт, жена Рика, обнаруживает, что он одержим злым духом. Теперь ей предстоит найти того, кто поможет спасти мужа от злых сил.",
+        "poster": "https://cdnrrviubnyuntopbez5.svc.cdn.yandex.net/get-kinopoisk-image/10835644/cb58b834-930c-49e1-83d4-5cb6e318f974/600x900",
         "ratings": {
-          "kp": 6.18,
-          "imdb": 6.2,
-          "tmdb": null,
-          "votes_kp": 36364,
-          "votes_imdb": 13729,
-          "votes_tmdb": null
+          "kp": 4.5,
+          "imdb": 4.2,
+          "tmdb": 4.944,
+          "votes_kp": 820,
+          "votes_imdb": 489,
+          "votes_tmdb": 18
         }
       }
     },
@@ -3470,12 +3491,72 @@
   ],
   "external_enrichment": {
     "source": "poiskkino.dev",
-    "enriched_at": "2026-11-22T12:30:42.334Z",
-    "matched": 57,
+    "enriched_at": "2026-11-22T12:32:41.670Z",
+    "matched": 42,
     "unmatched": [
       {
-        "title": "No Other Choice / Метод исключения",
-        "reason": "no confident match"
+        "title": "Weapons / Орудия",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Weapons"
+      },
+      {
+        "title": "Eddington / Эддингтон",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Eddington"
+      },
+      {
+        "title": "Shōgun / Сёгун",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Sh%C5%8Dgun"
+      },
+      {
+        "title": "The Sympathizer / Сочувствующий",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Sympathizer"
+      },
+      {
+        "title": "Fallout / Фоллаут",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Fallout"
+      },
+      {
+        "title": "The Boy and the Heron / Мальчик и птица",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Boy%20and%20the%20Heron"
+      },
+      {
+        "title": "Perfect Days / Идеальные дни",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Perfect%20Days"
+      },
+      {
+        "title": "The Holdovers / Оставленные",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Holdovers"
+      },
+      {
+        "title": "The Zone of Interest / Зона интересов",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Zone%20of%20Interest"
+      },
+      {
+        "title": "The Phoenician Scheme / Финикийская схема",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=The%20Phoenician%20Scheme"
+      },
+      {
+        "title": "Marty Supreme / Марти Великолепный",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Marty%20Supreme"
+      },
+      {
+        "title": "Priscilla / Присцилла",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Priscilla"
+      },
+      {
+        "title": "Queer / Квир",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Queer"
+      },
+      {
+        "title": "Materialists / Материалистка",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Materialists"
+      },
+      {
+        "title": "Sirât / Сират",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Sir%C3%A2t"
+      },
+      {
+        "title": "Babygirl / Плохая девочка",
+        "reason": "403 Forbidden for https://eu-api.poiskkino.dev/v1.5/movie/search?page=1&limit=10&query=Babygirl"
       }
     ]
   }
