@@ -67,12 +67,16 @@ const {chromium}=require('playwright');
        await page.locator('#saveConfirm').click();
        const download=await promise;
        const savedPath=await download.path();
-       const html=fs.readFileSync(savedPath,'utf8');
+       // Playwright stores downloads as extensionless UUIDs; Chromium treats those as text on file://.
+       // Restore the expected .html extension before testing the standalone document.
+       const savedHtmlPath=savedPath+'.html';
+       fs.copyFileSync(savedPath,savedHtmlPath);
+       const html=fs.readFileSync(savedHtmlPath,'utf8');
        assert(html.includes('id="embeddedMovieData"'),'embedded data missing in save');
        assert(html.includes('Отзывы и копирование'),'new copy UI missing in save');
        const filePage=await context.newPage();
        const fileErrors=[];filePage.on('pageerror',e=>fileErrors.push(e.message));
-       await filePage.goto('file://'+savedPath);
+       await filePage.goto('file://'+savedHtmlPath);
        await filePage.waitForTimeout(300);
        console.log('SAVED FILE CHECK',JSON.stringify({
          filePath:savedPath,
