@@ -69,8 +69,8 @@ async function init(){
    assert.equal(header.children[2].id,'cat','category chips directly after sort');
    assert.equal(d.querySelectorAll('.top #cat').length,0,'old upper category row must be removed');
    assert.equal(d.querySelectorAll('[data-section-sort]').length,1);
-   assert.equal(d.querySelector('[data-k="cat"][data-v="me"]').textContent,'👨 Для Егор');
-   assert.equal(d.querySelector('[data-k="cat"][data-v="her"]').textContent,'👩 Для Анна');
+   assert.equal(d.querySelector('[data-k="cat"][data-v="me"]').textContent,'👨 для Егор');
+   assert.equal(d.querySelector('[data-k="cat"][data-v="her"]').textContent,'👩 для Анна');
    click('#catalogToolbar .section-sort');
    assert.equal(d.querySelector('.section-sort').dataset.sort,'ru-asc');
    click('[data-k="cat"][data-v="films"]');
@@ -146,8 +146,8 @@ async function init(){
    assert(copied.indexOf('Анна')<copied.indexOf('Егор'),'Anna before Egor in package');
  });
  await test('canonical UI labels do not alter raw reviews',()=>{
-   assert.equal(db.categories.find(x=>x.id==='me').label,'Для Егор');
-   assert.equal(db.categories.find(x=>x.id==='her').label,'Для Анна');
+   assert.equal(db.categories.find(x=>x.id==='me').label,'для Егор');
+   assert.equal(db.categories.find(x=>x.id==='her').label,'для Анна');
    assert(db.works.find(w=>w.id==='33233b1d276d').reviews.me.length>300);
    const api=fs.readFileSync('api/chat.js','utf8');
    assert(api.includes('me = Егор, wife = Анна'));
