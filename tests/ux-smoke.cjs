@@ -238,6 +238,37 @@ async function init(){
    assert(yearsAsc.every((x,i)=>i===0||yearsAsc[i-1]<=x),'asc sort must be chronological');
    click('#reset');
  });
+ await test('History of Soul canonical-first reads and legacy safety',()=>{
+   const contract=require('../scripts/history-contract.cjs');
+   assert.deepEqual(contract.errorsForMovieMap(db),[]);
+   assert.equal(w.canonicalPerson('wife'),'anna');
+   assert.equal(w.canonicalPerson('me'),'egor');
+   assert.equal(w.personValue({egor:'new',me:'old'},'egor'),'new');
+   assert.equal(w.personValue({wife:'legacy'},'anna'),'legacy');
+   const legacy=db.works.find(x=>x.id==='33233b1d276d');
+   assert(legacy);
+   const canonical=JSON.parse(JSON.stringify(legacy));
+   function remap(obj){
+     if(!obj||typeof obj!=='object')return;
+     if(Object.prototype.hasOwnProperty.call(obj,'me')){obj.egor=obj.me;delete obj.me}
+     if(Object.prototype.hasOwnProperty.call(obj,'wife')){obj.anna=obj.wife;delete obj.wife}
+   }
+   for(const group of ['reviews','review_dates','ai_comments'])remap(canonical[group]);
+   for(const p of canonical.placements){remap(p.prediction);remap(p.actual)}
+   assert.equal(w.personValue(canonical.reviews,'egor'),legacy.reviews.me);
+   assert.equal(w.personValue(canonical.ai_comments,'anna'),legacy.ai_comments.wife);
+   const card=w.cardHtml(canonical,canonical.placements[0]);
+   assert(card.includes('data-has-review-me="1"'));
+   assert(card.includes('data-has-review-wife="1"'));
+   assert(card.includes('data-score-me="9"')&&card.includes('data-score-wife="10"'));
+   assert(card.includes('data-review-me=')&&card.includes('data-review-wife='));
+   assert(card.includes('data-ai-together='));
+   assert(card.includes('Открыть полный отзыв Егора'));
+   assert.deepEqual(contract.errorsForMovieMap({...db,works:db.works.map(w=>w.id===canonical.id?canonical:w)}),[]);
+   const fake={...canonical,review_history:{egor:[{id:'event_review_1',type:'legacy_current',date:'2026-11-16',text:canonical.reviews.egor}],anna:[]},ai_comment_history:{egor:[{id:'event_ai_1',type:'backfill',version:1,text:canonical.ai_comments.egor}],anna:[],together:[]}};
+   assert.equal(contract.errorsForMovieMap({...db,works:db.works.map(w=>w.id===fake.id?fake:w)}).length,0);
+   assert.equal(w.personHistory(fake,'review_history','egor').length,1);
+ });
  await test('Golden Fleece save code preserved',()=>{
    assert(html.includes('clone=document.documentElement.cloneNode(true)'));
    assert(html.includes('embedded.textContent=JSON.stringify(selected)'));

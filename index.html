@@ -394,9 +394,24 @@ function firstYear(v){
  const m=String(v==null?'':v).match(/(?:19|20)\d{2}/);
  return m?m[0]:'';
 }
+/* History of Soul transitional canonical-first reader; never rewrites stored text. */
+const PERSON_LEGACY={egor:'me',anna:'wife'};
+function canonicalPerson(p){return p==='me'?'egor':p==='wife'?'anna':p}
+function personValue(obj,p){
+ const key=canonicalPerson(p);
+ if(!obj||typeof obj!=='object')return undefined;
+ if(Object.prototype.hasOwnProperty.call(obj,key))return obj[key];
+ const legacy=PERSON_LEGACY[key];
+ return legacy&&Object.prototype.hasOwnProperty.call(obj,legacy)?obj[legacy]:undefined;
+}
+function personHistory(work,group,p){
+ const list=work&&work[group]&&work[group][canonicalPerson(p)];
+ return Array.isArray(list)?list:[];
+}
+
 function hasHumanReview(work,person){
- const r=work&&work.reviews||{};
- return typeof r[person]==='string'&&!!r[person].trim();
+ const value=personValue(work&&work.reviews,person);
+ return typeof value==='string'&&!!value.trim();
 }
 
 function categoryChip(cat,current){
@@ -438,10 +453,10 @@ function copyButton(text,label){
 }
 function reviewThreadText(kind){
  const kinds={
-  'review:wife':['Отзыв Анны',w=>w.reviews&&w.reviews.wife],
-  'review:me':['Отзыв Егора',w=>w.reviews&&w.reviews.me],
-  'ai:wife':['GPT · Анна',w=>w.ai_comments&&w.ai_comments.wife],
-  'ai:me':['GPT · Егор',w=>w.ai_comments&&w.ai_comments.me],
+  'review:wife':['Отзыв Анны',w=>personValue(w.reviews,'anna')],
+  'review:me':['Отзыв Егора',w=>personValue(w.reviews,'egor')],
+  'ai:wife':['GPT · Анна',w=>personValue(w.ai_comments,'anna')],
+  'ai:me':['GPT · Егор',w=>personValue(w.ai_comments,'egor')],
   'ai:together':['Общий GPT-итог',w=>w.ai_comments&&w.ai_comments.together]
  };
  const spec=kinds[kind];if(!spec)return'';
@@ -454,35 +469,34 @@ function movieReviewPackageText(work){
  if(!work)return'';
  const reviews=work.reviews||{},ai=work.ai_comments||{};
  const entries=[
-  ['Анна',reviews.wife],
-  ['GPT · Анна',ai.wife],
-  ['Егор',reviews.me],
-  ['GPT · Егор',ai.me],
+  ['Анна',personValue(reviews,'anna')],
+  ['GPT · Анна',personValue(ai,'anna')],
+  ['Егор',personValue(reviews,'egor')],
+  ['GPT · Егор',personValue(ai,'egor')],
   ['Общий GPT-итог',ai.together]
  ].filter(item=>String(item[1]||'').trim());
  return entries.length?[work.title,...entries.map(([label,txt])=>label+'\n'+String(txt).trim())].join('\n\n'):'';
 }
 function reviewDataAttrs(work,p){
- const actual=p.actual||{};
- const reviews=work.reviews||{};
- const ai=work.ai_comments||{};
+ const actual=p.actual||{}, reviews=work.reviews||{}, ai=work.ai_comments||{};
+ const es=personValue(actual,'egor'),as=personValue(actual,'anna');
+ const er=personValue(reviews,'egor'),ar=personValue(reviews,'anna');
+ const ec=personValue(ai,'egor'),ac=personValue(ai,'anna');
  return ' data-work-id="'+esc(work.id)+'" data-title="'+esc(work.title)+'"'+
-   ' data-score-me="'+esc(actual.me==null?'—':actual.me)+'"'+
-   ' data-score-wife="'+esc(actual.wife==null?'—':actual.wife)+'"'+
-   ' data-review-me="'+esc(typeof reviews.me==='string'?reviews.me:'')+'"'+
-   ' data-review-wife="'+esc(typeof reviews.wife==='string'?reviews.wife:'')+'"'+
-   ' data-ai-me="'+esc(typeof ai.me==='string'?ai.me:'')+'"'+
-   ' data-ai-wife="'+esc(typeof ai.wife==='string'?ai.wife:'')+'"'+
+   ' data-score-me="'+esc(es==null?'—':es)+'"'+
+   ' data-score-wife="'+esc(as==null?'—':as)+'"'+
+   ' data-review-me="'+esc(typeof er==='string'?er:'')+'"'+
+   ' data-review-wife="'+esc(typeof ar==='string'?ar:'')+'"'+
+   ' data-ai-me="'+esc(typeof ec==='string'?ec:'')+'"'+
+   ' data-ai-wife="'+esc(typeof ac==='string'?ac:'')+'"'+
    ' data-ai-together="'+esc(typeof ai.together==='string'?ai.together:'')+'"';
 }
 function factCellHtml(work,p,person){
- const actual=p.actual||{};
- const score=actual[person]==null?'—':actual[person];
- const reviews=work.reviews||{};
- const review=typeof reviews[person]==='string'?reviews[person].trim():'';
- if(!review) return '<div class="c fact">'+esc(score)+'</div>';
- const who=person==='me'?'Егора':'Анны';
- return '<div class="c fact"><button type="button" class="fact-review-trigger" data-person="'+person+'"'+reviewDataAttrs(work,p)+' aria-label="Открыть полный отзыв '+who+'">'+esc(score)+'<span class="review-dot" aria-hidden="true"></span></button></div>';
+ const score=personValue(p.actual,person);
+ const review=personValue(work.reviews,person);
+ if(typeof review!=='string'||!review.trim())return '<div class="c fact">'+esc(score==null?'—':score)+'</div>';
+ const who=canonicalPerson(person)==='egor'?'Егора':'Анны';
+ return '<div class="c fact"><button type="button" class="fact-review-trigger" data-person="'+person+'"'+reviewDataAttrs(work,p)+' aria-label="Открыть полный отзыв '+who+'">'+esc(score==null?'—':score)+'<span class="review-dot" aria-hidden="true"></span></button></div>';
 }
 
 function ratingValue(v){
@@ -517,7 +531,7 @@ function cardHtml(work,p){
  const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+((hasHumanReview(work,'me')||hasHumanReview(work,'wife'))?'1':'0')+'" data-has-review-me="'+(hasHumanReview(work,'me')?'1':'0')+'" data-has-review-wife="'+(hasHumanReview(work,'wife')?'1':'0')+'" data-origin="'+originBucket(work)+'" data-year="'+firstYear(work.year)+'" data-search="'+esc(norm(work.title))+'">'+
  '<div class="left"><div class="row1"><span class="card-index"><span class="n">'+String(p.order).padStart(2,'0')+'</span>'+status+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span>'+starBadge+'</div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+membership+'</div>'+
- '<div class="score"><div class="score-shortlist"><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+(externalRatingsHtml(work,false)?'<div class="score-ext-label lab">🌐 сайты</div><div class="score-ext-values">'+externalRatingsHtml(work,false)+'</div>':'')+'</div>'+
+ '<div class="score"><div class="score-shortlist"><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(personValue(p.prediction,'egor'))+'</div><div class="c">'+esc(personValue(p.prediction,'anna'))+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+(externalRatingsHtml(work,false)?'<div class="score-ext-label lab">🌐 сайты</div><div class="score-ext-values">'+externalRatingsHtml(work,false)+'</div>':'')+'</div>'+
  '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
 }
 async function ensureCards(){
@@ -616,7 +630,7 @@ function workPassesDuplicateView(work){
  const hasRu=placements.some(p=>(p.tags||[]).includes('россия'));
  if(st.countryMode==='ru'&&!hasRu)return false;
  if(st.countryMode==='nonru'&&hasRu)return false;
- const hasReview=!!(work.reviews&&(work.reviews.me||work.reviews.wife));
+ const hasReview=hasHumanReview(work,'egor')||hasHumanReview(work,'anna');
  if(st.reviewMode==='has'&&!hasReview)return false;
  if(st.reviewMode==='none'&&hasReview)return false;
  if(st.reviewMode==='missing-me'&&hasHumanReview(work,'me'))return false;
@@ -1067,16 +1081,16 @@ document.addEventListener('click',async function(e){
  }
  function scoreBlock(p){
    const pred=p.prediction||{},act=p.actual||{};
-   return '<div class="detail-score-grid"><div class="dh"></div><div class="dh">Егор</div><div class="dh">Анна</div><div class="dh">🔮 прогноз</div><div>'+esc(pred.me||'—')+'</div><div>'+esc(pred.wife||'—')+'</div><div class="dh">★ факт</div><div>'+esc(act.me||'—')+'</div><div>'+esc(act.wife||'—')+'</div></div>';
+   return '<div class="detail-score-grid"><div class="dh"></div><div class="dh">Егор</div><div class="dh">Анна</div><div class="dh">🔮 прогноз</div><div>'+esc(personValue(pred,'egor')||'—')+'</div><div>'+esc(personValue(pred,'anna')||'—')+'</div><div class="dh">★ факт</div><div>'+esc(personValue(act,'egor')||'—')+'</div><div>'+esc(personValue(act,'anna')||'—')+'</div></div>';
  }
  function reviewBlock(work,person){
    const reviews=work.reviews||{},ai=work.ai_comments||{};
-   const text=person==='me'?reviews.me:reviews.wife;
+   const text=personValue(reviews,person);
    if(!text)return'';
    const name=person==='me'?'Егор':'Анна';
    const p=(work.placements||[])[0]||{actual:{}};
-   const score=(p.actual||{})[person]||'—';
-   const gpt=person==='me'?ai.me:ai.wife;
+   const score=personValue(p.actual,person)||'—';
+   const gpt=personValue(ai,person);
    return '<div class="detail-review"><div class="detail-review-head">💬 '+name+' · '+esc(score)+copyButton(text,'Копировать отзыв '+name)+'</div><div class="detail-text">'+esc(text)+'</div>'+(gpt?'<div class="detail-gpt"><div class="detail-review-head">🤖 GPT · '+name+copyButton(gpt,'Копировать GPT-комментарий '+name)+'</div><div class="detail-text">'+esc(gpt)+'</div></div>':'')+'</div>';
  }
  function renderPicker(){
@@ -1109,7 +1123,7 @@ document.addEventListener('click',async function(e){
    ].map(x=>'<button type="button" data-copy-thread="'+x[0]+'" title="Копировать: '+x[1]+' по всей Movie Map">'+x[1]+'</button>').join('')+'</div></details>';
    const hasReviewPackage=!!movieReviewPackageText(work);
    const copyTools='<div class="review-copy-tools">'+reviewMenu+'<button type="button" class="copy-package" data-copy-package="'+esc(work.id)+'" title="Копировать все отзывы этого фильма: Анна, GPT Анна, Егор, GPT Егор, общий GPT"'+(hasReviewPackage?'':' disabled')+'>🗂 Весь пакет фильма</button></div>';
-   const reviewSection='<div class="detail-section"><div class="section-title-row review-section-title"><h3>Отзывы и копирование</h3>'+copyTools+'</div>'+((work.reviews&&(work.reviews.me||work.reviews.wife))?reviewBlock(work,'wife')+reviewBlock(work,'me'):'<div class="detail-empty-review">Пока нет полных человеческих отзывов для этого фильма.</div>')+'</div>';
+   const reviewSection='<div class="detail-section"><div class="section-title-row review-section-title"><h3>Отзывы и копирование</h3>'+copyTools+'</div>'+((hasHumanReview(work,'egor')||hasHumanReview(work,'anna'))?reviewBlock(work,'wife')+reviewBlock(work,'me'):'<div class="detail-empty-review">Пока нет полных человеческих отзывов для этого фильма.</div>')+'</div>';
    const exactImdb=external.imdb_id?'https://www.imdb.com/title/'+encodeURIComponent(external.imdb_id)+'/':work.links.imdb;
    const exactKp=external.kp_id?'https://www.kinopoisk.ru/film/'+encodeURIComponent(external.kp_id)+'/':work.links.kinopoisk;
    const exactTmdb=external.tmdb_id?'https://www.themoviedb.org/'+(work.media_type==='сериал'?'tv':'movie')+'/'+encodeURIComponent(external.tmdb_id):'';
