@@ -1,4 +1,4 @@
-name: Enrich Movie Map from TMDB
+name: Enrich Movie Map from PoiskKino API
 on:
   push:
     branches: [data/tmdb-enrichment]
@@ -20,7 +20,7 @@ jobs:
           node-version: '22'
       - name: Enrich movies.json
         env:
-          TMDB_BEARER_TOKEN: ${{ secrets.TMDB_BEARER_TOKEN }}
+          POISKKINO_API_KEY: ${{ secrets.POISKKINO_API_KEY }}
         run: node scripts/enrich-tmdb.js
       - name: Commit enrichment
         run: |
@@ -31,5 +31,5 @@ jobs:
           git config user.name "movie-map-bot"
           git config user.email "movie-map-bot@users.noreply.github.com"
           git add movies.json
-          git commit -m "Enrich Movie Map with TMDB metadata"
+          git commit -m "Enrich Movie Map with PoiskKino metadata"
           git push origin HEAD:data/tmdb-enrichment
