@@ -306,6 +306,56 @@ async function init(){
    assert(w.personValue(record.reviews,'egor').length>100);
    assert(record.placements.every(p=>p.actual.egor!==undefined&&p.actual.anna!==undefined));
  });
+ await test('History UI supports two human events and GPT v1 → v2 without changing production JSON',async()=>{
+   const {appendHumanEvent,appendAiEvent}=require('../scripts/history-events.cjs');
+   const live=w.getMovieData().works.find(x=>x.id==='33233b1d276d');
+   const snapshot=JSON.stringify(live);
+   const card=d.querySelector('#allRegistry .card[data-key="33233b1d276d"]');
+   const trigger=card.querySelector('.fact-review-trigger[data-person="egor"]');
+   const oldReview=trigger.dataset.reviewEgor,oldAi=trigger.dataset.aiEgor;
+   try{
+     const added=appendHumanEvent(live,'egor',{
+       id:'review_synthetic_ui_addition',date:'2026-12-03',type:'addition',
+       text:'Позднее уточнение первого просмотра.',source:'30_ci_chat'
+     });
+     const revision=appendAiEvent(added,'egor',{
+       id:'ai_synthetic_ui_v2',date:'2026-12-04',type:'reinterpretation',
+       reason:'Контекст вкуса изменился',confidence:'developing',
+       text:'Новая GPT-интерпретация v2.',source:'30_ci_chat',author:'ChatGPT'
+     });
+     Object.assign(live,revision);
+     trigger.dataset.reviewEgor=revision.reviews.egor;
+     trigger.dataset.aiEgor=revision.ai_comments.egor;
+     trigger.click();await tick();
+     assert.match(d.getElementById('historyToggle').textContent,/История · 2/);
+     assert.equal(d.getElementById('reviewBody').textContent,revision.reviews.egor);
+     click('#historyToggle');
+     assert.equal(d.querySelectorAll('#historyPanel [data-history-index]').length,2);
+     assert.match(d.getElementById('historyPanel').textContent,/Дополнение/);
+     click('#historyPanel [data-history-index="0"]');
+     assert.equal(d.getElementById('reviewBody').textContent,revision.review_history.egor[0].text);
+     click('#historyPanel [data-history-index="1"]');
+     assert.equal(d.getElementById('reviewBody').textContent,'Позднее уточнение первого просмотра.');
+     click('#reviewCopyCurrent');await tick();
+     assert.equal(copied,'Позднее уточнение первого просмотра.');
+     click('#historyShowCurrent');
+     assert.equal(d.getElementById('reviewBody').textContent,revision.reviews.egor);
+     click('#reviewNavChips [data-review-mode="ai"][data-review-person-target="egor"]');
+     assert.match(d.getElementById('historyStatus').textContent,/v2/);
+     click('#historyToggle');
+     assert.match(d.getElementById('historyPanel').textContent,/Контекст вкуса изменился/);
+     assert.match(d.getElementById('historyPanel').textContent,/развивается/);
+     click('#historyPanel [data-history-index="0"]');
+     assert.equal(d.getElementById('reviewBody').textContent,revision.ai_comment_history.egor[0].text);
+     click('#historyPanel [data-history-index="1"]');
+     assert.equal(d.getElementById('reviewBody').textContent,'Новая GPT-интерпретация v2.');
+     click('#reviewClose');
+   }finally{
+     Object.assign(live,JSON.parse(snapshot));
+     trigger.dataset.reviewEgor=oldReview;
+     trigger.dataset.aiEgor=oldAi;
+   }
+ });
  await test('Golden Fleece save code preserved',()=>{
    assert(html.includes('clone=document.documentElement.cloneNode(true)'));
    assert(html.includes('embedded.textContent=JSON.stringify(selected)'));

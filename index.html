@@ -187,6 +187,24 @@
 .year-option input{accent-color:#9eb5d8}
 #yearPickerToggle{cursor:pointer}
 @media(max-width:560px){.card .card-memberships .origin-source{font-size:8px;padding:2px 5px}.year-popover{width:210px;max-height:45dvh}}
+
+/* History of Soul: inline version/timeline navigator, never replaces current review by default. */
+.history-toolbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:7px 12px 0;border-top:1px solid #242b34;margin-top:8px}
+.history-toolbar button{cursor:pointer;font-size:9.5px;padding:4px 8px;border-radius:8px}
+.history-toolbar #historyToggle{border-color:#506071;color:#cedaea}
+.history-toolbar #historyToggle[aria-expanded="true"]{border-color:#7993b0;background:#243241;color:#eff5ff}
+.history-status{font-size:9.5px;color:#99a5b3;min-width:0;flex:1}
+.history-current{border-style:dashed!important;color:#cbd7e5}
+.history-panel{display:grid;gap:4px;flex:0 1 auto;max-height:min(28dvh,190px);min-height:0;overflow-y:auto;overflow-x:hidden;margin:6px 12px 0;padding:6px;border:1px solid #343f4c;border-radius:9px;background:#14191f;overscroll-behavior:contain}
+.history-entry{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;padding:6px 8px!important;border:1px solid #323b46;background:#1a2029;border-radius:7px!important;white-space:normal;cursor:pointer}
+.history-entry:hover{background:#242e3b}
+.history-entry.history-selected{border-color:#9db1c5;background:#273443;color:#f0f4f8}
+.history-entry.history-current-version:not(.history-selected){border-color:#526475}
+.history-entry-head{display:flex;align-items:center;flex-wrap:wrap;gap:7px;font-size:10px;font-weight:650}
+.history-entry-current{font-size:8.8px;color:#93c9ec}
+.history-entry-meta{color:#a1acba;font-size:9.3px;line-height:1.25;overflow-wrap:anywhere;white-space:normal}
+.review-shell.history-open .review-body{min-height:65px;flex:1 1 auto}
+@media(max-width:560px){.history-toolbar{padding:6px 12px 0;gap:5px}.history-panel{max-height:min(25dvh,165px)}.review-shell.history-open .review-body{min-height:100px}.history-entry{padding:7px 8px!important}}
 </style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
@@ -245,6 +263,12 @@
         <button id="reviewCopyMovie" type="button" title="Копировать весь пакет отзывов текущего фильма" aria-label="Копировать весь пакет отзывов текущего фильма">🗂 Пакет фильма</button>
       </div>
     </div>
+    <div id="historyToolbar" class="history-toolbar hidden">
+      <button id="historyToggle" type="button" aria-expanded="false" aria-controls="historyPanel">🕰 История · 0</button>
+      <span id="historyStatus" class="history-status">Актуальный текст</span>
+      <button id="historyShowCurrent" type="button" class="history-current hidden" title="Вернуться к текущему отзыву">↩ Текущий взгляд</button>
+    </div>
+    <div id="historyPanel" class="history-panel hidden" role="region" aria-label="История отзывов и GPT-интерпретаций"></div>
     <div id="reviewBody" class="review-body"></div>
     <div class="review-nav">
       <button id="reviewPrev" type="button" aria-label="Предыдущий отзыв">‹</button>
@@ -1236,7 +1260,13 @@ document.addEventListener('click',async function(e){
   const prevButton=document.getElementById('reviewPrev');
   const nextButton=document.getElementById('reviewNext');
   const position=document.getElementById('reviewPosition');
+  const historyToolbar=document.getElementById('historyToolbar');
+  const historyToggle=document.getElementById('historyToggle');
+  const historyPanel=document.getElementById('historyPanel');
+  const historyStatus=document.getElementById('historyStatus');
+  const historyShowCurrent=document.getElementById('historyShowCurrent');
   let model=null,touchStartX=0,touchStartY=0;
+  let historyOpen=false,historyIndex=null;
 
   function personName(person){return person==='egor'?'Егор':'Анна'}
   function personScore(person){if(!model)return'—';return person==='egor'?(model.scoreEgor||'—'):(model.scoreAnna||'—')}
@@ -1265,8 +1295,84 @@ document.addEventListener('click',async function(e){
   function peopleFor(mode){
     return ['egor','anna'].filter(p=>available(mode,p));
   }
+
+  const humanTypeLabels={original:'Первый просмотр',addition:'Дополнение',rewatch:'Пересмотр',legacy_current:'Зафиксированный текущий отзыв'};
+  const aiTypeLabels={original:'Первая интерпретация',reinterpretation:'Переосмысление',taste_model_update:'Обновление модели вкуса',backfill:'Перенесённая текущая версия',manual_revision:'Ручная редакция'};
+  const confidenceLabels={tentative:'предварительное',developing:'развивается',strong:'устойчивое'};
+  function currentWork(){
+    return model?(getMovieData().works||[]).find(w=>w.id===model.id):null;
+  }
+  function currentHistoryEvents(){
+    const work=currentWork();
+    if(!work||!model)return[];
+    return personHistory(work,model.mode==='review'?'review_history':'ai_comment_history',model.mode==='together'?'together':model.person);
+  }
+  function currentEventId(){
+    const work=currentWork();
+    const root=work&&work.history_current||{};
+    const group=model.mode==='review'?'review':'ai';
+    const p=model.mode==='together'?'together':model.person;
+    const selected=root[group]&&root[group][p];
+    const list=currentHistoryEvents();
+    return selected||list[list.length-1]?.id||null;
+  }
+  function materializedText(){
+    if(!model)return'';
+    if(model.mode==='together')return model.aiTogether||'';
+    return model.mode==='ai'?aiText(model.person):humanText(model.person);
+  }
+  function selectedHistoryEvent(){
+    const events=currentHistoryEvents();
+    return historyIndex===null?null:(events[historyIndex]||null);
+  }
+  function visibleText(){
+    const event=selectedHistoryEvent();
+    return event&&typeof event.text==='string'?event.text:materializedText();
+  }
+  function eventDate(event){
+    const value=event.date||event.recorded_at||'';
+    const text=/^\d{4}-\d{2}-\d{2}$/.test(value)?value.slice(8,10)+'.'+value.slice(5,7)+'.'+value.slice(0,4):'дата неизвестна';
+    return event.date?text:event.recorded_at?'зафиксировано '+text:'дата неизвестна';
+  }
+  function eventCaption(event){
+    const label=model.mode==='review'?(humanTypeLabels[event.type]||event.type):(aiTypeLabels[event.type]||event.type);
+    const version=model.mode==='review'?'':'v'+event.version+' · ';
+    const rating=model.mode==='review'&&event.rating?' · '+event.rating+'/10':'';
+    return version+label+rating;
+  }
+  function resetHistory(){
+    historyIndex=null;
+    historyOpen=false;
+  }
+  function renderHistory(){
+    const events=currentHistoryEvents(),has=events.length>0;
+    historyToolbar.classList.toggle('hidden',!has);
+    if(!has){historyOpen=false;historyIndex=null}
+    historyPanel.classList.toggle('hidden',!has||!historyOpen);
+    shell.classList.toggle('history-open',has&&historyOpen);
+    historyToggle.textContent='🕰 История · '+events.length;
+    historyToggle.setAttribute('aria-expanded',has&&historyOpen?'true':'false');
+    const selected=selectedHistoryEvent(),current=events.find(e=>e.id===currentEventId());
+    const version=model.mode==='review'?'':(current&&current.version?' · v'+current.version:'');
+    historyStatus.textContent=selected?'Историческая запись · '+eventDate(selected):'Актуальный текст'+version;
+    historyShowCurrent.classList.toggle('hidden',historyIndex===null);
+    if(!historyOpen){historyPanel.innerHTML='';return}
+    const currentId=currentEventId();
+    historyPanel.innerHTML=events.map((event,i)=>{
+      const isCurrent=event.id===currentId;
+      const meta=[];
+      if(event.reason)meta.push('Причина: '+event.reason);
+      if(event.confidence)meta.push('Уверенность: '+(confidenceLabels[event.confidence]||event.confidence));
+      if(event.source)meta.push('Источник: '+event.source);
+      return '<button type="button" class="history-entry'+(historyIndex===i?' history-selected':'')+(isCurrent?' history-current-version':'')+'" data-history-index="'+i+'" aria-label="Показать запись '+(i+1)+'">'+
+       '<span class="history-entry-head">'+esc(eventDate(event))+' · '+esc(eventCaption(event))+(isCurrent?'<span class="history-entry-current">текущая</span>':'')+'</span>'+
+       (meta.length?'<span class="history-entry-meta">'+esc(meta.join(' · '))+'</span>':'')+
+       '</button>';
+    }).join('');
+  }
+
   function renderJoint(){
-    body.textContent=model.aiTogether;
+    body.textContent=visibleText();
     body.classList.add('ai-view');
     title.textContent=model.title;
     sub.textContent='GPT · итог по двум отзывам';
@@ -1285,7 +1391,7 @@ document.addEventListener('click',async function(e){
     if(!people.includes(model.person))model.person=people[0];
     const idx=people.indexOf(model.person);
     const isAi=model.mode==='ai';
-    body.textContent=isAi?aiText(model.person):humanText(model.person);
+    body.textContent=visibleText();
     body.classList.toggle('ai-view',isAi);
     title.textContent=model.title;
     sub.textContent=personName(model.person)+' · оценка '+personScore(model.person);
@@ -1301,6 +1407,7 @@ document.addEventListener('click',async function(e){
     copyCurrent.title='Копировать текущий: '+currentTypeLabel();
     copyThread.title='Копировать все «'+currentTypeLabel()+'» по всей Movie Map';
     copyMovie.title='Копировать все отзывы этого фильма: Анна → GPT Анна → Егор → GPT Егор → общий GPT';
+    renderHistory();
   }
   function readModel(el){
     return {
@@ -1317,11 +1424,7 @@ document.addEventListener('click',async function(e){
       aiTogether:(el.dataset.aiTogether||'').trim()
     };
   }
-  function currentText(){
-    if(!model)return'';
-    if(model.mode==='together')return model.aiTogether||'';
-    return model.mode==='ai'?aiText(model.person):humanText(model.person);
-  }
+  function currentText(){return visibleText();}
   function currentTypeLabel(){
     if(!model)return'';
     if(model.mode==='together')return'GPT · общий итог';
@@ -1345,7 +1448,7 @@ document.addEventListener('click',async function(e){
     window.setTimeout(()=>button.textContent=original,1000);
   }
   function openFrom(el,mode){
-    model=readModel(el);model.mode=mode||'review';
+    model=readModel(el);model.mode=mode||'review';resetHistory();
     if(model.mode==='together'&&!model.aiTogether){model=null;return}
     if(model.mode!=='together'&&!available(model.mode,model.person)){
       const p=peopleFor(model.mode);if(p.length)model.person=p[0];else if(model.aiTogether)model.mode='together';
@@ -1354,12 +1457,12 @@ document.addEventListener('click',async function(e){
     overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';closeButton.focus();
   }
-  function close(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';body.classList.remove('ai-view');model=null;}
+  function close(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.style.overflow='';body.classList.remove('ai-view');model=null;resetHistory();historyToolbar.classList.add('hidden');historyPanel.classList.add('hidden');shell.classList.remove('history-open');}
   function move(step){
     if(!model||model.mode==='together')return;
     const people=peopleFor(model.mode);if(people.length<2)return;
     const idx=people.indexOf(model.person);
-    model.person=people[(idx+step+people.length)%people.length];render();
+    model.person=people[(idx+step+people.length)%people.length];resetHistory();render();
   }
   document.addEventListener('click',function(event){
     if(event.target.closest('[data-copy-text],[data-copy-package],[data-copy-thread]'))return;
@@ -1370,18 +1473,27 @@ document.addEventListener('click',async function(e){
     const chip=event.target.closest('#reviewNavChips [data-review-mode]');
     if(chip&&model&&!chip.disabled){
       const person=chip.dataset.reviewPersonTarget;if(person)model.person=person;
-      model.mode=chip.dataset.reviewMode;render();
+      model.mode=chip.dataset.reviewMode;resetHistory();render();
     }
   });
   document.addEventListener('keydown',function(event){
     const afterTrigger=event.target&&event.target.closest?event.target.closest('[data-open-ai-summary="1"]'):null;
     if(afterTrigger&&(event.key==='Enter'||event.key===' ')){event.preventDefault();openFrom(afterTrigger,'together');return}
     if(!overlay.classList.contains('open'))return;
-    if(event.key==='Escape')close();
+    if(event.key==='Escape'){if(historyOpen){historyOpen=false;renderHistory();}else close();}
     if(event.key==='ArrowLeft')move(-1);
     if(event.key==='ArrowRight')move(1);
   });
   closeButton.addEventListener('click',close);
+  historyToggle.addEventListener('click',function(){if(!model)return;historyOpen=!historyOpen;renderHistory();});
+  historyShowCurrent.addEventListener('click',function(){historyIndex=null;render();});
+  historyPanel.addEventListener('click',function(event){
+    const item=event.target.closest('button[data-history-index]');
+    if(!item||!model)return;
+    const i=Number(item.dataset.historyIndex);
+    if(!Number.isInteger(i)||i<0||i>=currentHistoryEvents().length)return;
+    historyIndex=i;render();body.scrollTop=0;
+  });
   copyCurrent.addEventListener('click',()=>copyViaButton(copyCurrent,currentText()));
   copyThread.addEventListener('click',()=>copyViaButton(copyThread,threadText()));
   copyMovie.addEventListener('click',()=>copyViaButton(copyMovie,moviePackageText()));

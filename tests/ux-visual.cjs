@@ -146,6 +146,29 @@ const {chromium}=require('playwright');
      console.log('DETAIL',cfg.name,JSON.stringify(detail));
      assert(detail.left>=-2&&detail.right<=cfg.width+2,'movie shell outside viewport '+cfg.name);
      await page.locator('#movieClose').click();
+     // Disclaimer acceptance: history of Egor, GPT Egor, and joint GPT.
+     await page.locator('#allRegistry .card[data-key="33233b1d276d"] .fact-review-trigger[data-person="egor"]').first().click();
+     await page.waitForSelector('#reviewOverlay.open');
+     assert.equal(await page.locator('#historyToggle').textContent(),'🕰 История · 1');
+     const currentReview=await page.locator('#reviewBody').textContent();
+     assert(currentReview.includes('Фильм быстро завлекает'));
+     await page.locator('#historyToggle').click();
+     assert.equal(await page.locator('#historyPanel [data-history-index]').count(),1);
+     assert((await page.locator('#historyPanel').textContent()).includes('Зафиксированный текущий отзыв'));
+     await page.locator('#historyPanel [data-history-index="0"]').click();
+     assert((await page.locator('#reviewBody').textContent()).includes('Фильм быстро завлекает'));
+     await page.locator('#historyShowCurrent').click();
+     assert.equal(await page.locator('#reviewBody').textContent(),currentReview);
+     await page.locator('#reviewNavChips [data-review-mode="ai"][data-review-person-target="egor"]').click();
+     assert((await page.locator('#historyStatus').textContent()).includes('v1'));
+     await page.locator('#historyToggle').click();
+     assert((await page.locator('#historyPanel').textContent()).includes('Перенесённая текущая версия'));
+     await page.locator('#reviewNavChips [data-review-mode="together"]').click();
+     assert.equal(await page.locator('#historyToggle').textContent(),'🕰 История · 1');
+     const shellReview=await page.locator('#reviewShell').boundingBox();
+     assert(shellReview&&shellReview.x>=-2&&shellReview.x+shellReview.width<=cfg.width+2,'review popup must fit viewport');
+     await page.screenshot({path:'ux-history-'+cfg.name+'.png',fullPage:false});
+     await page.locator('#reviewClose').click();
 
      if(cfg.name==='desktop'){
        // Verify autonomous save functionality with a real browser download.
@@ -194,6 +217,12 @@ const {chromium}=require('playwright');
        await filePage.locator('[data-k="cat"][data-v="all"]').click();
        assert.equal(await filePage.locator('#allRegistry .card:not(.hidden)').count(),85,'standalone must restore flat All');
        assert.equal(await filePage.locator('#catalogCount').textContent(),'(85/85)');
+       await filePage.locator('#allRegistry .card[data-key="33233b1d276d"] .fact-review-trigger[data-person="egor"]').first().click();
+       await filePage.waitForSelector('#reviewOverlay.open');
+       assert.equal(await filePage.locator('#historyToggle').textContent(),'🕰 История · 1','offline history retained');
+       await filePage.locator('#historyToggle').click();
+       assert.equal(await filePage.locator('#historyPanel [data-history-index]').count(),1);
+       await filePage.locator('#reviewClose').click();
        assert.deepEqual(fileErrors,[],'standalone JavaScript errors');
        await filePage.close();
      }
