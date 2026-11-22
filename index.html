@@ -38,7 +38,7 @@
 .review-head{display:flex;align-items:flex-start;gap:10px;padding:12px 14px 9px;border-bottom:1px solid #2d333c}
 .review-title{min-width:0;flex:1}.review-title strong{display:block;font-size:14px;line-height:1.25}
 .review-sub{font-size:9.5px;color:#89919d;margin-top:3px}.review-close{cursor:pointer;margin-left:auto}
-.review-nav-chips{display:flex;gap:6px;padding:9px 12px 0;flex-wrap:wrap}.review-nav-chips button{font-size:9.5px;padding:5px 9px;cursor:pointer}.review-nav-chips button[disabled]{opacity:.28;cursor:default}.review-nav-chips button.human-active{background:#eee;color:#111;border-color:#eee;box-shadow:0 0 0 1px rgba(255,255,255,.15)}.review-nav-chips button.ai-active{background:#173654;color:#dff1ff;border-color:#6aa2d5}.review-nav-chips button.joint-active{background:#213d57;color:#e7f4ff;border-color:#7db0db}.review-mode-label{font-size:9.5px;color:#89919d;border:1px solid #343b45;border-radius:999px;padding:4px 8px}.review-mode-inline{align-self:flex-start;margin:8px 12px 0}.review-mode-label.human-current{background:#eceff3;color:#11161b;border-color:#eceff3}.review-mode-label.ai-current{background:#142b43;color:#d8edff;border-color:#5f8db8}.review-body{font-size:13px;line-height:1.5;color:#e4e7eb;padding:14px 16px 16px;overflow:auto;white-space:pre-wrap;min-height:110px;overscroll-behavior:contain}.review-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-top:1px solid #2d333c}.review-nav button{cursor:pointer;min-width:42px}.review-position{font-size:9.5px;color:#89919d;text-align:center}.review-single .review-nav{display:none}.review-body.ai-view{color:#dcecff;background:linear-gradient(180deg,rgba(66,105,148,.12),rgba(66,105,148,0))}.post.has-ai-summary{cursor:pointer}.post.has-ai-summary:hover{color:#fff}.post-ai-chip{display:inline-block;margin-left:5px;color:#82c8ff;font-size:9px;vertical-align:1px}
+.review-nav-chips{display:flex;gap:6px;padding:9px 12px 0;flex-wrap:wrap}.review-nav-chips button{font-size:9.5px;padding:5px 9px;cursor:pointer}.review-nav-chips button[disabled]{opacity:.28;cursor:default}.review-nav-chips button.human-active{background:#eee;color:#111;border-color:#eee;box-shadow:0 0 0 1px rgba(255,255,255,.15)}.review-nav-chips button.ai-active{background:#173654;color:#dff1ff;border-color:#6aa2d5}.review-nav-chips button.joint-active{background:#213d57;color:#e7f4ff;border-color:#7db0db}.review-mode-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px 0}.review-mode-label{font-size:9.5px;color:#89919d;border:1px solid #343b45;border-radius:999px;padding:4px 8px}.review-copybar{display:flex;gap:5px}.review-copybar button{font-size:10px;padding:4px 7px;cursor:pointer}.review-mode-label.human-current{background:#eceff3;color:#11161b;border-color:#eceff3}.review-mode-label.ai-current{background:#142b43;color:#d8edff;border-color:#5f8db8}.review-body{font-size:13px;line-height:1.5;color:#e4e7eb;padding:14px 16px 16px;overflow:auto;white-space:pre-wrap;min-height:110px;overscroll-behavior:contain}.review-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-top:1px solid #2d333c}.review-nav button{cursor:pointer;min-width:42px}.review-position{font-size:9.5px;color:#89919d;text-align:center}.review-single .review-nav{display:none}.review-body.ai-view{color:#dcecff;background:linear-gradient(180deg,rgba(66,105,148,.12),rgba(66,105,148,0))}.post.has-ai-summary{cursor:pointer}.post.has-ai-summary:hover{color:#fff}.post-ai-chip{display:inline-block;margin-left:5px;color:#82c8ff;font-size:9px;vertical-align:1px}
 @media(max-width:560px){.review-overlay{align-items:flex-end;padding:0}.review-shell{width:100%;max-height:80dvh;border-radius:18px 18px 0 0;border-left:0;border-right:0;border-bottom:0}.review-head{padding:12px 14px 10px}.review-body{font-size:13.5px;line-height:1.52;padding:14px 16px 20px;min-height:180px}.review-nav{padding:9px 12px 11px}.review-nav-chips{gap:4px}.review-nav-chips button{font-size:8.7px;padding:4px 7px}}
 
 </style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино - АННА и Егор</h1><div class="summary" id="summary"></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><section data-sec="films"><div class="section-head"><h2>❤️ Фильмы для двоих <span style="color:#777;font-weight:400">(20)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="series"><div class="section-head"><h2>📺 Сериалы для двоих <span style="color:#777;font-weight:400">(19)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="weird"><div class="section-head"><h2>🌀 Странное кино / сериал для двоих <span style="color:#777;font-weight:400">(15)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="me"><div class="section-head"><h2>👨 Кино / сериал для Егора <span style="color:#777;font-weight:400">(16)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section data-sec="her"><div class="section-head"><h2>👩 Кино / сериал для Анны <span style="color:#777;font-weight:400">(15)</span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div class="section-head"><h2>⧉ Все фильмы / сериалы с задвоением <span id="duplicateCount" style="color:#777;font-weight:400"></span></h2><button class="section-sort" type="button" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button></div><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
@@ -91,7 +91,14 @@
       <button id="reviewClose" class="review-close" type="button" aria-label="Закрыть отзыв">✕</button>
     </div>
     <div id="reviewNavChips" class="review-nav-chips"></div>
-    <div id="reviewModeLabel" class="review-mode-label review-mode-inline"></div>
+    <div class="review-mode-row">
+      <div id="reviewModeLabel" class="review-mode-label"></div>
+      <div class="review-copybar">
+        <button id="reviewCopyCurrent" type="button" title="Копировать текущий отзыв / комментарий" aria-label="Копировать текущий отзыв или комментарий">📋</button>
+        <button id="reviewCopyThread" type="button" title="Копировать все отзывы этого типа" aria-label="Копировать все отзывы этого типа">📚</button>
+        <button id="reviewCopyMovie" type="button" title="Копировать весь пакет отзывов текущего фильма" aria-label="Копировать весь пакет отзывов текущего фильма">🗂</button>
+      </div>
+    </div>
     <div id="reviewBody" class="review-body"></div>
     <div class="review-nav">
       <button id="reviewPrev" type="button" aria-label="Предыдущий отзыв">‹</button>
@@ -254,7 +261,7 @@ function reviewDataAttrs(work,p){
  const actual=p.actual||{};
  const reviews=work.reviews||{};
  const ai=work.ai_comments||{};
- return ' data-title="'+esc(work.title)+'"'+
+ return ' data-work-id="'+esc(work.id)+'" data-title="'+esc(work.title)+'"'+
    ' data-score-me="'+esc(actual.me==null?'—':actual.me)+'"'+
    ' data-score-wife="'+esc(actual.wife==null?'—':actual.wife)+'"'+
    ' data-review-me="'+esc(typeof reviews.me==='string'?reviews.me:'')+'"'+
@@ -869,6 +876,9 @@ document.addEventListener('click',async function(e){
   const sub=document.getElementById('reviewSub');
   const nav=document.getElementById('reviewNavChips');
   const modeLabel=document.getElementById('reviewModeLabel');
+  const copyCurrent=document.getElementById('reviewCopyCurrent');
+  const copyThread=document.getElementById('reviewCopyThread');
+  const copyMovie=document.getElementById('reviewCopyMovie');
   const body=document.getElementById('reviewBody');
   const closeButton=document.getElementById('reviewClose');
   const prevButton=document.getElementById('reviewPrev');
@@ -908,7 +918,7 @@ document.addEventListener('click',async function(e){
     body.classList.add('ai-view');
     title.textContent=model.title;
     sub.textContent='GPT · итог по двум отзывам';
-    modeLabel.className='review-mode-label review-mode-inline ai-current';
+    modeLabel.className='review-mode-label ai-current';
     modeLabel.textContent='🤖 GPT · итоговый комментарий';
     shell.classList.add('review-single');
     position.textContent='';
@@ -927,7 +937,7 @@ document.addEventListener('click',async function(e){
     body.classList.toggle('ai-view',isAi);
     title.textContent=model.title;
     sub.textContent=personName(model.person)+' · оценка '+personScore(model.person);
-    modeLabel.className='review-mode-label review-mode-inline '+(isAi?'ai-current':'human-current');
+    modeLabel.className='review-mode-label '+(isAi?'ai-current':'human-current');
     modeLabel.textContent=isAi?'🤖 GPT-комментарий':'💬 Отзыв человека';
     shell.classList.toggle('review-single',people.length<2);
     position.textContent=people.length>1?(idx+1)+' из '+people.length:'';
@@ -936,6 +946,7 @@ document.addEventListener('click',async function(e){
   function render(){if(!model)return;model.mode==='together'?renderJoint():renderPerson();}
   function readModel(el){
     return {
+      id:el.dataset.workId||'',
       title:el.dataset.title||'Полный отзыв',
       person:el.dataset.person||'me',
       mode:'review',
@@ -947,6 +958,50 @@ document.addEventListener('click',async function(e){
       aiWife:(el.dataset.aiWife||'').trim(),
       aiTogether:(el.dataset.aiTogether||'').trim()
     };
+  }
+  function currentText(){
+    if(!model)return'';
+    if(model.mode==='together')return model.aiTogether||'';
+    return model.mode==='ai'?aiText(model.person):humanText(model.person);
+  }
+  function currentTypeLabel(){
+    if(!model)return'';
+    if(model.mode==='together')return'GPT · общий итог';
+    if(model.mode==='ai')return'GPT · '+personName(model.person);
+    return'Отзыв '+personName(model.person);
+  }
+  function threadText(){
+    if(!model)return'';
+    const blocks=[];
+    (getMovieData().works||[]).forEach(work=>{
+      let value='';
+      if(model.mode==='together')value=(work.ai_comments&&work.ai_comments.together)||'';
+      else if(model.mode==='ai')value=(work.ai_comments&&work.ai_comments[model.person])||'';
+      else value=(work.reviews&&work.reviews[model.person])||'';
+      value=String(value||'').trim();
+      if(value)blocks.push(work.title+'\n'+currentTypeLabel()+'\n'+value);
+    });
+    return blocks.join('\n\n──────────\n\n');
+  }
+  function moviePackageText(){
+    if(!model)return'';
+    const work=(getMovieData().works||[]).find(w=>w.id===model.id)||null;
+    if(!work)return'';
+    const reviews=work.reviews||{},ai=work.ai_comments||{};
+    const parts=[work.title];
+    const add=(label,value)=>{value=String(value||'').trim();if(value)parts.push(label+'\n'+value)};
+    add('Анна',reviews.wife);
+    add('GPT · Анна',ai.wife);
+    add('Егор',reviews.me);
+    add('GPT · Егор',ai.me);
+    add('GPT · общий итог',ai.together);
+    return parts.join('\n\n');
+  }
+  async function copyViaButton(button,text){
+    const original=button.textContent;
+    const ok=await copyTextToClipboard(text);
+    button.textContent=ok?'✓':'!';
+    window.setTimeout(()=>button.textContent=original,1000);
   }
   function openFrom(el,mode){
     model=readModel(el);model.mode=mode||'review';
@@ -985,6 +1040,9 @@ document.addEventListener('click',async function(e){
     if(event.key==='ArrowRight')move(1);
   });
   closeButton.addEventListener('click',close);
+  copyCurrent.addEventListener('click',()=>copyViaButton(copyCurrent,currentText()));
+  copyThread.addEventListener('click',()=>copyViaButton(copyThread,threadText()));
+  copyMovie.addEventListener('click',()=>copyViaButton(copyMovie,moviePackageText()));
   prevButton.addEventListener('click',()=>move(-1));
   nextButton.addEventListener('click',()=>move(1));
   overlay.addEventListener('click',event=>{if(event.target===overlay)close()});
