@@ -1,0 +1,20 @@
+name: TMDB enrichment probe
+on:
+  push:
+    branches: [data/tmdb-enrichment]
+    paths:
+      - 'scripts/enrich-tmdb.js'
+      - '.github/workflows/tmdb-enrich.yml'
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: data/tmdb-enrichment
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/enrich-tmdb.js
