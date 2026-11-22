@@ -7,9 +7,9 @@ const html=fs.readFileSync('index.html','utf8');
 const api=fs.readFileSync('api/chat.js','utf8');
 assert.equal(db.schema_version,2,'canonical production schema v2');
 const stats=assertMovieMap(db,{requireCanonical:true});
-assert.equal(stats.works,58,'work count');
-assert.equal(stats.placements,85,'placement count');
-assert.equal(stats.history,58,'history coverage');
+assert.equal(stats.works,db.counts.unique_works,'work count');
+assert.equal(stats.placements,db.counts.rendered_cards,'placement count');
+assert.equal(stats.history,db.works.length,'history coverage');
 assert(stats.withReviews>=1,'at least one work must have materialized reviews');
 const PEOPLE=['egor','anna'],AI_PEOPLE=['egor','anna','together'],LEGACY=['me','wife','husband','her','him','she','he','partner','spouse'];
 const checkKeys=(obj,allowed,where)=>{

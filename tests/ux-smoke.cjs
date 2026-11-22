@@ -4,6 +4,8 @@ const { JSDOM, VirtualConsole } = require('jsdom');
 
 const html = fs.readFileSync('index.html','utf8');
 const db = JSON.parse(fs.readFileSync('movies.json','utf8'));
+const totalCards=db.works.reduce((n,work)=>n+work.placements.length,0);
+const filmCards=db.works.reduce((n,work)=>n+work.placements.filter(p=>p.category==='films').length,0);
 const errors=[];
 let copied = '';
 const vc=new VirtualConsole();
@@ -43,10 +45,10 @@ const test=async(name,fn)=>{
 };
 async function init(){
  for(let i=0;i<100;i++){
-   if(d.querySelectorAll('section[data-sec] .card').length===85)break;
+   if(d.querySelectorAll('section[data-sec] .card').length===totalCards)break;
    await tick();
  }
- assert.equal(d.querySelectorAll('section[data-sec] .card').length,85,'all 85 placements rendered');
+ assert.equal(d.querySelectorAll('section[data-sec] .card').length,totalCards,'all placements rendered');
 }
 
 (async()=>{
@@ -58,11 +60,11 @@ async function init(){
    assert(!d.getElementById('summary'));
  });
  await test('single header: All, sort, then category chips',()=>{
-   assert.equal(visible(),85);
-   assert.equal(count(),'(85/85)');
+   assert.equal(visible(),totalCards);
+   assert.equal(count(),`(${totalCards}/${totalCards})`);
    assert.equal(catalogTitle(),'Все');
-   assert.equal(d.querySelectorAll('#allRegistry .card').length,85);
-   assert.equal(d.querySelectorAll('#allRegistry .card-origin').length,85);
+   assert.equal(d.querySelectorAll('#allRegistry .card').length,totalCards);
+   assert.equal(d.querySelectorAll('#allRegistry .card-origin').length,totalCards);
    const header=d.getElementById('catalogToolbar');
    assert.equal(header.children[0].id,'catalogTitle');
    assert(header.children[1].classList.contains('section-sort'),'sort directly after title');
@@ -74,26 +76,26 @@ async function init(){
    click('#catalogToolbar .section-sort');
    assert.equal(d.querySelector('.section-sort').dataset.sort,'ru-asc');
    click('[data-k="cat"][data-v="films"]');
-   assert.equal(visible(),20);
-   assert.equal(count(),'(20/85)');
+   assert.equal(visible(),filmCards);
+   assert.equal(count(),`(${filmCards}/${totalCards})`);
    assert.equal(catalogTitle(),'❤️ Фильмы для двоих');
    assert.equal(d.querySelectorAll('#allRegistry .card').length,0);
    assert.equal(d.querySelectorAll('#catalogToolbar #cat [data-k="cat"]').length,6);
    click('[data-k="cat"][data-v="all"]');
-   assert.equal(visible(),85);
-   assert.equal(count(),'(85/85)');
+   assert.equal(visible(),totalCards);
+   assert.equal(count(),`(${totalCards}/${totalCards})`);
    click('#reset');
  });
  await test('review-presence filter still updates header',()=>{
    const reviewed=db.works.reduce((n,x)=>n+x.placements.length*((w.personValue(x.reviews,'egor')?.trim()||w.personValue(x.reviews,'anna')?.trim())?1:0),0);
-   click('#reviewMode');assert.equal(visible(),reviewed);assert.equal(count(),`(${reviewed}/85)`);
-   click('#reviewMode');assert.equal(visible(),85-reviewed);assert.equal(count(),`(${85-reviewed}/85)`);
-   click('#reset');assert.equal(visible(),85);assert.equal(count(),'(85/85)');
+   click('#reviewMode');assert.equal(visible(),reviewed);assert.equal(count(),`(${reviewed}/${totalCards})`);
+   click('#reviewMode');assert.equal(visible(),totalCards-reviewed);assert.equal(count(),`(${totalCards-reviewed}/${totalCards})`);
+   click('#reset');assert.equal(visible(),totalCards);assert.equal(count(),`(${totalCards}/${totalCards})`);
  });
  await test('stars and country filters',()=>{
    click('#starsMode');assert.equal(d.getElementById('starsMode').dataset.mode,'3');
    click('#countryMode');assert.equal(d.getElementById('countryMode').dataset.mode,'ru');
-   click('#reset');assert.equal(visible(),85);
+   click('#reset');assert.equal(visible(),totalCards);
  });
  await test('movie detail and poster zoom',()=>{
    click('[data-open-movie]');
@@ -141,7 +143,7 @@ async function init(){
    assert.match(line.textContent,/Для Анны/);
    assert(line.querySelector('[data-cross-cat="her"]'),'cross-list chip must retain its navigation');
    assert.equal(line.previousElementSibling.classList.contains('meta'),true);
-   assert.equal(d.querySelectorAll('#allRegistry .card .score-shortlist .watch').length,85,'all 85 placements have shortlist button in score');
+   assert.equal(d.querySelectorAll('#allRegistry .card .score-shortlist .watch').length,totalCards,'all placements have shortlist button in score');
    const beforeCopy=d.querySelectorAll('#allRegistry .card .pre .copy-icon').length;
    assert.equal(beforeCopy,0,'compact card does not have copy action');
  });
@@ -192,8 +194,8 @@ async function init(){
    assert.equal(w.originBucket({origin:{type:'user_added',added_by:'egor'}}),'egor');
    assert.equal(w.originBucket({origin:{type:'user_added',added_by:'anna'}}),'anna');
    assert.equal(w.originBucket({origin:{type:'gpt_recommendation',added_by:'unknown'}}),'unknown');
-   assert.equal(d.querySelectorAll('#allRegistry .card[data-origin]').length,85);
-   assert.equal(d.querySelectorAll('#allRegistry .card .origin-source').length,85);
+   assert.equal(d.querySelectorAll('#allRegistry .card[data-origin]').length,totalCards);
+   assert.equal(d.querySelectorAll('#allRegistry .card .origin-source').length,totalCards);
    assert(d.querySelector('#originMode'),'origin filter must be visible');
    click('#originMode');assert.equal(d.querySelector('#originMode').dataset.mode,'gpt');
    const gptRows=db.works.filter(x=>w.originBucket(x)==='gpt').reduce((n,x)=>n+x.placements.length,0);
@@ -203,7 +205,7 @@ async function init(){
    assert.equal(d.querySelector('#originMode').dataset.mode,'unknown');
    const unknownRows=db.works.filter(x=>w.originBucket(x)==='unknown').reduce((n,x)=>n+x.placements.length,0);
    assert.equal(visible(),unknownRows);
-   click('#reset');assert.equal(visible(),85);
+   click('#reset');assert.equal(visible(),totalCards);
  });
 
  await test('Recommendation Batches schema, safe legacy display, and filter',()=>{
@@ -239,14 +241,13 @@ async function init(){
    assert(d.getElementById('batchPopover').classList.contains('hidden'));
    const august=db.recommendation_batches.find(x=>x.id==='rec_2026_08_initial');
    if(august){
-     const gpt=db.works.filter(x=>x.origin?.type==='gpt_recommendation'&&x.origin?.added_by==='chatgpt');
-     assert.equal(gpt.length,53);
-     assert(gpt.every(x=>x.recommendations.some(e=>e.batch_id===august.id&&e.event==='added')));
-     assert(db.works.filter(x=>x.origin?.type!=='gpt_recommendation').every(x=>x.recommendations.length===0));
+     const members=db.works.filter(x=>x.recommendations.some(e=>e.batch_id===august.id));
+     const original=members.filter(x=>x.recommendations.some(e=>e.batch_id===august.id&&e.event==='added'));
+     assert.equal(original.length,53,'historical August additions');
      click('#batchPickerToggle');click('[data-batch-option="rec_2026_08_initial"]');
-     const rows=gpt.reduce((n,x)=>n+x.placements.length,0);
+     const rows=members.reduce((n,x)=>n+x.placements.length,0);
      assert.equal(visible(),rows);
-     assert([...d.querySelectorAll('section[data-sec] .card:not(.hidden) .origin-source.origin-gpt')].every(x=>x.textContent.includes('авг 26')));
+     assert([...d.querySelectorAll('section[data-sec] .card:not(.hidden)')].every(c=>members.some(x=>x.id===c.dataset.key)));
      click('#reset');
    }else{
      assert(db.works.every(x=>x.recommendations.length===0));
@@ -269,12 +270,12 @@ async function init(){
 
  await test('four duplicate modes with unique work representatives',()=>{
    const duplicates=db.works.filter(x=>x.placements.length>1),sum=duplicates.reduce((n,x)=>n+x.placements.length,0);
-   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'exclude');assert.equal(visible(),85-sum);
+   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'exclude');assert.equal(visible(),totalCards-sum);
    click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'only');assert.equal(visible(),sum);
    click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'unique');assert.equal(visible(),duplicates.length);
    const rows=[...d.querySelectorAll('section[data-sec] .card:not(.hidden)')];
    assert.equal(new Set(rows.map(c=>c.dataset.key)).size,rows.length);
-   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'all');assert.equal(visible(),85);
+   click('#dupMode');assert.equal(d.getElementById('dupMode').dataset.mode,'all');assert.equal(visible(),totalCards);
    click('[data-k="cat"][data-v="her"]');for(let i=0;i<3;i++)click('#dupMode');
    assert.equal(visible(),duplicates.filter(x=>x.placements.some(p=>p.category==='her')).length);
    click('#reset');
@@ -310,7 +311,7 @@ async function init(){
    click('[data-extra-filter="sites"]');
    assert.equal(d.querySelectorAll('#duplicateList .duplicate-row').length,expected);
    click('#reset');
-   assert.equal(visible(),85);
+   assert.equal(visible(),totalCards);
    assert(buttons.every(b=>b.dataset.mode==='all'));
  });
  await test('multiselect film years and year sort',()=>{
@@ -324,7 +325,7 @@ async function init(){
    }
    assert([...d.querySelectorAll('.card:not(.hidden)')].every(c=>['2023','2025'].includes(c.dataset.year)));
    click('#yearClear');
-   assert.equal(visible(),85);
+   assert.equal(visible(),totalCards);
    click('#reset');
    for(let i=0;i<7;i++)click('#catalogToolbar .section-sort');
    assert.equal(d.querySelector('.section-sort').dataset.sort,'year-desc');
@@ -371,7 +372,7 @@ async function init(){
    if(Number(db.schema_version)<2)return;
    const contract=require('../scripts/history-contract.cjs');
    assert.equal(contract.errorsForMovieMap(db,{requireCanonical:true}).length,0);
-   assert.equal(db.works.filter(w=>w.review_history&&w.ai_comment_history).length,58);
+   assert.equal(db.works.filter(w=>w.review_history&&w.ai_comment_history).length,db.counts.unique_works);
    const w0=db.works.find(w=>w.id==='33233b1d276d');
    assert(w0.review_history.egor.length>=1);
    assert(w0.review_history.anna.length>=1);
@@ -388,8 +389,8 @@ async function init(){
    assert.equal(togetherEvent.text,w0.ai_comments.together);
    assert(w0.placements.every(x=>x.actual.egor==='9'&&x.actual.anna==='10'));
    assert(db.works.every(w=>w.origin));
-   assert.equal(db.works.length,58);
-   assert.equal(db.works.reduce((n,w)=>n+w.placements.length,0),85);
+   assert.equal(db.works.length,db.counts.unique_works);
+   assert.equal(db.works.reduce((n,w)=>n+w.placements.length,0),totalCards);
  });
  await test('System naming and API tools use Egor/Anna only',()=>{
    const labels=[...d.querySelectorAll('[data-k="cat"],.review-nav-chips button,.review-mode-label,#catalogTitleText,.score .c.lab')].map(x=>x.textContent).join(' ');
@@ -399,7 +400,7 @@ async function init(){
    const backend=new Function('require','process','module',code+'\nreturn {canonicalPair,flatRows,getMovie,getCatalogStats};')(require,process,{exports:{}});
    assert.deepEqual(backend.canonicalPair({me:'9',wife:'10'}),{egor:'9',anna:'10'});
    assert.deepEqual(backend.canonicalPair({egor:'9',anna:'10'}),{egor:'9',anna:'10'});
-   assert.equal(backend.flatRows().length,85);
+   assert.equal(backend.flatRows().length,totalCards);
    const result=backend.getMovie({id_or_title:'Disclaimer'});
    assert(result.length>0);
    assert.equal(backend.getCatalogStats().categories.find(c=>c.id==='me').label,'Кино / сериал для Егора');

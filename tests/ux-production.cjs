@@ -1,5 +1,7 @@
 const assert=require('node:assert/strict');
 const {chromium}=require('playwright');
+const db=require('../movies.json');
+const totalCards=db.works.reduce((n,work)=>n+work.placements.length,0);
 (async()=>{
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  try{
@@ -20,7 +22,7 @@ const {chromium}=require('playwright');
        width:document.documentElement.scrollWidth,
        viewport:window.innerWidth
      }));
-     if(state.origin&&state.yearPicker&&state.rows===85&&state.visible===85&&state.width<=state.viewport+2){
+     if(state.origin&&state.yearPicker&&state.rows===totalCards&&state.visible===totalCards&&state.width<=state.viewport+2){
        console.log('PRODUCTION LIVE',width,JSON.stringify(state));ready=true;break;
      }
      last=JSON.stringify(state);
@@ -35,9 +37,9 @@ const {chromium}=require('playwright');
    await page.locator('#yearPickerToggle').click();
    await page.locator('input[data-year-choice][value="2025"]').check();
    const remaining=await page.locator('#allRegistry .card:not(.hidden)').count();
-   assert(remaining>0&&remaining<85,'Year filter should narrow production results');
+   assert(remaining>0&&remaining<totalCards,'Year filter should narrow production results');
    await page.locator('#reset').click();
-   assert.equal(await page.locator('#allRegistry .card:not(.hidden)').count(),85);
+   assert.equal(await page.locator('#allRegistry .card:not(.hidden)').count(),totalCards);
    await page.locator('#allRegistry .movie-title-trigger').first().click();
    await page.waitForSelector('#movieOverlay.open');
    await page.locator('#movieClose').click();

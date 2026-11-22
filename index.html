@@ -1,4 +1,19 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Лабиринт кино — Анна и Егор</title><style>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>
+function requestCatalog(){
+ const controller=new AbortController();
+ const timer=setTimeout(()=>controller.abort(),30000);
+ return fetch('./movies.json',{cache:'no-cache',signal:controller.signal})
+   .then(response=>{
+     if(!response.ok)throw new Error('HTTP '+response.status);
+     return response.json();
+   }).finally(()=>clearTimeout(timer));
+}
+let earlyCatalog=null;
+if(location.protocol!=='file:'&&!document.documentElement.hasAttribute('data-standalone')){
+ earlyCatalog=requestCatalog();
+ earlyCatalog.catch(()=>{}); // initMovieMap handles this once the interface is available.
+}
+</script><title>Лабиринт кино — Анна и Егор</title><style>
 *{box-sizing:border-box}body{margin:0;background:#0d0f12;color:#eee;font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:14px}.wrap{max-width:980px;margin:auto;padding:10px 10px 60px}.top{position:sticky;top:0;z-index:20;background:rgba(13,15,18,.98);padding:5px 0 8px;border-bottom:1px solid #292d34}h1{font-size:19px;margin:1px 0}.top{min-width:0}.titlebar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;margin:1px 0 6px;min-width:0}.title-copy{min-width:0}.titlebar h1{margin:0;line-height:1.12;overflow-wrap:anywhere}.summary{font-size:10px;color:#9299a4;margin-top:4px;padding-left:28px}.header-actions{display:grid;grid-template-columns:auto auto;column-gap:6px;row-gap:2px;justify-items:end;align-items:start;min-width:0}.header-actions>button{margin-top:0}#agentOpen{grid-column:1;grid-row:1;font-weight:800;border-color:#586273;cursor:pointer;padding:4px 8px}#saveStandalone{grid-column:2;grid-row:1;font-weight:800;border-color:#69717d;cursor:pointer;touch-action:manipulation;padding:4px 8px}#saveStatus{grid-column:2;grid-row:2;max-width:180px;font-size:8.8px;line-height:1.15;color:#7f8792;text-align:right;white-space:normal}.filters{max-width:100%;min-width:0}@media(max-width:680px){.titlebar{grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:start}.titlebar h1{font-size:15px;line-height:1.08}.header-actions{grid-template-columns:auto;row-gap:3px;justify-items:end;width:auto}.header-actions>button,#saveStandalone{font-size:8.8px;padding:4px 6px}#saveStandalone{grid-column:1;grid-row:1}#agentOpen{grid-column:1;grid-row:2}#saveStatus{grid-column:1;grid-row:3;max-width:118px;font-size:7.6px;line-height:1.05}.summary{margin-top:3px;padding-left:26px;font-size:9px}}@media(max-width:420px){.titlebar{gap:5px}.titlebar h1{font-size:14px}.header-actions{row-gap:2px}.header-actions>button,#saveStandalone{font-size:8px;padding:3px 5px}#saveStatus{max-width:104px;font-size:7px}.summary{padding-left:24px;font-size:8.5px}}.filters{display:flex;gap:5px;flex-wrap:wrap;overflow:visible;padding:2px 0;max-width:100%;min-width:0}.filters::-webkit-scrollbar{display:none}.cat-filters button{font-size:10px;padding:5px 7px}@media(max-width:560px){.filters{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:3px}.filters>*{flex:0 0 auto}}@media(max-width:560px){.section-head{align-items:flex-end;flex-wrap:wrap}.section-head h2{flex:1 1 auto;margin-bottom:2px}.section-sort{margin:0 0 2px auto;font-size:8.8px;padding:4px 6px}}button{font:inherit;color:#cfd3da;background:#15181d;border:1px solid #30343c;border-radius:999px;padding:5px 8px;white-space:nowrap;font-size:10.5px}button.active{background:#eee;color:#101216;border-color:#eee;font-weight:400}.reset{border-style:dashed;padding:5px 6px;min-width:26px;font-size:12px;line-height:1}.star-none{color:#9aa2ad;font-size:14px;line-height:1}h2{font-size:16px;margin:17px 0 5px}.section-head{display:flex;align-items:center;gap:8px;border-bottom:0}.section-head h2{flex:1;min-width:0}.section-sort{margin-top:12px;font-size:9.5px;padding:4px 7px;cursor:pointer}.state-only{padding:4px 6px!important;min-width:27px}.state-only .state-mark{margin:0!important}.card{border-bottom:1px solid #292d34;padding:7px 2px}.row1{display:flex;gap:6px;align-items:baseline}.n{color:#777;font-size:10px;min-width:18px}.title{font-weight:720;font-size:13.5px;flex:1}.badge{font-size:10px;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}.stars{color:#ffd76a}.state-mark{display:inline-block;font-weight:900;line-height:1;text-shadow:0 0 8px currentColor}.state-mark.seen{color:#45d483;font-size:12px}.state-mark.todo{color:#ff5f6d;font-size:14px}.filters button .state-mark{margin-right:2px;vertical-align:-1px}.meta{color:#888f9a;font-size:10.5px;margin-left:24px}.score{display:grid;grid-template-columns:67px 1fr 1fr;column-gap:4px;row-gap:3px;margin:4px 0 4px 24px;max-width:350px;align-items:center}.score div{padding:0 3px}.score .c{text-align:center;font-size:12px;line-height:1.15;font-variant-numeric:tabular-nums}.lab{color:#858c96;font-size:10px;line-height:1.15}.score .lab.fact{font-weight:650;color:#aeb5bf}.score .c.fact{font-size:10.5px;font-weight:700;line-height:1.12;color:#f3f5f7;background:#161a20;border:1px solid #2b3139;border-radius:6px;padding:4px 5px;min-height:24px;display:flex;align-items:center;justify-content:center;overflow-wrap:anywhere;word-break:normal;hyphens:auto}.layers{margin-left:24px}.pre,.post{font-size:11.5px;line-height:1.28}.pre{color:#c7cbd1}.post{color:#e3e5e8;margin-top:4px;padding-top:4px;border-top:1px dotted #333840}.k{font-size:10px;color:#8e96a1;font-weight:650}.links{margin:4px 0 0 24px}.links a{font-size:10.5px;color:#aeb6c4;margin-right:11px}.watch{margin-left:6px;border:1px solid #3a3f48;border-radius:999px;padding:2px 6px;font-size:9.5px;color:#9ca3ad;cursor:pointer;user-select:none}.watch.on{background:#eee;color:#111;border-color:#eee;font-weight:700}.hidden{display:none!important}.empty{padding:18px 3px;color:#8e96a1;font-size:12px}@media(min-width:720px){.wrap{padding:18px}.card{display:grid;grid-template-columns:minmax(260px,1.1fr) 235px 2fr;gap:10px;align-items:start}.meta,.score,.layers,.links{margin-left:0}.left .meta{margin-left:24px}.links{grid-column:3}}
 
 .save-overlay{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.78);align-items:flex-start;justify-content:center;padding:clamp(64px,12vh,110px) 18px 24px;overflow-y:auto}
@@ -214,7 +229,7 @@
 .history-entry-meta{color:#a1acba;font-size:9.3px;line-height:1.25;overflow-wrap:anywhere;white-space:normal}
 .review-shell.history-open .review-body{min-height:65px;flex:1 1 auto}
 @media(max-width:560px){.history-toolbar{padding:6px 12px 0;gap:5px}.history-panel{max-height:min(25dvh,165px)}.review-shell.history-open .review-body{min-height:100px}.history-entry{padding:7px 8px!important}}
-</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="batchPickerToggle" type="button" data-batch-id="all" aria-expanded="false" aria-controls="batchPopover" title="Партия GPT-рекомендаций">Партия: все ▾</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button><button type="button" data-extra-filter="prediction" data-mode="all" title="Наличие прогнозов для Егора и Анны">🔮 Прогноз: все</button><button type="button" data-extra-filter="fact" data-mode="all" title="Наличие фактических оценок">★ Факт: все</button><button type="button" data-extra-filter="sites" data-mode="all" title="Наличие оценок Кинопоиска и IMDb">🌐 Сайты: все</button><button type="button" data-extra-filter="texts" data-mode="all" title="Наличие текстов ДО и ПОСЛЕ">📝 Тексты: все</button></div></div><div id="batchPopover" class="year-popover batch-popover hidden" role="group" aria-label="Партии GPT-рекомендаций"><div class="year-popover-top"><strong>Партии рекомендаций</strong></div><div class="batch-options" id="batchOptions"></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
+</style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" disabled type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="originMode" type="button" data-mode="all" title="Источник первоначального добавления">Источник: все</button><button id="batchPickerToggle" type="button" data-batch-id="all" aria-expanded="false" aria-controls="batchPopover" title="Партия GPT-рекомендаций">Партия: все ▾</button><button id="yearPickerToggle" type="button" aria-expanded="false" aria-controls="yearPopover" title="Выбрать несколько годов выпуска">Годы: все ▾</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button><button type="button" data-extra-filter="prediction" data-mode="all" title="Наличие прогнозов для Егора и Анны">🔮 Прогноз: все</button><button type="button" data-extra-filter="fact" data-mode="all" title="Наличие фактических оценок">★ Факт: все</button><button type="button" data-extra-filter="sites" data-mode="all" title="Наличие оценок Кинопоиска и IMDb">🌐 Сайты: все</button><button type="button" data-extra-filter="texts" data-mode="all" title="Наличие текстов ДО и ПОСЛЕ">📝 Тексты: все</button></div></div><div id="batchPopover" class="year-popover batch-popover hidden" role="group" aria-label="Партии GPT-рекомендаций"><div class="year-popover-top"><strong>Партии рекомендаций</strong></div><div class="batch-options" id="batchOptions"></div></div><div id="yearPopover" class="year-popover hidden" role="group" aria-label="Выбор годов выпуска"><div class="year-popover-top"><strong>Годы выпуска</strong><button type="button" id="yearClear">Все годы</button></div><div class="year-options" id="yearOptions"></div></div><div id="catalogLoad"><span role="status" aria-live="polite" id="catalogMessage">Загрузка каталога…</span> <button type="button" id="retryCatalog" hidden>Повторить</button></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count"></span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 Для Егора</button><button data-k="cat" data-v="her">👩 Для Анны</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
   <div class="agent-shell" role="dialog" aria-modal="true" aria-label="Movie Map Agent">
@@ -319,6 +334,7 @@
   }
 
   function openSave(){
+    if(saveButton.disabled)return;
     var selected=currentSelection();
     saveStatus.textContent='✓ Нажатие получено';
     dialogText.textContent='В файл будет записано позиций «смотреть завтра»: '+selected.length+'. Файл останется автономным и переносимым.';
@@ -326,9 +342,11 @@
   }
 
   function doSave(){
+    if(saveButton.disabled)return;
     try{
       var selected=currentSelection();
       var clone=document.documentElement.cloneNode(true);
+      clone.setAttribute('data-standalone','');
       var embedded=clone.querySelector('#embeddedShortlist');
       if(!embedded) throw new Error('Не найден embeddedShortlist');
       embedded.textContent=JSON.stringify(selected).replace(/<\//g,'<\\/');
@@ -606,12 +624,10 @@ async function ensureCards(){
    getMovieData();
    return;
  }
- const summary=document.getElementById('summary');
- if(summary) summary.textContent='Загрузка данных…';
- const response=await fetch('./movies.json',{cache:'no-cache'});
- if(!response.ok) throw new Error('movies.json: HTTP '+response.status);
- const data=await response.json();
- if(!data||!Array.isArray(data.works)) throw new Error('Некорректная структура movies.json');
+ const pending=earlyCatalog;
+ earlyCatalog=null;
+ const data=await (pending||requestCatalog());
+ if(!Array.isArray(data?.works)||!data.works.length)throw new Error('Каталог пуст или повреждён');
  window.movieMapData=data;
  const embeddedData=document.getElementById('embeddedMovieData');
  if(embeddedData) embeddedData.textContent=JSON.stringify(data).replace(/<\//g,'<\\/');
@@ -620,10 +636,15 @@ async function ensureCards(){
    (work.placements||[]).forEach(p=>rows.push({work,p}));
  });
  rows.sort((a,b)=>Number(a.p.order)-Number(b.p.order));
+ const sections=new Map();
  rows.forEach(({work,p})=>{
    const section=document.querySelector('section[data-sec="'+p.category+'"]');
-   if(section) section.insertAdjacentHTML('beforeend',cardHtml(work,p));
+   if(!section)throw new Error('Неизвестный раздел каталога');
+   if(!sections.has(section))sections.set(section,[]);
+   sections.get(section).push(cardHtml(work,p));
  });
+ if(!sections.size)throw new Error('В каталоге нет карточек');
+ sections.forEach((cards,section)=>section.insertAdjacentHTML('beforeend',cards.join('')));
 }
 
 const EXTRA_FILTERS={
@@ -1117,22 +1138,32 @@ document.addEventListener('click',async function(e){
  if(menu)menu.open=false;
  window.setTimeout(()=>{b.textContent=original;b.classList.remove('copy-ok')},1100);
 });
-(async function initMovieMap(){
+const catalogLoad=document.getElementById('catalogLoad');
+const catalogMessage=document.getElementById('catalogMessage');
+const retryCatalog=document.getElementById('retryCatalog');
+async function initMovieMap(){
+ retryCatalog.disabled=true;
+ retryCatalog.hidden=true;
+ catalogMessage.textContent='Загрузка каталога…';
  try{
    await ensureCards();
-   bindUi();
-   loadShortlist();
-   apply();
-   window.dispatchEvent(new Event('movie-map-ready'));
  }catch(err){
-   const msg='Ошибка загрузки данных: '+String(err&&err.message?err.message:err);
-   const summary=document.getElementById('summary');
-   if(summary) summary.textContent=msg;
-   const empty=document.getElementById('empty');
-   if(empty){empty.classList.remove('hidden');empty.textContent=msg;}
-   console.error(err);
+   catalogMessage.textContent='Не удалось загрузить каталог. '+(err.message||err);
+   retryCatalog.hidden=false;
+   retryCatalog.disabled=false;
+   return;
  }
-})();
+ bindUi();
+ st.q=document.getElementById('movieSearch').value;
+ updateSearchClear();
+ loadShortlist();
+ apply();
+ catalogLoad.hidden=true;
+ document.getElementById('saveStandalone').disabled=false;
+ window.dispatchEvent(new Event('movie-map-ready'));
+}
+retryCatalog.addEventListener('click',()=>{if(!retryCatalog.disabled)initMovieMap()});
+initMovieMap();
 </script>
 <script>
 (function(){

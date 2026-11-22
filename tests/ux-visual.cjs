@@ -3,12 +3,56 @@ const fs=require('node:fs');
 const {spawn}=require('node:child_process');
 const {chromium}=require('playwright');
 
+const db=require('../movies.json');
+const totalCards=db.works.reduce((n,work)=>n+work.placements.length,0);
+const filmCards=db.works.reduce((n,work)=>n+work.placements.filter(p=>p.category==='films').length,0);
+async function checkCatalogRecovery(browser){
+ const context=await browser.newContext();
+ const page=await context.newPage();
+ let attempts=0;
+ let releaseFirst;
+ const hold=new Promise(resolve=>{releaseFirst=resolve});
+ await page.route('**/movies.json',async route=>{
+   attempts++;
+   if(attempts===1){
+     await hold;
+     return route.fulfill({status:503,body:'Temporary failure'});
+   }
+   if(attempts===2)return route.abort('failed');
+   if(attempts===3)return route.fulfill({contentType:'application/json',body:'{'});
+   return route.continue();
+ });
+ try{
+   await page.goto('http://127.0.0.1:8765/',{waitUntil:'domcontentloaded'});
+   await page.locator('#movieSearch').fill('Saltburn');
+   assert(await page.locator('#catalogMessage').isVisible());
+   assert(await page.locator('#saveStandalone').isDisabled());
+   releaseFirst();
+   for(let expected=1;expected<=3;expected++){
+     await page.locator('#retryCatalog').waitFor();
+     assert.equal(attempts,expected);
+     assert(await page.locator('#saveStandalone').isDisabled());
+     await page.locator('#retryCatalog').click();
+   }
+   await page.locator('#allRegistry .card:visible').first().waitFor();
+   assert.equal(attempts,4);
+   assert.equal(await page.locator('.card:visible').count(),1);
+   assert.match(await page.locator('.card:visible .title').innerText(),/Saltburn/);
+   assert.equal(await page.locator('.card').count(),totalCards);
+   const watch=page.locator('.card:visible .watch');
+   await watch.click();
+   assert.equal(await page.locator('.card:visible').getAttribute('data-tomorrow'),'1');
+   assert(await page.locator('#saveStandalone').isEnabled());
+ }finally{await context.close()}
+}
+
 (async()=>{
  const server=spawn('python3',['-m','http.server','8765','--bind','127.0.0.1'],{stdio:'ignore'});
  let browser;
  try{
    await new Promise(r=>setTimeout(r,850));
    browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+   await checkCatalogRecovery(browser);
    const sizes=[
      {name:'desktop',width:1440,height:900},
      {name:'mobile',width:390,height:844},
@@ -103,20 +147,20 @@ const {chromium}=require('playwright');
      assert(result.scrollWidth<=cfg.width+2,'horizontal overflow '+cfg.name+' '+result.scrollWidth+' > '+cfg.width);
      assert(result.tagHeight<95,'tagline too tall '+cfg.name);
      assert.notEqual(result.firstColor,result.secondColor,'tagline parts must differ');
-     assert.equal(result.count,'(85/85)');
+     assert.equal(result.count,`(${totalCards}/${totalCards})`);
      assert.equal(result.titleText,'Все');
      assert.equal(result.filterChipCount,6,'all 6 category chips remain');
      assert.equal(result.oldHeaderCatPresent,false,'old top category row removed');
-     assert.equal(result.indexStatusStacks,85,'status must sit below each row number');
+     assert.equal(result.indexStatusStacks,totalCards,'status must sit below each row number');
      assert.equal(result.listCopies,0,'no copy icons in collapsed list rows');
-     assert.equal(result.allRows,85,'All must contain 85 real cards');
-     assert.equal(result.originTags,85,'All must show each card category');
+     assert.equal(result.allRows,totalCards,'All must contain all catalog cards');
+     assert.equal(result.originTags,totalCards,'All must show each card category');
      assert.equal(result.categorySectionsVisible,0,'no other list sections should show in All');
      assert(Number.parseFloat(result.movieFontSize)<=12.5,'movie title must be reduced by one font unit');
      assert(Number.parseFloat(result.movieFontWeight)<720,'movie title must be lighter');
      assert.equal(result.titleWatchExists,false,'tomorrow must be removed from movie title');
      assert.equal(result.leftRatingsExists,false,'aggregator ratings must be moved from under title');
-     assert.equal(result.shortlistCount,85,'all 85 shortlist actions preserved');
+     assert.equal(result.shortlistCount,totalCards,'all shortlist actions preserved');
      assert.equal(result.scoreRatingsCount,2,'Saltburn must show KP and IMDb below personal scores');
      assert(result.watchRect.bottom<=result.forecastRect.top+1.5,'tomorrow must sit directly above forecast label');
      assert(result.externalRect.top>=result.factRect.bottom-2,'aggregators must be under actual score cells');
@@ -207,16 +251,16 @@ const {chromium}=require('playwright');
          count:document.getElementById('catalogCount')?.textContent
        }));
        console.log('STANDALONE',n,'cards, state',JSON.stringify(fileState),'errors',JSON.stringify(fileErrors),'saved HTML bytes',html.length);
-       assert.equal(n,85,'standalone must show 85 cards');
-       assert.equal(fileState.visible,85,'standalone must show 85 visible cards');
-       assert.equal(await filePage.locator('#allRegistry .card').count(),85,'standalone All should be a single register');
-       assert.equal(fileState.count,'(85/85)');
+       assert.equal(n,totalCards,'standalone must show all cards');
+       assert.equal(fileState.visible,totalCards,'standalone must show all visible cards');
+       assert.equal(await filePage.locator('#allRegistry .card').count(),totalCards,'standalone All should be a single register');
+       assert.equal(fileState.count,`(${totalCards}/${totalCards})`);
        await filePage.locator('[data-k="cat"][data-v="films"]').click();
-       assert.equal(await filePage.locator('section[data-sec="films"] .card:not(.hidden)').count(),20,'standalone category navigation must work');
-       assert.equal(await filePage.locator('#catalogCount').textContent(),'(20/85)');
+       assert.equal(await filePage.locator('section[data-sec="films"] .card:not(.hidden)').count(),filmCards,'standalone category navigation must work');
+       assert.equal(await filePage.locator('#catalogCount').textContent(),`(${filmCards}/${totalCards})`);
        await filePage.locator('[data-k="cat"][data-v="all"]').click();
-       assert.equal(await filePage.locator('#allRegistry .card:not(.hidden)').count(),85,'standalone must restore flat All');
-       assert.equal(await filePage.locator('#catalogCount').textContent(),'(85/85)');
+       assert.equal(await filePage.locator('#allRegistry .card:not(.hidden)').count(),totalCards,'standalone must restore flat All');
+       assert.equal(await filePage.locator('#catalogCount').textContent(),`(${totalCards}/${totalCards})`);
        await filePage.locator('#allRegistry .card[data-key="33233b1d276d"] .fact-review-trigger[data-person="egor"]').first().click();
        await filePage.waitForSelector('#reviewOverlay.open');
        assert.equal(await filePage.locator('#historyToggle').textContent(),'🕰 История · 1','offline history retained');
