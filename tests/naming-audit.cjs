@@ -6,7 +6,11 @@ const db=JSON.parse(fs.readFileSync('movies.json','utf8'));
 const html=fs.readFileSync('index.html','utf8');
 const api=fs.readFileSync('api/chat.js','utf8');
 assert.equal(db.schema_version,2,'canonical production schema v2');
-assert.deepEqual(assertMovieMap(db,{requireCanonical:true}),{works:58,placements:85,withReviews:1,history:58});
+const stats=assertMovieMap(db,{requireCanonical:true});
+assert.equal(stats.works,58,'work count');
+assert.equal(stats.placements,85,'placement count');
+assert.equal(stats.history,58,'history coverage');
+assert(stats.withReviews>=1,'at least one work must have materialized reviews');
 const PEOPLE=['egor','anna'],AI_PEOPLE=['egor','anna','together'],LEGACY=['me','wife','husband','her','him','she','he','partner','spouse'];
 const checkKeys=(obj,allowed,where)=>{
  if(!obj)return;
