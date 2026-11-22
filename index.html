@@ -866,6 +866,7 @@ document.addEventListener('click',async function(e){
  pickerSearch.addEventListener('input',renderPicker);
  body.addEventListener('touchstart',function(e){const t=e.changedTouches&&e.changedTouches[0];if(!t)return;touchX=t.clientX;touchY=t.clientY;},{passive:true});
  body.addEventListener('touchend',function(e){const t=e.changedTouches&&e.changedTouches[0];if(!t)return;const dx=t.clientX-touchX,dy=t.clientY-touchY;if(Math.abs(dx)>=65&&Math.abs(dx)>Math.abs(dy)*1.35)move(dx<0?1:-1);},{passive:true});
+ window.setTimeout(openFromHash,0);
 })();
 </script>
 <script>
