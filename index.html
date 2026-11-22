@@ -140,6 +140,32 @@
  .catalog-toolbar .cat-filters button{font-size:9.1px;padding:4px 6px}
  .card .card-index{flex-basis:21px}
 }
+
+/* Catalog card refinement from annotated screenshots 20261122-143230, -143447, -143624. */
+.card .row1 .title{min-width:0;flex:1 1 auto}
+.card .row1 .badge{flex:0 0 auto;align-self:flex-start;margin-top:1px}
+.card .row1 .stars{white-space:nowrap}
+.card .card-memberships{display:flex;flex-wrap:wrap;align-items:center;column-gap:6px;row-gap:2px;margin:3px 0 0 24px;min-width:0;line-height:1.15}
+.card .card-memberships .card-origin{display:inline-flex!important;margin:0!important;font-size:9px;white-space:nowrap;align-items:center}
+.card .card-memberships .crosslists{display:inline-flex!important;margin:0!important;padding:0!important;gap:4px;flex-wrap:wrap;align-items:center;font-size:9px;min-width:0}
+.card .card-memberships .crosslists>span{color:#828d99}
+.card .card-memberships .category-chip{font-size:8.6px;padding:2px 6px;line-height:1.15}
+.card .left .meta{line-height:1.16}
+.card .score{grid-template-columns:76px minmax(0,1fr) minmax(0,1fr);align-items:center;min-width:0}
+.card .score .score-shortlist{min-width:0;padding:0;display:flex;align-items:center;justify-content:flex-start}
+.card .score .score-shortlist .watch{margin:0!important;padding:2px 5px!important;font-size:8.6px;line-height:1.2;white-space:nowrap;flex:0 0 auto;max-width:100%;cursor:pointer}
+.card .score .score-ext-label{grid-column:1;min-width:0;color:#828d99;font-size:9px;line-height:1.15;padding:0 3px}
+.card .score .score-ext-values{grid-column:2 / 4;min-width:0;padding:0!important}
+.card .score .score-ext-values .external-ratings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:4px;row-gap:3px;margin:0!important;padding:0!important;width:100%;min-width:0}
+.card .score .score-ext-values .external-rating{display:flex;align-items:center;justify-content:center;gap:3px;min-width:0;padding:3px 2px;font-size:9px;white-space:nowrap;line-height:1.15}
+@media(max-width:560px){
+ .card .score{grid-template-columns:76px minmax(0,1fr) minmax(0,1fr)}
+ .card .card-memberships .card-origin,.card .card-memberships .crosslists{font-size:8.8px}
+}
+@media(max-width:360px){
+ .card .score{grid-template-columns:76px minmax(0,1fr) minmax(0,1fr)}
+ .card .score .score-ext-values .external-rating{font-size:8.5px}
+}
 </style></head><body><div class="wrap"><div class="top"><div class="titlebar"><div class="title-copy"><div class="title-stack"><h1>🎬 Лабиринт кино — Анна и Егор</h1><div class="tagline"><span class="tagline-main">Чтобы однажды вспомнить, почему нам это было важно</span> <span class="tagline-separator">//</span> <span class="tagline-personal">Мы смотрели. Мы чувствовали. Анна потом забыла.</span></div></div><div class="title-search"><div class="search-wrap"><input id="movieSearch" class="main-search" type="search" placeholder="Поиск" autocomplete="off" aria-label="Поиск фильма или сериала"><button id="searchClear" class="search-clear hidden" type="button" aria-label="Очистить поиск">×</button></div><button class="header-reset" id="reset" type="button" title="Сбросить поиск и все фильтры" aria-label="Сбросить поиск и все фильтры">↺</button></div></div><div class="header-actions"><button id="agentOpen" type="button">🤖 Спросить AI</button><button id="saveStandalone" type="button">💾 Сохранить версию</button><span id="saveStatus">Готово к сохранению</span></div></div><div class="filters"><button id="typeMode" type="button" data-mode="all" title="Тип контента">Тип: все</button><button class="state-only" data-k="state" data-v="seen" title="Просмотрено" aria-label="Просмотрено"><span class="state-mark seen">✓</span></button><button class="state-only" data-k="state" data-v="todo" title="Не просмотрено" aria-label="Не просмотрено"><span class="state-mark todo">○</span></button><button data-k="tomorrow" data-v="1">📌 Смотреть завтра</button><button data-k="tag" data-v="отдых">🍿 Отдых</button><button id="countryMode" type="button" data-mode="all">Страна: все</button><button id="reviewMode" type="button" data-mode="all">Отзывы: все</button><button id="dupMode" type="button" data-mode="all">⧉ Повторы: все</button><button id="duplicateListToggle" type="button">⧉ Все задвоения</button><button id="starsMode" type="button" data-mode="all">⭐: все</button></div></div><div id="catalogToolbar" class="catalog-toolbar"><h2 id="catalogTitle"><span id="catalogTitleText">Все</span> <span id="catalogCount" class="section-count">(85/85)</span></h2><button type="button" class="section-sort" data-section-sort data-sort="original" title="Сортировка">↕ Исходный</button><div class="filters cat-filters" id="cat"><button class="active" data-k="cat" data-v="all">Все</button><button data-k="cat" data-v="films">❤️ Фильмы 2х</button><button data-k="cat" data-v="series">📺 Сериалы 2х</button><button data-k="cat" data-v="weird">🌀 Странное</button><button data-k="cat" data-v="me">👨 для Егор</button><button data-k="cat" data-v="her">👩 для Анна</button></div></div><section data-sec="all" id="allRegistry" class="all-registry hidden"></section><section data-sec="films"></section><section data-sec="series"></section><section data-sec="weird"></section><section data-sec="me"></section><section data-sec="her"></section><section id="duplicateListPanel" class="duplicate-panel hidden"><div id="duplicateList"></div></section><div id="empty" class="empty hidden">По этой комбинации фильтров ничего нет.</div>
 
 <div id="agentOverlay" class="agent-overlay">
@@ -429,14 +455,15 @@ function cardHtml(work,p){
  const thisCategory=CATEGORY_META[p.category]||{icon:'•',label:p.category};
  const originLabel='<span class="card-origin" title="Раздел: '+esc(thisCategory.label)+'">'+esc(thisCategory.icon)+' '+esc(thisCategory.label)+'</span>';
  const others=[...new Set((work.placements||[]).map(x=>x.category))].filter(cat=>cat!==p.category);
- const cross=others.length?'<div class="crosslists"><span>↔ ещё:</span>'+others.map(cat=>categoryChip(cat,p.category)).join('')+'</div>':'';
+ const cross=others.length?'<span class="crosslists"><span>ещё:</span>'+others.map(cat=>categoryChip(cat,p.category)).join('')+'</span>':'';
+ const membership='<div class="card-memberships">'+originLabel+cross+'</div>';
  const jointAi=work.ai_comments&&typeof work.ai_comments.together==='string'&&work.ai_comments.together.trim();
  const before=p.before?String(p.before):'';
  const beforeHtml='<div class="pre"><span class="k">💡 ДО</span> · '+esc(before)+'</div>';
  const after=p.after?'<div class="post'+(jointAi?' has-ai-summary':'')+'"'+(jointAi?' role="button" tabindex="0" data-open-ai-summary="1"'+reviewDataAttrs(work,p):'')+'><span class="k">📝 ПОСЛЕ</span> · '+esc(p.after)+(jointAi?'<span class="post-ai-chip">🤖 GPT</span>':'')+'</div>':'';
  return '<article class="card" data-key="'+esc(work.id)+'" data-cat="'+esc(p.category)+'" data-type="'+esc(work.media_type)+'" data-state="'+esc(work.state)+'" data-tags="'+esc(tags)+'" data-stars="'+Number(p.stars||0)+'" data-order="'+Number(p.order||0)+'" data-duplicate="'+(isDuplicate?'1':'0')+'" data-has-review="'+(((work.reviews&&work.reviews.me)||(work.reviews&&work.reviews.wife))?'1':'0')+'" data-search="'+esc(norm(work.title))+'">'+
- '<div class="left"><div class="row1"><span class="card-index"><span class="n">'+String(p.order).padStart(2,'0')+'</span>'+status+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span>'+starBadge+'<span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+originLabel+'</div>'+externalRatingsHtml(work,false)+cross+'</div>'+
- '<div class="score"><div></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+'</div>'+
+ '<div class="left"><div class="row1"><span class="card-index"><span class="n">'+String(p.order).padStart(2,'0')+'</span>'+status+'</span><span class="title movie-title-trigger" role="button" tabindex="0" data-open-movie="'+esc(work.id)+'">'+esc(work.title)+'</span>'+starBadge+'</div><div class="meta">'+esc(work.year)+' · '+esc(work.media_type)+'</div>'+membership+'</div>'+
+ '<div class="score"><div class="score-shortlist"><span class="watch" title="Добавить в шортлист">📌 завтра</span></div><div class="c lab">Егор</div><div class="c lab">Анна</div><div class="lab">🔮 прогноз</div><div class="c">'+esc(p.prediction.me)+'</div><div class="c">'+esc(p.prediction.wife)+'</div><div class="lab fact">★ факт</div>'+factCellHtml(work,p,'me')+factCellHtml(work,p,'wife')+(externalRatingsHtml(work,false)?'<div class="score-ext-label lab">🌐 сайты</div><div class="score-ext-values">'+externalRatingsHtml(work,false)+'</div>':'')+'</div>'+
  '<div><div class="layers">'+beforeHtml+after+'</div><div class="links"><a target="_blank" href="'+esc(work.links.imdb)+'">IMDb ↗</a><a target="_blank" href="'+esc(work.links.kinopoisk)+'">Кинопоиск ↗</a></div></div></article>';
 }
 async function ensureCards(){
