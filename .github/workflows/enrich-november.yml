@@ -1,0 +1,63 @@
+name: Enrich November movie metadata (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Write verified API matches to production movies.json"
+        type: boolean
+        default: false
+        required: true
+      include_tmdb:
+        description: "Use optional TMDB API for rating and review count"
+        type: boolean
+        default: true
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check importer and matching rules
+        run: node tests/external-enrichment.cjs
+      - name: Fetch verified external metadata (never log tokens)
+        env:
+          POISKKINO_API_KEY: ${{ secrets.POISKKINO_API_KEY }}
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          TMDB_READ_ACCESS_TOKEN: ${{ secrets.TMDB_READ_ACCESS_TOKEN }}
+          APPLY: ${{ inputs.apply }}
+          INCLUDE_TMDB: ${{ inputs.include_tmdb }}
+        run: |
+          set -euo pipefail
+          flags=""
+          if [ "$APPLY" = "true" ]; then flags="$flags --write"; fi
+          if [ "$INCLUDE_TMDB" = "true" ]; then flags="$flags --tmdb"; fi
+          node scripts/enrich-external.cjs $flags
+      - name: Validate JSON and content contracts
+        run: |
+          node scripts/history-contract.cjs movies.json
+          node scripts/recommendation-contract.cjs movies.json
+          node tests/naming-audit.cjs
+          git diff --check
+      - name: Commit enriched metadata to main
+        if: ${{ inputs.apply }}
+        run: |
+          if git diff --quiet -- movies.json; then
+            echo "No verified enrichment changes"
+            exit 0
+          fi
+          git config user.name "movie-map-enrichment-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add movies.json
+          git commit -m "Enrich November movies with verified external API metadata"
+          git push origin HEAD:main
