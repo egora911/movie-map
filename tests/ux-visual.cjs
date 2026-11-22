@@ -122,7 +122,7 @@ const {chromium}=require('playwright');
      assert(result.externalRect.top>=result.factRect.bottom-2,'aggregators must be under actual score cells');
      assert(result.membershipRect.top>=result.metaRect.top,'membership must follow year and type');
      assert(result.membershipText.includes('Фильмы 2х'),'category origin visible in next line');
-     assert(result.sentimentalMembershipText.includes('Фильмы 2х')&&result.sentimentalMembershipText.includes('ещё:')&&result.sentimentalMembershipText.includes('для Анна'),'Sentimental Value must show current list before cross-list');
+     assert(result.sentimentalMembershipText.includes('Фильмы 2х')&&result.sentimentalMembershipText.includes('ещё:')&&result.sentimentalMembershipText.includes('Для Анны'),'Sentimental Value must show current list before cross-list');
      assert(result.sentimentalStars.includes('⭐'),'stars must remain alongside title, at old tomorrow position');
      if(cfg.name==='desktop'){
        assert(result.sortOffset>=3&&result.sortOffset<24,'sort must follow title directly: '+result.sortOffset);

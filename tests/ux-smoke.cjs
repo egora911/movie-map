@@ -69,8 +69,8 @@ async function init(){
    assert.equal(header.children[2].id,'cat','category chips directly after sort');
    assert.equal(d.querySelectorAll('.top #cat').length,0,'old upper category row must be removed');
    assert.equal(d.querySelectorAll('[data-section-sort]').length,1);
-   assert.equal(d.querySelector('[data-k="cat"][data-v="me"]').textContent,'👨 для Егор');
-   assert.equal(d.querySelector('[data-k="cat"][data-v="her"]').textContent,'👩 для Анна');
+   assert.equal(d.querySelector('[data-k="cat"][data-v="me"]').textContent,'👨 Для Егора');
+   assert.equal(d.querySelector('[data-k="cat"][data-v="her"]').textContent,'👩 Для Анны');
    click('#catalogToolbar .section-sort');
    assert.equal(d.querySelector('.section-sort').dataset.sort,'ru-asc');
    click('[data-k="cat"][data-v="films"]');
@@ -137,7 +137,7 @@ async function init(){
    const line=filmPlacement.querySelector('.card-memberships');
    assert.match(line.textContent,/Фильмы 2х/);
    assert.match(line.textContent,/ещё:/);
-   assert.match(line.textContent,/для Анна/);
+   assert.match(line.textContent,/Для Анны/);
    assert(line.querySelector('[data-cross-cat="her"]'),'cross-list chip must retain its navigation');
    assert.equal(line.previousElementSibling.classList.contains('meta'),true);
    assert.equal(d.querySelectorAll('#allRegistry .card .score-shortlist .watch').length,85,'all 85 placements have shortlist button in score');
@@ -156,7 +156,7 @@ async function init(){
    assert(after,'after copy retained inside full movie card');
    after.click();await tick();
    assert(copied.length>25);
-   const thread=detail.querySelector('[data-copy-thread="review:me"]');
+   const thread=detail.querySelector('[data-copy-thread="review:egor"]');
    assert(thread);
    thread.click();await tick();
    assert(copied.includes('Disclaimer / Дисклеймер'));
@@ -176,11 +176,11 @@ async function init(){
    assert(copied.indexOf('Анна')<copied.indexOf('Егор'),'Anna before Egor in package');
  });
  await test('canonical UI labels do not alter raw reviews',()=>{
-   assert.equal(db.categories.find(x=>x.id==='me').label,'для Егор');
-   assert.equal(db.categories.find(x=>x.id==='her').label,'для Анна');
-   assert(db.works.find(w=>w.id==='33233b1d276d').reviews.me.length>300);
+   if(Number(db.schema_version)>=2)assert.equal(db.categories.find(x=>x.id==='me').label,'Кино / сериал для Егора');
+   if(Number(db.schema_version)>=2)assert.equal(db.categories.find(x=>x.id==='her').label,'Кино / сериал для Анны');
+   assert(w.personValue(db.works.find(w=>w.id==='33233b1d276d').reviews,'egor').length>300);
    const api=fs.readFileSync('api/chat.js','utf8');
-   assert(api.includes('me = Егор, wife = Анна'));
+   assert(api.includes('Системные ключи персон: egor / anna'));
    assert(!/Для меня|Для неё|Для жены|Для него/i.test([...d.querySelectorAll('[data-k="cat"],.card-origin,#catalogTitleText')].map(x=>x.textContent).join(' ')));
  });
 
@@ -206,12 +206,12 @@ async function init(){
  });
  await test('missing Egor/Anna human review modes',()=>{
    for(let i=0;i<3;i++)click('#reviewMode');
-   assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-me');
-   const expected=db.works.reduce((n,x)=>n+x.placements.length*(typeof x.reviews?.me==='string'&&x.reviews.me.trim()?0:1),0);
+   assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-egor');
+   const expected=db.works.reduce((n,x)=>n+x.placements.length*(w.personValue(x.reviews,'egor')?.trim()?0:1),0);
    assert.equal(visible(),expected);
    click('#reviewMode');
-   assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-wife');
-   const anna=db.works.reduce((n,x)=>n+x.placements.length*(typeof x.reviews?.wife==='string'&&x.reviews.wife.trim()?0:1),0);
+   assert.equal(d.querySelector('#reviewMode').dataset.mode,'missing-anna');
+   const anna=db.works.reduce((n,x)=>n+x.placements.length*(w.personValue(x.reviews,'anna')?.trim()?0:1),0);
    assert.equal(visible(),anna);
    click('#reset');
  });
@@ -255,19 +255,35 @@ async function init(){
    }
    for(const group of ['reviews','review_dates','ai_comments'])remap(canonical[group]);
    for(const p of canonical.placements){remap(p.prediction);remap(p.actual)}
-   assert.equal(w.personValue(canonical.reviews,'egor'),legacy.reviews.me);
-   assert.equal(w.personValue(canonical.ai_comments,'anna'),legacy.ai_comments.wife);
+   assert.equal(w.personValue(canonical.reviews,'egor'),w.personValue(legacy.reviews,'egor'));
+   assert.equal(w.personValue(canonical.ai_comments,'anna'),w.personValue(legacy.ai_comments,'anna'));
    const card=w.cardHtml(canonical,canonical.placements[0]);
-   assert(card.includes('data-has-review-me="1"'));
-   assert(card.includes('data-has-review-wife="1"'));
-   assert(card.includes('data-score-me="9"')&&card.includes('data-score-wife="10"'));
-   assert(card.includes('data-review-me=')&&card.includes('data-review-wife='));
+   assert(card.includes('data-has-review-egor="1"'));
+   assert(card.includes('data-has-review-anna="1"'));
+   assert(card.includes('data-score-egor="9"')&&card.includes('data-score-anna="10"'));
+   assert(card.includes('data-review-egor=')&&card.includes('data-review-anna='));
    assert(card.includes('data-ai-together='));
    assert(card.includes('Открыть полный отзыв Егора'));
    assert.deepEqual(contract.errorsForMovieMap({...db,works:db.works.map(w=>w.id===canonical.id?canonical:w)}),[]);
    const fake={...canonical,review_history:{egor:[{id:'event_review_1',type:'legacy_current',date:'2026-11-16',text:canonical.reviews.egor}],anna:[]},ai_comment_history:{egor:[{id:'event_ai_1',type:'backfill',version:1,text:canonical.ai_comments.egor}],anna:[],together:[]}};
    assert.equal(contract.errorsForMovieMap({...db,works:db.works.map(w=>w.id===fake.id?fake:w)}).length,0);
    assert.equal(w.personHistory(fake,'review_history','egor').length,1);
+ });
+ await test('System naming and API tools use Egor/Anna only',()=>{
+   const labels=[...d.querySelectorAll('[data-k="cat"],.review-nav-chips button,.review-mode-label,#catalogTitleText,.score .c.lab')].map(x=>x.textContent).join(' ');
+   assert(!/(GPT\s*·\s*(?:Я|Жена)|Для\s+(?:меня|неё|нее|него|жены)|Мой отзыв|Отзыв жены)/iu.test(labels));
+   assert(labels.includes('Егор')&&labels.includes('Анна'));
+   const code=fs.readFileSync('api/chat.js','utf8');
+   const backend=new Function('require','process','module',code+'\nreturn {canonicalPair,flatRows,getMovie,getCatalogStats};')(require,process,{exports:{}});
+   assert.deepEqual(backend.canonicalPair({me:'9',wife:'10'}),{egor:'9',anna:'10'});
+   assert.deepEqual(backend.canonicalPair({egor:'9',anna:'10'}),{egor:'9',anna:'10'});
+   assert.equal(backend.flatRows().length,85);
+   const result=backend.getMovie({id_or_title:'Disclaimer'});
+   assert(result.length>0);
+   assert.equal(backend.getCatalogStats().categories.find(c=>c.id==='me').label,'Кино / сериал для Егора');
+   const record=result[0];
+   assert(w.personValue(record.reviews,'egor').length>100);
+   assert(record.placements.every(p=>p.actual.egor!==undefined&&p.actual.anna!==undefined));
  });
  await test('Golden Fleece save code preserved',()=>{
    assert(html.includes('clone=document.documentElement.cloneNode(true)'));

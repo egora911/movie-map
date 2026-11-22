@@ -9,9 +9,27 @@ function loadDb() {
   return cachedDb;
 }
 
+/* System-facing person keys are egor/anna. Legacy JSON me/wife is readable until all consumers migrate. */
+function canonicalPair(obj){
+ if(!obj||typeof obj!=='object'||Array.isArray(obj))return obj;
+ const {me,wife,...rest}=obj;
+ if(!Object.prototype.hasOwnProperty.call(rest,'egor')&&me!==undefined)rest.egor=me;
+ if(!Object.prototype.hasOwnProperty.call(rest,'anna')&&wife!==undefined)rest.anna=wife;
+ return rest;
+}
+function canonicalWork(work){
+ const next={...work,placements:(work.placements||[]).map(p=>({...p,actual:canonicalPair(p.actual),prediction:canonicalPair(p.prediction)}))};
+ for(const field of ['reviews','review_dates','ai_comments'])if(work[field])next[field]=canonicalPair(work[field]);
+ return next;
+}
+function publicCategories(db){
+ return (db.categories||[]).map(c=>c.id==='me'?{...c,label:'Кино / сериал для Егора'}:
+   c.id==='her'?{...c,label:'Кино / сериал для Анны'}:c);
+}
+
 function flatRows() {
   const db = loadDb();
-  const categoryLabels = Object.fromEntries((db.categories || []).map(c => [c.id, c.label]));
+  const categoryLabels = Object.fromEntries(publicCategories(db).map(c => [c.id, c.label]));
   return (db.works || []).flatMap(work =>
     (work.placements || []).map(p => ({
       id: work.id,
@@ -24,8 +42,8 @@ function flatRows() {
       order: p.order,
       stars: Number(p.stars || 0),
       tags: p.tags || [],
-      prediction: p.prediction,
-      actual: p.actual,
+      prediction: canonicalPair(p.prediction),
+      actual: canonicalPair(p.actual),
       before: p.before,
       after: p.after,
       links: work.links
@@ -72,14 +90,14 @@ function getMovie(args = {}) {
     normalize(w.id) === needle ||
     normalize(w.title).includes(needle)
   );
-  return matches.slice(0, 8);
+  return matches.slice(0, 8).map(canonicalWork);
 }
 
 function getCatalogStats() {
   const db = loadDb();
   return {
     counts: db.counts,
-    categories: db.categories
+    categories: publicCategories(db)
   };
 }
 
@@ -150,7 +168,7 @@ async function callGemini(contents) {
     "Отвечай по-русски, компактно и по делу.",
     "Для любых утверждений о содержимом карты обязательно используй инструменты. Не выдумывай фильмы, оценки, теги, просмотренность или предпочтения.",
     "Рекомендации делай только из Movie Map. Для рекомендации обычно исключай state=seen, если пользователь явно не просит иначе.",
-    "В структуре JSON ключи me и wife — стабильные технические идентификаторы: me = Егор, wife = Анна. В ответах называй людей Егор и Анна, а категории «для Егор» и «для Анна»; не называй их «я», «жена», «для него», «для неё». Дословные цитаты отзывов не исправляй. Учитывай прогнозы, звёзды, категории, теги и тексты ДО/ПОСЛЕ.",
+    "Системные ключи персон: egor / anna. Егор и Анна — два конкретных человека. Слой совместимости читает старые me/wife, но выдаёт egor/anna. Отвечай с именами Егор и Анна; категории — «Кино / сериал для Егора» и «Кино / сериал для Анны». Не используй в своих системных обозначениях «я», «жена», «для него», «для неё». Дословные цитаты не переписывай. Учитывай прогнозы, звёзды, категории, теги и тексты ДО/ПОСЛЕ.",
     "Если данных недостаточно, так и скажи.",
     "Ты НЕ МОЖЕШЬ менять JSON, shortlist, оценки или карточки. Если просят изменить данные, объясни, что v1 read-only, и скажи какое изменение понял.",
     "Когда рекомендуешь несколько вариантов, объясни одним коротким предложением почему каждый подходит."
