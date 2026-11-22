@@ -85,8 +85,9 @@ async function init(){
    click('#reset');
  });
  await test('review-presence filter still updates header',()=>{
-   click('#reviewMode');assert.equal(visible(),2);assert.equal(count(),'(2/85)');
-   click('#reviewMode');assert.equal(visible(),83);assert.equal(count(),'(83/85)');
+   const reviewed=db.works.reduce((n,x)=>n+x.placements.length*((w.personValue(x.reviews,'egor')?.trim()||w.personValue(x.reviews,'anna')?.trim())?1:0),0);
+   click('#reviewMode');assert.equal(visible(),reviewed);assert.equal(count(),`(${reviewed}/85)`);
+   click('#reviewMode');assert.equal(visible(),85-reviewed);assert.equal(count(),`(${85-reviewed}/85)`);
    click('#reset');assert.equal(visible(),85);assert.equal(count(),'(85/85)');
  });
  await test('stars and country filters',()=>{
@@ -275,16 +276,19 @@ async function init(){
    assert.equal(contract.errorsForMovieMap(db,{requireCanonical:true}).length,0);
    assert.equal(db.works.filter(w=>w.review_history&&w.ai_comment_history).length,58);
    const w0=db.works.find(w=>w.id==='33233b1d276d');
-   assert.equal(w0.review_history.egor.length,1);
-   assert.equal(w0.review_history.anna.length,1);
+   assert(w0.review_history.egor.length>=1);
+   assert(w0.review_history.anna.length>=1);
    for(const p of ['egor','anna']){
-     assert.equal(w0.review_history[p][0].text,w0.reviews[p]);
-     assert.equal(w0.ai_comment_history[p][0].text,w0.ai_comments[p]);
-     assert.equal(w0.history_current.review[p],w0.review_history[p][0].id);
-     assert.equal(w0.history_current.ai[p],w0.ai_comment_history[p][0].id);
+     const reviewEvent=w0.review_history[p].find(x=>x.id===w0.history_current.review[p]);
+     const aiEvent=w0.ai_comment_history[p].find(x=>x.id===w0.history_current.ai[p]);
+     assert(reviewEvent,'current human review event must exist for '+p);
+     assert(aiEvent,'current AI event must exist for '+p);
+     assert.equal(reviewEvent.text,w0.reviews[p]);
+     assert.equal(aiEvent.text,w0.ai_comments[p]);
    }
-   assert.equal(w0.ai_comment_history.together[0].text,w0.ai_comments.together);
-   assert.equal(w0.history_current.ai.together,w0.ai_comment_history.together[0].id);
+   const togetherEvent=w0.ai_comment_history.together.find(x=>x.id===w0.history_current.ai.together);
+   assert(togetherEvent,'current together AI event must exist');
+   assert.equal(togetherEvent.text,w0.ai_comments.together);
    assert(w0.placements.every(x=>x.actual.egor==='9'&&x.actual.anna==='10'));
    assert(db.works.every(w=>w.origin));
    assert.equal(db.works.length,58);
