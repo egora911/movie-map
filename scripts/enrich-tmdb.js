@@ -1,0 +1,11 @@
+const q='Saltburn';
+const url='https://www.themoviedb.org/search/movie?query='+encodeURIComponent(q);
+const r=await fetch(url,{headers:{'user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36','accept-language':'en-US,en;q=0.9'}});
+const html=await r.text();
+console.log('STATUS',r.status,'LEN',html.length);
+const id=[...html.matchAll(/href="\/movie\/(\d+)[^"]*"/g)].slice(0,10).map(m=>m[1]);
+const imgs=[...html.matchAll(/https:\/\/image\.tmdb\.org\/t\/p\/[^"' ]+/g)].slice(0,20).map(m=>m[0]);
+console.log('IDS',JSON.stringify(id));
+console.log('IMAGES',JSON.stringify(imgs));
+const pos=html.toLowerCase().indexOf('saltburn');
+console.log('SNIP',pos>=0?html.slice(Math.max(0,pos-1800),pos+5000).replace(/\s+/g,' '):html.slice(0,5000).replace(/\s+/g,' '));
